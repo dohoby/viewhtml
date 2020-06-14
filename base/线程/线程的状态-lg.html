@@ -1,0 +1,2497 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>线程的状态 · java实用笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="ThreadPoolExecutor.html" />
+    
+
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://blog.liangqingxiang.top/" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.</b>
+                    
+                    Base
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    String
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../string/StringBuffer和StringBuilder.html">
+            
+                <a href="../string/StringBuffer和StringBuilder.html">
+            
+                    
+                        <b>1.2.1.1.</b>
+                    
+                    集合StringBuffer和StringBuilder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../string/string源码.html">
+            
+                <a href="../string/string源码.html">
+            
+                    
+                        <b>1.2.1.2.</b>
+                    
+                    string源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../string/string源码学习.html">
+            
+                <a href="../string/string源码学习.html">
+            
+                    
+                        <b>1.2.1.3.</b>
+                    
+                    string源码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../string/字符串string学习.html">
+            
+                <a href="../string/字符串string学习.html">
+            
+                    
+                        <b>1.2.1.4.</b>
+                    
+                    字符串string学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../string/字符串string学习2-lg.html">
+            
+                <a href="../string/字符串string学习2-lg.html">
+            
+                    
+                        <b>1.2.1.5.</b>
+                    
+                    字符串string学习2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    线程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="ThreadPoolExecutor.html">
+            
+                <a href="ThreadPoolExecutor.html">
+            
+                    
+                        <b>1.2.2.1.</b>
+                    
+                    ThreadPoolExecutor详解 ThreadPoolExecutor 的参数含义及源码执行流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2.2" data-path="线程的状态-lg.html">
+            
+                <a href="线程的状态-lg.html">
+            
+                    
+                        <b>1.2.2.2.</b>
+                    
+                    线程的状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    网络
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../网络/http和tcp.html">
+            
+                <a href="../网络/http和tcp.html">
+            
+                    
+                        <b>1.2.3.1.</b>
+                    
+                    http和tcp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../test.html">
+            
+                <a href="../test.html">
+            
+                    
+                        <b>1.2.4.</b>
+                    
+                    Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../基本类型装箱拆箱.html">
+            
+                <a href="../基本类型装箱拆箱.html">
+            
+                    
+                        <b>1.2.5.</b>
+                    
+                    集合基本类型装箱拆箱
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../基本类型装箱拆箱2.html">
+            
+                <a href="../基本类型装箱拆箱2.html">
+            
+                    
+                        <b>1.2.6.</b>
+                    
+                    基本类型装箱拆箱2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                        <b>1.3.</b>
+                    
+                    Design Patterns
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" >
+            
+                <span>
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    Spring
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../designPatterns/spring/spring享元模式.html">
+            
+                <a href="../../designPatterns/spring/spring享元模式.html">
+            
+                    
+                        <b>1.3.1.1.</b>
+                    
+                    spring享元模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../../designPatterns/spring/spring代理模式.html">
+            
+                <a href="../../designPatterns/spring/spring代理模式.html">
+            
+                    
+                        <b>1.3.1.2.</b>
+                    
+                    spring代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../../designPatterns/spring/spring策略模式.html">
+            
+                <a href="../../designPatterns/spring/spring策略模式.html">
+            
+                    
+                        <b>1.3.1.3.</b>
+                    
+                    spring策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                        <b>1.4.</b>
+                    
+                    Jvm
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../jvm/jvm内存模型.html">
+            
+                <a href="../../jvm/jvm内存模型.html">
+            
+                    
+                        <b>1.4.1.</b>
+                    
+                    jvm内存模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../jvm/jvm参数.html">
+            
+                <a href="../../jvm/jvm参数.html">
+            
+                    
+                        <b>1.4.2.</b>
+                    
+                    jvm参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                        <b>1.5.</b>
+                    
+                    Mybatis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" >
+            
+                <span>
+            
+                    
+                        <b>1.5.1.</b>
+                    
+                    mybatis分页插件
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../mybatis/mybatis分页插件/mybatis插件引入.html">
+            
+                <a href="../../mybatis/mybatis分页插件/mybatis插件引入.html">
+            
+                    
+                        <b>1.5.1.1.</b>
+                    
+                    mybatis插件引入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../../mybatis/mybatis分页插件/Page.html">
+            
+                <a href="../../mybatis/mybatis分页插件/Page.html">
+            
+                    
+                        <b>1.5.1.2.</b>
+                    
+                    Page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="../../mybatis/mybatis分页插件/PagePlugin.html">
+            
+                <a href="../../mybatis/mybatis分页插件/PagePlugin.html">
+            
+                    
+                        <b>1.5.1.3.</b>
+                    
+                    Page Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.4" data-path="../../mybatis/mybatis分页插件/ReflectHelper.html">
+            
+                <a href="../../mybatis/mybatis分页插件/ReflectHelper.html">
+            
+                    
+                        <b>1.5.1.4.</b>
+                    
+                    Reflect Helper
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" >
+            
+                <span>
+            
+                    
+                        <b>1.5.2.</b>
+                    
+                    mybatis分页插件2
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../../mybatis/mybatis分页插件2/mybatis插件引入.html">
+            
+                <a href="../../mybatis/mybatis分页插件2/mybatis插件引入.html">
+            
+                    
+                        <b>1.5.2.1.</b>
+                    
+                    mybatis插件引入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../../mybatis/mybatis分页插件2/PageInterceptor.html">
+            
+                <a href="../../mybatis/mybatis分页插件2/PageInterceptor.html">
+            
+                    
+                        <b>1.5.2.2.</b>
+                    
+                    Page Interceptor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3" data-path="../../mybatis/mybatis分页插件2/Pagination.html">
+            
+                <a href="../../mybatis/mybatis分页插件2/Pagination.html">
+            
+                    
+                        <b>1.5.2.3.</b>
+                    
+                    Pagination
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../mybatis/mybatis-view1.html">
+            
+                <a href="../../mybatis/mybatis-view1.html">
+            
+                    
+                        <b>1.5.3.</b>
+                    
+                    Mybatis View 1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../mybatis/mybatis学习.html">
+            
+                <a href="../../mybatis/mybatis学习.html">
+            
+                    
+                        <b>1.5.4.</b>
+                    
+                    mybatis学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../mybatis/mybatis源码.html">
+            
+                <a href="../../mybatis/mybatis源码.html">
+            
+                    
+                        <b>1.5.5.</b>
+                    
+                    mybatis源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../mybatis/mybatis源码学习总结1.html">
+            
+                <a href="../../mybatis/mybatis源码学习总结1.html">
+            
+                    
+                        <b>1.5.6.</b>
+                    
+                    mybatis源码学习总结1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../../mybatis/mybatis源码学习总结2.html">
+            
+                <a href="../../mybatis/mybatis源码学习总结2.html">
+            
+                    
+                        <b>1.5.7.</b>
+                    
+                    mybatis源码学习总结2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../../mybatis/mybatis用法.html">
+            
+                <a href="../../mybatis/mybatis用法.html">
+            
+                    
+                        <b>1.5.8.</b>
+                    
+                    mybatis用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../../mybatis/常见mybatis用法.html">
+            
+                <a href="../../mybatis/常见mybatis用法.html">
+            
+                    
+                        <b>1.5.9.</b>
+                    
+                    常见mybatis用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                        <b>1.6.</b>
+                    
+                    Mybatis Spring
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../mybatis-spring/Mybatis-Spring源码分析.html">
+            
+                <a href="../../mybatis-spring/Mybatis-Spring源码分析.html">
+            
+                    
+                        <b>1.6.1.</b>
+                    
+                    Mybatis-Spring源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                        <b>1.7.</b>
+                    
+                    Redis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../redis/redis相关.html">
+            
+                <a href="../../redis/redis相关.html">
+            
+                    
+                        <b>1.7.1.</b>
+                    
+                    redis相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../redis/缓存.html">
+            
+                <a href="../../redis/缓存.html">
+            
+                    
+                        <b>1.7.2.</b>
+                    
+                    缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                        <b>1.8.</b>
+                    
+                    Spring
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" >
+            
+                <span>
+            
+                    
+                        <b>1.8.1.</b>
+                    
+                    Aop
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1.1" data-path="../../spring/aop/aop动态代理学习.html">
+            
+                <a href="../../spring/aop/aop动态代理学习.html">
+            
+                    
+                        <b>1.8.1.1.</b>
+                    
+                    aop动态代理学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.2" data-path="../../spring/aop/aop学习.html">
+            
+                <a href="../../spring/aop/aop学习.html">
+            
+                    
+                        <b>1.8.1.2.</b>
+                    
+                    mybatis学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.3" data-path="../../spring/aop/JdkDanymicAopProxy源码.html">
+            
+                <a href="../../spring/aop/JdkDanymicAopProxy源码.html">
+            
+                    
+                        <b>1.8.1.3.</b>
+                    
+                    JdkDanymicAopProxy源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" >
+            
+                <span>
+            
+                    
+                        <b>1.8.2.</b>
+                    
+                    Ioc
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.2.1" data-path="../../spring/ioc/bean实例化过程.html">
+            
+                <a href="../../spring/ioc/bean实例化过程.html">
+            
+                    
+                        <b>1.8.2.1.</b>
+                    
+                    bean实例化过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.2" data-path="../../spring/ioc/spring-ioc原理.html">
+            
+                <a href="../../spring/ioc/spring-ioc原理.html">
+            
+                    
+                        <b>1.8.2.2.</b>
+                    
+                    spring-ioc原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" >
+            
+                <span>
+            
+                    
+                        <b>1.8.3.</b>
+                    
+                    事务
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.3.1" data-path="../../spring/事务/spring事务管理.html">
+            
+                <a href="../../spring/事务/spring事务管理.html">
+            
+                    
+                        <b>1.8.3.1.</b>
+                    
+                    spring事务管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                        <b>1.9.</b>
+                    
+                    Springboot
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" >
+            
+                <span>
+            
+                    
+                        <b>1.9.1.</b>
+                    
+                    springboot配置
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1.1" data-path="../../springboot/springboot配置/springboot配置文件加载分析.html">
+            
+                <a href="../../springboot/springboot配置/springboot配置文件加载分析.html">
+            
+                    
+                        <b>1.9.1.1.</b>
+                    
+                    springboot配置文件加载分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.1.2" data-path="../../springboot/springboot配置/修改springboot默认加载application-properties文件.html">
+            
+                <a href="../../springboot/springboot配置/修改springboot默认加载application-properties文件.html">
+            
+                    
+                        <b>1.9.1.2.</b>
+                    
+                    修改springboot默认加载application.properties文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" >
+            
+                <span>
+            
+                    
+                        <b>1.9.2.</b>
+                    
+                    监听器
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.2.1" data-path="../../springboot/监听器/springboot监听器.html">
+            
+                <a href="../../springboot/监听器/springboot监听器.html">
+            
+                    
+                        <b>1.9.2.1.</b>
+                    
+                    springboot监听器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../../springboot/SpringApplication源码分析.html">
+            
+                <a href="../../springboot/SpringApplication源码分析.html">
+            
+                    
+                        <b>1.9.3.</b>
+                    
+                    SpringApplication源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                        <b>1.10.</b>
+                    
+                    Zother 1 Java Face Notes
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../../zother1-JavaFaceNotes/Dubbo.html">
+            
+                <a href="../../zother1-JavaFaceNotes/Dubbo.html">
+            
+                    
+                        <b>1.10.1.</b>
+                    
+                    Dubbo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../../zother1-JavaFaceNotes/IO&NIO.html">
+            
+                <a href="../../zother1-JavaFaceNotes/IO&NIO.html">
+            
+                    
+                        <b>1.10.2.</b>
+                    
+                    IO NIO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../../zother1-JavaFaceNotes/Java基础.html">
+            
+                <a href="../../zother1-JavaFaceNotes/Java基础.html">
+            
+                    
+                        <b>1.10.3.</b>
+                    
+                    Java基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../../zother1-JavaFaceNotes/java集合.html">
+            
+                <a href="../../zother1-JavaFaceNotes/java集合.html">
+            
+                    
+                        <b>1.10.4.</b>
+                    
+                    java集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../../zother1-JavaFaceNotes/JVM.html">
+            
+                <a href="../../zother1-JavaFaceNotes/JVM.html">
+            
+                    
+                        <b>1.10.5.</b>
+                    
+                    JVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../../zother1-JavaFaceNotes/Kafka.html">
+            
+                <a href="../../zother1-JavaFaceNotes/Kafka.html">
+            
+                    
+                        <b>1.10.6.</b>
+                    
+                    Kafka
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="../../zother1-JavaFaceNotes/Linux.html">
+            
+                <a href="../../zother1-JavaFaceNotes/Linux.html">
+            
+                    
+                        <b>1.10.7.</b>
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="../../zother1-JavaFaceNotes/Mybatis.html">
+            
+                <a href="../../zother1-JavaFaceNotes/Mybatis.html">
+            
+                    
+                        <b>1.10.8.</b>
+                    
+                    Mybatis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="../../zother1-JavaFaceNotes/MySql.html">
+            
+                <a href="../../zother1-JavaFaceNotes/MySql.html">
+            
+                    
+                        <b>1.10.9.</b>
+                    
+                    My Sql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.10" data-path="../../zother1-JavaFaceNotes/Nginx.html">
+            
+                <a href="../../zother1-JavaFaceNotes/Nginx.html">
+            
+                    
+                        <b>1.10.10.</b>
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.11" data-path="../../zother1-JavaFaceNotes/Redis.html">
+            
+                <a href="../../zother1-JavaFaceNotes/Redis.html">
+            
+                    
+                        <b>1.10.11.</b>
+                    
+                    Redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.12" data-path="../../zother1-JavaFaceNotes/Spring.html">
+            
+                <a href="../../zother1-JavaFaceNotes/Spring.html">
+            
+                    
+                        <b>1.10.12.</b>
+                    
+                    Spring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.13" data-path="../../zother1-JavaFaceNotes/SpringBoot.html">
+            
+                <a href="../../zother1-JavaFaceNotes/SpringBoot.html">
+            
+                    
+                        <b>1.10.13.</b>
+                    
+                    Spring Boot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.14" data-path="../../zother1-JavaFaceNotes/SpringCloud.html">
+            
+                <a href="../../zother1-JavaFaceNotes/SpringCloud.html">
+            
+                    
+                        <b>1.10.14.</b>
+                    
+                    Spring Cloud
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.15" data-path="../../zother1-JavaFaceNotes/多线程.html">
+            
+                <a href="../../zother1-JavaFaceNotes/多线程.html">
+            
+                    
+                        <b>1.10.15.</b>
+                    
+                    多线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.16" data-path="../../zother1-JavaFaceNotes/异常&反射.html">
+            
+                <a href="../../zother1-JavaFaceNotes/异常&反射.html">
+            
+                    
+                        <b>1.10.16.</b>
+                    
+                    异常&反射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.17" data-path="../../zother1-JavaFaceNotes/简历.html">
+            
+                <a href="../../zother1-JavaFaceNotes/简历.html">
+            
+                    
+                        <b>1.10.17.</b>
+                    
+                    简历
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../../zother5-Java-Interview/">
+            
+                <a href="../../zother5-Java-Interview/">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    Zother 5 Java Interview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../../zother5-Java-Interview/Java基础学习.html">
+            
+                <a href="../../zother5-Java-Interview/Java基础学习.html">
+            
+                    
+                        <b>1.11.1.</b>
+                    
+                    Java基础学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../../zother5-Java-Interview/Java集合面试题及答案.html">
+            
+                <a href="../../zother5-Java-Interview/Java集合面试题及答案.html">
+            
+                    
+                        <b>1.11.2.</b>
+                    
+                    Java集合面试题及答案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../../zother5-Java-Interview/一、Java基础.html">
+            
+                <a href="../../zother5-Java-Interview/一、Java基础.html">
+            
+                    
+                        <b>1.11.3.</b>
+                    
+                    一、Java基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../../zother5-Java-Interview/七、JavaWeb.html">
+            
+                <a href="../../zother5-Java-Interview/七、JavaWeb.html">
+            
+                    
+                        <b>1.11.4.</b>
+                    
+                    七、JavaWeb
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../../zother5-Java-Interview/三、Java 集合.html">
+            
+                <a href="../../zother5-Java-Interview/三、Java 集合.html">
+            
+                    
+                        <b>1.11.5.</b>
+                    
+                    三、Java 集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../../zother5-Java-Interview/九、操作系统.html">
+            
+                <a href="../../zother5-Java-Interview/九、操作系统.html">
+            
+                    
+                        <b>1.11.6.</b>
+                    
+                    九、操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="../../zother5-Java-Interview/二、设计模式.html">
+            
+                <a href="../../zother5-Java-Interview/二、设计模式.html">
+            
+                    
+                        <b>1.11.7.</b>
+                    
+                    二、设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="../../zother5-Java-Interview/二十、Spring源码解析.html">
+            
+                <a href="../../zother5-Java-Interview/二十、Spring源码解析.html">
+            
+                    
+                        <b>1.11.8.</b>
+                    
+                    二十、Spring源码解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="../../zother5-Java-Interview/二十一、Tomcat源码解析.html">
+            
+                <a href="../../zother5-Java-Interview/二十一、Tomcat源码解析.html">
+            
+                    
+                        <b>1.11.9.</b>
+                    
+                    二十一、Tomcat源码解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="../../zother5-Java-Interview/五、JVM.html">
+            
+                <a href="../../zother5-Java-Interview/五、JVM.html">
+            
+                    
+                        <b>1.11.10.</b>
+                    
+                    五、JVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.11" data-path="../../zother5-Java-Interview/八、Mysql.html">
+            
+                <a href="../../zother5-Java-Interview/八、Mysql.html">
+            
+                    
+                        <b>1.11.11.</b>
+                    
+                    八、Mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                        <b>1.12.</b>
+                    
+                    Zother 7 Java Interview
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" >
+            
+                <span>
+            
+                    
+                        <b>1.12.1.</b>
+                    
+                    Data Structures Algorithms
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1.1" data-path="../../zother7-JavaInterview/dataStructures-algorithms/算法面试真题汇总.html">
+            
+                <a href="../../zother7-JavaInterview/dataStructures-algorithms/算法面试真题汇总.html">
+            
+                    
+                        <b>1.12.1.1.</b>
+                    
+                    算法面试真题汇总
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.2" data-path="../../zother7-JavaInterview/dataStructures-algorithms/算法题目难点题目总结.html">
+            
+                <a href="../../zother7-JavaInterview/dataStructures-algorithms/算法题目难点题目总结.html">
+            
+                    
+                        <b>1.12.1.2.</b>
+                    
+                    算法题目难点题目总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.3" data-path="../../zother7-JavaInterview/dataStructures-algorithms/递归套路总结.html">
+            
+                <a href="../../zother7-JavaInterview/dataStructures-algorithms/递归套路总结.html">
+            
+                    
+                        <b>1.12.1.3.</b>
+                    
+                    递归套路总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" >
+            
+                <span>
+            
+                    
+                        <b>1.12.2.</b>
+                    
+                    Interview
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.2.1" data-path="../../zother7-JavaInterview/interview/已投公司情况.html">
+            
+                <a href="../../zother7-JavaInterview/interview/已投公司情况.html">
+            
+                    
+                        <b>1.12.2.1.</b>
+                    
+                    已投公司情况
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.2" data-path="../../zother7-JavaInterview/interview/自我介绍和项目介绍.html">
+            
+                <a href="../../zother7-JavaInterview/interview/自我介绍和项目介绍.html">
+            
+                    
+                        <b>1.12.2.2.</b>
+                    
+                    自我介绍和项目介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" >
+            
+                <span>
+            
+                    
+                        <b>1.12.3.</b>
+                    
+                    Interview Experience
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.3.1" data-path="../../zother7-JavaInterview/interview-experience/各大公司面经.html">
+            
+                <a href="../../zother7-JavaInterview/interview-experience/各大公司面经.html">
+            
+                    
+                        <b>1.12.3.1.</b>
+                    
+                    各大公司面经
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3.2" data-path="../../zother7-JavaInterview/interview-experience/面试常见知识.html">
+            
+                <a href="../../zother7-JavaInterview/interview-experience/面试常见知识.html">
+            
+                    
+                        <b>1.12.3.2.</b>
+                    
+                    面试常见知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3.3" data-path="../../zother7-JavaInterview/interview-experience/面试常见问题分类汇总.html">
+            
+                <a href="../../zother7-JavaInterview/interview-experience/面试常见问题分类汇总.html">
+            
+                    
+                        <b>1.12.3.3.</b>
+                    
+                    面试常见问题分类汇总
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" >
+            
+                <span>
+            
+                    
+                        <b>1.12.4.</b>
+                    
+                    Microservice
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.4.1" data-path="../../zother7-JavaInterview/microservice/微服务相关资料.html">
+            
+                <a href="../../zother7-JavaInterview/microservice/微服务相关资料.html">
+            
+                    
+                        <b>1.12.4.1.</b>
+                    
+                    微服务相关资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" >
+            
+                <span>
+            
+                    
+                        <b>1.12.5.</b>
+                    
+                    Network
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.5.1" data-path="../../zother7-JavaInterview/network/http面试问题全解析.html">
+            
+                <a href="../../zother7-JavaInterview/network/http面试问题全解析.html">
+            
+                    
+                        <b>1.12.5.1.</b>
+                    
+                    http面试问题全解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" >
+            
+                <span>
+            
+                    
+                        <b>1.12.6.</b>
+                    
+                    Operating System
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.6.1" data-path="../../zother7-JavaInterview/operating-system/后端程序员必备的Linux基础知识.html">
+            
+                <a href="../../zother7-JavaInterview/operating-system/后端程序员必备的Linux基础知识.html">
+            
+                    
+                        <b>1.12.6.1.</b>
+                    
+                    后端程序员必备的Linux基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6.2" data-path="../../zother7-JavaInterview/operating-system/操作系统、计算机网络相关知识.html">
+            
+                <a href="../../zother7-JavaInterview/operating-system/操作系统、计算机网络相关知识.html">
+            
+                    
+                        <b>1.12.6.2.</b>
+                    
+                    操作系统、计算机网络相关知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7" >
+            
+                <span>
+            
+                    
+                        <b>1.12.7.</b>
+                    
+                    Project
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.7.1" data-path="../../zother7-JavaInterview/project/消息中间件面试题.html">
+            
+                <a href="../../zother7-JavaInterview/project/消息中间件面试题.html">
+            
+                    
+                        <b>1.12.7.1.</b>
+                    
+                    消息中间件面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7.2" data-path="../../zother7-JavaInterview/project/秒杀项目总结.html">
+            
+                <a href="../../zother7-JavaInterview/project/秒杀项目总结.html">
+            
+                    
+                        <b>1.12.7.2.</b>
+                    
+                    秒杀项目总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../../学习路线.html">
+            
+                <a href="../../学习路线.html">
+            
+                    
+                        <b>1.13.</b>
+                    
+                    学习路线
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >线程的状态</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p><strong>  </strong> <excerpt in="" index="" |="" 首页摘要=""></excerpt></p>
+<!-- more -->
+<h3 id="&#x7EBF;&#x7A0B;&#x7684;&#x72B6;&#x6001;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;&#x5B83;&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;&#xFF1F;"><a name="&#x7EBF;&#x7A0B;&#x7684;&#x72B6;&#x6001;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;&#x5B83;&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;&#xFF1F;" class="plugin-anchor" href="#&#x7EBF;&#x7A0B;&#x7684;&#x72B6;&#x6001;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;&#x5B83;&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7EBF;&#x7A0B;&#x7684;&#x72B6;&#x6001;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;&#x5B83;&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;&#xFF1F;</h3>
+<p>&#x7EBF;&#x7A0B;&#x7684;&#x72B6;&#x6001;&#x5728; JDK 1.5 &#x4E4B;&#x540E;&#x4EE5;&#x679A;&#x4E3E;&#x7684;&#x65B9;&#x5F0F;&#x88AB;&#x5B9A;&#x4E49;&#x5728; Thread &#x7684;&#x6E90;&#x7801;&#x4E2D;&#xFF0C;&#x5B83;&#x603B;&#x5171;&#x5305;&#x542B;&#x4EE5;&#x4E0B; 6 &#x4E2A;&#x72B6;&#x6001;&#xFF1A;</p>
+<ul>
+<li>NEW&#xFF0C;&#x65B0;&#x5EFA;&#x72B6;&#x6001;&#xFF0C;&#x7EBF;&#x7A0B;&#x88AB;&#x521B;&#x5EFA;&#x51FA;&#x6765;&#xFF0C;&#x4F46;&#x5C1A;&#x672A;&#x542F;&#x52A8;&#x65F6;&#x7684;&#x7EBF;&#x7A0B;&#x72B6;&#x6001;&#xFF1B;</li>
+<li>RUNNABLE&#xFF0C;&#x5C31;&#x7EEA;&#x72B6;&#x6001;&#xFF0C;&#x8868;&#x793A;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x7684;&#x7EBF;&#x7A0B;&#x72B6;&#x6001;&#xFF0C;&#x5B83;&#x53EF;&#x80FD;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x5728;&#x6392;&#x961F;&#x7B49;&#x5F85;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7ED9;&#x5B83;&#x5206;&#x914D; CPU &#x8D44;&#x6E90;&#xFF1B;</li>
+<li>BLOCKED&#xFF0C;&#x963B;&#x585E;&#x7B49;&#x5F85;&#x9501;&#x7684;&#x7EBF;&#x7A0B;&#x72B6;&#x6001;&#xFF0C;&#x8868;&#x793A;&#x5904;&#x4E8E;&#x963B;&#x585E;&#x72B6;&#x6001;&#x7684;&#x7EBF;&#x7A0B;&#x6B63;&#x5728;&#x7B49;&#x5F85;&#x76D1;&#x89C6;&#x5668;&#x9501;&#xFF0C;&#x6BD4;&#x5982;&#x7B49;&#x5F85;&#x6267;&#x884C; synchronized &#x4EE3;&#x7801;&#x5757;&#x6216;&#x8005;&#x4F7F;&#x7528; synchronized &#x6807;&#x8BB0;&#x7684;&#x65B9;&#x6CD5;&#xFF1B;</li>
+<li>WAITING&#xFF0C;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#xFF0C;&#x4E00;&#x4E2A;&#x5904;&#x4E8E;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#x7684;&#x7EBF;&#x7A0B;&#x6B63;&#x5728;&#x7B49;&#x5F85;&#x53E6;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x67D0;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x52A8;&#x4F5C;&#xFF0C;&#x6BD4;&#x5982;&#xFF0C;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;&#x4E86; Object.wait() &#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x5B83;&#x5C31;&#x5728;&#x7B49;&#x5F85;&#x53E6;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x8C03;&#x7528; Object.notify() &#x6216; Object.notifyAll() &#x65B9;&#x6CD5;&#xFF1B;</li>
+<li>TIMED_WAITING&#xFF0C;&#x8BA1;&#x65F6;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#xFF0C;&#x548C;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#xFF08;WAITING&#xFF09;&#x7C7B;&#x4F3C;&#xFF0C;&#x5B83;&#x53EA;&#x662F;&#x591A;&#x4E86;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#xFF0C;&#x6BD4;&#x5982;&#x8C03;&#x7528;&#x4E86;&#x6709;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x8BBE;&#x7F6E;&#x7684;&#x65B9;&#x6CD5; Object.wait(long timeout) &#x548C; Thread.join(long timeout) &#x7B49;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x5B83;&#x624D;&#x4F1A;&#x8FDB;&#x5165;&#x6B64;&#x72B6;&#x6001;&#xFF1B;</li>
+<li>TERMINATED&#xFF0C;&#x7EC8;&#x6B62;&#x72B6;&#x6001;&#xFF0C;&#x8868;&#x793A;&#x7EBF;&#x7A0B;&#x5DF2;&#x7ECF;&#x6267;&#x884C;&#x5B8C;&#x6210;&#x3002;</li>
+</ul>
+<p>&#x7EBF;&#x7A0B;&#x72B6;&#x6001;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>public enum State {
+    /**
+     * &#x65B0;&#x5EFA;&#x72B6;&#x6001;&#xFF0C;&#x7EBF;&#x7A0B;&#x88AB;&#x521B;&#x5EFA;&#x51FA;&#x6765;&#xFF0C;&#x4F46;&#x5C1A;&#x672A;&#x542F;&#x52A8;&#x65F6;&#x7684;&#x7EBF;&#x7A0B;&#x72B6;&#x6001;
+     */
+    NEW,
+
+    /**
+     * &#x5C31;&#x7EEA;&#x72B6;&#x6001;&#xFF0C;&#x8868;&#x793A;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x7684;&#x7EBF;&#x7A0B;&#x72B6;&#x6001;&#xFF0C;&#x4F46;&#x5B83;&#x5728;&#x6392;&#x961F;&#x7B49;&#x5F85;&#x6765;&#x81EA;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684; CPU &#x8D44;&#x6E90;
+     */
+    RUNNABLE,
+
+    /**
+     * &#x963B;&#x585E;&#x7B49;&#x5F85;&#x9501;&#x7684;&#x7EBF;&#x7A0B;&#x72B6;&#x6001;&#xFF0C;&#x8868;&#x793A;&#x6B63;&#x5728;&#x5904;&#x4E8E;&#x963B;&#x585E;&#x72B6;&#x6001;&#x7684;&#x7EBF;&#x7A0B;
+     * &#x6B63;&#x5728;&#x7B49;&#x5F85;&#x76D1;&#x89C6;&#x5668;&#x9501;&#xFF0C;&#x6BD4;&#x5982;&#x7B49;&#x5F85;&#x6267;&#x884C; synchronized &#x4EE3;&#x7801;&#x5757;&#x6216;&#x8005;
+     * &#x4F7F;&#x7528; synchronized &#x6807;&#x8BB0;&#x7684;&#x65B9;&#x6CD5;
+     */
+    BLOCKED,
+
+    /**
+     * &#x7B49;&#x5F85;&#x72B6;&#x6001;&#xFF0C;&#x4E00;&#x4E2A;&#x5904;&#x4E8E;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#x7684;&#x7EBF;&#x7A0B;&#x6B63;&#x5728;&#x7B49;&#x5F85;&#x53E6;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x67D0;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x52A8;&#x4F5C;&#x3002;
+     * &#x4F8B;&#x5982;&#xFF0C;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;&#x4E86; Object.wait() &#x5B83;&#x5728;&#x7B49;&#x5F85;&#x53E6;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;
+     * Object.notify() &#x6216; Object.notifyAll()
+     */
+    WAITING,
+
+    /**
+     * &#x8BA1;&#x65F6;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#xFF0C;&#x548C;&#x7B49;&#x5F85;&#x72B6;&#x6001; (WAITING) &#x7C7B;&#x4F3C;&#xFF0C;&#x53EA;&#x662F;&#x591A;&#x4E86;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#xFF0C;&#x6BD4;&#x5982;
+     * &#x8C03;&#x7528;&#x4E86;&#x6709;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x8BBE;&#x7F6E;&#x7684;&#x65B9;&#x6CD5; Object.wait(long timeout) &#x548C; 
+     * Thread.join(long timeout) &#x5C31;&#x4F1A;&#x8FDB;&#x5165;&#x6B64;&#x72B6;&#x6001;
+     */
+    TIMED_WAITING,
+
+    /**
+     * &#x7EC8;&#x6B62;&#x72B6;&#x6001;&#xFF0C;&#x8868;&#x793A;&#x7EBF;&#x7A0B;&#x5DF2;&#x7ECF;&#x6267;&#x884C;&#x5B8C;&#x6210;
+     */
+}
+</code></pre><p>&#x7EBF;&#x7A0B;&#x7684;&#x5DE5;&#x4F5C;&#x6A21;&#x5F0F;&#x662F;&#xFF0C;&#x9996;&#x5148;&#x5148;&#x8981;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#x5E76;&#x6307;&#x5B9A;&#x7EBF;&#x7A0B;&#x9700;&#x8981;&#x6267;&#x884C;&#x7684;&#x4E1A;&#x52A1;&#x65B9;&#x6CD5;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x8C03;&#x7528;&#x7EBF;&#x7A0B;&#x7684; start() &#x65B9;&#x6CD5;&#xFF0C;&#x6B64;&#x65F6;&#x7EBF;&#x7A0B;&#x5C31;&#x4ECE; NEW&#xFF08;&#x65B0;&#x5EFA;&#xFF09;&#x72B6;&#x6001;&#x53D8;&#x6210;&#x4E86; RUNNABLE&#xFF08;&#x5C31;&#x7EEA;&#xFF09;&#x72B6;&#x6001;&#xFF0C;&#x6B64;&#x65F6;&#x7EBF;&#x7A0B;&#x4F1A;&#x5224;&#x65AD;&#x8981;&#x6267;&#x884C;&#x7684;&#x65B9;&#x6CD5;&#x4E2D;&#x6709;&#x6CA1;&#x6709; synchronized &#x540C;&#x6B65;&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x5E76;&#x4E14;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x4E5F;&#x5728;&#x4F7F;&#x7528;&#x6B64;&#x9501;&#xFF0C;&#x90A3;&#x4E48;&#x7EBF;&#x7A0B;&#x5C31;&#x4F1A;&#x53D8;&#x4E3A; BLOCKED&#xFF08;&#x963B;&#x585E;&#x7B49;&#x5F85;&#xFF09;&#x72B6;&#x6001;&#xFF0C;&#x5F53;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x4F7F;&#x7528;&#x5B8C;&#x6B64;&#x9501;&#x4E4B;&#x540E;&#xFF0C;&#x7EBF;&#x7A0B;&#x4F1A;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x5269;&#x4F59;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x5F53;&#x9047;&#x5230; Object.wait() &#x6216; Thread.join() &#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x7EBF;&#x7A0B;&#x4F1A;&#x53D8;&#x4E3A; WAITING&#xFF08;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#xFF09;&#x72B6;&#x6001;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x5E26;&#x4E86;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x7684;&#x7B49;&#x5F85;&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x4E48;&#x7EBF;&#x7A0B;&#x4F1A;&#x8FDB;&#x5165; TIMED_WAITING&#xFF08;&#x8BA1;&#x65F6;&#x7B49;&#x5F85;&#xFF09;&#x72B6;&#x6001;&#xFF0C;&#x5F53;&#x6709;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x4E86; notify() &#x6216; notifyAll() &#x65B9;&#x6CD5;&#x4E4B;&#x540E;&#xFF0C;&#x7EBF;&#x7A0B;&#x88AB;&#x5524;&#x9192;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x5269;&#x4F59;&#x7684;&#x4E1A;&#x52A1;&#x65B9;&#x6CD5;&#xFF0C;&#x76F4;&#x5230;&#x65B9;&#x6CD5;&#x6267;&#x884C;&#x5B8C;&#x6210;&#x4E3A;&#x6B62;&#xFF0C;&#x6B64;&#x65F6;&#x6574;&#x4E2A;&#x7EBF;&#x7A0B;&#x7684;&#x6D41;&#x7A0B;&#x5C31;&#x6267;&#x884C;&#x5B8C;&#x4E86;&#xFF0C;&#x6267;&#x884C;&#x6D41;&#x7A0B;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;</p>
+<p><img src="images/thread-1.png" alt=""></p>
+<p>&#x8003;&#x70B9;&#x5206;&#x6790;
+&#x7EBF;&#x7A0B;&#x4E00;&#x822C;&#x4F1A;&#x4F5C;&#x4E3A;&#x5E76;&#x53D1;&#x7F16;&#x7A0B;&#x7684;&#x8D77;&#x59CB;&#x95EE;&#x9898;&#xFF0C;&#x7528;&#x4E8E;&#x5F15;&#x51FA;&#x66F4;&#x591A;&#x7684;&#x5173;&#x4E8E;&#x5E76;&#x53D1;&#x7F16;&#x7A0B;&#x7684;&#x9762;&#x8BD5;&#x95EE;&#x9898;&#x3002;&#x5F53;&#x7136;&#x5BF9;&#x4E8E;&#x7EBF;&#x7A0B;&#x7684;&#x638C;&#x63E1;&#x7A0B;&#x5EA6;&#x4E5F;&#x51B3;&#x5B9A;&#x4E86;&#x4F60;&#x5BF9;&#x5E76;&#x53D1;&#x7F16;&#x7A0B;&#x7684;&#x638C;&#x63E1;&#x7A0B;&#x5EA6;&#xFF0C;&#x901A;&#x5E38;&#x9762;&#x8BD5;&#x5B98;&#x8FD8;&#x4F1A;&#x95EE;&#xFF1A;</p>
+<ul>
+<li>BLOCKED&#xFF08;&#x963B;&#x585E;&#x7B49;&#x5F85;&#xFF09;&#x548C; WAITING&#xFF08;&#x7B49;&#x5F85;&#xFF09;&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#xFF1F;- </li>
+<li>start() &#x65B9;&#x6CD5;&#x548C; run() &#x65B9;&#x6CD5;&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#xFF1F;      - </li>
+<li>&#x7EBF;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x6709;&#x4EC0;&#x4E48;&#x7528;&#xFF1F;&#x8BE5;&#x5982;&#x4F55;&#x8BBE;&#x7F6E;&#xFF1F;               - </li>
+<li>&#x7EBF;&#x7A0B;&#x7684;&#x5E38;&#x7528;&#x65B9;&#x6CD5;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;                     - </li>
+</ul>
+<h3 id="&#x77E5;&#x8BC6;&#x6269;&#x5C55;"><a name="&#x77E5;&#x8BC6;&#x6269;&#x5C55;" class="plugin-anchor" href="#&#x77E5;&#x8BC6;&#x6269;&#x5C55;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x77E5;&#x8BC6;&#x6269;&#x5C55;</h3>
+<h4 id="1blocked-&#x548C;-waiting-&#x7684;&#x533A;&#x522B;"><a name="1blocked-&#x548C;-waiting-&#x7684;&#x533A;&#x522B;" class="plugin-anchor" href="#1blocked-&#x548C;-waiting-&#x7684;&#x533A;&#x522B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.BLOCKED &#x548C; WAITING &#x7684;&#x533A;&#x522B;</h4>
+<p>&#x867D;&#x7136; BLOCKED &#x548C; WAITING &#x90FD;&#x6709;&#x7B49;&#x5F85;&#x7684;&#x542B;&#x4E49;&#xFF0C;&#x4F46;&#x4E8C;&#x8005;&#x6709;&#x7740;&#x672C;&#x8D28;&#x7684;&#x533A;&#x522B;&#xFF0C;&#x9996;&#x5148;&#x5B83;&#x4EEC;&#x72B6;&#x6001;&#x5F62;&#x6210;&#x7684;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#x4E0D;&#x540C;&#xFF0C;&#x5176;&#x6B21; BLOCKED &#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x8FD8;&#x5904;&#x4E8E;&#x6D3B;&#x8DC3;&#x72B6;&#x6001;&#xFF0C;&#x53EA;&#x662F;&#x5728;&#x963B;&#x585E;&#x7B49;&#x5F85;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x4F7F;&#x7528;&#x5B8C;&#x67D0;&#x4E2A;&#x9501;&#x8D44;&#x6E90;&#xFF1B;&#x800C; WAITING &#x5219;&#x662F;&#x56E0;&#x4E3A;&#x81EA;&#x8EAB;&#x8C03;&#x7528;&#x4E86; Object.wait() &#x6216;&#x7740;&#x662F; Thread.join() &#x53C8;&#x6216;&#x8005;&#x662F; LockSupport.park() &#x800C;&#x8FDB;&#x5165;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#xFF0C;&#x53EA;&#x80FD;&#x7B49;&#x5F85;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x67D0;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x52A8;&#x4F5C;&#x624D;&#x80FD;&#x88AB;&#x7EE7;&#x7EED;&#x5524;&#x9192;&#xFF0C;&#x6BD4;&#x5982;&#x5F53;&#x7EBF;&#x7A0B;&#x56E0;&#x4E3A;&#x8C03;&#x7528;&#x4E86; Object.wait() &#x800C;&#x8FDB;&#x5165; WAITING &#x72B6;&#x6001;&#x4E4B;&#x540E;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x7B49;&#x5F85;&#x53E6;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x6267;&#x884C; Object.notify() &#x6216; Object.notifyAll() &#x624D;&#x80FD;&#x88AB;&#x5524;&#x9192;&#x3002;</p>
+<h4 id="2start-&#x548C;-run-&#x7684;&#x533A;&#x522B;"><a name="2start-&#x548C;-run-&#x7684;&#x533A;&#x522B;" class="plugin-anchor" href="#2start-&#x548C;-run-&#x7684;&#x533A;&#x522B;"><i class="fa fa-link" aria-hidden="true"></i></a>2.start() &#x548C; run() &#x7684;&#x533A;&#x522B;</h4>
+<ul>
+<li>&#x9996;&#x5148;&#x4ECE; Thread &#x6E90;&#x7801;&#x6765;&#x770B;&#xFF0C;start() &#x65B9;&#x6CD5;&#x5C5E;&#x4E8E; Thread &#x81EA;&#x8EAB;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x7528;&#x4E86; synchronized &#x6765;&#x4FDD;&#x8BC1;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF0C;&#x6E90;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</li>
+</ul>
+<pre><code>public synchronized void start() {
+    // &#x72B6;&#x6001;&#x9A8C;&#x8BC1;&#xFF0C;&#x4E0D;&#x7B49;&#x4E8E; NEW &#x7684;&#x72B6;&#x6001;&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;
+    if (threadStatus != 0)
+        throw new IllegalThreadStateException();
+    // &#x901A;&#x77E5;&#x7EBF;&#x7A0B;&#x7EC4;&#xFF0C;&#x6B64;&#x7EBF;&#x7A0B;&#x5373;&#x5C06;&#x542F;&#x52A8;
+
+    group.add(this);
+    boolean started = false;
+    try {
+        start0();
+        started = true;
+    } finally {
+        try {
+            if (!started) {
+                group.threadStartFailed(this);
+            }
+        } catch (Throwable ignore) {
+            // &#x4E0D;&#x5904;&#x7406;&#x4EFB;&#x4F55;&#x5F02;&#x5E38;&#xFF0C;&#x5982;&#x679C; start0 &#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF0C;&#x5219;&#x5B83;&#x5C06;&#x88AB;&#x4F20;&#x9012;&#x5230;&#x8C03;&#x7528;&#x5806;&#x6808;&#x4E0A;
+        }
+    }
+}
+</code></pre><ul>
+<li>run() &#x65B9;&#x6CD5;&#x4E3A; Runnable &#x7684;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#xFF0C;&#x5FC5;&#x987B;&#x7531;&#x8C03;&#x7528;&#x7C7B;&#x91CD;&#x5199;&#x6B64;&#x65B9;&#x6CD5;&#xFF0C;&#x91CD;&#x5199;&#x7684; run() &#x65B9;&#x6CD5;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x6B64;&#x7EBF;&#x7A0B;&#x8981;&#x6267;&#x884C;&#x7684;&#x4E1A;&#x52A1;&#x65B9;&#x6CD5;&#xFF0C;&#x6E90;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</li>
+</ul>
+<pre><code>public class Thread implements Runnable {
+ // &#x5FFD;&#x7565;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;......
+  private Runnable target;
+  @Override
+  public void run() {
+      if (target != null) {
+          target.run();
+      }
+  }
+}
+@FunctionalInterface
+public interface Runnable {
+    public abstract void run();
+}
+</code></pre><ul>
+<li><p>&#x4ECE;&#x6267;&#x884C;&#x7684;&#x6548;&#x679C;&#x6765;&#x8BF4;&#xFF0C;start() &#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5F00;&#x542F;&#x591A;&#x7EBF;&#x7A0B;&#xFF0C;&#x8BA9;&#x7EBF;&#x7A0B;&#x4ECE; NEW &#x72B6;&#x6001;&#x8F6C;&#x6362;&#x6210; RUNNABLE &#x72B6;&#x6001;&#xFF0C;&#x800C; run() &#x65B9;&#x6CD5;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+</li>
+<li><p>&#x5176;&#x6B21;&#xFF0C;&#x5B83;&#x4EEC;&#x53EF;&#x8C03;&#x7528;&#x7684;&#x6B21;&#x6570;&#x4E0D;&#x540C;&#xFF0C;start() &#x65B9;&#x6CD5;&#x4E0D;&#x80FD;&#x88AB;&#x591A;&#x6B21;&#x8C03;&#x7528;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x629B;&#x51FA; java.lang.IllegalStateException&#xFF1B;&#x800C; run() &#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x591A;&#x6B21;&#x8C03;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x7684;&#x65B9;&#x6CD5;&#x800C;&#x5DF2;&#x3002;</p>
+</li>
+</ul>
+<p>&#x6D4B;&#x8BD5;start&#x65B9;&#x6CD5;&#x591A;&#x6B21;&#x8C03;&#x7528;</p>
+<pre><code>package com.view.Thread;
+
+/**
+ *
+ */
+public class ThreadTest2 {
+
+    public static void main(String args[]) {
+
+        Thread1 thread1 = new Thread1();
+        thread1.start();
+        thread1.start();//&#x591A;&#x6B21;&#x8C03;&#x7528;&#x629B;&#x51FA;java.lang.IllegalThreadStateException
+
+    }
+
+
+    static class Thread1 extends Thread {
+        @Override
+        public void run() {
+            System.out.println(&quot;&#x6267;&#x884C;run&#x65B9;&#x6CD5;&quot;);
+        }
+    }
+
+
+}
+</code></pre><p>&#x7ED3;&#x679C;</p>
+<pre><code>&quot;D:\Program Files\Java8\jdk1.8.0_77\bin\java.exe&quot; &quot;-javaagent:D:\Program Files\JetBrains\IntelliJ IDEA 2019.3.4\lib\idea_rt.jar=9573:D:\Program Files\JetBrains\IntelliJ IDEA 2019.3.4\bin&quot; -Dfile.encoding=UTF-8 -classpath &quot;D:\Program Files\Java8\jdk1.8.0_77\jre\lib\charsets.jar;D:\Program Files\Java8\jdk1.8.0_77\jre\lib\deploy.jar;D:\Program Files\Java8\jdk1.8.0_77\jre\lib\ext\access-bridge-64.jar;D:\Program Files\Java8\jdk1.8.0_77\jre\lib\ext\cldrdata.jar;D:\Program Files\Java8\jdk1.8.0_77\jre\lib\ext\dnsns.jar;D:\Program Files\Java8\jdk1.8.0_77\jre\lib\ext\jaccess.jar;D:\Program Files\Java8\jdk1.8.0_77\jre\lib\ext\jfxrt.jar;D:\Program Files\Java8\jdk1.8.0_77\jre\lib\ext\localedata.jar;D:\Program Files\Java8\jdk1.8.0_77\jre\lib\ext\nashorn.jar;D:\Program Files\Java8\jdk1.8.0_77\jre\lib\ext\sunec.jar;D:\Program Files\Java8\jdk1.8.0_77\jre\lib\ext\sunjce_provider.jar;D:\Program Files\Java8\jdk1.8.0_77\jre\lib\ext\sunmscapi.jar;D:\Program Files\Java8\jdk1.8.0_77\jre\lib\ext\sunpkcs11.jar;D:\Program Files\Java8\jdk1.8.0_77\jre\lib\ext\zipfs.jar;D:\Program Files\Java8\jdk1.8.0_77\jre\lib\javaws.jar;D:\Program Files\Java8\jdk1.8.0_77\jre\lib\jce.jar;D:\Program Files\Java8\jdk1.8.0_77\jre\lib\jfr.jar;D:\Program Files\Java8\jdk1.8.0_77\jre\lib\jfxswt.jar;D:\Program Files\Java8\jdk1.8.0_77\jre\lib\jsse.jar;D:\Program Files\Java8\jdk1.8.0_77\jre\lib\management-agent.jar;D:\Program Files\Java8\jdk1.8.0_77\jre\lib\plugin.jar;D:\Program Files\Java8\jdk1.8.0_77\jre\lib\resources.jar;D:\Program Files\Java8\jdk1.8.0_77\jre\lib\rt.jar;D:\idea-workspace3\lqx-project-demo-github\basic-view\target\classes;D:\idea-workspace3\lqx-project-demo-github\basic-server\target\classes;D:\idea-workspace3\lqx-project-demo-github\demo\search\elasticsearch-starter\target\classes;D:\maven\repository\org\springframework\boot\spring-boot-configuration-processor\2.1.6.RELEASE\spring-boot-configuration-processor-2.1.6.RELEASE.jar;D:\maven\repository\org\springframework\boot\spring-boot-starter-json\2.1.6.RELEASE\spring-boot-starter-json-2.1.6.RELEASE.jar;D:\maven\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.9.9\jackson-datatype-jdk8-2.9.9.jar;D:\maven\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.9.9\jackson-datatype-jsr310-2.9.9.jar;D:\maven\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.9.9\jackson-module-parameter-names-2.9.9.jar;D:\maven\repository\org\springframework\boot\spring-boot-starter-data-jpa\2.1.6.RELEASE\spring-boot-starter-data-jpa-2.1.6.RELEASE.jar;D:\maven\repository\javax\transaction\javax.transaction-api\1.3\javax.transaction-api-1.3.jar;D:\maven\repository\org\hibernate\hibernate-core\5.3.10.Final\hibernate-core-5.3.10.Final.jar;D:\maven\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;D:\maven\repository\org\jboss\jandex\2.0.5.Final\jandex-2.0.5.Final.jar;D:\maven\repository\org\dom4j\dom4j\2.1.1\dom4j-2.1.1.jar;D:\maven\repository\org\hibernate\common\hibernate-commons-annotations\5.0.4.Final\hibernate-commons-annotations-5.0.4.Final.jar;D:\maven\repository\org\springframework\data\spring-data-jpa\2.1.9.RELEASE\spring-data-jpa-2.1.9.RELEASE.jar;D:\maven\repository\org\springframework\spring-orm\5.1.8.RELEASE\spring-orm-5.1.8.RELEASE.jar;D:\maven\repository\org\springframework\spring-aspects\5.1.8.RELEASE\spring-aspects-5.1.8.RELEASE.jar;D:\maven\repository\commons-codec\commons-codec\1.12\commons-codec-1.12.jar;D:\maven\repository\io\springfox\springfox-swagger2\2.7.0\springfox-swagger2-2.7.0.jar;D:\maven\repository\io\swagger\swagger-annotations\1.5.13\swagger-annotations-1.5.13.jar;D:\maven\repository\io\swagger\swagger-models\1.5.13\swagger-models-1.5.13.jar;D:\maven\repository\io\springfox\springfox-spi\2.7.0\springfox-spi-2.7.0.jar;D:\maven\repository\io\springfox\springfox-core\2.7.0\springfox-core-2.7.0.jar;D:\maven\repository\io\springfox\springfox-schema\2.7.0\springfox-schema-2.7.0.jar;D:\maven\repository\io\springfox\springfox-swagger-common\2.7.0\springfox-swagger-common-2.7.0.jar;D:\maven\repository\io\springfox\springfox-spring-web\2.7.0\springfox-spring-web-2.7.0.jar;D:\maven\repository\org\reflections\reflections\0.9.11\reflections-0.9.11.jar;D:\maven\repository\com\google\guava\guava\18.0\guava-18.0.jar;D:\maven\repository\com\fasterxml\classmate\1.4.0\classmate-1.4.0.jar;D:\maven\repository\org\springframework\plugin\spring-plugin-core\1.2.0.RELEASE\spring-plugin-core-1.2.0.RELEASE.jar;D:\maven\repository\org\springframework\plugin\spring-plugin-metadata\1.2.0.RELEASE\spring-plugin-metadata-1.2.0.RELEASE.jar;D:\maven\repository\org\mapstruct\mapstruct\1.1.0.Final\mapstruct-1.1.0.Final.jar;D:\maven\repository\io\springfox\springfox-swagger-ui\2.7.0\springfox-swagger-ui-2.7.0.jar;D:\maven\repository\org\springframework\boot\spring-boot-starter-log4j\1.3.5.RELEASE\spring-boot-starter-log4j-1.3.5.RELEASE.jar;D:\maven\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;D:\maven\repository\com\alibaba\fastjson\1.2.44\fastjson-1.2.44.jar;D:\maven\repository\org\apache\httpcomponents\httpclient\4.4.1\httpclient-4.4.1.jar;D:\maven\repository\org\apache\httpcomponents\httpcore\4.4.11\httpcore-4.4.11.jar;D:\maven\repository\com\google\code\gson\gson\2.8.5\gson-2.8.5.jar;D:\maven\repository\org\elasticsearch\elasticsearch\6.2.4\elasticsearch-6.2.4.jar;D:\maven\repository\org\elasticsearch\elasticsearch-core\6.2.4\elasticsearch-core-6.2.4.jar;D:\maven\repository\org\apache\lucene\lucene-core\7.2.1\lucene-core-7.2.1.jar;D:\maven\repository\org\apache\lucene\lucene-analyzers-common\7.2.1\lucene-analyzers-common-7.2.1.jar;D:\maven\repository\org\apache\lucene\lucene-backward-codecs\7.2.1\lucene-backward-codecs-7.2.1.jar;D:\maven\repository\org\apache\lucene\lucene-grouping\7.2.1\lucene-grouping-7.2.1.jar;D:\maven\repository\org\apache\lucene\lucene-highlighter\7.2.1\lucene-highlighter-7.2.1.jar;D:\maven\repository\org\apache\lucene\lucene-join\7.2.1\lucene-join-7.2.1.jar;D:\maven\repository\org\apache\lucene\lucene-memory\7.2.1\lucene-memory-7.2.1.jar;D:\maven\repository\org\apache\lucene\lucene-misc\7.2.1\lucene-misc-7.2.1.jar;D:\maven\repository\org\apache\lucene\lucene-queries\7.2.1\lucene-queries-7.2.1.jar;D:\maven\repository\org\apache\lucene\lucene-queryparser\7.2.1\lucene-queryparser-7.2.1.jar;D:\maven\repository\org\apache\lucene\lucene-sandbox\7.2.1\lucene-sandbox-7.2.1.jar;D:\maven\repository\org\apache\lucene\lucene-spatial\7.2.1\lucene-spatial-7.2.1.jar;D:\maven\repository\org\apache\lucene\lucene-spatial-extras\7.2.1\lucene-spatial-extras-7.2.1.jar;D:\maven\repository\org\apache\lucene\lucene-spatial3d\7.2.1\lucene-spatial3d-7.2.1.jar;D:\maven\repository\org\apache\lucene\lucene-suggest\7.2.1\lucene-suggest-7.2.1.jar;D:\maven\repository\org\elasticsearch\securesm\1.2\securesm-1.2.jar;D:\maven\repository\org\elasticsearch\elasticsearch-cli\6.2.4\elasticsearch-cli-6.2.4.jar;D:\maven\repository\net\sf\jopt-simple\jopt-simple\5.0.2\jopt-simple-5.0.2.jar;D:\maven\repository\com\carrotsearch\hppc\0.7.1\hppc-0.7.1.jar;D:\maven\repository\joda-time\joda-time\2.10.2\joda-time-2.10.2.jar;D:\maven\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-smile\2.9.9\jackson-dataformat-smile-2.9.9.jar;D:\maven\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-cbor\2.9.9\jackson-dataformat-cbor-2.9.9.jar;D:\maven\repository\com\tdunning\t-digest\3.0\t-digest-3.0.jar;D:\maven\repository\org\hdrhistogram\HdrHistogram\2.1.9\HdrHistogram-2.1.9.jar;D:\maven\repository\org\apache\logging\log4j\log4j-api\2.11.2\log4j-api-2.11.2.jar;D:\maven\repository\org\elasticsearch\jna\4.5.1\jna-4.5.1.jar;D:\maven\repository\org\elasticsearch\client\rest\6.0.0-alpha1\rest-6.0.0-alpha1.jar;D:\maven\repository\org\apache\httpcomponents\httpasyncclient\4.1.4\httpasyncclient-4.1.4.jar;D:\maven\repository\org\apache\httpcomponents\httpcore-nio\4.4.11\httpcore-nio-4.4.11.jar;D:\maven\repository\org\elasticsearch\client\elasticsearch-rest-high-level-client\6.2.4\elasticsearch-rest-high-level-client-6.2.4.jar;D:\maven\repository\org\elasticsearch\client\elasticsearch-rest-client\6.2.4\elasticsearch-rest-client-6.2.4.jar;D:\maven\repository\org\elasticsearch\plugin\parent-join-client\6.2.4\parent-join-client-6.2.4.jar;D:\maven\repository\org\elasticsearch\plugin\aggs-matrix-stats-client\6.2.4\aggs-matrix-stats-client-6.2.4.jar;D:\maven\repository\org\elasticsearch\plugin\rank-eval-client\6.2.4\rank-eval-client-6.2.4.jar;D:\maven\repository\org\elasticsearch\client\transport\6.2.4\transport-6.2.4.jar;D:\maven\repository\org\elasticsearch\plugin\reindex-client\6.2.4\reindex-client-6.2.4.jar;D:\maven\repository\org\elasticsearch\plugin\lang-mustache-client\6.2.4\lang-mustache-client-6.2.4.jar;D:\maven\repository\com\github\spullara\mustache\java\compiler\0.9.3\compiler-0.9.3.jar;D:\maven\repository\org\elasticsearch\plugin\percolator-client\6.2.4\percolator-client-6.2.4.jar;D:\maven\repository\org\elasticsearch\plugin\transport-netty4-client\6.2.4\transport-netty4-client-6.2.4.jar;D:\maven\repository\io\netty\netty-codec-http\4.1.36.Final\netty-codec-http-4.1.36.Final.jar;D:\maven\repository\org\locationtech\spatial4j\spatial4j\0.6\spatial4j-0.6.jar;D:\maven\repository\com\vividsolutions\jts\1.13\jts-1.13.jar;D:\maven\repository\org\apache\logging\log4j\log4j-core\2.11.2\log4j-core-2.11.2.jar;D:\maven\repository\org\ansj\ansj_seg\5.1.1\ansj_seg-5.1.1.jar;D:\maven\repository\org\nlpcn\nlp-lang\1.7.2\nlp-lang-1.7.2.jar;D:\maven\repository\org\apache\httpcomponents\httpmime\4.5.6\httpmime-4.5.6.jar;D:\maven\repository\org\jsoup\jsoup\1.11.2\jsoup-1.11.2.jar;D:\maven\repository\javax\servlet\javax.servlet-api\4.0.1\javax.servlet-api-4.0.1.jar;D:\maven\repository\javax\persistence\javax.persistence-api\2.2\javax.persistence-api-2.2.jar;D:\maven\repository\org\postgresql\postgresql\42.2.2\postgresql-42.2.2.jar;D:\maven\repository\org\apache\shiro\shiro-core\1.4.0\shiro-core-1.4.0.jar;D:\maven\repository\org\apache\shiro\shiro-lang\1.4.0\shiro-lang-1.4.0.jar;D:\maven\repository\org\apache\shiro\shiro-cache\1.4.0\shiro-cache-1.4.0.jar;D:\maven\repository\org\apache\shiro\shiro-crypto-hash\1.4.0\shiro-crypto-hash-1.4.0.jar;D:\maven\repository\org\apache\shiro\shiro-crypto-core\1.4.0\shiro-crypto-core-1.4.0.jar;D:\maven\repository\org\apache\shiro\shiro-crypto-cipher\1.4.0\shiro-crypto-cipher-1.4.0.jar;D:\maven\repository\org\apache\shiro\shiro-config-core\1.4.0\shiro-config-core-1.4.0.jar;D:\maven\repository\org\apache\shiro\shiro-config-ogdl\1.4.0\shiro-config-ogdl-1.4.0.jar;D:\maven\repository\commons-beanutils\commons-beanutils\1.9.3\commons-beanutils-1.9.3.jar;D:\maven\repository\org\apache\shiro\shiro-event\1.4.0\shiro-event-1.4.0.jar;D:\maven\repository\org\apache\shiro\shiro-web\1.4.0\shiro-web-1.4.0.jar;D:\maven\repository\org\apache\shiro\shiro-spring\1.4.0\shiro-spring-1.4.0.jar;D:\maven\repository\org\apache\shiro\shiro-ehcache\1.4.0\shiro-ehcache-1.4.0.jar;D:\maven\repository\net\sf\ehcache\ehcache-core\2.6.11\ehcache-core-2.6.11.jar;D:\maven\repository\org\springframework\boot\spring-boot-starter-amqp\2.1.6.RELEASE\spring-boot-starter-amqp-2.1.6.RELEASE.jar;D:\maven\repository\org\springframework\spring-messaging\5.1.8.RELEASE\spring-messaging-5.1.8.RELEASE.jar;D:\maven\repository\org\springframework\spring-beans\5.1.8.RELEASE\spring-beans-5.1.8.RELEASE.jar;D:\maven\repository\org\springframework\amqp\spring-rabbit\2.1.7.RELEASE\spring-rabbit-2.1.7.RELEASE.jar;D:\maven\repository\org\springframework\amqp\spring-amqp\2.1.7.RELEASE\spring-amqp-2.1.7.RELEASE.jar;D:\maven\repository\org\springframework\retry\spring-retry\1.2.4.RELEASE\spring-retry-1.2.4.RELEASE.jar;D:\maven\repository\com\rabbitmq\amqp-client\5.4.3\amqp-client-5.4.3.jar;D:\maven\repository\org\apache\poi\poi\4.0.0\poi-4.0.0.jar;D:\maven\repository\org\apache\poi\poi-ooxml\4.0.0\poi-ooxml-4.0.0.jar;D:\maven\repository\org\apache\poi\poi-ooxml-schemas\4.0.0\poi-ooxml-schemas-4.0.0.jar;D:\maven\repository\org\apache\xmlbeans\xmlbeans\3.0.1\xmlbeans-3.0.1.jar;D:\maven\repository\org\apache\commons\commons-compress\1.18\commons-compress-1.18.jar;D:\maven\repository\com\github\virtuald\curvesapi\1.04\curvesapi-1.04.jar;D:\maven\repository\com\xuxueli\xxl-job-core\1.8.2\xxl-job-core-1.8.2.jar;D:\maven\repository\javax\servlet\jsp\jsp-api\2.2\jsp-api-2.2.jar;D:\maven\repository\org\eclipse\jetty\jetty-server\9.4.19.v20190610\jetty-server-9.4.19.v20190610.jar;D:\maven\repository\org\eclipse\jetty\jetty-http\9.4.19.v20190610\jetty-http-9.4.19.v20190610.jar;D:\maven\repository\org\eclipse\jetty\jetty-util\9.4.19.v20190610\jetty-util-9.4.19.v20190610.jar;D:\maven\repository\org\eclipse\jetty\jetty-io\9.4.19.v20190610\jetty-io-9.4.19.v20190610.jar;D:\maven\repository\com\caucho\hessian\4.0.38\hessian-4.0.38.jar;D:\maven\repository\org\codehaus\jackson\jackson-mapper-asl\1.9.13\jackson-mapper-asl-1.9.13.jar;D:\maven\repository\org\codehaus\jackson\jackson-core-asl\1.9.13\jackson-core-asl-1.9.13.jar;D:\maven\repository\org\springframework\spring-context\5.1.8.RELEASE\spring-context-5.1.8.RELEASE.jar;D:\maven\repository\org\springframework\spring-expression\5.1.8.RELEASE\spring-expression-5.1.8.RELEASE.jar;D:\maven\repository\org\codehaus\groovy\groovy-all\2.4.5\groovy-all-2.4.5.jar;D:\maven\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;D:\maven\repository\com\belerweb\pinyin4j\2.5.0\pinyin4j-2.5.0.jar;D:\maven\repository\org\redisson\redisson\3.11.2\redisson-3.11.2.jar;D:\maven\repository\io\netty\netty-common\4.1.36.Final\netty-common-4.1.36.Final.jar;D:\maven\repository\io\netty\netty-codec\4.1.36.Final\netty-codec-4.1.36.Final.jar;D:\maven\repository\io\netty\netty-buffer\4.1.36.Final\netty-buffer-4.1.36.Final.jar;D:\maven\repository\io\netty\netty-transport\4.1.36.Final\netty-transport-4.1.36.Final.jar;D:\maven\repository\io\netty\netty-resolver\4.1.36.Final\netty-resolver-4.1.36.Final.jar;D:\maven\repository\io\netty\netty-resolver-dns\4.1.36.Final\netty-resolver-dns-4.1.36.Final.jar;D:\maven\repository\io\netty\netty-codec-dns\4.1.36.Final\netty-codec-dns-4.1.36.Final.jar;D:\maven\repository\io\netty\netty-handler\4.1.36.Final\netty-handler-4.1.36.Final.jar;D:\maven\repository\javax\cache\cache-api\1.1.1\cache-api-1.1.1.jar;D:\maven\repository\io\projectreactor\reactor-core\3.2.10.RELEASE\reactor-core-3.2.10.RELEASE.jar;D:\maven\repository\org\reactivestreams\reactive-streams\1.0.2\reactive-streams-1.0.2.jar;D:\maven\repository\io\reactivex\rxjava2\rxjava\2.2.9\rxjava-2.2.9.jar;D:\maven\repository\de\ruedigermoeller\fst\2.57\fst-2.57.jar;D:\maven\repository\org\javassist\javassist\3.21.0-GA\javassist-3.21.0-GA.jar;D:\maven\repository\org\objenesis\objenesis\2.5.1\objenesis-2.5.1.jar;D:\maven\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.9.9\jackson-dataformat-yaml-2.9.9.jar;D:\maven\repository\com\fasterxml\jackson\core\jackson-core\2.9.9\jackson-core-2.9.9.jar;D:\maven\repository\com\fasterxml\jackson\core\jackson-databind\2.9.9\jackson-databind-2.9.9.jar;D:\maven\repository\com\fasterxml\jackson\core\jackson-annotations\2.9.0\jackson-annotations-2.9.0.jar;D:\maven\repository\net\bytebuddy\byte-buddy\1.9.13\byte-buddy-1.9.13.jar;D:\maven\repository\org\jodd\jodd-bean\5.0.10\jodd-bean-5.0.10.jar;D:\maven\repository\org\jodd\jodd-core\5.0.10\jodd-core-5.0.10.jar;D:\maven\repository\org\redisson\redisson-spring-boot-starter\3.11.2\redisson-spring-boot-starter-3.11.2.jar;D:\maven\repository\org\springframework\boot\spring-boot-starter-actuator\2.1.6.RELEASE\spring-boot-starter-actuator-2.1.6.RELEASE.jar;D:\maven\repository\org\springframework\boot\spring-boot-actuator-autoconfigure\2.1.6.RELEASE\spring-boot-actuator-autoconfigure-2.1.6.RELEASE.jar;D:\maven\repository\org\springframework\boot\spring-boot-actuator\2.1.6.RELEASE\spring-boot-actuator-2.1.6.RELEASE.jar;D:\maven\repository\io\micrometer\micrometer-core\1.1.5\micrometer-core-1.1.5.jar;D:\maven\repository\org\latencyutils\LatencyUtils\2.0.3\LatencyUtils-2.0.3.jar;D:\maven\repository\org\springframework\boot\spring-boot-starter-web\2.1.6.RELEASE\spring-boot-starter-web-2.1.6.RELEASE.jar;D:\maven\repository\org\springframework\boot\spring-boot-starter-tomcat\2.1.6.RELEASE\spring-boot-starter-tomcat-2.1.6.RELEASE.jar;D:\maven\repository\org\apache\tomcat\embed\tomcat-embed-core\9.0.21\tomcat-embed-core-9.0.21.jar;D:\maven\repository\org\apache\tomcat\embed\tomcat-embed-el\9.0.21\tomcat-embed-el-9.0.21.jar;D:\maven\repository\org\apache\tomcat\embed\tomcat-embed-websocket\9.0.21\tomcat-embed-websocket-9.0.21.jar;D:\maven\repository\org\hibernate\validator\hibernate-validator\6.0.17.Final\hibernate-validator-6.0.17.Final.jar;D:\maven\repository\javax\validation\validation-api\2.0.1.Final\validation-api-2.0.1.Final.jar;D:\maven\repository\org\jboss\logging\jboss-logging\3.3.2.Final\jboss-logging-3.3.2.Final.jar;D:\maven\repository\org\springframework\spring-web\5.1.8.RELEASE\spring-web-5.1.8.RELEASE.jar;D:\maven\repository\org\springframework\spring-webmvc\5.1.8.RELEASE\spring-webmvc-5.1.8.RELEASE.jar;D:\maven\repository\org\redisson\redisson-spring-data-21\3.11.2\redisson-spring-data-21-3.11.2.jar;D:\maven\repository\redis\clients\jedis\3.0.1\jedis-3.0.1.jar;D:\maven\repository\org\apache\commons\commons-pool2\2.6.2\commons-pool2-2.6.2.jar;D:\maven\repository\org\springframework\boot\spring-boot-starter-data-redis\2.1.6.RELEASE\spring-boot-starter-data-redis-2.1.6.RELEASE.jar;D:\maven\repository\org\springframework\data\spring-data-redis\2.1.9.RELEASE\spring-data-redis-2.1.9.RELEASE.jar;D:\maven\repository\org\springframework\data\spring-data-keyvalue\2.1.9.RELEASE\spring-data-keyvalue-2.1.9.RELEASE.jar;D:\maven\repository\org\springframework\data\spring-data-commons\2.1.9.RELEASE\spring-data-commons-2.1.9.RELEASE.jar;D:\maven\repository\org\springframework\spring-tx\5.1.8.RELEASE\spring-tx-5.1.8.RELEASE.jar;D:\maven\repository\org\springframework\spring-oxm\5.1.8.RELEASE\spring-oxm-5.1.8.RELEASE.jar;D:\maven\repository\org\springframework\spring-aop\5.1.8.RELEASE\spring-aop-5.1.8.RELEASE.jar;D:\maven\repository\org\springframework\spring-context-support\5.1.8.RELEASE\spring-context-support-5.1.8.RELEASE.jar;D:\maven\repository\io\lettuce\lettuce-core\5.1.7.RELEASE\lettuce-core-5.1.7.RELEASE.jar;D:\maven\repository\com\microsoft\sqlserver\mssql-jdbc\6.1.0.jre8\mssql-jdbc-6.1.0.jre8.jar;D:\maven\repository\com\microsoft\azure\azure-keyvault\0.9.3\azure-keyvault-0.9.3.jar;D:\maven\repository\com\microsoft\azure\azure-core\0.9.3\azure-core-0.9.3.jar;D:\maven\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;D:\maven\repository\javax\mail\mail\1.4.5\mail-1.4.5.jar;D:\maven\repository\javax\activation\activation\1.1\activation-1.1.jar;D:\maven\repository\com\sun\jersey\jersey-client\1.13\jersey-client-1.13.jar;D:\maven\repository\com\sun\jersey\jersey-core\1.13\jersey-core-1.13.jar;D:\maven\repository\com\sun\jersey\jersey-json\1.13\jersey-json-1.13.jar;D:\maven\repository\com\sun\xml\bind\jaxb-impl\2.2.3-1\jaxb-impl-2.2.3-1.jar;D:\maven\repository\org\codehaus\jackson\jackson-jaxrs\1.9.2\jackson-jaxrs-1.9.2.jar;D:\maven\repository\org\codehaus\jackson\jackson-xc\1.9.2\jackson-xc-1.9.2.jar;D:\maven\repository\javax\inject\javax.inject\1\javax.inject-1.jar;D:\maven\repository\com\microsoft\azure\adal4j\1.0.0\adal4j-1.0.0.jar;D:\maven\repository\com\nimbusds\oauth2-oidc-sdk\4.5\oauth2-oidc-sdk-4.5.jar;D:\maven\repository\net\jcip\jcip-annotations\1.0\jcip-annotations-1.0.jar;D:\maven\repository\com\nimbusds\lang-tag\1.4\lang-tag-1.4.jar;D:\maven\repository\com\nimbusds\nimbus-jose-jwt\3.1.2\nimbus-jose-jwt-3.1.2.jar;D:\maven\repository\org\bouncycastle\bcprov-jdk15on\1.51\bcprov-jdk15on-1.51.jar;D:\maven\repository\mysql\mysql-connector-java\5.1.41\mysql-connector-java-5.1.41.jar;D:\maven\repository\org\slf4j\slf4j-api\1.7.26\slf4j-api-1.7.26.jar;D:\maven\repository\org\slf4j\jcl-over-slf4j\1.7.26\jcl-over-slf4j-1.7.26.jar;D:\maven\repository\org\slf4j\jul-to-slf4j\1.7.26\jul-to-slf4j-1.7.26.jar;D:\maven\repository\org\springframework\boot\spring-boot-starter\2.1.6.RELEASE\spring-boot-starter-2.1.6.RELEASE.jar;D:\maven\repository\org\springframework\boot\spring-boot\2.1.6.RELEASE\spring-boot-2.1.6.RELEASE.jar;D:\maven\repository\org\springframework\boot\spring-boot-autoconfigure\2.1.6.RELEASE\spring-boot-autoconfigure-2.1.6.RELEASE.jar;D:\maven\repository\org\springframework\boot\spring-boot-starter-logging\2.1.6.RELEASE\spring-boot-starter-logging-2.1.6.RELEASE.jar;D:\maven\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar;D:\maven\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar;D:\maven\repository\org\apache\logging\log4j\log4j-to-slf4j\2.11.2\log4j-to-slf4j-2.11.2.jar;D:\maven\repository\javax\annotation\javax.annotation-api\1.3.2\javax.annotation-api-1.3.2.jar;D:\maven\repository\org\springframework\spring-core\5.1.8.RELEASE\spring-core-5.1.8.RELEASE.jar;D:\maven\repository\org\springframework\spring-jcl\5.1.8.RELEASE\spring-jcl-5.1.8.RELEASE.jar;D:\maven\repository\org\yaml\snakeyaml\1.23\snakeyaml-1.23.jar;D:\maven\repository\com\baomidou\mybatis-plus-boot-starter\3.1.2\mybatis-plus-boot-starter-3.1.2.jar;D:\maven\repository\org\springframework\boot\spring-boot-starter-jdbc\2.1.6.RELEASE\spring-boot-starter-jdbc-2.1.6.RELEASE.jar;D:\maven\repository\com\zaxxer\HikariCP\3.2.0\HikariCP-3.2.0.jar;D:\maven\repository\org\springframework\spring-jdbc\5.1.8.RELEASE\spring-jdbc-5.1.8.RELEASE.jar;D:\maven\repository\com\baomidou\mybatis-plus\3.1.2\mybatis-plus-3.1.2.jar;D:\maven\repository\com\baomidou\mybatis-plus-generator\3.1.2\mybatis-plus-generator-3.1.2.jar;D:\maven\repository\com\alibaba\druid\1.1.18\druid-1.1.18.jar;D:\maven\repository\com\alibaba\druid-spring-boot-starter\1.1.18\druid-spring-boot-starter-1.1.18.jar;D:\maven\repository\org\json\json\20180130\json-20180130.jar;D:\maven\repository\org\apache\oltu\oauth2\org.apache.oltu.oauth2.client\0.31\org.apache.oltu.oauth2.client-0.31.jar;D:\maven\repository\org\apache\oltu\oauth2\org.apache.oltu.oauth2.common\0.31\org.apache.oltu.oauth2.common-0.31.jar;D:\maven\repository\org\codehaus\jettison\jettison\1.2\jettison-1.2.jar;D:\maven\repository\com\squareup\okhttp3\okhttp\3.8.1\okhttp-3.8.1.jar;D:\maven\repository\com\squareup\okio\okio\1.13.0\okio-1.13.0.jar;D:\maven\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;D:\maven\repository\org\apache\commons\commons-vfs2\2.1\commons-vfs2-2.1.jar;D:\maven\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;D:\maven\repository\org\apache\commons\commons-lang3\3.4\commons-lang3-3.4.jar;D:\maven\repository\commons-collections\commons-collections\3.1\commons-collections-3.1.jar;D:\maven\repository\commons-fileupload\commons-fileupload\1.3.1\commons-fileupload-1.3.1.jar;D:\maven\repository\commons-io\commons-io\2.2\commons-io-2.2.jar;D:\maven\repository\com\baomidou\mybatis-plus-extension\3.1.2\mybatis-plus-extension-3.1.2.jar;D:\maven\repository\com\baomidou\mybatis-plus-core\3.1.2\mybatis-plus-core-3.1.2.jar;D:\maven\repository\com\baomidou\mybatis-plus-annotation\3.1.2\mybatis-plus-annotation-3.1.2.jar;D:\maven\repository\com\github\jsqlparser\jsqlparser\1.2\jsqlparser-1.2.jar;D:\maven\repository\org\mybatis\mybatis\3.5.1\mybatis-3.5.1.jar;D:\maven\repository\org\mybatis\mybatis-spring\2.0.1\mybatis-spring-2.0.1.jar;D:\maven\repository\com\baomidou\dynamic-datasource-spring-boot-starter\2.5.5\dynamic-datasource-spring-boot-starter-2.5.5.jar;D:\maven\repository\org\springframework\boot\spring-boot-starter-aop\2.1.6.RELEASE\spring-boot-starter-aop-2.1.6.RELEASE.jar;D:\maven\repository\org\aspectj\aspectjweaver\1.9.4\aspectjweaver-1.9.4.jar;D:\maven\repository\org\projectlombok\lombok\1.16.10\lombok-1.16.10.jar;D:\maven\repository\net\minidev\json-smart\2.3\json-smart-2.3.jar;D:\maven\repository\net\minidev\accessors-smart\1.2\accessors-smart-1.2.jar;D:\maven\repository\org\ow2\asm\asm\5.0.4\asm-5.0.4.jar;D:\maven\repository\javax\xml\bind\jaxb-api\2.3.1\jaxb-api-2.3.1.jar;D:\maven\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar&quot; com.view.Thread.ThreadTest2
+Exception in thread &quot;main&quot; java.lang.IllegalThreadStateException
+    at java.lang.Thread.start(Thread.java:705)
+    at com.view.Thread.ThreadTest2.main(ThreadTest2.java:12)
+&#x6267;&#x884C;run&#x65B9;&#x6CD5;
+
+Process finished with exit code 1
+</code></pre><ol>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+<h4 id="3&#x7EBF;&#x7A0B;&#x4F18;&#x5148;&#x7EA7;"><a name="3&#x7EBF;&#x7A0B;&#x4F18;&#x5148;&#x7EA7;" class="plugin-anchor" href="#3&#x7EBF;&#x7A0B;&#x4F18;&#x5148;&#x7EA7;"><i class="fa fa-link" aria-hidden="true"></i></a>3.&#x7EBF;&#x7A0B;&#x4F18;&#x5148;&#x7EA7;</h4>
+<p>&#x5728; Thread &#x6E90;&#x7801;&#x4E2D;&#x548C;&#x7EBF;&#x7A0B;&#x4F18;&#x5148;&#x7EA7;&#x76F8;&#x5173;&#x7684;&#x5C5E;&#x6027;&#x6709; 3 &#x4E2A;&#xFF1A;</p>
+<pre><code>// &#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x62E5;&#x6709;&#x7684;&#x6700;&#x5C0F;&#x4F18;&#x5148;&#x7EA7;
+public final static int MIN_PRIORITY = 1;
+
+// &#x7EBF;&#x7A0B;&#x9ED8;&#x8BA4;&#x4F18;&#x5148;&#x7EA7;
+public final static int NORM_PRIORITY = 5;
+
+// &#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x62E5;&#x6709;&#x7684;&#x6700;&#x5927;&#x4F18;&#x5148;&#x7EA7;
+public final static int MAX_PRIORITY = 10
+</code></pre><p>&#x7EBF;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x7EBF;&#x7A0B;&#x62A2;&#x5360; CPU &#x65F6;&#x95F4;&#x7247;&#x7684;&#x6982;&#x7387;&#xFF0C;&#x4F18;&#x5148;&#x7EA7;&#x8D8A;&#x9AD8;&#x7684;&#x7EBF;&#x7A0B;&#x4F18;&#x5148;&#x6267;&#x884C;&#x7684;&#x6982;&#x7387;&#x5C31;&#x8D8A;&#x5927;&#xFF0C;&#x4F46;&#x5E76;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#x7684;&#x7EBF;&#x7A0B;&#x4E00;&#x5B9A;&#x5148;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; Thread.setPriority() &#x6765;&#x8BBE;&#x7F6E;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;setPriority() &#x6E90;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>public final void setPriority(int newPriority) {
+    ThreadGroup g;
+    checkAccess();
+    // &#x5148;&#x9A8C;&#x8BC1;&#x4F18;&#x5148;&#x7EA7;&#x7684;&#x5408;&#x7406;&#x6027;
+    if (newPriority &gt; MAX_PRIORITY || newPriority &lt; MIN_PRIORITY) {
+        throw new IllegalArgumentException();
+    }
+    if((g = getThreadGroup()) != null) {
+        // &#x4F18;&#x5148;&#x7EA7;&#x5982;&#x679C;&#x8D85;&#x8FC7;&#x7EBF;&#x7A0B;&#x7EC4;&#x7684;&#x6700;&#x9AD8;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x5219;&#x628A;&#x4F18;&#x5148;&#x7EA7;&#x8BBE;&#x7F6E;&#x4E3A;&#x7EBF;&#x7A0B;&#x7EC4;&#x7684;&#x6700;&#x9AD8;&#x4F18;&#x5148;&#x7EA7;
+        if (newPriority &gt; g.getMaxPriority()) {
+            newPriority = g.getMaxPriority();
+        }
+        setPriority0(priority = newPriority);
+    }
+}
+</code></pre><h4 id="4&#x7EBF;&#x7A0B;&#x7684;&#x5E38;&#x7528;&#x65B9;&#x6CD5;"><a name="4&#x7EBF;&#x7A0B;&#x7684;&#x5E38;&#x7528;&#x65B9;&#x6CD5;" class="plugin-anchor" href="#4&#x7EBF;&#x7A0B;&#x7684;&#x5E38;&#x7528;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>4.&#x7EBF;&#x7A0B;&#x7684;&#x5E38;&#x7528;&#x65B9;&#x6CD5;</h4>
+<p>&#x7EBF;&#x7A0B;&#x7684;&#x5E38;&#x7528;&#x65B9;&#x6CD5;&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x3002;</p>
+<h5 id="&#xFF08;1&#xFF09;join"><a name="&#xFF08;1&#xFF09;join" class="plugin-anchor" href="#&#xFF08;1&#xFF09;join"><i class="fa fa-link" aria-hidden="true"></i></a>&#xFF08;1&#xFF09;join()</h5>
+<p>&#x5728;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E2D;&#x8C03;&#x7528; other.join() &#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x4F1A;&#x8BA9;&#x51FA;&#x6267;&#x884C;&#x6743;&#x7ED9; other &#x7EBF;&#x7A0B;&#xFF0C;&#x76F4;&#x5230; other &#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x5B8C;&#x6216;&#x8005;&#x8FC7;&#x4E86;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x4E4B;&#x540E;&#x518D;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#xFF0C;join() &#x6E90;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>public final synchronized void join(long millis)
+throws InterruptedException {
+    long base = System.currentTimeMillis();
+    long now = 0;
+    // &#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x4E0D;&#x80FD;&#x5C0F;&#x4E8E; 0
+    if (millis &lt; 0) {
+        throw new IllegalArgumentException(&quot;timeout value is negative&quot;);
+    }
+    // &#x7B49;&#x4E8E; 0 &#x8868;&#x793A;&#x65E0;&#x9650;&#x7B49;&#x5F85;&#xFF0C;&#x76F4;&#x5230;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x5B8C;&#x4E3A;&#x4E4B;
+    if (millis == 0) {
+        // &#x5224;&#x65AD;&#x5B50;&#x7EBF;&#x7A0B; (&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;) &#x4E3A;&#x6D3B;&#x8DC3;&#x7EBF;&#x7A0B;&#xFF0C;&#x5219;&#x4E00;&#x76F4;&#x7B49;&#x5F85;
+        while (isAlive()) {
+            wait(0);
+        }
+    } else {
+        // &#x5FAA;&#x73AF;&#x5224;&#x65AD;
+        while (isAlive()) {
+            long delay = millis - now;
+            if (delay &lt;= 0) {
+                break;
+            }
+            wait(delay);
+            now = System.currentTimeMillis() - base;
+        }
+    }
+}
+</code></pre><p>&#x4ECE;&#x6E90;&#x7801;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x51FA; join() &#x65B9;&#x6CD5;&#x5E95;&#x5C42;&#x8FD8;&#x662F;&#x901A;&#x8FC7; wait() &#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x672A;&#x4F7F;&#x7528; join() &#x65F6;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>public class ThreadExample {
+    public static void main(String[] args) throws InterruptedException {
+        Thread thread = new Thread(() -&gt; {
+            for (int i = 1; i &lt; 6; i++) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(&quot;&#x5B50;&#x7EBF;&#x7A0B;&#x7761;&#x7720;&#xFF1A;&quot; + i + &quot;&#x79D2;&#x3002;&quot;);
+            }
+        });
+        thread.start(); // &#x5F00;&#x542F;&#x7EBF;&#x7A0B;
+        // &#x4E3B;&#x7EBF;&#x7A0B;&#x6267;&#x884C;
+        for (int i = 1; i &lt; 4; i++) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(&quot;&#x4E3B;&#x7EBF;&#x7A0B;&#x7761;&#x7720;&#xFF1A;&quot; + i + &quot;&#x79D2;&#x3002;&quot;);
+        }
+    }
+}
+</code></pre><p>&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x4E3A;&#xFF1A;</p>
+<pre><code>&#x4E3B;&#x7EBF;&#x7A0B;&#x7761;&#x7720;&#xFF1A;1&#x79D2;&#x3002;
+&#x5B50;&#x7EBF;&#x7A0B;&#x7761;&#x7720;&#xFF1A;1&#x79D2;&#x3002;
+&#x4E3B;&#x7EBF;&#x7A0B;&#x7761;&#x7720;&#xFF1A;2&#x79D2;&#x3002;
+&#x5B50;&#x7EBF;&#x7A0B;&#x7761;&#x7720;&#xFF1A;2&#x79D2;&#x3002;
+&#x4E3B;&#x7EBF;&#x7A0B;&#x7761;&#x7720;&#xFF1A;3&#x79D2;&#x3002;
+&#x5B50;&#x7EBF;&#x7A0B;&#x7761;&#x7720;&#xFF1A;3&#x79D2;&#x3002;
+&#x5B50;&#x7EBF;&#x7A0B;&#x7761;&#x7720;&#xFF1A;4&#x79D2;&#x3002;
+&#x5B50;&#x7EBF;&#x7A0B;&#x7761;&#x7720;&#xFF1A;5&#x79D2;&#x3002;
+</code></pre><p>&#x4ECE;&#x7ED3;&#x679C;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x5728;&#x672A;&#x4F7F;&#x7528; join() &#x65F6;&#x4E3B;&#x5B50;&#x7EBF;&#x7A0B;&#x4F1A;&#x4EA4;&#x66FF;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x518D;&#x628A; join() &#x65B9;&#x6CD5;&#x52A0;&#x5165;&#x5230;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java">public class ThreadExample {
+    public static void main(String[] args) throws InterruptedException {
+        Thread thread = new Thread(() -&gt; {
+            for (int i = 1; i &lt; 6; i++) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(&quot;&#x5B50;&#x7EBF;&#x7A0B;&#x7761;&#x7720;&#xFF1A;&quot; + i + &quot;&#x79D2;&#x3002;&quot;);
+            }
+        });
+        thread.start(); // &#x5F00;&#x542F;&#x7EBF;&#x7A0B;
+        thread.join(2000); // &#x7B49;&#x5F85;&#x5B50;&#x7EBF;&#x7A0B;&#x5148;&#x6267;&#x884C; 2 &#x79D2;&#x949F;
+        // &#x4E3B;&#x7EBF;&#x7A0B;&#x6267;&#x884C;
+        for (int i = 1; i &lt; 4; i++) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(&quot;&#x4E3B;&#x7EBF;&#x7A0B;&#x7761;&#x7720;&#xFF1A;&quot; + i + &quot;&#x79D2;&#x3002;&quot;);
+        }
+    }
+}
+</code></pre>
+<p>&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-java">&#x5B50;&#x7EBF;&#x7A0B;&#x7761;&#x7720;&#xFF1A;1&#x79D2;&#x3002;
+&#x5B50;&#x7EBF;&#x7A0B;&#x7761;&#x7720;&#xFF1A;2&#x79D2;&#x3002;
+&#x4E3B;&#x7EBF;&#x7A0B;&#x7761;&#x7720;&#xFF1A;1&#x79D2;&#x3002; 
+// thread.join(2000); &#x7B49;&#x5F85; 2 &#x79D2;&#x4E4B;&#x540E;&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x548C;&#x5B50;&#x7EBF;&#x7A0B;&#x518D;&#x4EA4;&#x66FF;&#x6267;&#x884C;
+&#x5B50;&#x7EBF;&#x7A0B;&#x7761;&#x7720;&#xFF1A;3&#x79D2;&#x3002;
+&#x4E3B;&#x7EBF;&#x7A0B;&#x7761;&#x7720;&#xFF1A;2&#x79D2;&#x3002;
+&#x5B50;&#x7EBF;&#x7A0B;&#x7761;&#x7720;&#xFF1A;4&#x79D2;&#x3002;
+&#x5B50;&#x7EBF;&#x7A0B;&#x7761;&#x7720;&#xFF1A;5&#x79D2;&#x3002;
+&#x4E3B;&#x7EBF;&#x7A0B;&#x7761;&#x7720;&#xFF1A;3&#x79D2;&#x3002;
+</code></pre>
+<p>&#x4ECE;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x6DFB;&#x52A0; join() &#x65B9;&#x6CD5;&#x4E4B;&#x540E;&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x4F1A;&#x5148;&#x7B49;&#x5B50;&#x7EBF;&#x7A0B;&#x6267;&#x884C; 2 &#x79D2;&#x4E4B;&#x540E;&#x624D;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x3002;</p>
+<h5 id="&#xFF08;2&#xFF09;yield"><a name="&#xFF08;2&#xFF09;yield" class="plugin-anchor" href="#&#xFF08;2&#xFF09;yield"><i class="fa fa-link" aria-hidden="true"></i></a>&#xFF08;2&#xFF09;yield()</h5>
+<p>&#x770B; Thread &#x7684;&#x6E90;&#x7801;&#x53EF;&#x4EE5;&#x77E5;&#x9053; yield() &#x4E3A;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4; yield() &#x662F;&#x7531; C &#x6216; C++ &#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x6E90;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java">public static native void yield();
+</code></pre>
+<p>yield() &#x65B9;&#x6CD5;&#x8868;&#x793A;&#x7ED9;&#x7EBF;&#x7A0B;&#x8C03;&#x5EA6;&#x5668;&#x4E00;&#x4E2A;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x613F;&#x610F;&#x51FA;&#x8BA9; CPU &#x4F7F;&#x7528;&#x6743;&#x7684;&#x6697;&#x793A;&#xFF0C;&#x4F46;&#x662F;&#x7EBF;&#x7A0B;&#x8C03;&#x5EA6;&#x5668;&#x53EF;&#x80FD;&#x4F1A;&#x5FFD;&#x7565;&#x8FD9;&#x4E2A;&#x6697;&#x793A;&#x3002;
+&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x6267;&#x884C;&#x8FD9;&#x6BB5;&#x5305;&#x542B;&#x4E86; yield() &#x65B9;&#x6CD5;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-java">public static void main(String[] args) throws InterruptedException {
+    Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            for (int i = 0; i &lt; 10; i++) {
+                System.out.println(&quot;&#x7EBF;&#x7A0B;&#xFF1A;&quot; +
+                        Thread.currentThread().getName() + &quot; I&#xFF1A;&quot; + i);
+                if (i == 5) {
+                    Thread.yield();
+                }
+            }
+        }
+    };
+    Thread t1 = new Thread(runnable, &quot;T1&quot;);
+    Thread t2 = new Thread(runnable, &quot;T2&quot;);
+    t1.start();
+    t2.start();
+}
+</code></pre>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x628A;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x591A;&#x6B21;&#x4E4B;&#x540E;&#x4F1A;&#x53D1;&#x73B0;&#xFF0C;&#x6BCF;&#x6B21;&#x6267;&#x884C;&#x7684;&#x7ED3;&#x679C;&#x90FD;&#x4E0D;&#x76F8;&#x540C;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A; yield() &#x6267;&#x884C;&#x975E;&#x5E38;&#x4E0D;&#x7A33;&#x5B9A;&#xFF0C;&#x7EBF;&#x7A0B;&#x8C03;&#x5EA6;&#x5668;&#x4E0D;&#x4E00;&#x5B9A;&#x4F1A;&#x91C7;&#x7EB3; yield() &#x51FA;&#x8BA9; CPU &#x4F7F;&#x7528;&#x6743;&#x7684;&#x5EFA;&#x8BAE;&#xFF0C;&#x4ECE;&#x800C;&#x5BFC;&#x81F4;&#x4E86;&#x8FD9;&#x6837;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<p>&#x5C0F;&#x7ED3;
+&#x672C;&#x8BFE;&#x65F6;&#x6211;&#x4EEC;&#x4ECB;&#x7ECD;&#x4E86;&#x7EBF;&#x7A0B;&#x7684; 6 &#x79CD;&#x72B6;&#x6001;&#x4EE5;&#x53CA;&#x7EBF;&#x7A0B;&#x7684;&#x6267;&#x884C;&#x6D41;&#x7A0B;&#xFF0C;&#x8FD8;&#x4ECB;&#x7ECD;&#x4E86; BLOCKED&#xFF08;&#x963B;&#x585E;&#x7B49;&#x5F85;&#xFF09;&#x548C; WAITING&#xFF08;&#x7B49;&#x5F85;&#xFF09;&#x7684;&#x533A;&#x522B;&#xFF0C;start() &#x65B9;&#x6CD5;&#x548C; run() &#x65B9;&#x6CD5;&#x7684;&#x533A;&#x522B;&#xFF0C;&#x4EE5;&#x53CA; join() &#x65B9;&#x6CD5;&#x548C; yield() &#x65B9;&#x6CD5;&#x7684;&#x4F5C;&#x7528;&#xFF0C;&#x4F46;&#x6211;&#x4EEC;&#x4E0D;&#x80FD;&#x6B7B;&#x8BB0;&#x786C;&#x80CC;&#xFF0C;&#x8981;&#x591A;&#x52A8;&#x624B;&#x5B9E;&#x8DF5;&#x624D;&#x80FD;&#x771F;&#x6B63;&#x7684;&#x7406;&#x89E3;&#x8FD9;&#x4E9B;&#x77E5;&#x8BC6;&#x70B9;&#x3002;</p>
+
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ThreadPoolExecutor.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: ThreadPoolExecutor详解 ThreadPoolExecutor 的参数含义及源码执行流程">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"线程的状态","tags":["线程"],"date":"2020-06-06T21:47:47.000Z","categories":null,"level":"1.2.2.2","depth":3,"next":{"title":"网络","level":"1.2.3","depth":2,"ref":"","articles":[{"title":"http和tcp","level":"1.2.3.1","depth":3,"path":"base/网络/http和tcp.md","ref":"base/网络/http和tcp.md","articles":[]}]},"previous":{"title":"ThreadPoolExecutor详解 ThreadPoolExecutor 的参数含义及源码执行流程","level":"1.2.2.1","depth":3,"path":"base/线程/ThreadPoolExecutor.md","ref":"base/线程/ThreadPoolExecutor.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","-highlight","baidu","splitter","sitemap","back-to-top-button","code","splitter","-lunr","-search","search-pro","theme-comscore","popup","hide-element","anchors","nocache","page-toc-button"],"ignores":["friends","tags","categories","about"],"root":".deploy/content","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"nocache":{},"github":{"url":"https://github.com/zhaoda/webpack-handbook"},"editlink":{"base":"https://github.com/zhaoda/webpack-handbook/blob/master/content","label":"编辑本页"},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://zhaoda.net/"},"theme-comscore":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"baidu":{"token":"a9787f0ab45d5e237bab522431d0a7ec"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"SUMMARY.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java实用笔记","language":"zh-hans","output.name":"site","catalog":["./source/_posts"],"links":{"sidebar":{"Home":"http://blog.liangqingxiang.top/"}},"gitbook":"3.2.3","description":"学习笔记"},"file":{"path":"base/线程/线程的状态-lg.md","mtime":"2020-06-14T07:51:31.558Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-14T07:52:15.655Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-nocache/nocache.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
