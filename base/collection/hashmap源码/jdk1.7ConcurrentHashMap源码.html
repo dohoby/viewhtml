@@ -1,0 +1,4164 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>jdk1.7ConcurrentHashMap源码 · java实用笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="jdk1.7HashMap源码.html" />
+    
+    
+
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://blog.liangqingxiang.top/" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.</b>
+                    
+                    Base
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    Collection
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" >
+            
+                <span>
+            
+                    
+                        <b>1.2.1.1.</b>
+                    
+                    Hashmap
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1" data-path="../hashmap/ConcurrentHashMap相关.html">
+            
+                <a href="../hashmap/ConcurrentHashMap相关.html">
+            
+                    
+                        <b>1.2.1.1.1.</b>
+                    
+                    ConcurrentHashMap相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.2" data-path="../hashmap/HashMap相关.html">
+            
+                <a href="../hashmap/HashMap相关.html">
+            
+                    
+                        <b>1.2.1.1.2.</b>
+                    
+                    HashMap相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.3" data-path="../hashmap/HashMap相关2.html">
+            
+                <a href="../hashmap/HashMap相关2.html">
+            
+                    
+                        <b>1.2.1.1.3.</b>
+                    
+                    HashMap相关2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.4" data-path="../hashmap/HashMap相关tx.html">
+            
+                <a href="../hashmap/HashMap相关tx.html">
+            
+                    
+                        <b>1.2.1.1.4.</b>
+                    
+                    HashMap相关tx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.5" data-path="../hashmap/jdk1.7hashmap源码分析.html">
+            
+                <a href="../hashmap/jdk1.7hashmap源码分析.html">
+            
+                    
+                        <b>1.2.1.1.5.</b>
+                    
+                    jdk1.7hashmap源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.6" data-path="../hashmap/jdk1.8ConcurrentHashMap源码分析.html">
+            
+                <a href="../hashmap/jdk1.8ConcurrentHashMap源码分析.html">
+            
+                    
+                        <b>1.2.1.1.6.</b>
+                    
+                    jdk1.8ConcurrentHashMap源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.7" data-path="../hashmap/jdk1.8HashMap源码分析.html">
+            
+                <a href="../hashmap/jdk1.8HashMap源码分析.html">
+            
+                    
+                        <b>1.2.1.1.7.</b>
+                    
+                    jdk1.8hashmap源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.8" data-path="../hashmap/Jdk1.8源码解析HashMap-putTreeVal.html">
+            
+                <a href="../hashmap/Jdk1.8源码解析HashMap-putTreeVal.html">
+            
+                    
+                        <b>1.2.1.1.8.</b>
+                    
+                    Jdk1.8源码解析-java.util.HashMap#putTreeVal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.9" data-path="../hashmap/Jdk1.8源码解析HashMap-resize.html">
+            
+                <a href="../hashmap/Jdk1.8源码解析HashMap-resize.html">
+            
+                    
+                        <b>1.2.1.1.9.</b>
+                    
+                    Jdk1.8源码解析-java.util.HashMap#resize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.10" data-path="../hashmap/Jdk1.8源码解析HashMap-treeifyBin.html">
+            
+                <a href="../hashmap/Jdk1.8源码解析HashMap-treeifyBin.html">
+            
+                    
+                        <b>1.2.1.1.10.</b>
+                    
+                    Jdk1.8源码解析-java.util.HashMap#treeifyBin链表转化为红黑树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.11" data-path="../hashmap/其他map.html">
+            
+                <a href="../hashmap/其他map.html">
+            
+                    
+                        <b>1.2.1.1.11.</b>
+                    
+                    其他map
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.1.2.</b>
+                    
+                    hashmap源码
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1.2.1" data-path="jdk1.7ConcurrentHashMap源码.html">
+            
+                <a href="jdk1.7ConcurrentHashMap源码.html">
+            
+                    
+                        <b>1.2.1.2.1.</b>
+                    
+                    jdk1.7ConcurrentHashMap源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.2" data-path="jdk1.7HashMap源码.html">
+            
+                <a href="jdk1.7HashMap源码.html">
+            
+                    
+                        <b>1.2.1.2.2.</b>
+                    
+                    jdk1.7HashMap源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.3" data-path="jdk1.8ConcurrentHashMap源码.html">
+            
+                <a href="jdk1.8ConcurrentHashMap源码.html">
+            
+                    
+                        <b>1.2.1.2.3.</b>
+                    
+                    jdk1.8ConcurrentHashMap源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.4" data-path="jdk1.8HashMap源码.html">
+            
+                <a href="jdk1.8HashMap源码.html">
+            
+                    
+                        <b>1.2.1.2.4.</b>
+                    
+                    jdk1.8HashMap源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" >
+            
+                <span>
+            
+                    
+                        <b>1.2.1.3.</b>
+                    
+                    Hashset
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.3.1" data-path="../hashset/hashset源码学习.html">
+            
+                <a href="../hashset/hashset源码学习.html">
+            
+                    
+                        <b>1.2.1.3.1.</b>
+                    
+                    hashset源码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../集合类学习.html">
+            
+                <a href="../集合类学习.html">
+            
+                    
+                        <b>1.2.1.4.</b>
+                    
+                    集合类学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    String
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../../string/StringBuffer和StringBuilder.html">
+            
+                <a href="../../string/StringBuffer和StringBuilder.html">
+            
+                    
+                        <b>1.2.2.1.</b>
+                    
+                    集合StringBuffer和StringBuilder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../../string/string源码.html">
+            
+                <a href="../../string/string源码.html">
+            
+                    
+                        <b>1.2.2.2.</b>
+                    
+                    string源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../../string/string源码学习.html">
+            
+                <a href="../../string/string源码学习.html">
+            
+                    
+                        <b>1.2.2.3.</b>
+                    
+                    string源码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../../string/字符串string学习.html">
+            
+                <a href="../../string/字符串string学习.html">
+            
+                    
+                        <b>1.2.2.4.</b>
+                    
+                    字符串string学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../../string/字符串string学习2-lg.html">
+            
+                <a href="../../string/字符串string学习2-lg.html">
+            
+                    
+                        <b>1.2.2.5.</b>
+                    
+                    字符串string学习2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    线程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../../线程/ThreadPoolExecutor.html">
+            
+                <a href="../../线程/ThreadPoolExecutor.html">
+            
+                    
+                        <b>1.2.3.1.</b>
+                    
+                    ThreadPoolExecutor详解 ThreadPoolExecutor 的参数含义及源码执行流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../../线程/线程的状态-lg.html">
+            
+                <a href="../../线程/线程的状态-lg.html">
+            
+                    
+                        <b>1.2.3.2.</b>
+                    
+                    线程的状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                        <b>1.2.4.</b>
+                    
+                    网络
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../../网络/http和tcp.html">
+            
+                <a href="../../网络/http和tcp.html">
+            
+                    
+                        <b>1.2.4.1.</b>
+                    
+                    http和tcp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../test.html">
+            
+                <a href="../../test.html">
+            
+                    
+                        <b>1.2.5.</b>
+                    
+                    Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../基本类型装箱拆箱.html">
+            
+                <a href="../../基本类型装箱拆箱.html">
+            
+                    
+                        <b>1.2.6.</b>
+                    
+                    集合基本类型装箱拆箱
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../基本类型装箱拆箱2.html">
+            
+                <a href="../../基本类型装箱拆箱2.html">
+            
+                    
+                        <b>1.2.7.</b>
+                    
+                    基本类型装箱拆箱2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                        <b>1.3.</b>
+                    
+                    Design Patterns
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" >
+            
+                <span>
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    Spring
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../../designPatterns/spring/spring享元模式.html">
+            
+                <a href="../../../designPatterns/spring/spring享元模式.html">
+            
+                    
+                        <b>1.3.1.1.</b>
+                    
+                    spring享元模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../../../designPatterns/spring/spring代理模式.html">
+            
+                <a href="../../../designPatterns/spring/spring代理模式.html">
+            
+                    
+                        <b>1.3.1.2.</b>
+                    
+                    spring代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../../../designPatterns/spring/spring策略模式.html">
+            
+                <a href="../../../designPatterns/spring/spring策略模式.html">
+            
+                    
+                        <b>1.3.1.3.</b>
+                    
+                    spring策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                        <b>1.4.</b>
+                    
+                    Jvm
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../../jvm/jvm内存模型.html">
+            
+                <a href="../../../jvm/jvm内存模型.html">
+            
+                    
+                        <b>1.4.1.</b>
+                    
+                    jvm内存模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../../jvm/jvm参数.html">
+            
+                <a href="../../../jvm/jvm参数.html">
+            
+                    
+                        <b>1.4.2.</b>
+                    
+                    jvm参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                        <b>1.5.</b>
+                    
+                    Mybatis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" >
+            
+                <span>
+            
+                    
+                        <b>1.5.1.</b>
+                    
+                    mybatis分页插件
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../../mybatis/mybatis分页插件/mybatis插件引入.html">
+            
+                <a href="../../../mybatis/mybatis分页插件/mybatis插件引入.html">
+            
+                    
+                        <b>1.5.1.1.</b>
+                    
+                    mybatis插件引入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../../../mybatis/mybatis分页插件/Page.html">
+            
+                <a href="../../../mybatis/mybatis分页插件/Page.html">
+            
+                    
+                        <b>1.5.1.2.</b>
+                    
+                    Page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="../../../mybatis/mybatis分页插件/PagePlugin.html">
+            
+                <a href="../../../mybatis/mybatis分页插件/PagePlugin.html">
+            
+                    
+                        <b>1.5.1.3.</b>
+                    
+                    Page Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.4" data-path="../../../mybatis/mybatis分页插件/ReflectHelper.html">
+            
+                <a href="../../../mybatis/mybatis分页插件/ReflectHelper.html">
+            
+                    
+                        <b>1.5.1.4.</b>
+                    
+                    Reflect Helper
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" >
+            
+                <span>
+            
+                    
+                        <b>1.5.2.</b>
+                    
+                    mybatis分页插件2
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../../../mybatis/mybatis分页插件2/mybatis插件引入.html">
+            
+                <a href="../../../mybatis/mybatis分页插件2/mybatis插件引入.html">
+            
+                    
+                        <b>1.5.2.1.</b>
+                    
+                    mybatis插件引入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../../../mybatis/mybatis分页插件2/PageInterceptor.html">
+            
+                <a href="../../../mybatis/mybatis分页插件2/PageInterceptor.html">
+            
+                    
+                        <b>1.5.2.2.</b>
+                    
+                    Page Interceptor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3" data-path="../../../mybatis/mybatis分页插件2/Pagination.html">
+            
+                <a href="../../../mybatis/mybatis分页插件2/Pagination.html">
+            
+                    
+                        <b>1.5.2.3.</b>
+                    
+                    Pagination
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../../mybatis/mybatis-view1.html">
+            
+                <a href="../../../mybatis/mybatis-view1.html">
+            
+                    
+                        <b>1.5.3.</b>
+                    
+                    Mybatis View 1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../../mybatis/mybatis学习.html">
+            
+                <a href="../../../mybatis/mybatis学习.html">
+            
+                    
+                        <b>1.5.4.</b>
+                    
+                    mybatis学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../../mybatis/mybatis源码.html">
+            
+                <a href="../../../mybatis/mybatis源码.html">
+            
+                    
+                        <b>1.5.5.</b>
+                    
+                    mybatis源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../../mybatis/mybatis源码学习总结1.html">
+            
+                <a href="../../../mybatis/mybatis源码学习总结1.html">
+            
+                    
+                        <b>1.5.6.</b>
+                    
+                    mybatis源码学习总结1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../../../mybatis/mybatis源码学习总结2.html">
+            
+                <a href="../../../mybatis/mybatis源码学习总结2.html">
+            
+                    
+                        <b>1.5.7.</b>
+                    
+                    mybatis源码学习总结2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../../../mybatis/mybatis用法.html">
+            
+                <a href="../../../mybatis/mybatis用法.html">
+            
+                    
+                        <b>1.5.8.</b>
+                    
+                    mybatis用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../../../mybatis/常见mybatis用法.html">
+            
+                <a href="../../../mybatis/常见mybatis用法.html">
+            
+                    
+                        <b>1.5.9.</b>
+                    
+                    常见mybatis用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                        <b>1.6.</b>
+                    
+                    Mybatis Spring
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../../mybatis-spring/Mybatis-Spring源码分析.html">
+            
+                <a href="../../../mybatis-spring/Mybatis-Spring源码分析.html">
+            
+                    
+                        <b>1.6.1.</b>
+                    
+                    Mybatis-Spring源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                        <b>1.7.</b>
+                    
+                    Redis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../../redis/redis相关.html">
+            
+                <a href="../../../redis/redis相关.html">
+            
+                    
+                        <b>1.7.1.</b>
+                    
+                    redis相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../../redis/缓存.html">
+            
+                <a href="../../../redis/缓存.html">
+            
+                    
+                        <b>1.7.2.</b>
+                    
+                    缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                        <b>1.8.</b>
+                    
+                    Spring
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" >
+            
+                <span>
+            
+                    
+                        <b>1.8.1.</b>
+                    
+                    Aop
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1.1" data-path="../../../spring/aop/aop动态代理学习.html">
+            
+                <a href="../../../spring/aop/aop动态代理学习.html">
+            
+                    
+                        <b>1.8.1.1.</b>
+                    
+                    aop动态代理学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.2" data-path="../../../spring/aop/aop学习.html">
+            
+                <a href="../../../spring/aop/aop学习.html">
+            
+                    
+                        <b>1.8.1.2.</b>
+                    
+                    mybatis学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.3" data-path="../../../spring/aop/JdkDanymicAopProxy源码.html">
+            
+                <a href="../../../spring/aop/JdkDanymicAopProxy源码.html">
+            
+                    
+                        <b>1.8.1.3.</b>
+                    
+                    JdkDanymicAopProxy源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" >
+            
+                <span>
+            
+                    
+                        <b>1.8.2.</b>
+                    
+                    Ioc
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.2.1" data-path="../../../spring/ioc/bean实例化过程.html">
+            
+                <a href="../../../spring/ioc/bean实例化过程.html">
+            
+                    
+                        <b>1.8.2.1.</b>
+                    
+                    bean实例化过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.2" data-path="../../../spring/ioc/spring-ioc原理.html">
+            
+                <a href="../../../spring/ioc/spring-ioc原理.html">
+            
+                    
+                        <b>1.8.2.2.</b>
+                    
+                    spring-ioc原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" >
+            
+                <span>
+            
+                    
+                        <b>1.8.3.</b>
+                    
+                    事务
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.3.1" data-path="../../../spring/事务/spring事务管理.html">
+            
+                <a href="../../../spring/事务/spring事务管理.html">
+            
+                    
+                        <b>1.8.3.1.</b>
+                    
+                    spring事务管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                        <b>1.9.</b>
+                    
+                    Springboot
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" >
+            
+                <span>
+            
+                    
+                        <b>1.9.1.</b>
+                    
+                    springboot配置
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1.1" data-path="../../../springboot/springboot配置/springboot配置文件加载分析.html">
+            
+                <a href="../../../springboot/springboot配置/springboot配置文件加载分析.html">
+            
+                    
+                        <b>1.9.1.1.</b>
+                    
+                    springboot配置文件加载分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.1.2" data-path="../../../springboot/springboot配置/修改springboot默认加载application-properties文件.html">
+            
+                <a href="../../../springboot/springboot配置/修改springboot默认加载application-properties文件.html">
+            
+                    
+                        <b>1.9.1.2.</b>
+                    
+                    修改springboot默认加载application.properties文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" >
+            
+                <span>
+            
+                    
+                        <b>1.9.2.</b>
+                    
+                    监听器
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.2.1" data-path="../../../springboot/监听器/springboot监听器.html">
+            
+                <a href="../../../springboot/监听器/springboot监听器.html">
+            
+                    
+                        <b>1.9.2.1.</b>
+                    
+                    springboot监听器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../../../springboot/SpringApplication源码分析.html">
+            
+                <a href="../../../springboot/SpringApplication源码分析.html">
+            
+                    
+                        <b>1.9.3.</b>
+                    
+                    SpringApplication源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                        <b>1.10.</b>
+                    
+                    Zother 1 Java Face Notes
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../../../zother1-JavaFaceNotes/Dubbo.html">
+            
+                <a href="../../../zother1-JavaFaceNotes/Dubbo.html">
+            
+                    
+                        <b>1.10.1.</b>
+                    
+                    Dubbo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../../../zother1-JavaFaceNotes/IO&NIO.html">
+            
+                <a href="../../../zother1-JavaFaceNotes/IO&NIO.html">
+            
+                    
+                        <b>1.10.2.</b>
+                    
+                    IO NIO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../../../zother1-JavaFaceNotes/Java基础.html">
+            
+                <a href="../../../zother1-JavaFaceNotes/Java基础.html">
+            
+                    
+                        <b>1.10.3.</b>
+                    
+                    Java基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../../../zother1-JavaFaceNotes/java集合.html">
+            
+                <a href="../../../zother1-JavaFaceNotes/java集合.html">
+            
+                    
+                        <b>1.10.4.</b>
+                    
+                    java集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../../../zother1-JavaFaceNotes/JVM.html">
+            
+                <a href="../../../zother1-JavaFaceNotes/JVM.html">
+            
+                    
+                        <b>1.10.5.</b>
+                    
+                    JVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../../../zother1-JavaFaceNotes/Kafka.html">
+            
+                <a href="../../../zother1-JavaFaceNotes/Kafka.html">
+            
+                    
+                        <b>1.10.6.</b>
+                    
+                    Kafka
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="../../../zother1-JavaFaceNotes/Linux.html">
+            
+                <a href="../../../zother1-JavaFaceNotes/Linux.html">
+            
+                    
+                        <b>1.10.7.</b>
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="../../../zother1-JavaFaceNotes/Mybatis.html">
+            
+                <a href="../../../zother1-JavaFaceNotes/Mybatis.html">
+            
+                    
+                        <b>1.10.8.</b>
+                    
+                    Mybatis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="../../../zother1-JavaFaceNotes/MySql.html">
+            
+                <a href="../../../zother1-JavaFaceNotes/MySql.html">
+            
+                    
+                        <b>1.10.9.</b>
+                    
+                    My Sql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.10" data-path="../../../zother1-JavaFaceNotes/Nginx.html">
+            
+                <a href="../../../zother1-JavaFaceNotes/Nginx.html">
+            
+                    
+                        <b>1.10.10.</b>
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.11" data-path="../../../zother1-JavaFaceNotes/Redis.html">
+            
+                <a href="../../../zother1-JavaFaceNotes/Redis.html">
+            
+                    
+                        <b>1.10.11.</b>
+                    
+                    Redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.12" data-path="../../../zother1-JavaFaceNotes/Spring.html">
+            
+                <a href="../../../zother1-JavaFaceNotes/Spring.html">
+            
+                    
+                        <b>1.10.12.</b>
+                    
+                    Spring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.13" data-path="../../../zother1-JavaFaceNotes/SpringBoot.html">
+            
+                <a href="../../../zother1-JavaFaceNotes/SpringBoot.html">
+            
+                    
+                        <b>1.10.13.</b>
+                    
+                    Spring Boot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.14" data-path="../../../zother1-JavaFaceNotes/SpringCloud.html">
+            
+                <a href="../../../zother1-JavaFaceNotes/SpringCloud.html">
+            
+                    
+                        <b>1.10.14.</b>
+                    
+                    Spring Cloud
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.15" data-path="../../../zother1-JavaFaceNotes/多线程.html">
+            
+                <a href="../../../zother1-JavaFaceNotes/多线程.html">
+            
+                    
+                        <b>1.10.15.</b>
+                    
+                    多线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.16" data-path="../../../zother1-JavaFaceNotes/异常&反射.html">
+            
+                <a href="../../../zother1-JavaFaceNotes/异常&反射.html">
+            
+                    
+                        <b>1.10.16.</b>
+                    
+                    异常&反射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.17" data-path="../../../zother1-JavaFaceNotes/简历.html">
+            
+                <a href="../../../zother1-JavaFaceNotes/简历.html">
+            
+                    
+                        <b>1.10.17.</b>
+                    
+                    简历
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../../../zother5-Java-Interview/">
+            
+                <a href="../../../zother5-Java-Interview/">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    Zother 5 Java Interview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../../../zother5-Java-Interview/Java基础学习.html">
+            
+                <a href="../../../zother5-Java-Interview/Java基础学习.html">
+            
+                    
+                        <b>1.11.1.</b>
+                    
+                    Java基础学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../../../zother5-Java-Interview/Java集合面试题及答案.html">
+            
+                <a href="../../../zother5-Java-Interview/Java集合面试题及答案.html">
+            
+                    
+                        <b>1.11.2.</b>
+                    
+                    Java集合面试题及答案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../../../zother5-Java-Interview/一、Java基础.html">
+            
+                <a href="../../../zother5-Java-Interview/一、Java基础.html">
+            
+                    
+                        <b>1.11.3.</b>
+                    
+                    一、Java基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../../../zother5-Java-Interview/七、JavaWeb.html">
+            
+                <a href="../../../zother5-Java-Interview/七、JavaWeb.html">
+            
+                    
+                        <b>1.11.4.</b>
+                    
+                    七、JavaWeb
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../../../zother5-Java-Interview/三、Java 集合.html">
+            
+                <a href="../../../zother5-Java-Interview/三、Java 集合.html">
+            
+                    
+                        <b>1.11.5.</b>
+                    
+                    三、Java 集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../../../zother5-Java-Interview/九、操作系统.html">
+            
+                <a href="../../../zother5-Java-Interview/九、操作系统.html">
+            
+                    
+                        <b>1.11.6.</b>
+                    
+                    九、操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="../../../zother5-Java-Interview/二、设计模式.html">
+            
+                <a href="../../../zother5-Java-Interview/二、设计模式.html">
+            
+                    
+                        <b>1.11.7.</b>
+                    
+                    二、设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="../../../zother5-Java-Interview/二十、Spring源码解析.html">
+            
+                <a href="../../../zother5-Java-Interview/二十、Spring源码解析.html">
+            
+                    
+                        <b>1.11.8.</b>
+                    
+                    二十、Spring源码解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="../../../zother5-Java-Interview/二十一、Tomcat源码解析.html">
+            
+                <a href="../../../zother5-Java-Interview/二十一、Tomcat源码解析.html">
+            
+                    
+                        <b>1.11.9.</b>
+                    
+                    二十一、Tomcat源码解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="../../../zother5-Java-Interview/五、JVM.html">
+            
+                <a href="../../../zother5-Java-Interview/五、JVM.html">
+            
+                    
+                        <b>1.11.10.</b>
+                    
+                    五、JVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.11" data-path="../../../zother5-Java-Interview/八、Mysql.html">
+            
+                <a href="../../../zother5-Java-Interview/八、Mysql.html">
+            
+                    
+                        <b>1.11.11.</b>
+                    
+                    八、Mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                        <b>1.12.</b>
+                    
+                    Zother 7 Java Interview
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" >
+            
+                <span>
+            
+                    
+                        <b>1.12.1.</b>
+                    
+                    Data Structures Algorithms
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1.1" data-path="../../../zother7-JavaInterview/dataStructures-algorithms/算法面试真题汇总.html">
+            
+                <a href="../../../zother7-JavaInterview/dataStructures-algorithms/算法面试真题汇总.html">
+            
+                    
+                        <b>1.12.1.1.</b>
+                    
+                    算法面试真题汇总
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.2" data-path="../../../zother7-JavaInterview/dataStructures-algorithms/算法题目难点题目总结.html">
+            
+                <a href="../../../zother7-JavaInterview/dataStructures-algorithms/算法题目难点题目总结.html">
+            
+                    
+                        <b>1.12.1.2.</b>
+                    
+                    算法题目难点题目总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.3" data-path="../../../zother7-JavaInterview/dataStructures-algorithms/递归套路总结.html">
+            
+                <a href="../../../zother7-JavaInterview/dataStructures-algorithms/递归套路总结.html">
+            
+                    
+                        <b>1.12.1.3.</b>
+                    
+                    递归套路总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" >
+            
+                <span>
+            
+                    
+                        <b>1.12.2.</b>
+                    
+                    Interview
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.2.1" data-path="../../../zother7-JavaInterview/interview/已投公司情况.html">
+            
+                <a href="../../../zother7-JavaInterview/interview/已投公司情况.html">
+            
+                    
+                        <b>1.12.2.1.</b>
+                    
+                    已投公司情况
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.2" data-path="../../../zother7-JavaInterview/interview/自我介绍和项目介绍.html">
+            
+                <a href="../../../zother7-JavaInterview/interview/自我介绍和项目介绍.html">
+            
+                    
+                        <b>1.12.2.2.</b>
+                    
+                    自我介绍和项目介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" >
+            
+                <span>
+            
+                    
+                        <b>1.12.3.</b>
+                    
+                    Interview Experience
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.3.1" data-path="../../../zother7-JavaInterview/interview-experience/各大公司面经.html">
+            
+                <a href="../../../zother7-JavaInterview/interview-experience/各大公司面经.html">
+            
+                    
+                        <b>1.12.3.1.</b>
+                    
+                    各大公司面经
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3.2" data-path="../../../zother7-JavaInterview/interview-experience/面试常见知识.html">
+            
+                <a href="../../../zother7-JavaInterview/interview-experience/面试常见知识.html">
+            
+                    
+                        <b>1.12.3.2.</b>
+                    
+                    面试常见知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3.3" data-path="../../../zother7-JavaInterview/interview-experience/面试常见问题分类汇总.html">
+            
+                <a href="../../../zother7-JavaInterview/interview-experience/面试常见问题分类汇总.html">
+            
+                    
+                        <b>1.12.3.3.</b>
+                    
+                    面试常见问题分类汇总
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" >
+            
+                <span>
+            
+                    
+                        <b>1.12.4.</b>
+                    
+                    Microservice
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.4.1" data-path="../../../zother7-JavaInterview/microservice/微服务相关资料.html">
+            
+                <a href="../../../zother7-JavaInterview/microservice/微服务相关资料.html">
+            
+                    
+                        <b>1.12.4.1.</b>
+                    
+                    微服务相关资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" >
+            
+                <span>
+            
+                    
+                        <b>1.12.5.</b>
+                    
+                    Network
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.5.1" data-path="../../../zother7-JavaInterview/network/http面试问题全解析.html">
+            
+                <a href="../../../zother7-JavaInterview/network/http面试问题全解析.html">
+            
+                    
+                        <b>1.12.5.1.</b>
+                    
+                    http面试问题全解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" >
+            
+                <span>
+            
+                    
+                        <b>1.12.6.</b>
+                    
+                    Operating System
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.6.1" data-path="../../../zother7-JavaInterview/operating-system/后端程序员必备的Linux基础知识.html">
+            
+                <a href="../../../zother7-JavaInterview/operating-system/后端程序员必备的Linux基础知识.html">
+            
+                    
+                        <b>1.12.6.1.</b>
+                    
+                    后端程序员必备的Linux基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6.2" data-path="../../../zother7-JavaInterview/operating-system/操作系统、计算机网络相关知识.html">
+            
+                <a href="../../../zother7-JavaInterview/operating-system/操作系统、计算机网络相关知识.html">
+            
+                    
+                        <b>1.12.6.2.</b>
+                    
+                    操作系统、计算机网络相关知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7" >
+            
+                <span>
+            
+                    
+                        <b>1.12.7.</b>
+                    
+                    Project
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.7.1" data-path="../../../zother7-JavaInterview/project/消息中间件面试题.html">
+            
+                <a href="../../../zother7-JavaInterview/project/消息中间件面试题.html">
+            
+                    
+                        <b>1.12.7.1.</b>
+                    
+                    消息中间件面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7.2" data-path="../../../zother7-JavaInterview/project/秒杀项目总结.html">
+            
+                <a href="../../../zother7-JavaInterview/project/秒杀项目总结.html">
+            
+                    
+                        <b>1.12.7.2.</b>
+                    
+                    秒杀项目总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../../../学习路线.html">
+            
+                <a href="../../../学习路线.html">
+            
+                    
+                        <b>1.13.</b>
+                    
+                    学习路线
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >jdk1.7ConcurrentHashMap源码</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p><strong>  </strong> <excerpt in="" index="" |="" 首页摘要=""></excerpt></p>
+<!-- more -->
+<h3 id="1&#x3001;"><a name="1&#x3001;" class="plugin-anchor" href="#1&#x3001;"><i class="fa fa-link" aria-hidden="true"></i></a>1&#x3001;</h3>
+<pre><code>/*
+ * ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
+/*
+ *
+ *
+ *
+ *
+ *
+ * Written by Doug Lea with assistance from members of JCP JSR-166
+ * Expert Group and released to the public domain, as explained at
+ * http://creativecommons.org/publicdomain/zero/1.0/
+ */
+
+package java.util.concurrent;
+import java.util.concurrent.locks.*;
+import java.util.*;
+import java.io.Serializable;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.ObjectStreamField;
+
+/**
+ * A hash table supporting full concurrency of retrievals and
+ * adjustable expected concurrency for updates. This class obeys the
+ * same functional specification as {@link java.util.Hashtable}, and
+ * includes versions of methods corresponding to each method of
+ * &lt;tt&gt;Hashtable&lt;/tt&gt;. However, even though all operations are
+ * thread-safe, retrieval operations do &lt;em&gt;not&lt;/em&gt; entail locking,
+ * and there is &lt;em&gt;not&lt;/em&gt; any support for locking the entire table
+ * in a way that prevents all access.  This class is fully
+ * interoperable with &lt;tt&gt;Hashtable&lt;/tt&gt; in programs that rely on its
+ * thread safety but not on its synchronization details.
+ *
+ * &lt;p&gt; Retrieval operations (including &lt;tt&gt;get&lt;/tt&gt;) generally do not
+ * block, so may overlap with update operations (including
+ * &lt;tt&gt;put&lt;/tt&gt; and &lt;tt&gt;remove&lt;/tt&gt;). Retrievals reflect the results
+ * of the most recently &lt;em&gt;completed&lt;/em&gt; update operations holding
+ * upon their onset.  For aggregate operations such as &lt;tt&gt;putAll&lt;/tt&gt;
+ * and &lt;tt&gt;clear&lt;/tt&gt;, concurrent retrievals may reflect insertion or
+ * removal of only some entries.  Similarly, Iterators and
+ * Enumerations return elements reflecting the state of the hash table
+ * at some point at or since the creation of the iterator/enumeration.
+ * They do &lt;em&gt;not&lt;/em&gt; throw {@link ConcurrentModificationException}.
+ * However, iterators are designed to be used by only one thread at a time.
+ *
+ * &lt;p&gt; The allowed concurrency among update operations is guided by
+ * the optional &lt;tt&gt;concurrencyLevel&lt;/tt&gt; constructor argument
+ * (default &lt;tt&gt;16&lt;/tt&gt;), which is used as a hint for internal sizing.  The
+ * table is internally partitioned to try to permit the indicated
+ * number of concurrent updates without contention. Because placement
+ * in hash tables is essentially random, the actual concurrency will
+ * vary.  Ideally, you should choose a value to accommodate as many
+ * threads as will ever concurrently modify the table. Using a
+ * significantly higher value than you need can waste space and time,
+ * and a significantly lower value can lead to thread contention. But
+ * overestimates and underestimates within an order of magnitude do
+ * not usually have much noticeable impact. A value of one is
+ * appropriate when it is known that only one thread will modify and
+ * all others will only read. Also, resizing this or any other kind of
+ * hash table is a relatively slow operation, so, when possible, it is
+ * a good idea to provide estimates of expected table sizes in
+ * constructors.
+ *
+ * &lt;p&gt;This class and its views and iterators implement all of the
+ * &lt;em&gt;optional&lt;/em&gt; methods of the {@link Map} and {@link Iterator}
+ * interfaces.
+ *
+ * &lt;p&gt; Like {@link Hashtable} but unlike {@link HashMap}, this class
+ * does &lt;em&gt;not&lt;/em&gt; allow &lt;tt&gt;null&lt;/tt&gt; to be used as a key or value.
+ *
+ * &lt;p&gt;This class is a member of the
+ * &lt;a href=&quot;{@docRoot}/../technotes/guides/collections/index.html&quot;&gt;
+ * Java Collections Framework&lt;/a&gt;.
+ *
+ * @since 1.5
+ * @author Doug Lea
+ * @param &lt;K&gt; the type of keys maintained by this map
+ * @param &lt;V&gt; the type of mapped values
+ */
+public class ConcurrentHashMap&lt;K, V&gt; extends AbstractMap&lt;K, V&gt;
+        implements ConcurrentMap&lt;K, V&gt;, Serializable {
+    private static final long serialVersionUID = 7249069246763182397L;
+
+    /*
+     * The basic strategy is to subdivide the table among Segments,
+     * each of which itself is a concurrently readable hash table.  To
+     * reduce footprint, all but one segments are constructed only
+     * when first needed (see ensureSegment). To maintain visibility
+     * in the presence of lazy construction, accesses to segments as
+     * well as elements of segment&apos;s table must use volatile access,
+     * which is done via Unsafe within methods segmentAt etc
+     * below. These provide the functionality of AtomicReferenceArrays
+     * but reduce the levels of indirection. Additionally,
+     * volatile-writes of table elements and entry &quot;next&quot; fields
+     * within locked operations use the cheaper &quot;lazySet&quot; forms of
+     * writes (via putOrderedObject) because these writes are always
+     * followed by lock releases that maintain sequential consistency
+     * of table updates.
+     *
+     * Historical note: The previous version of this class relied
+     * heavily on &quot;final&quot; fields, which avoided some volatile reads at
+     * the expense of a large initial footprint.  Some remnants of
+     * that design (including forced construction of segment 0) exist
+     * to ensure serialization compatibility.
+     */
+
+    /* ---------------- Constants -------------- */
+
+    /**
+     * The default initial capacity for this table,
+     * used when not otherwise specified in a constructor.
+     */
+    static final int DEFAULT_INITIAL_CAPACITY = 16;
+
+    /**
+     * The default load factor for this table, used when not
+     * otherwise specified in a constructor.
+     */
+    static final float DEFAULT_LOAD_FACTOR = 0.75f;
+
+    /**
+     * The default concurrency level for this table, used when not
+     * otherwise specified in a constructor.
+     */
+    static final int DEFAULT_CONCURRENCY_LEVEL = 16;
+
+    /**
+     * The maximum capacity, used if a higher value is implicitly
+     * specified by either of the constructors with arguments.  MUST
+     * be a power of two &lt;= 1&lt;&lt;30 to ensure that entries are indexable
+     * using ints.
+     */
+    static final int MAXIMUM_CAPACITY = 1 &lt;&lt; 30;
+
+    /**
+     * The minimum capacity for per-segment tables.  Must be a power
+     * of two, at least two to avoid immediate resizing on next use
+     * after lazy construction.
+     */
+    static final int MIN_SEGMENT_TABLE_CAPACITY = 2;
+
+    /**
+     * The maximum number of segments to allow; used to bound
+     * constructor arguments. Must be power of two less than 1 &lt;&lt; 24.
+     */
+    static final int MAX_SEGMENTS = 1 &lt;&lt; 16; // slightly conservative
+
+    /**
+     * Number of unsynchronized retries in size and containsValue
+     * methods before resorting to locking. This is used to avoid
+     * unbounded retries if tables undergo continuous modification
+     * which would make it impossible to obtain an accurate result.
+     */
+    static final int RETRIES_BEFORE_LOCK = 2;
+
+    /* ---------------- Fields -------------- */
+
+    /**
+     * holds values which can&apos;t be initialized until after VM is booted.
+     */
+    private static class Holder {
+
+        /**
+        * Enable alternative hashing of String keys?
+        *
+        * &lt;p&gt;Unlike the other hash map implementations we do not implement a
+        * threshold for regulating whether alternative hashing is used for
+        * String keys. Alternative hashing is either enabled for all instances
+        * or disabled for all instances.
+        */
+        static final boolean ALTERNATIVE_HASHING;
+
+        static {
+            // Use the &quot;threshold&quot; system property even though our threshold
+            // behaviour is &quot;ON&quot; or &quot;OFF&quot;.
+            String altThreshold = java.security.AccessController.doPrivileged(
+                new sun.security.action.GetPropertyAction(
+                    &quot;jdk.map.althashing.threshold&quot;));
+
+            int threshold;
+            try {
+                threshold = (null != altThreshold)
+                        ? Integer.parseInt(altThreshold)
+                        : Integer.MAX_VALUE;
+
+                // disable alternative hashing if -1
+                if (threshold == -1) {
+                    threshold = Integer.MAX_VALUE;
+                }
+
+                if (threshold &lt; 0) {
+                    throw new IllegalArgumentException(&quot;value must be positive integer.&quot;);
+                }
+            } catch(IllegalArgumentException failed) {
+                throw new Error(&quot;Illegal value for &apos;jdk.map.althashing.threshold&apos;&quot;, failed);
+            }
+            ALTERNATIVE_HASHING = threshold &lt;= MAXIMUM_CAPACITY;
+        }
+    }
+
+    /**
+     * A randomizing value associated with this instance that is applied to
+     * hash code of keys to make hash collisions harder to find.
+     */
+    private transient final int hashSeed = randomHashSeed(this);
+
+    private static int randomHashSeed(ConcurrentHashMap instance) {
+        if (sun.misc.VM.isBooted() &amp;&amp; Holder.ALTERNATIVE_HASHING) {
+            return sun.misc.Hashing.randomHashSeed(instance);
+        }
+
+        return 0;
+    }
+
+    /**
+     * Mask value for indexing into segments. The upper bits of a
+     * key&apos;s hash code are used to choose the segment.
+     */
+    final int segmentMask;
+
+    /**
+     * Shift value for indexing within segments.
+     */
+    final int segmentShift;
+
+    /**
+     * The segments, each of which is a specialized hash table.
+     */
+    final Segment&lt;K,V&gt;[] segments;
+
+    transient Set&lt;K&gt; keySet;
+    transient Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet;
+    transient Collection&lt;V&gt; values;
+
+    /**
+     * ConcurrentHashMap list entry. Note that this is never exported
+     * out as a user-visible Map.Entry.
+     */
+    static final class HashEntry&lt;K,V&gt; {
+        final int hash;
+        final K key;
+        volatile V value;
+        volatile HashEntry&lt;K,V&gt; next;
+
+        HashEntry(int hash, K key, V value, HashEntry&lt;K,V&gt; next) {
+            this.hash = hash;
+            this.key = key;
+            this.value = value;
+            this.next = next;
+        }
+
+        /**
+         * Sets next field with volatile write semantics.  (See above
+         * about use of putOrderedObject.)
+         */
+        final void setNext(HashEntry&lt;K,V&gt; n) {
+            UNSAFE.putOrderedObject(this, nextOffset, n);
+        }
+
+        // Unsafe mechanics
+        static final sun.misc.Unsafe UNSAFE;
+        static final long nextOffset;
+        static {
+            try {
+                UNSAFE = sun.misc.Unsafe.getUnsafe();
+                Class k = HashEntry.class;
+                nextOffset = UNSAFE.objectFieldOffset
+                    (k.getDeclaredField(&quot;next&quot;));
+            } catch (Exception e) {
+                throw new Error(e);
+            }
+        }
+    }
+
+    /**
+     * Gets the ith element of given table (if nonnull) with volatile
+     * read semantics. Note: This is manually integrated into a few
+     * performance-sensitive methods to reduce call overhead.
+     */
+    @SuppressWarnings(&quot;unchecked&quot;)
+    static final &lt;K,V&gt; HashEntry&lt;K,V&gt; entryAt(HashEntry&lt;K,V&gt;[] tab, int i) {
+        return (tab == null) ? null :
+            (HashEntry&lt;K,V&gt;) UNSAFE.getObjectVolatile
+            (tab, ((long)i &lt;&lt; TSHIFT) + TBASE);
+    }
+
+    /**
+     * Sets the ith element of given table, with volatile write
+     * semantics. (See above about use of putOrderedObject.)
+     */
+    static final &lt;K,V&gt; void setEntryAt(HashEntry&lt;K,V&gt;[] tab, int i,
+                                       HashEntry&lt;K,V&gt; e) {
+        UNSAFE.putOrderedObject(tab, ((long)i &lt;&lt; TSHIFT) + TBASE, e);
+    }
+
+    /**
+     * Applies a supplemental hash function to a given hashCode, which
+     * defends against poor quality hash functions.  This is critical
+     * because ConcurrentHashMap uses power-of-two length hash tables,
+     * that otherwise encounter collisions for hashCodes that do not
+     * differ in lower or upper bits.
+     */
+    private int hash(Object k) {
+        int h = hashSeed;
+
+        if ((0 != h) &amp;&amp; (k instanceof String)) {
+            return sun.misc.Hashing.stringHash32((String) k);
+        }
+
+        h ^= k.hashCode();
+
+        // Spread bits to regularize both segment and index locations,
+        // using variant of single-word Wang/Jenkins hash.
+        h += (h &lt;&lt;  15) ^ 0xffffcd7d;
+        h ^= (h &gt;&gt;&gt; 10);
+        h += (h &lt;&lt;   3);
+        h ^= (h &gt;&gt;&gt;  6);
+        h += (h &lt;&lt;   2) + (h &lt;&lt; 14);
+        return h ^ (h &gt;&gt;&gt; 16);
+    }
+
+    /**
+     * Segments are specialized versions of hash tables.  This
+     * subclasses from ReentrantLock opportunistically, just to
+     * simplify some locking and avoid separate construction.
+     */
+    static final class Segment&lt;K,V&gt; extends ReentrantLock implements Serializable {
+        /*
+         * Segments maintain a table of entry lists that are always
+         * kept in a consistent state, so can be read (via volatile
+         * reads of segments and tables) without locking.  This
+         * requires replicating nodes when necessary during table
+         * resizing, so the old lists can be traversed by readers
+         * still using old version of table.
+         *
+         * This class defines only mutative methods requiring locking.
+         * Except as noted, the methods of this class perform the
+         * per-segment versions of ConcurrentHashMap methods.  (Other
+         * methods are integrated directly into ConcurrentHashMap
+         * methods.) These mutative methods use a form of controlled
+         * spinning on contention via methods scanAndLock and
+         * scanAndLockForPut. These intersperse tryLocks with
+         * traversals to locate nodes.  The main benefit is to absorb
+         * cache misses (which are very common for hash tables) while
+         * obtaining locks so that traversal is faster once
+         * acquired. We do not actually use the found nodes since they
+         * must be re-acquired under lock anyway to ensure sequential
+         * consistency of updates (and in any case may be undetectably
+         * stale), but they will normally be much faster to re-locate.
+         * Also, scanAndLockForPut speculatively creates a fresh node
+         * to use in put if no node is found.
+         */
+
+        private static final long serialVersionUID = 2249069246763182397L;
+
+        /**
+         * The maximum number of times to tryLock in a prescan before
+         * possibly blocking on acquire in preparation for a locked
+         * segment operation. On multiprocessors, using a bounded
+         * number of retries maintains cache acquired while locating
+         * nodes.
+         */
+        static final int MAX_SCAN_RETRIES =
+            Runtime.getRuntime().availableProcessors() &gt; 1 ? 64 : 1;
+
+        /**
+         * The per-segment table. Elements are accessed via
+         * entryAt/setEntryAt providing volatile semantics.
+         */
+        transient volatile HashEntry&lt;K,V&gt;[] table;
+
+        /**
+         * The number of elements. Accessed only either within locks
+         * or among other volatile reads that maintain visibility.
+         */
+        transient int count;
+
+        /**
+         * The total number of mutative operations in this segment.
+         * Even though this may overflows 32 bits, it provides
+         * sufficient accuracy for stability checks in CHM isEmpty()
+         * and size() methods.  Accessed only either within locks or
+         * among other volatile reads that maintain visibility.
+         */
+        transient int modCount;
+
+        /**
+         * The table is rehashed when its size exceeds this threshold.
+         * (The value of this field is always &lt;tt&gt;(int)(capacity *
+         * loadFactor)&lt;/tt&gt;.)
+         */
+        transient int threshold;
+
+        /**
+         * The load factor for the hash table.  Even though this value
+         * is same for all segments, it is replicated to avoid needing
+         * links to outer object.
+         * @serial
+         */
+        final float loadFactor;
+
+        Segment(float lf, int threshold, HashEntry&lt;K,V&gt;[] tab) {
+            this.loadFactor = lf;
+            this.threshold = threshold;
+            this.table = tab;
+        }
+
+        final V put(K key, int hash, V value, boolean onlyIfAbsent) {
+            HashEntry&lt;K,V&gt; node = tryLock() ? null :
+                scanAndLockForPut(key, hash, value);
+            V oldValue;
+            try {
+                HashEntry&lt;K,V&gt;[] tab = table;
+                int index = (tab.length - 1) &amp; hash;
+                HashEntry&lt;K,V&gt; first = entryAt(tab, index);
+                for (HashEntry&lt;K,V&gt; e = first;;) {
+                    if (e != null) {
+                        K k;
+                        if ((k = e.key) == key ||
+                            (e.hash == hash &amp;&amp; key.equals(k))) {
+                            oldValue = e.value;
+                            if (!onlyIfAbsent) {
+                                e.value = value;
+                                ++modCount;
+                            }
+                            break;
+                        }
+                        e = e.next;
+                    }
+                    else {
+                        if (node != null)
+                            node.setNext(first);
+                        else
+                            node = new HashEntry&lt;K,V&gt;(hash, key, value, first);
+                        int c = count + 1;
+                        if (c &gt; threshold &amp;&amp; tab.length &lt; MAXIMUM_CAPACITY)
+                            rehash(node);
+                        else
+                            setEntryAt(tab, index, node);
+                        ++modCount;
+                        count = c;
+                        oldValue = null;
+                        break;
+                    }
+                }
+            } finally {
+                unlock();
+            }
+            return oldValue;
+        }
+
+        /**
+         * Doubles size of table and repacks entries, also adding the
+         * given node to new table
+         */
+        @SuppressWarnings(&quot;unchecked&quot;)
+        private void rehash(HashEntry&lt;K,V&gt; node) {
+            /*
+             * Reclassify nodes in each list to new table.  Because we
+             * are using power-of-two expansion, the elements from
+             * each bin must either stay at same index, or move with a
+             * power of two offset. We eliminate unnecessary node
+             * creation by catching cases where old nodes can be
+             * reused because their next fields won&apos;t change.
+             * Statistically, at the default threshold, only about
+             * one-sixth of them need cloning when a table
+             * doubles. The nodes they replace will be garbage
+             * collectable as soon as they are no longer referenced by
+             * any reader thread that may be in the midst of
+             * concurrently traversing table. Entry accesses use plain
+             * array indexing because they are followed by volatile
+             * table write.
+             */
+            HashEntry&lt;K,V&gt;[] oldTable = table;
+            int oldCapacity = oldTable.length;
+            int newCapacity = oldCapacity &lt;&lt; 1;
+            threshold = (int)(newCapacity * loadFactor);
+            HashEntry&lt;K,V&gt;[] newTable =
+                (HashEntry&lt;K,V&gt;[]) new HashEntry[newCapacity];
+            int sizeMask = newCapacity - 1;
+            for (int i = 0; i &lt; oldCapacity ; i++) {
+                HashEntry&lt;K,V&gt; e = oldTable[i];
+                if (e != null) {
+                    HashEntry&lt;K,V&gt; next = e.next;
+                    int idx = e.hash &amp; sizeMask;
+                    if (next == null)   //  Single node on list
+                        newTable[idx] = e;
+                    else { // Reuse consecutive sequence at same slot
+                        HashEntry&lt;K,V&gt; lastRun = e;
+                        int lastIdx = idx;
+                        for (HashEntry&lt;K,V&gt; last = next;
+                             last != null;
+                             last = last.next) {
+                            int k = last.hash &amp; sizeMask;
+                            if (k != lastIdx) {
+                                lastIdx = k;
+                                lastRun = last;
+                            }
+                        }
+                        newTable[lastIdx] = lastRun;
+                        // Clone remaining nodes
+                        for (HashEntry&lt;K,V&gt; p = e; p != lastRun; p = p.next) {
+                            V v = p.value;
+                            int h = p.hash;
+                            int k = h &amp; sizeMask;
+                            HashEntry&lt;K,V&gt; n = newTable[k];
+                            newTable[k] = new HashEntry&lt;K,V&gt;(h, p.key, v, n);
+                        }
+                    }
+                }
+            }
+            int nodeIndex = node.hash &amp; sizeMask; // add the new node
+            node.setNext(newTable[nodeIndex]);
+            newTable[nodeIndex] = node;
+            table = newTable;
+        }
+
+        /**
+         * Scans for a node containing given key while trying to
+         * acquire lock, creating and returning one if not found. Upon
+         * return, guarantees that lock is held. UNlike in most
+         * methods, calls to method equals are not screened: Since
+         * traversal speed doesn&apos;t matter, we might as well help warm
+         * up the associated code and accesses as well.
+         *
+         * @return a new node if key not found, else null
+         */
+        private HashEntry&lt;K,V&gt; scanAndLockForPut(K key, int hash, V value) {
+            HashEntry&lt;K,V&gt; first = entryForHash(this, hash);
+            HashEntry&lt;K,V&gt; e = first;
+            HashEntry&lt;K,V&gt; node = null;
+            int retries = -1; // negative while locating node
+            while (!tryLock()) {
+                HashEntry&lt;K,V&gt; f; // to recheck first below
+                if (retries &lt; 0) {
+                    if (e == null) {
+                        if (node == null) // speculatively create node
+                            node = new HashEntry&lt;K,V&gt;(hash, key, value, null);
+                        retries = 0;
+                    }
+                    else if (key.equals(e.key))
+                        retries = 0;
+                    else
+                        e = e.next;
+                }
+                else if (++retries &gt; MAX_SCAN_RETRIES) {
+                    lock();
+                    break;
+                }
+                else if ((retries &amp; 1) == 0 &amp;&amp;
+                         (f = entryForHash(this, hash)) != first) {
+                    e = first = f; // re-traverse if entry changed
+                    retries = -1;
+                }
+            }
+            return node;
+        }
+
+        /**
+         * Scans for a node containing the given key while trying to
+         * acquire lock for a remove or replace operation. Upon
+         * return, guarantees that lock is held.  Note that we must
+         * lock even if the key is not found, to ensure sequential
+         * consistency of updates.
+         */
+        private void scanAndLock(Object key, int hash) {
+            // similar to but simpler than scanAndLockForPut
+            HashEntry&lt;K,V&gt; first = entryForHash(this, hash);
+            HashEntry&lt;K,V&gt; e = first;
+            int retries = -1;
+            while (!tryLock()) {
+                HashEntry&lt;K,V&gt; f;
+                if (retries &lt; 0) {
+                    if (e == null || key.equals(e.key))
+                        retries = 0;
+                    else
+                        e = e.next;
+                }
+                else if (++retries &gt; MAX_SCAN_RETRIES) {
+                    lock();
+                    break;
+                }
+                else if ((retries &amp; 1) == 0 &amp;&amp;
+                         (f = entryForHash(this, hash)) != first) {
+                    e = first = f;
+                    retries = -1;
+                }
+            }
+        }
+
+        /**
+         * Remove; match on key only if value null, else match both.
+         */
+        final V remove(Object key, int hash, Object value) {
+            if (!tryLock())
+                scanAndLock(key, hash);
+            V oldValue = null;
+            try {
+                HashEntry&lt;K,V&gt;[] tab = table;
+                int index = (tab.length - 1) &amp; hash;
+                HashEntry&lt;K,V&gt; e = entryAt(tab, index);
+                HashEntry&lt;K,V&gt; pred = null;
+                while (e != null) {
+                    K k;
+                    HashEntry&lt;K,V&gt; next = e.next;
+                    if ((k = e.key) == key ||
+                        (e.hash == hash &amp;&amp; key.equals(k))) {
+                        V v = e.value;
+                        if (value == null || value == v || value.equals(v)) {
+                            if (pred == null)
+                                setEntryAt(tab, index, next);
+                            else
+                                pred.setNext(next);
+                            ++modCount;
+                            --count;
+                            oldValue = v;
+                        }
+                        break;
+                    }
+                    pred = e;
+                    e = next;
+                }
+            } finally {
+                unlock();
+            }
+            return oldValue;
+        }
+
+        final boolean replace(K key, int hash, V oldValue, V newValue) {
+            if (!tryLock())
+                scanAndLock(key, hash);
+            boolean replaced = false;
+            try {
+                HashEntry&lt;K,V&gt; e;
+                for (e = entryForHash(this, hash); e != null; e = e.next) {
+                    K k;
+                    if ((k = e.key) == key ||
+                        (e.hash == hash &amp;&amp; key.equals(k))) {
+                        if (oldValue.equals(e.value)) {
+                            e.value = newValue;
+                            ++modCount;
+                            replaced = true;
+                        }
+                        break;
+                    }
+                }
+            } finally {
+                unlock();
+            }
+            return replaced;
+        }
+
+        final V replace(K key, int hash, V value) {
+            if (!tryLock())
+                scanAndLock(key, hash);
+            V oldValue = null;
+            try {
+                HashEntry&lt;K,V&gt; e;
+                for (e = entryForHash(this, hash); e != null; e = e.next) {
+                    K k;
+                    if ((k = e.key) == key ||
+                        (e.hash == hash &amp;&amp; key.equals(k))) {
+                        oldValue = e.value;
+                        e.value = value;
+                        ++modCount;
+                        break;
+                    }
+                }
+            } finally {
+                unlock();
+            }
+            return oldValue;
+        }
+
+        final void clear() {
+            lock();
+            try {
+                HashEntry&lt;K,V&gt;[] tab = table;
+                for (int i = 0; i &lt; tab.length ; i++)
+                    setEntryAt(tab, i, null);
+                ++modCount;
+                count = 0;
+            } finally {
+                unlock();
+            }
+        }
+    }
+
+    // Accessing segments
+
+    /**
+     * Gets the jth element of given segment array (if nonnull) with
+     * volatile element access semantics via Unsafe. (The null check
+     * can trigger harmlessly only during deserialization.) Note:
+     * because each element of segments array is set only once (using
+     * fully ordered writes), some performance-sensitive methods rely
+     * on this method only as a recheck upon null reads.
+     */
+    @SuppressWarnings(&quot;unchecked&quot;)
+    static final &lt;K,V&gt; Segment&lt;K,V&gt; segmentAt(Segment&lt;K,V&gt;[] ss, int j) {
+        long u = (j &lt;&lt; SSHIFT) + SBASE;
+        return ss == null ? null :
+            (Segment&lt;K,V&gt;) UNSAFE.getObjectVolatile(ss, u);
+    }
+
+    /**
+     * Returns the segment for the given index, creating it and
+     * recording in segment table (via CAS) if not already present.
+     *
+     * @param k the index
+     * @return the segment
+     */
+    @SuppressWarnings(&quot;unchecked&quot;)
+    private Segment&lt;K,V&gt; ensureSegment(int k) {
+        final Segment&lt;K,V&gt;[] ss = this.segments;
+        long u = (k &lt;&lt; SSHIFT) + SBASE; // raw offset
+        Segment&lt;K,V&gt; seg;
+        if ((seg = (Segment&lt;K,V&gt;)UNSAFE.getObjectVolatile(ss, u)) == null) {
+            Segment&lt;K,V&gt; proto = ss[0]; // use segment 0 as prototype
+            int cap = proto.table.length;
+            float lf = proto.loadFactor;
+            int threshold = (int)(cap * lf);
+            HashEntry&lt;K,V&gt;[] tab = (HashEntry&lt;K,V&gt;[])new HashEntry[cap];
+            if ((seg = (Segment&lt;K,V&gt;)UNSAFE.getObjectVolatile(ss, u))
+                == null) { // recheck
+                Segment&lt;K,V&gt; s = new Segment&lt;K,V&gt;(lf, threshold, tab);
+                while ((seg = (Segment&lt;K,V&gt;)UNSAFE.getObjectVolatile(ss, u))
+                       == null) {
+                    if (UNSAFE.compareAndSwapObject(ss, u, null, seg = s))
+                        break;
+                }
+            }
+        }
+        return seg;
+    }
+
+    // Hash-based segment and entry accesses
+
+    /**
+     * Get the segment for the given hash
+     */
+    @SuppressWarnings(&quot;unchecked&quot;)
+    private Segment&lt;K,V&gt; segmentForHash(int h) {
+        long u = (((h &gt;&gt;&gt; segmentShift) &amp; segmentMask) &lt;&lt; SSHIFT) + SBASE;
+        return (Segment&lt;K,V&gt;) UNSAFE.getObjectVolatile(segments, u);
+    }
+
+    /**
+     * Gets the table entry for the given segment and hash
+     */
+    @SuppressWarnings(&quot;unchecked&quot;)
+    static final &lt;K,V&gt; HashEntry&lt;K,V&gt; entryForHash(Segment&lt;K,V&gt; seg, int h) {
+        HashEntry&lt;K,V&gt;[] tab;
+        return (seg == null || (tab = seg.table) == null) ? null :
+            (HashEntry&lt;K,V&gt;) UNSAFE.getObjectVolatile
+            (tab, ((long)(((tab.length - 1) &amp; h)) &lt;&lt; TSHIFT) + TBASE);
+    }
+
+    /* ---------------- Public operations -------------- */
+
+    /**
+     * Creates a new, empty map with the specified initial
+     * capacity, load factor and concurrency level.
+     *
+     * @param initialCapacity the initial capacity. The implementation
+     * performs internal sizing to accommodate this many elements.
+     * @param loadFactor  the load factor threshold, used to control resizing.
+     * Resizing may be performed when the average number of elements per
+     * bin exceeds this threshold.
+     * @param concurrencyLevel the estimated number of concurrently
+     * updating threads. The implementation performs internal sizing
+     * to try to accommodate this many threads.
+     * @throws IllegalArgumentException if the initial capacity is
+     * negative or the load factor or concurrencyLevel are
+     * nonpositive.
+     */
+    @SuppressWarnings(&quot;unchecked&quot;)
+    public ConcurrentHashMap(int initialCapacity,
+                             float loadFactor, int concurrencyLevel) {
+        if (!(loadFactor &gt; 0) || initialCapacity &lt; 0 || concurrencyLevel &lt;= 0)
+            throw new IllegalArgumentException();
+        if (concurrencyLevel &gt; MAX_SEGMENTS)
+            concurrencyLevel = MAX_SEGMENTS;
+        // Find power-of-two sizes best matching arguments
+        int sshift = 0;
+        int ssize = 1;
+        while (ssize &lt; concurrencyLevel) {
+            ++sshift;
+            ssize &lt;&lt;= 1;
+        }
+        this.segmentShift = 32 - sshift;
+        this.segmentMask = ssize - 1;
+        if (initialCapacity &gt; MAXIMUM_CAPACITY)
+            initialCapacity = MAXIMUM_CAPACITY;
+        int c = initialCapacity / ssize;
+        if (c * ssize &lt; initialCapacity)
+            ++c;
+        int cap = MIN_SEGMENT_TABLE_CAPACITY;
+        while (cap &lt; c)
+            cap &lt;&lt;= 1;
+        // create segments and segments[0]
+        Segment&lt;K,V&gt; s0 =
+            new Segment&lt;K,V&gt;(loadFactor, (int)(cap * loadFactor),
+                             (HashEntry&lt;K,V&gt;[])new HashEntry[cap]);
+        Segment&lt;K,V&gt;[] ss = (Segment&lt;K,V&gt;[])new Segment[ssize];
+        UNSAFE.putOrderedObject(ss, SBASE, s0); // ordered write of segments[0]
+        this.segments = ss;
+    }
+
+    /**
+     * Creates a new, empty map with the specified initial capacity
+     * and load factor and with the default concurrencyLevel (16).
+     *
+     * @param initialCapacity The implementation performs internal
+     * sizing to accommodate this many elements.
+     * @param loadFactor  the load factor threshold, used to control resizing.
+     * Resizing may be performed when the average number of elements per
+     * bin exceeds this threshold.
+     * @throws IllegalArgumentException if the initial capacity of
+     * elements is negative or the load factor is nonpositive
+     *
+     * @since 1.6
+     */
+    public ConcurrentHashMap(int initialCapacity, float loadFactor) {
+        this(initialCapacity, loadFactor, DEFAULT_CONCURRENCY_LEVEL);
+    }
+
+    /**
+     * Creates a new, empty map with the specified initial capacity,
+     * and with default load factor (0.75) and concurrencyLevel (16).
+     *
+     * @param initialCapacity the initial capacity. The implementation
+     * performs internal sizing to accommodate this many elements.
+     * @throws IllegalArgumentException if the initial capacity of
+     * elements is negative.
+     */
+    public ConcurrentHashMap(int initialCapacity) {
+        this(initialCapacity, DEFAULT_LOAD_FACTOR, DEFAULT_CONCURRENCY_LEVEL);
+    }
+
+    /**
+     * Creates a new, empty map with a default initial capacity (16),
+     * load factor (0.75) and concurrencyLevel (16).
+     */
+    public ConcurrentHashMap() {
+        this(DEFAULT_INITIAL_CAPACITY, DEFAULT_LOAD_FACTOR, DEFAULT_CONCURRENCY_LEVEL);
+    }
+
+    /**
+     * Creates a new map with the same mappings as the given map.
+     * The map is created with a capacity of 1.5 times the number
+     * of mappings in the given map or 16 (whichever is greater),
+     * and a default load factor (0.75) and concurrencyLevel (16).
+     *
+     * @param m the map
+     */
+    public ConcurrentHashMap(Map&lt;? extends K, ? extends V&gt; m) {
+        this(Math.max((int) (m.size() / DEFAULT_LOAD_FACTOR) + 1,
+                      DEFAULT_INITIAL_CAPACITY),
+             DEFAULT_LOAD_FACTOR, DEFAULT_CONCURRENCY_LEVEL);
+        putAll(m);
+    }
+
+    /**
+     * Returns &lt;tt&gt;true&lt;/tt&gt; if this map contains no key-value mappings.
+     *
+     * @return &lt;tt&gt;true&lt;/tt&gt; if this map contains no key-value mappings
+     */
+    public boolean isEmpty() {
+        /*
+         * Sum per-segment modCounts to avoid mis-reporting when
+         * elements are concurrently added and removed in one segment
+         * while checking another, in which case the table was never
+         * actually empty at any point. (The sum ensures accuracy up
+         * through at least 1&lt;&lt;31 per-segment modifications before
+         * recheck.)  Methods size() and containsValue() use similar
+         * constructions for stability checks.
+         */
+        long sum = 0L;
+        final Segment&lt;K,V&gt;[] segments = this.segments;
+        for (int j = 0; j &lt; segments.length; ++j) {
+            Segment&lt;K,V&gt; seg = segmentAt(segments, j);
+            if (seg != null) {
+                if (seg.count != 0)
+                    return false;
+                sum += seg.modCount;
+            }
+        }
+        if (sum != 0L) { // recheck unless no modifications
+            for (int j = 0; j &lt; segments.length; ++j) {
+                Segment&lt;K,V&gt; seg = segmentAt(segments, j);
+                if (seg != null) {
+                    if (seg.count != 0)
+                        return false;
+                    sum -= seg.modCount;
+                }
+            }
+            if (sum != 0L)
+                return false;
+        }
+        return true;
+    }
+
+    /**
+     * Returns the number of key-value mappings in this map.  If the
+     * map contains more than &lt;tt&gt;Integer.MAX_VALUE&lt;/tt&gt; elements, returns
+     * &lt;tt&gt;Integer.MAX_VALUE&lt;/tt&gt;.
+     *
+     * @return the number of key-value mappings in this map
+     */
+    public int size() {
+        // Try a few times to get accurate count. On failure due to
+        // continuous async changes in table, resort to locking.
+        final Segment&lt;K,V&gt;[] segments = this.segments;
+        int size;
+        boolean overflow; // true if size overflows 32 bits
+        long sum;         // sum of modCounts
+        long last = 0L;   // previous sum
+        int retries = -1; // first iteration isn&apos;t retry
+        try {
+            for (;;) {
+                if (retries++ == RETRIES_BEFORE_LOCK) {
+                    for (int j = 0; j &lt; segments.length; ++j)
+                        ensureSegment(j).lock(); // force creation
+                }
+                sum = 0L;
+                size = 0;
+                overflow = false;
+                for (int j = 0; j &lt; segments.length; ++j) {
+                    Segment&lt;K,V&gt; seg = segmentAt(segments, j);
+                    if (seg != null) {
+                        sum += seg.modCount;
+                        int c = seg.count;
+                        if (c &lt; 0 || (size += c) &lt; 0)
+                            overflow = true;
+                    }
+                }
+                if (sum == last)
+                    break;
+                last = sum;
+            }
+        } finally {
+            if (retries &gt; RETRIES_BEFORE_LOCK) {
+                for (int j = 0; j &lt; segments.length; ++j)
+                    segmentAt(segments, j).unlock();
+            }
+        }
+        return overflow ? Integer.MAX_VALUE : size;
+    }
+
+    /**
+     * Returns the value to which the specified key is mapped,
+     * or {@code null} if this map contains no mapping for the key.
+     *
+     * &lt;p&gt;More formally, if this map contains a mapping from a key
+     * {@code k} to a value {@code v} such that {@code key.equals(k)},
+     * then this method returns {@code v}; otherwise it returns
+     * {@code null}.  (There can be at most one such mapping.)
+     *
+     * @throws NullPointerException if the specified key is null
+     */
+    public V get(Object key) {
+        Segment&lt;K,V&gt; s; // manually integrate access methods to reduce overhead
+        HashEntry&lt;K,V&gt;[] tab;
+        int h = hash(key);
+        long u = (((h &gt;&gt;&gt; segmentShift) &amp; segmentMask) &lt;&lt; SSHIFT) + SBASE;
+        if ((s = (Segment&lt;K,V&gt;)UNSAFE.getObjectVolatile(segments, u)) != null &amp;&amp;
+            (tab = s.table) != null) {
+            for (HashEntry&lt;K,V&gt; e = (HashEntry&lt;K,V&gt;) UNSAFE.getObjectVolatile
+                     (tab, ((long)(((tab.length - 1) &amp; h)) &lt;&lt; TSHIFT) + TBASE);
+                 e != null; e = e.next) {
+                K k;
+                if ((k = e.key) == key || (e.hash == h &amp;&amp; key.equals(k)))
+                    return e.value;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Tests if the specified object is a key in this table.
+     *
+     * @param  key   possible key
+     * @return &lt;tt&gt;true&lt;/tt&gt; if and only if the specified object
+     *         is a key in this table, as determined by the
+     *         &lt;tt&gt;equals&lt;/tt&gt; method; &lt;tt&gt;false&lt;/tt&gt; otherwise.
+     * @throws NullPointerException if the specified key is null
+     */
+    @SuppressWarnings(&quot;unchecked&quot;)
+    public boolean containsKey(Object key) {
+        Segment&lt;K,V&gt; s; // same as get() except no need for volatile value read
+        HashEntry&lt;K,V&gt;[] tab;
+        int h = hash(key);
+        long u = (((h &gt;&gt;&gt; segmentShift) &amp; segmentMask) &lt;&lt; SSHIFT) + SBASE;
+        if ((s = (Segment&lt;K,V&gt;)UNSAFE.getObjectVolatile(segments, u)) != null &amp;&amp;
+            (tab = s.table) != null) {
+            for (HashEntry&lt;K,V&gt; e = (HashEntry&lt;K,V&gt;) UNSAFE.getObjectVolatile
+                     (tab, ((long)(((tab.length - 1) &amp; h)) &lt;&lt; TSHIFT) + TBASE);
+                 e != null; e = e.next) {
+                K k;
+                if ((k = e.key) == key || (e.hash == h &amp;&amp; key.equals(k)))
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Returns &lt;tt&gt;true&lt;/tt&gt; if this map maps one or more keys to the
+     * specified value. Note: This method requires a full internal
+     * traversal of the hash table, and so is much slower than
+     * method &lt;tt&gt;containsKey&lt;/tt&gt;.
+     *
+     * @param value value whose presence in this map is to be tested
+     * @return &lt;tt&gt;true&lt;/tt&gt; if this map maps one or more keys to the
+     *         specified value
+     * @throws NullPointerException if the specified value is null
+     */
+    public boolean containsValue(Object value) {
+        // Same idea as size()
+        if (value == null)
+            throw new NullPointerException();
+        final Segment&lt;K,V&gt;[] segments = this.segments;
+        boolean found = false;
+        long last = 0;
+        int retries = -1;
+        try {
+            outer: for (;;) {
+                if (retries++ == RETRIES_BEFORE_LOCK) {
+                    for (int j = 0; j &lt; segments.length; ++j)
+                        ensureSegment(j).lock(); // force creation
+                }
+                long hashSum = 0L;
+                int sum = 0;
+                for (int j = 0; j &lt; segments.length; ++j) {
+                    HashEntry&lt;K,V&gt;[] tab;
+                    Segment&lt;K,V&gt; seg = segmentAt(segments, j);
+                    if (seg != null &amp;&amp; (tab = seg.table) != null) {
+                        for (int i = 0 ; i &lt; tab.length; i++) {
+                            HashEntry&lt;K,V&gt; e;
+                            for (e = entryAt(tab, i); e != null; e = e.next) {
+                                V v = e.value;
+                                if (v != null &amp;&amp; value.equals(v)) {
+                                    found = true;
+                                    break outer;
+                                }
+                            }
+                        }
+                        sum += seg.modCount;
+                    }
+                }
+                if (retries &gt; 0 &amp;&amp; sum == last)
+                    break;
+                last = sum;
+            }
+        } finally {
+            if (retries &gt; RETRIES_BEFORE_LOCK) {
+                for (int j = 0; j &lt; segments.length; ++j)
+                    segmentAt(segments, j).unlock();
+            }
+        }
+        return found;
+    }
+
+    /**
+     * Legacy method testing if some key maps into the specified value
+     * in this table.  This method is identical in functionality to
+     * {@link #containsValue}, and exists solely to ensure
+     * full compatibility with class {@link java.util.Hashtable},
+     * which supported this method prior to introduction of the
+     * Java Collections framework.
+
+     * @param  value a value to search for
+     * @return &lt;tt&gt;true&lt;/tt&gt; if and only if some key maps to the
+     *         &lt;tt&gt;value&lt;/tt&gt; argument in this table as
+     *         determined by the &lt;tt&gt;equals&lt;/tt&gt; method;
+     *         &lt;tt&gt;false&lt;/tt&gt; otherwise
+     * @throws NullPointerException if the specified value is null
+     */
+    public boolean contains(Object value) {
+        return containsValue(value);
+    }
+
+    /**
+     * Maps the specified key to the specified value in this table.
+     * Neither the key nor the value can be null.
+     *
+     * &lt;p&gt; The value can be retrieved by calling the &lt;tt&gt;get&lt;/tt&gt; method
+     * with a key that is equal to the original key.
+     *
+     * @param key key with which the specified value is to be associated
+     * @param value value to be associated with the specified key
+     * @return the previous value associated with &lt;tt&gt;key&lt;/tt&gt;, or
+     *         &lt;tt&gt;null&lt;/tt&gt; if there was no mapping for &lt;tt&gt;key&lt;/tt&gt;
+     * @throws NullPointerException if the specified key or value is null
+     */
+    @SuppressWarnings(&quot;unchecked&quot;)
+    public V put(K key, V value) {
+        Segment&lt;K,V&gt; s;
+        if (value == null)
+            throw new NullPointerException();
+        int hash = hash(key);
+        int j = (hash &gt;&gt;&gt; segmentShift) &amp; segmentMask;
+        if ((s = (Segment&lt;K,V&gt;)UNSAFE.getObject          // nonvolatile; recheck
+             (segments, (j &lt;&lt; SSHIFT) + SBASE)) == null) //  in ensureSegment
+            s = ensureSegment(j);
+        return s.put(key, hash, value, false);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @return the previous value associated with the specified key,
+     *         or &lt;tt&gt;null&lt;/tt&gt; if there was no mapping for the key
+     * @throws NullPointerException if the specified key or value is null
+     */
+    @SuppressWarnings(&quot;unchecked&quot;)
+    public V putIfAbsent(K key, V value) {
+        Segment&lt;K,V&gt; s;
+        if (value == null)
+            throw new NullPointerException();
+        int hash = hash(key);
+        int j = (hash &gt;&gt;&gt; segmentShift) &amp; segmentMask;
+        if ((s = (Segment&lt;K,V&gt;)UNSAFE.getObject
+             (segments, (j &lt;&lt; SSHIFT) + SBASE)) == null)
+            s = ensureSegment(j);
+        return s.put(key, hash, value, true);
+    }
+
+    /**
+     * Copies all of the mappings from the specified map to this one.
+     * These mappings replace any mappings that this map had for any of the
+     * keys currently in the specified map.
+     *
+     * @param m mappings to be stored in this map
+     */
+    public void putAll(Map&lt;? extends K, ? extends V&gt; m) {
+        for (Map.Entry&lt;? extends K, ? extends V&gt; e : m.entrySet())
+            put(e.getKey(), e.getValue());
+    }
+
+    /**
+     * Removes the key (and its corresponding value) from this map.
+     * This method does nothing if the key is not in the map.
+     *
+     * @param  key the key that needs to be removed
+     * @return the previous value associated with &lt;tt&gt;key&lt;/tt&gt;, or
+     *         &lt;tt&gt;null&lt;/tt&gt; if there was no mapping for &lt;tt&gt;key&lt;/tt&gt;
+     * @throws NullPointerException if the specified key is null
+     */
+    public V remove(Object key) {
+        int hash = hash(key);
+        Segment&lt;K,V&gt; s = segmentForHash(hash);
+        return s == null ? null : s.remove(key, hash, null);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @throws NullPointerException if the specified key is null
+     */
+    public boolean remove(Object key, Object value) {
+        int hash = hash(key);
+        Segment&lt;K,V&gt; s;
+        return value != null &amp;&amp; (s = segmentForHash(hash)) != null &amp;&amp;
+            s.remove(key, hash, value) != null;
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @throws NullPointerException if any of the arguments are null
+     */
+    public boolean replace(K key, V oldValue, V newValue) {
+        int hash = hash(key);
+        if (oldValue == null || newValue == null)
+            throw new NullPointerException();
+        Segment&lt;K,V&gt; s = segmentForHash(hash);
+        return s != null &amp;&amp; s.replace(key, hash, oldValue, newValue);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @return the previous value associated with the specified key,
+     *         or &lt;tt&gt;null&lt;/tt&gt; if there was no mapping for the key
+     * @throws NullPointerException if the specified key or value is null
+     */
+    public V replace(K key, V value) {
+        int hash = hash(key);
+        if (value == null)
+            throw new NullPointerException();
+        Segment&lt;K,V&gt; s = segmentForHash(hash);
+        return s == null ? null : s.replace(key, hash, value);
+    }
+
+    /**
+     * Removes all of the mappings from this map.
+     */
+    public void clear() {
+        final Segment&lt;K,V&gt;[] segments = this.segments;
+        for (int j = 0; j &lt; segments.length; ++j) {
+            Segment&lt;K,V&gt; s = segmentAt(segments, j);
+            if (s != null)
+                s.clear();
+        }
+    }
+
+    /**
+     * Returns a {@link Set} view of the keys contained in this map.
+     * The set is backed by the map, so changes to the map are
+     * reflected in the set, and vice-versa.  The set supports element
+     * removal, which removes the corresponding mapping from this map,
+     * via the &lt;tt&gt;Iterator.remove&lt;/tt&gt;, &lt;tt&gt;Set.remove&lt;/tt&gt;,
+     * &lt;tt&gt;removeAll&lt;/tt&gt;, &lt;tt&gt;retainAll&lt;/tt&gt;, and &lt;tt&gt;clear&lt;/tt&gt;
+     * operations.  It does not support the &lt;tt&gt;add&lt;/tt&gt; or
+     * &lt;tt&gt;addAll&lt;/tt&gt; operations.
+     *
+     * &lt;p&gt;The view&apos;s &lt;tt&gt;iterator&lt;/tt&gt; is a &quot;weakly consistent&quot; iterator
+     * that will never throw {@link ConcurrentModificationException},
+     * and guarantees to traverse elements as they existed upon
+     * construction of the iterator, and may (but is not guaranteed to)
+     * reflect any modifications subsequent to construction.
+     */
+    public Set&lt;K&gt; keySet() {
+        Set&lt;K&gt; ks = keySet;
+        return (ks != null) ? ks : (keySet = new KeySet());
+    }
+
+    /**
+     * Returns a {@link Collection} view of the values contained in this map.
+     * The collection is backed by the map, so changes to the map are
+     * reflected in the collection, and vice-versa.  The collection
+     * supports element removal, which removes the corresponding
+     * mapping from this map, via the &lt;tt&gt;Iterator.remove&lt;/tt&gt;,
+     * &lt;tt&gt;Collection.remove&lt;/tt&gt;, &lt;tt&gt;removeAll&lt;/tt&gt;,
+     * &lt;tt&gt;retainAll&lt;/tt&gt;, and &lt;tt&gt;clear&lt;/tt&gt; operations.  It does not
+     * support the &lt;tt&gt;add&lt;/tt&gt; or &lt;tt&gt;addAll&lt;/tt&gt; operations.
+     *
+     * &lt;p&gt;The view&apos;s &lt;tt&gt;iterator&lt;/tt&gt; is a &quot;weakly consistent&quot; iterator
+     * that will never throw {@link ConcurrentModificationException},
+     * and guarantees to traverse elements as they existed upon
+     * construction of the iterator, and may (but is not guaranteed to)
+     * reflect any modifications subsequent to construction.
+     */
+    public Collection&lt;V&gt; values() {
+        Collection&lt;V&gt; vs = values;
+        return (vs != null) ? vs : (values = new Values());
+    }
+
+    /**
+     * Returns a {@link Set} view of the mappings contained in this map.
+     * The set is backed by the map, so changes to the map are
+     * reflected in the set, and vice-versa.  The set supports element
+     * removal, which removes the corresponding mapping from the map,
+     * via the &lt;tt&gt;Iterator.remove&lt;/tt&gt;, &lt;tt&gt;Set.remove&lt;/tt&gt;,
+     * &lt;tt&gt;removeAll&lt;/tt&gt;, &lt;tt&gt;retainAll&lt;/tt&gt;, and &lt;tt&gt;clear&lt;/tt&gt;
+     * operations.  It does not support the &lt;tt&gt;add&lt;/tt&gt; or
+     * &lt;tt&gt;addAll&lt;/tt&gt; operations.
+     *
+     * &lt;p&gt;The view&apos;s &lt;tt&gt;iterator&lt;/tt&gt; is a &quot;weakly consistent&quot; iterator
+     * that will never throw {@link ConcurrentModificationException},
+     * and guarantees to traverse elements as they existed upon
+     * construction of the iterator, and may (but is not guaranteed to)
+     * reflect any modifications subsequent to construction.
+     */
+    public Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet() {
+        Set&lt;Map.Entry&lt;K,V&gt;&gt; es = entrySet;
+        return (es != null) ? es : (entrySet = new EntrySet());
+    }
+
+    /**
+     * Returns an enumeration of the keys in this table.
+     *
+     * @return an enumeration of the keys in this table
+     * @see #keySet()
+     */
+    public Enumeration&lt;K&gt; keys() {
+        return new KeyIterator();
+    }
+
+    /**
+     * Returns an enumeration of the values in this table.
+     *
+     * @return an enumeration of the values in this table
+     * @see #values()
+     */
+    public Enumeration&lt;V&gt; elements() {
+        return new ValueIterator();
+    }
+
+    /* ---------------- Iterator Support -------------- */
+
+    abstract class HashIterator {
+        int nextSegmentIndex;
+        int nextTableIndex;
+        HashEntry&lt;K,V&gt;[] currentTable;
+        HashEntry&lt;K, V&gt; nextEntry;
+        HashEntry&lt;K, V&gt; lastReturned;
+
+        HashIterator() {
+            nextSegmentIndex = segments.length - 1;
+            nextTableIndex = -1;
+            advance();
+        }
+
+        /**
+         * Set nextEntry to first node of next non-empty table
+         * (in backwards order, to simplify checks).
+         */
+        final void advance() {
+            for (;;) {
+                if (nextTableIndex &gt;= 0) {
+                    if ((nextEntry = entryAt(currentTable,
+                                             nextTableIndex--)) != null)
+                        break;
+                }
+                else if (nextSegmentIndex &gt;= 0) {
+                    Segment&lt;K,V&gt; seg = segmentAt(segments, nextSegmentIndex--);
+                    if (seg != null &amp;&amp; (currentTable = seg.table) != null)
+                        nextTableIndex = currentTable.length - 1;
+                }
+                else
+                    break;
+            }
+        }
+
+        final HashEntry&lt;K,V&gt; nextEntry() {
+            HashEntry&lt;K,V&gt; e = nextEntry;
+            if (e == null)
+                throw new NoSuchElementException();
+            lastReturned = e; // cannot assign until after null check
+            if ((nextEntry = e.next) == null)
+                advance();
+            return e;
+        }
+
+        public final boolean hasNext() { return nextEntry != null; }
+        public final boolean hasMoreElements() { return nextEntry != null; }
+
+        public final void remove() {
+            if (lastReturned == null)
+                throw new IllegalStateException();
+            ConcurrentHashMap.this.remove(lastReturned.key);
+            lastReturned = null;
+        }
+    }
+
+    final class KeyIterator
+        extends HashIterator
+        implements Iterator&lt;K&gt;, Enumeration&lt;K&gt;
+    {
+        public final K next()        { return super.nextEntry().key; }
+        public final K nextElement() { return super.nextEntry().key; }
+    }
+
+    final class ValueIterator
+        extends HashIterator
+        implements Iterator&lt;V&gt;, Enumeration&lt;V&gt;
+    {
+        public final V next()        { return super.nextEntry().value; }
+        public final V nextElement() { return super.nextEntry().value; }
+    }
+
+    /**
+     * Custom Entry class used by EntryIterator.next(), that relays
+     * setValue changes to the underlying map.
+     */
+    final class WriteThroughEntry
+        extends AbstractMap.SimpleEntry&lt;K,V&gt;
+    {
+        WriteThroughEntry(K k, V v) {
+            super(k,v);
+        }
+
+        /**
+         * Set our entry&apos;s value and write through to the map. The
+         * value to return is somewhat arbitrary here. Since a
+         * WriteThroughEntry does not necessarily track asynchronous
+         * changes, the most recent &quot;previous&quot; value could be
+         * different from what we return (or could even have been
+         * removed in which case the put will re-establish). We do not
+         * and cannot guarantee more.
+         */
+        public V setValue(V value) {
+            if (value == null) throw new NullPointerException();
+            V v = super.setValue(value);
+            ConcurrentHashMap.this.put(getKey(), value);
+            return v;
+        }
+    }
+
+    final class EntryIterator
+        extends HashIterator
+        implements Iterator&lt;Entry&lt;K,V&gt;&gt;
+    {
+        public Map.Entry&lt;K,V&gt; next() {
+            HashEntry&lt;K,V&gt; e = super.nextEntry();
+            return new WriteThroughEntry(e.key, e.value);
+        }
+    }
+
+    final class KeySet extends AbstractSet&lt;K&gt; {
+        public Iterator&lt;K&gt; iterator() {
+            return new KeyIterator();
+        }
+        public int size() {
+            return ConcurrentHashMap.this.size();
+        }
+        public boolean isEmpty() {
+            return ConcurrentHashMap.this.isEmpty();
+        }
+        public boolean contains(Object o) {
+            return ConcurrentHashMap.this.containsKey(o);
+        }
+        public boolean remove(Object o) {
+            return ConcurrentHashMap.this.remove(o) != null;
+        }
+        public void clear() {
+            ConcurrentHashMap.this.clear();
+        }
+    }
+
+    final class Values extends AbstractCollection&lt;V&gt; {
+        public Iterator&lt;V&gt; iterator() {
+            return new ValueIterator();
+        }
+        public int size() {
+            return ConcurrentHashMap.this.size();
+        }
+        public boolean isEmpty() {
+            return ConcurrentHashMap.this.isEmpty();
+        }
+        public boolean contains(Object o) {
+            return ConcurrentHashMap.this.containsValue(o);
+        }
+        public void clear() {
+            ConcurrentHashMap.this.clear();
+        }
+    }
+
+    final class EntrySet extends AbstractSet&lt;Map.Entry&lt;K,V&gt;&gt; {
+        public Iterator&lt;Map.Entry&lt;K,V&gt;&gt; iterator() {
+            return new EntryIterator();
+        }
+        public boolean contains(Object o) {
+            if (!(o instanceof Map.Entry))
+                return false;
+            Map.Entry&lt;?,?&gt; e = (Map.Entry&lt;?,?&gt;)o;
+            V v = ConcurrentHashMap.this.get(e.getKey());
+            return v != null &amp;&amp; v.equals(e.getValue());
+        }
+        public boolean remove(Object o) {
+            if (!(o instanceof Map.Entry))
+                return false;
+            Map.Entry&lt;?,?&gt; e = (Map.Entry&lt;?,?&gt;)o;
+            return ConcurrentHashMap.this.remove(e.getKey(), e.getValue());
+        }
+        public int size() {
+            return ConcurrentHashMap.this.size();
+        }
+        public boolean isEmpty() {
+            return ConcurrentHashMap.this.isEmpty();
+        }
+        public void clear() {
+            ConcurrentHashMap.this.clear();
+        }
+    }
+
+    /* ---------------- Serialization Support -------------- */
+
+    /**
+     * Save the state of the &lt;tt&gt;ConcurrentHashMap&lt;/tt&gt; instance to a
+     * stream (i.e., serialize it).
+     * @param s the stream
+     * @serialData
+     * the key (Object) and value (Object)
+     * for each key-value mapping, followed by a null pair.
+     * The key-value mappings are emitted in no particular order.
+     */
+    private void writeObject(java.io.ObjectOutputStream s) throws IOException {
+        // force all segments for serialization compatibility
+        for (int k = 0; k &lt; segments.length; ++k)
+            ensureSegment(k);
+        s.defaultWriteObject();
+
+        final Segment&lt;K,V&gt;[] segments = this.segments;
+        for (int k = 0; k &lt; segments.length; ++k) {
+            Segment&lt;K,V&gt; seg = segmentAt(segments, k);
+            seg.lock();
+            try {
+                HashEntry&lt;K,V&gt;[] tab = seg.table;
+                for (int i = 0; i &lt; tab.length; ++i) {
+                    HashEntry&lt;K,V&gt; e;
+                    for (e = entryAt(tab, i); e != null; e = e.next) {
+                        s.writeObject(e.key);
+                        s.writeObject(e.value);
+                    }
+                }
+            } finally {
+                seg.unlock();
+            }
+        }
+        s.writeObject(null);
+        s.writeObject(null);
+    }
+
+    /**
+     * Reconstitute the &lt;tt&gt;ConcurrentHashMap&lt;/tt&gt; instance from a
+     * stream (i.e., deserialize it).
+     * @param s the stream
+     */
+    @SuppressWarnings(&quot;unchecked&quot;)
+    private void readObject(java.io.ObjectInputStream s)
+        throws IOException, ClassNotFoundException {
+        // Don&apos;t call defaultReadObject()
+        ObjectInputStream.GetField oisFields = s.readFields();
+        final Segment&lt;K,V&gt;[] oisSegments = (Segment&lt;K,V&gt;[])oisFields.get(&quot;segments&quot;, null);
+
+        final int ssize = oisSegments.length;
+        if (ssize &lt; 1 || ssize &gt; MAX_SEGMENTS
+            || (ssize &amp; (ssize-1)) != 0 )  // ssize not power of two
+            throw new java.io.InvalidObjectException(&quot;Bad number of segments:&quot;
+                                                     + ssize);
+        int sshift = 0, ssizeTmp = ssize;
+        while (ssizeTmp &gt; 1) {
+            ++sshift;
+            ssizeTmp &gt;&gt;&gt;= 1;
+        }
+        UNSAFE.putIntVolatile(this, SEGSHIFT_OFFSET, 32 - sshift);
+        UNSAFE.putIntVolatile(this, SEGMASK_OFFSET, ssize - 1);
+        UNSAFE.putObjectVolatile(this, SEGMENTS_OFFSET, oisSegments);
+
+        // set hashMask
+        UNSAFE.putIntVolatile(this, HASHSEED_OFFSET, randomHashSeed(this));
+
+        // Re-initialize segments to be minimally sized, and let grow.
+        int cap = MIN_SEGMENT_TABLE_CAPACITY;
+        final Segment&lt;K,V&gt;[] segments = this.segments;
+        for (int k = 0; k &lt; segments.length; ++k) {
+            Segment&lt;K,V&gt; seg = segments[k];
+            if (seg != null) {
+                seg.threshold = (int)(cap * seg.loadFactor);
+                seg.table = (HashEntry&lt;K,V&gt;[]) new HashEntry[cap];
+            }
+        }
+
+        // Read the keys and values, and put the mappings in the table
+        for (;;) {
+            K key = (K) s.readObject();
+            V value = (V) s.readObject();
+            if (key == null)
+                break;
+            put(key, value);
+        }
+    }
+
+    // Unsafe mechanics
+    private static final sun.misc.Unsafe UNSAFE;
+    private static final long SBASE;
+    private static final int SSHIFT;
+    private static final long TBASE;
+    private static final int TSHIFT;
+    private static final long HASHSEED_OFFSET;
+    private static final long SEGSHIFT_OFFSET;
+    private static final long SEGMASK_OFFSET;
+    private static final long SEGMENTS_OFFSET;
+
+    static {
+        int ss, ts;
+        try {
+            UNSAFE = sun.misc.Unsafe.getUnsafe();
+            Class tc = HashEntry[].class;
+            Class sc = Segment[].class;
+            TBASE = UNSAFE.arrayBaseOffset(tc);
+            SBASE = UNSAFE.arrayBaseOffset(sc);
+            ts = UNSAFE.arrayIndexScale(tc);
+            ss = UNSAFE.arrayIndexScale(sc);
+            HASHSEED_OFFSET = UNSAFE.objectFieldOffset(
+                ConcurrentHashMap.class.getDeclaredField(&quot;hashSeed&quot;));
+            SEGSHIFT_OFFSET = UNSAFE.objectFieldOffset(
+                ConcurrentHashMap.class.getDeclaredField(&quot;segmentShift&quot;));
+            SEGMASK_OFFSET = UNSAFE.objectFieldOffset(
+                ConcurrentHashMap.class.getDeclaredField(&quot;segmentMask&quot;));
+            SEGMENTS_OFFSET = UNSAFE.objectFieldOffset(
+                ConcurrentHashMap.class.getDeclaredField(&quot;segments&quot;));
+        } catch (Exception e) {
+            throw new Error(e);
+        }
+        if ((ss &amp; (ss-1)) != 0 || (ts &amp; (ts-1)) != 0)
+            throw new Error(&quot;data type scale not a power of two&quot;);
+        SSHIFT = 31 - Integer.numberOfLeadingZeros(ss);
+        TSHIFT = 31 - Integer.numberOfLeadingZeros(ts);
+    }
+
+}
+</code></pre><h4 id="2&#x3001;"><a name="2&#x3001;" class="plugin-anchor" href="#2&#x3001;"><i class="fa fa-link" aria-hidden="true"></i></a>2&#x3001;</h4>
+<pre><code>
+
+</code></pre><ol>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+<h4 id="3&#x3001;"><a name="3&#x3001;" class="plugin-anchor" href="#3&#x3001;"><i class="fa fa-link" aria-hidden="true"></i></a>3&#x3001;</h4>
+<ol>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+<pre><code>
+
+</code></pre>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="jdk1.7HashMap源码.html" class="navigation navigation-next navigation-unique" aria-label="Next page: jdk1.7HashMap源码">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"jdk1.7ConcurrentHashMap源码","tags":[],"date":"2020-06-06T21:47:47.000Z","categories":null,"level":"1.2.1.2.1","depth":4,"next":{"title":"jdk1.7HashMap源码","level":"1.2.1.2.2","depth":4,"path":"base/collection/hashmap源码/jdk1.7HashMap源码.md","ref":"base/collection/hashmap源码/jdk1.7HashMap源码.md","articles":[]},"previous":{"title":"hashmap源码","level":"1.2.1.2","depth":3,"ref":"","articles":[{"title":"jdk1.7ConcurrentHashMap源码","level":"1.2.1.2.1","depth":4,"path":"base/collection/hashmap源码/jdk1.7ConcurrentHashMap源码.md","ref":"base/collection/hashmap源码/jdk1.7ConcurrentHashMap源码.md","articles":[]},{"title":"jdk1.7HashMap源码","level":"1.2.1.2.2","depth":4,"path":"base/collection/hashmap源码/jdk1.7HashMap源码.md","ref":"base/collection/hashmap源码/jdk1.7HashMap源码.md","articles":[]},{"title":"jdk1.8ConcurrentHashMap源码","level":"1.2.1.2.3","depth":4,"path":"base/collection/hashmap源码/jdk1.8ConcurrentHashMap源码.md","ref":"base/collection/hashmap源码/jdk1.8ConcurrentHashMap源码.md","articles":[]},{"title":"jdk1.8HashMap源码","level":"1.2.1.2.4","depth":4,"path":"base/collection/hashmap源码/jdk1.8HashMap源码.md","ref":"base/collection/hashmap源码/jdk1.8HashMap源码.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["github","-highlight","baidu","splitter","sitemap","back-to-top-button","code","splitter","-lunr","-search","search-pro","theme-comscore","popup","hide-element","anchors","nocache","page-toc-button"],"ignores":["friends","tags","categories","about"],"root":".deploy/content","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"nocache":{},"github":{"url":"https://github.com/zhaoda/webpack-handbook"},"editlink":{"base":"https://github.com/zhaoda/webpack-handbook/blob/master/content","label":"编辑本页"},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://zhaoda.net/"},"theme-comscore":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"baidu":{"token":"a9787f0ab45d5e237bab522431d0a7ec"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"SUMMARY.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java实用笔记","language":"zh-hans","output.name":"site","catalog":["./source/_posts"],"links":{"sidebar":{"Home":"http://blog.liangqingxiang.top/"}},"gitbook":"3.2.3","description":"学习笔记"},"file":{"path":"base/collection/hashmap源码/jdk1.7ConcurrentHashMap源码.md","mtime":"2020-06-14T08:02:21.108Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-14T08:06:28.960Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-nocache/nocache.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
