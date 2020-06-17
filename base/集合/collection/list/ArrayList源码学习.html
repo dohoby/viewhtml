@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>jdk1.8ConcurrentHashMap源码分析 · java实用笔记</title>
+        <title>Test · java实用笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -12,40 +12,40 @@
         
         
     
-    <link rel="stylesheet" href="../../../gitbook/style.css">
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
 
     
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-splitter/splitter.css">
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-code/plugin.css">
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-code/plugin.css">
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search-pro/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-anchors/plugin.css">
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-theme-comscore/test.css">
                 
             
         
@@ -77,14 +77,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="jdk1.8HashMap源码分析.html" />
-    
-    
-    <link rel="prev" href="jdk1.7hashmap源码分析.html" />
     
 
 
@@ -123,9 +119,9 @@
         
         
     
-        <li class="chapter " data-level="1.1" data-path="../../../">
+        <li class="chapter " data-level="1.1" data-path="../../../../">
             
-                <a href="../../../">
+                <a href="../../../../">
             
                     
                         <b>1.1.</b>
@@ -161,7 +157,7 @@
                     
                         <b>1.2.1.</b>
                     
-                    Collection
+                    String
             
                 </span>
             
@@ -170,30 +166,14 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1.1" >
+        <li class="chapter " data-level="1.2.1.1" data-path="../../../string/StringBuffer和StringBuilder.html">
             
-                <span>
+                <a href="../../../string/StringBuffer和StringBuilder.html">
             
                     
                         <b>1.2.1.1.</b>
                     
-                    Hashmap
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.1.1.1" data-path="ConcurrentHashMap相关.html">
-            
-                <a href="ConcurrentHashMap相关.html">
-            
-                    
-                        <b>1.2.1.1.1.</b>
-                    
-                    ConcurrentHashMap相关
+                    集合StringBuffer和StringBuilder
             
                 </a>
             
@@ -201,185 +181,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.1.2" data-path="HashMap相关.html">
+        <li class="chapter " data-level="1.2.1.2" data-path="../../../string/string源码.html">
             
-                <a href="HashMap相关.html">
-            
-                    
-                        <b>1.2.1.1.2.</b>
-                    
-                    HashMap相关
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.3" data-path="HashMap相关2.html">
-            
-                <a href="HashMap相关2.html">
-            
-                    
-                        <b>1.2.1.1.3.</b>
-                    
-                    HashMap相关2
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.4" data-path="HashMap相关tx.html">
-            
-                <a href="HashMap相关tx.html">
-            
-                    
-                        <b>1.2.1.1.4.</b>
-                    
-                    HashMap相关tx
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.5" data-path="jdk1.7hashmap源码分析.html">
-            
-                <a href="jdk1.7hashmap源码分析.html">
-            
-                    
-                        <b>1.2.1.1.5.</b>
-                    
-                    jdk1.7hashmap源码分析
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.2.1.1.6" data-path="jdk1.8ConcurrentHashMap源码分析.html">
-            
-                <a href="jdk1.8ConcurrentHashMap源码分析.html">
-            
-                    
-                        <b>1.2.1.1.6.</b>
-                    
-                    jdk1.8ConcurrentHashMap源码分析
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.7" data-path="jdk1.8HashMap源码分析.html">
-            
-                <a href="jdk1.8HashMap源码分析.html">
-            
-                    
-                        <b>1.2.1.1.7.</b>
-                    
-                    jdk1.8hashmap源码分析
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.8" data-path="Jdk1.8源码解析HashMap-putTreeVal.html">
-            
-                <a href="Jdk1.8源码解析HashMap-putTreeVal.html">
-            
-                    
-                        <b>1.2.1.1.8.</b>
-                    
-                    Jdk1.8源码解析-java.util.HashMap#putTreeVal
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.9" data-path="Jdk1.8源码解析HashMap-resize.html">
-            
-                <a href="Jdk1.8源码解析HashMap-resize.html">
-            
-                    
-                        <b>1.2.1.1.9.</b>
-                    
-                    Jdk1.8源码解析-java.util.HashMap#resize
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.10" data-path="Jdk1.8源码解析HashMap-treeifyBin.html">
-            
-                <a href="Jdk1.8源码解析HashMap-treeifyBin.html">
-            
-                    
-                        <b>1.2.1.1.10.</b>
-                    
-                    Jdk1.8源码解析-java.util.HashMap#treeifyBin链表转化为红黑树
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.11" data-path="其他map.html">
-            
-                <a href="其他map.html">
-            
-                    
-                        <b>1.2.1.1.11.</b>
-                    
-                    其他map
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.2" >
-            
-                <span>
+                <a href="../../../string/string源码.html">
             
                     
                         <b>1.2.1.2.</b>
                     
-                    hashmap源码
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.1.2.1" data-path="../hashmap源码/jdk1.7ConcurrentHashMap源码.html">
-            
-                <a href="../hashmap源码/jdk1.7ConcurrentHashMap源码.html">
-            
-                    
-                        <b>1.2.1.2.1.</b>
-                    
-                    jdk1.7ConcurrentHashMap源码
+                    string源码
             
                 </a>
             
@@ -387,80 +196,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.2.2" data-path="../hashmap源码/jdk1.7HashMap源码.html">
+        <li class="chapter " data-level="1.2.1.3" data-path="../../../string/string源码学习.html">
             
-                <a href="../hashmap源码/jdk1.7HashMap源码.html">
-            
-                    
-                        <b>1.2.1.2.2.</b>
-                    
-                    jdk1.7HashMap源码
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.2.3" data-path="../hashmap源码/jdk1.8ConcurrentHashMap源码.html">
-            
-                <a href="../hashmap源码/jdk1.8ConcurrentHashMap源码.html">
-            
-                    
-                        <b>1.2.1.2.3.</b>
-                    
-                    jdk1.8ConcurrentHashMap源码
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.2.4" data-path="../hashmap源码/jdk1.8HashMap源码.html">
-            
-                <a href="../hashmap源码/jdk1.8HashMap源码.html">
-            
-                    
-                        <b>1.2.1.2.4.</b>
-                    
-                    jdk1.8HashMap源码
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.3" >
-            
-                <span>
+                <a href="../../../string/string源码学习.html">
             
                     
                         <b>1.2.1.3.</b>
                     
-                    Hashset
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.1.3.1" data-path="../hashset/hashset源码学习.html">
-            
-                <a href="../hashset/hashset源码学习.html">
-            
-                    
-                        <b>1.2.1.3.1.</b>
-                    
-                    hashset源码学习
+                    string源码学习
             
                 </a>
             
@@ -468,19 +211,29 @@
             
         </li>
     
-
-            </ul>
+        <li class="chapter " data-level="1.2.1.4" data-path="../../../string/字符串string学习.html">
             
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.4" data-path="../集合类学习.html">
-            
-                <a href="../集合类学习.html">
+                <a href="../../../string/字符串string学习.html">
             
                     
                         <b>1.2.1.4.</b>
                     
-                    集合类学习
+                    字符串string学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../../../string/字符串string学习2-lg.html">
+            
+                <a href="../../../string/字符串string学习2-lg.html">
+            
+                    
+                        <b>1.2.1.5.</b>
+                    
+                    字符串string学习2
             
                 </a>
             
@@ -500,7 +253,7 @@
                     
                         <b>1.2.2.</b>
                     
-                    String
+                    算法
             
                 </span>
             
@@ -509,14 +262,30 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.2.1" data-path="../../string/StringBuffer和StringBuilder.html">
+        <li class="chapter " data-level="1.2.2.1" >
             
-                <a href="../../string/StringBuffer和StringBuilder.html">
+                <span>
             
                     
                         <b>1.2.2.1.</b>
                     
-                    集合StringBuffer和StringBuilder
+                    排序
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1.1" data-path="../../../算法/排序/快速排序.html">
+            
+                <a href="../../../算法/排序/快速排序.html">
+            
+                    
+                        <b>1.2.2.1.1.</b>
+                    
+                    Test
             
                 </a>
             
@@ -524,63 +293,8 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.2" data-path="../../string/string源码.html">
-            
-                <a href="../../string/string源码.html">
-            
-                    
-                        <b>1.2.2.2.</b>
-                    
-                    string源码
-            
-                </a>
-            
 
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.2.3" data-path="../../string/string源码学习.html">
-            
-                <a href="../../string/string源码学习.html">
-            
-                    
-                        <b>1.2.2.3.</b>
-                    
-                    string源码学习
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.2.4" data-path="../../string/字符串string学习.html">
-            
-                <a href="../../string/字符串string学习.html">
-            
-                    
-                        <b>1.2.2.4.</b>
-                    
-                    字符串string学习
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.2.5" data-path="../../string/字符串string学习2-lg.html">
-            
-                <a href="../../string/字符串string学习2-lg.html">
-            
-                    
-                        <b>1.2.2.5.</b>
-                    
-                    字符串string学习2
-            
-                </a>
-            
-
+            </ul>
             
         </li>
     
@@ -605,9 +319,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.3.1" data-path="../../线程/ThreadPoolExecutor.html">
+        <li class="chapter " data-level="1.2.3.1" data-path="../../../线程/ThreadPoolExecutor.html">
             
-                <a href="../../线程/ThreadPoolExecutor.html">
+                <a href="../../../线程/ThreadPoolExecutor.html">
             
                     
                         <b>1.2.3.1.</b>
@@ -620,9 +334,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3.2" data-path="../../线程/线程的状态-lg.html">
+        <li class="chapter " data-level="1.2.3.2" data-path="../../../线程/线程的状态-lg.html">
             
-                <a href="../../线程/线程的状态-lg.html">
+                <a href="../../../线程/线程的状态-lg.html">
             
                     
                         <b>1.2.3.2.</b>
@@ -656,9 +370,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.4.1" data-path="../../网络/http和tcp.html">
+        <li class="chapter " data-level="1.2.4.1" data-path="../../../网络/http和tcp.html">
             
-                <a href="../../网络/http和tcp.html">
+                <a href="../../../网络/http和tcp.html">
             
                     
                         <b>1.2.4.1.</b>
@@ -676,12 +390,60 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5" data-path="../../test.html">
+        <li class="chapter " data-level="1.2.5" >
             
-                <a href="../../test.html">
+                <span>
             
                     
                         <b>1.2.5.</b>
+                    
+                    集合
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" >
+            
+                <span>
+            
+                    
+                        <b>1.2.5.1.</b>
+                    
+                    Collection
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.1" >
+            
+                <span>
+            
+                    
+                        <b>1.2.5.1.1.</b>
+                    
+                    List
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.5.1.1.1" data-path="ArrayList源码学习.html">
+            
+                <a href="ArrayList源码学习.html">
+            
+                    
+                        <b>1.2.5.1.1.1.</b>
                     
                     Test
             
@@ -691,12 +453,375 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.6" data-path="../../基本类型装箱拆箱.html">
+
+            </ul>
             
-                <a href="../../基本类型装箱拆箱.html">
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.5.1.2.</b>
+                    
+                    Set
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.2.1" data-path="../set/hashset源码学习.html">
+            
+                <a href="../set/hashset源码学习.html">
+            
+                    
+                        <b>1.2.5.1.2.1.</b>
+                    
+                    hashset源码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.2" data-path="../set/TreeSet源码学习.html">
+            
+                <a href="../set/TreeSet源码学习.html">
+            
+                    
+                        <b>1.2.5.1.2.2.</b>
+                    
+                    TreeSet源码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.5.2.</b>
+                    
+                    Hashmap
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.2.1" data-path="../../hashmap/ConcurrentHashMap相关.html">
+            
+                <a href="../../hashmap/ConcurrentHashMap相关.html">
+            
+                    
+                        <b>1.2.5.2.1.</b>
+                    
+                    ConcurrentHashMap相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.2" data-path="../../hashmap/HashMap相关.html">
+            
+                <a href="../../hashmap/HashMap相关.html">
+            
+                    
+                        <b>1.2.5.2.2.</b>
+                    
+                    HashMap相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.3" data-path="../../hashmap/HashMap相关2.html">
+            
+                <a href="../../hashmap/HashMap相关2.html">
+            
+                    
+                        <b>1.2.5.2.3.</b>
+                    
+                    HashMap相关2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.4" data-path="../../hashmap/HashMap相关tx.html">
+            
+                <a href="../../hashmap/HashMap相关tx.html">
+            
+                    
+                        <b>1.2.5.2.4.</b>
+                    
+                    HashMap相关tx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.5" data-path="../../hashmap/jdk1.7hashmap源码分析.html">
+            
+                <a href="../../hashmap/jdk1.7hashmap源码分析.html">
+            
+                    
+                        <b>1.2.5.2.5.</b>
+                    
+                    jdk1.7hashmap源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.6" data-path="../../hashmap/jdk1.8ConcurrentHashMap源码分析.html">
+            
+                <a href="../../hashmap/jdk1.8ConcurrentHashMap源码分析.html">
+            
+                    
+                        <b>1.2.5.2.6.</b>
+                    
+                    jdk1.8ConcurrentHashMap源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.7" data-path="../../hashmap/jdk1.8HashMap源码分析.html">
+            
+                <a href="../../hashmap/jdk1.8HashMap源码分析.html">
+            
+                    
+                        <b>1.2.5.2.7.</b>
+                    
+                    jdk1.8hashmap源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.8" data-path="../../hashmap/Jdk1.8源码解析HashMap-putTreeVal.html">
+            
+                <a href="../../hashmap/Jdk1.8源码解析HashMap-putTreeVal.html">
+            
+                    
+                        <b>1.2.5.2.8.</b>
+                    
+                    Jdk1.8源码解析-java.util.HashMap#putTreeVal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.9" data-path="../../hashmap/Jdk1.8源码解析HashMap-resize.html">
+            
+                <a href="../../hashmap/Jdk1.8源码解析HashMap-resize.html">
+            
+                    
+                        <b>1.2.5.2.9.</b>
+                    
+                    Jdk1.8源码解析-java.util.HashMap#resize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.10" data-path="../../hashmap/Jdk1.8源码解析HashMap-treeifyBin.html">
+            
+                <a href="../../hashmap/Jdk1.8源码解析HashMap-treeifyBin.html">
+            
+                    
+                        <b>1.2.5.2.10.</b>
+                    
+                    Jdk1.8源码解析-java.util.HashMap#treeifyBin链表转化为红黑树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.11" data-path="../../hashmap/LinkedHashMap.html">
+            
+                <a href="../../hashmap/LinkedHashMap.html">
+            
+                    
+                        <b>1.2.5.2.11.</b>
+                    
+                    Linked Hash Map
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" >
+            
+                <span>
+            
+                    
+                        <b>1.2.5.3.</b>
+                    
+                    hashmap源码
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.3.1" data-path="../../hashmap源码/jdk1.7ConcurrentHashMap源码.html">
+            
+                <a href="../../hashmap源码/jdk1.7ConcurrentHashMap源码.html">
+            
+                    
+                        <b>1.2.5.3.1.</b>
+                    
+                    jdk1.7ConcurrentHashMap源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.2" data-path="../../hashmap源码/jdk1.7HashMap源码.html">
+            
+                <a href="../../hashmap源码/jdk1.7HashMap源码.html">
+            
+                    
+                        <b>1.2.5.3.2.</b>
+                    
+                    jdk1.7HashMap源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.3" data-path="../../hashmap源码/jdk1.8ConcurrentHashMap源码.html">
+            
+                <a href="../../hashmap源码/jdk1.8ConcurrentHashMap源码.html">
+            
+                    
+                        <b>1.2.5.3.3.</b>
+                    
+                    jdk1.8ConcurrentHashMap源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.4" data-path="../../hashmap源码/jdk1.8HashMap源码.html">
+            
+                <a href="../../hashmap源码/jdk1.8HashMap源码.html">
+            
+                    
+                        <b>1.2.5.3.4.</b>
+                    
+                    jdk1.8HashMap源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" data-path="../../集合类学习.html">
+            
+                <a href="../../集合类学习.html">
+            
+                    
+                        <b>1.2.5.4.</b>
+                    
+                    集合类学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../../test.html">
+            
+                <a href="../../../test.html">
             
                     
                         <b>1.2.6.</b>
+                    
+                    Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../../基本类型装箱拆箱.html">
+            
+                <a href="../../../基本类型装箱拆箱.html">
+            
+                    
+                        <b>1.2.7.</b>
                     
                     集合基本类型装箱拆箱
             
@@ -706,12 +831,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="../../基本类型装箱拆箱2.html">
+        <li class="chapter " data-level="1.2.8" data-path="../../../基本类型装箱拆箱2.html">
             
-                <a href="../../基本类型装箱拆箱2.html">
+                <a href="../../../基本类型装箱拆箱2.html">
             
                     
-                        <b>1.2.7.</b>
+                        <b>1.2.8.</b>
                     
                     基本类型装箱拆箱2
             
@@ -758,9 +883,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1.1" data-path="../../../designPatterns/spring/spring享元模式.html">
+        <li class="chapter " data-level="1.3.1.1" data-path="../../../../designPatterns/spring/spring享元模式.html">
             
-                <a href="../../../designPatterns/spring/spring享元模式.html">
+                <a href="../../../../designPatterns/spring/spring享元模式.html">
             
                     
                         <b>1.3.1.1.</b>
@@ -773,9 +898,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.1.2" data-path="../../../designPatterns/spring/spring代理模式.html">
+        <li class="chapter " data-level="1.3.1.2" data-path="../../../../designPatterns/spring/spring代理模式.html">
             
-                <a href="../../../designPatterns/spring/spring代理模式.html">
+                <a href="../../../../designPatterns/spring/spring代理模式.html">
             
                     
                         <b>1.3.1.2.</b>
@@ -788,9 +913,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.1.3" data-path="../../../designPatterns/spring/spring策略模式.html">
+        <li class="chapter " data-level="1.3.1.3" data-path="../../../../designPatterns/spring/spring策略模式.html">
             
-                <a href="../../../designPatterns/spring/spring策略模式.html">
+                <a href="../../../../designPatterns/spring/spring策略模式.html">
             
                     
                         <b>1.3.1.3.</b>
@@ -829,9 +954,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../../../jvm/jvm内存模型.html">
+        <li class="chapter " data-level="1.4.1" data-path="../../../../jvm/jvm内存模型.html">
             
-                <a href="../../../jvm/jvm内存模型.html">
+                <a href="../../../../jvm/jvm内存模型.html">
             
                     
                         <b>1.4.1.</b>
@@ -844,14 +969,29 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../../../jvm/jvm参数.html">
+        <li class="chapter " data-level="1.4.2" data-path="../../../../jvm/jvm参数.html">
             
-                <a href="../../../jvm/jvm参数.html">
+                <a href="../../../../jvm/jvm参数.html">
             
                     
                         <b>1.4.2.</b>
                     
                     jvm参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../../../jvm/jvm相关.html">
+            
+                <a href="../../../../jvm/jvm相关.html">
+            
+                    
+                        <b>1.4.3.</b>
+                    
+                    jvm相关
             
                 </a>
             
@@ -896,9 +1036,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1.1" data-path="../../../mybatis/mybatis分页插件/mybatis插件引入.html">
+        <li class="chapter " data-level="1.5.1.1" data-path="../../../../mybatis/mybatis分页插件/mybatis插件引入.html">
             
-                <a href="../../../mybatis/mybatis分页插件/mybatis插件引入.html">
+                <a href="../../../../mybatis/mybatis分页插件/mybatis插件引入.html">
             
                     
                         <b>1.5.1.1.</b>
@@ -911,9 +1051,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.1.2" data-path="../../../mybatis/mybatis分页插件/Page.html">
+        <li class="chapter " data-level="1.5.1.2" data-path="../../../../mybatis/mybatis分页插件/Page.html">
             
-                <a href="../../../mybatis/mybatis分页插件/Page.html">
+                <a href="../../../../mybatis/mybatis分页插件/Page.html">
             
                     
                         <b>1.5.1.2.</b>
@@ -926,9 +1066,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.1.3" data-path="../../../mybatis/mybatis分页插件/PagePlugin.html">
+        <li class="chapter " data-level="1.5.1.3" data-path="../../../../mybatis/mybatis分页插件/PagePlugin.html">
             
-                <a href="../../../mybatis/mybatis分页插件/PagePlugin.html">
+                <a href="../../../../mybatis/mybatis分页插件/PagePlugin.html">
             
                     
                         <b>1.5.1.3.</b>
@@ -941,9 +1081,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.1.4" data-path="../../../mybatis/mybatis分页插件/ReflectHelper.html">
+        <li class="chapter " data-level="1.5.1.4" data-path="../../../../mybatis/mybatis分页插件/ReflectHelper.html">
             
-                <a href="../../../mybatis/mybatis分页插件/ReflectHelper.html">
+                <a href="../../../../mybatis/mybatis分页插件/ReflectHelper.html">
             
                     
                         <b>1.5.1.4.</b>
@@ -977,9 +1117,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.2.1" data-path="../../../mybatis/mybatis分页插件2/mybatis插件引入.html">
+        <li class="chapter " data-level="1.5.2.1" data-path="../../../../mybatis/mybatis分页插件2/mybatis插件引入.html">
             
-                <a href="../../../mybatis/mybatis分页插件2/mybatis插件引入.html">
+                <a href="../../../../mybatis/mybatis分页插件2/mybatis插件引入.html">
             
                     
                         <b>1.5.2.1.</b>
@@ -992,9 +1132,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2.2" data-path="../../../mybatis/mybatis分页插件2/PageInterceptor.html">
+        <li class="chapter " data-level="1.5.2.2" data-path="../../../../mybatis/mybatis分页插件2/PageInterceptor.html">
             
-                <a href="../../../mybatis/mybatis分页插件2/PageInterceptor.html">
+                <a href="../../../../mybatis/mybatis分页插件2/PageInterceptor.html">
             
                     
                         <b>1.5.2.2.</b>
@@ -1007,9 +1147,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2.3" data-path="../../../mybatis/mybatis分页插件2/Pagination.html">
+        <li class="chapter " data-level="1.5.2.3" data-path="../../../../mybatis/mybatis分页插件2/Pagination.html">
             
-                <a href="../../../mybatis/mybatis分页插件2/Pagination.html">
+                <a href="../../../../mybatis/mybatis分页插件2/Pagination.html">
             
                     
                         <b>1.5.2.3.</b>
@@ -1027,9 +1167,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../../../mybatis/mybatis-view1.html">
+        <li class="chapter " data-level="1.5.3" data-path="../../../../mybatis/mybatis-view1.html">
             
-                <a href="../../../mybatis/mybatis-view1.html">
+                <a href="../../../../mybatis/mybatis-view1.html">
             
                     
                         <b>1.5.3.</b>
@@ -1042,9 +1182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="../../../mybatis/mybatis学习.html">
+        <li class="chapter " data-level="1.5.4" data-path="../../../../mybatis/mybatis学习.html">
             
-                <a href="../../../mybatis/mybatis学习.html">
+                <a href="../../../../mybatis/mybatis学习.html">
             
                     
                         <b>1.5.4.</b>
@@ -1057,9 +1197,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.5" data-path="../../../mybatis/mybatis源码.html">
+        <li class="chapter " data-level="1.5.5" data-path="../../../../mybatis/mybatis源码.html">
             
-                <a href="../../../mybatis/mybatis源码.html">
+                <a href="../../../../mybatis/mybatis源码.html">
             
                     
                         <b>1.5.5.</b>
@@ -1072,9 +1212,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.6" data-path="../../../mybatis/mybatis源码学习总结1.html">
+        <li class="chapter " data-level="1.5.6" data-path="../../../../mybatis/mybatis源码学习总结1.html">
             
-                <a href="../../../mybatis/mybatis源码学习总结1.html">
+                <a href="../../../../mybatis/mybatis源码学习总结1.html">
             
                     
                         <b>1.5.6.</b>
@@ -1087,9 +1227,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.7" data-path="../../../mybatis/mybatis源码学习总结2.html">
+        <li class="chapter " data-level="1.5.7" data-path="../../../../mybatis/mybatis源码学习总结2.html">
             
-                <a href="../../../mybatis/mybatis源码学习总结2.html">
+                <a href="../../../../mybatis/mybatis源码学习总结2.html">
             
                     
                         <b>1.5.7.</b>
@@ -1102,9 +1242,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.8" data-path="../../../mybatis/mybatis用法.html">
+        <li class="chapter " data-level="1.5.8" data-path="../../../../mybatis/mybatis用法.html">
             
-                <a href="../../../mybatis/mybatis用法.html">
+                <a href="../../../../mybatis/mybatis用法.html">
             
                     
                         <b>1.5.8.</b>
@@ -1117,9 +1257,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.9" data-path="../../../mybatis/常见mybatis用法.html">
+        <li class="chapter " data-level="1.5.9" data-path="../../../../mybatis/常见mybatis用法.html">
             
-                <a href="../../../mybatis/常见mybatis用法.html">
+                <a href="../../../../mybatis/常见mybatis用法.html">
             
                     
                         <b>1.5.9.</b>
@@ -1153,9 +1293,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="../../../mybatis-spring/Mybatis-Spring源码分析.html">
+        <li class="chapter " data-level="1.6.1" data-path="../../../../mybatis-spring/Mybatis-Spring源码分析.html">
             
-                <a href="../../../mybatis-spring/Mybatis-Spring源码分析.html">
+                <a href="../../../../mybatis-spring/Mybatis-Spring源码分析.html">
             
                     
                         <b>1.6.1.</b>
@@ -1189,9 +1329,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.7.1" data-path="../../../redis/redis相关.html">
+        <li class="chapter " data-level="1.7.1" data-path="../../../../redis/redis相关.html">
             
-                <a href="../../../redis/redis相关.html">
+                <a href="../../../../redis/redis相关.html">
             
                     
                         <b>1.7.1.</b>
@@ -1204,9 +1344,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.2" data-path="../../../redis/缓存.html">
+        <li class="chapter " data-level="1.7.2" data-path="../../../../redis/缓存.html">
             
-                <a href="../../../redis/缓存.html">
+                <a href="../../../../redis/缓存.html">
             
                     
                         <b>1.7.2.</b>
@@ -1256,9 +1396,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1.1" data-path="../../../spring/aop/aop动态代理学习.html">
+        <li class="chapter " data-level="1.8.1.1" data-path="../../../../spring/aop/aop动态代理学习.html">
             
-                <a href="../../../spring/aop/aop动态代理学习.html">
+                <a href="../../../../spring/aop/aop动态代理学习.html">
             
                     
                         <b>1.8.1.1.</b>
@@ -1271,9 +1411,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.1.2" data-path="../../../spring/aop/aop学习.html">
+        <li class="chapter " data-level="1.8.1.2" data-path="../../../../spring/aop/aop学习.html">
             
-                <a href="../../../spring/aop/aop学习.html">
+                <a href="../../../../spring/aop/aop学习.html">
             
                     
                         <b>1.8.1.2.</b>
@@ -1286,9 +1426,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.1.3" data-path="../../../spring/aop/JdkDanymicAopProxy源码.html">
+        <li class="chapter " data-level="1.8.1.3" data-path="../../../../spring/aop/JdkDanymicAopProxy源码.html">
             
-                <a href="../../../spring/aop/JdkDanymicAopProxy源码.html">
+                <a href="../../../../spring/aop/JdkDanymicAopProxy源码.html">
             
                     
                         <b>1.8.1.3.</b>
@@ -1322,9 +1462,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.2.1" data-path="../../../spring/ioc/bean实例化过程.html">
+        <li class="chapter " data-level="1.8.2.1" data-path="../../../../spring/ioc/bean实例化过程.html">
             
-                <a href="../../../spring/ioc/bean实例化过程.html">
+                <a href="../../../../spring/ioc/bean实例化过程.html">
             
                     
                         <b>1.8.2.1.</b>
@@ -1337,9 +1477,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.2.2" data-path="../../../spring/ioc/spring-ioc原理.html">
+        <li class="chapter " data-level="1.8.2.2" data-path="../../../../spring/ioc/spring-ioc原理.html">
             
-                <a href="../../../spring/ioc/spring-ioc原理.html">
+                <a href="../../../../spring/ioc/spring-ioc原理.html">
             
                     
                         <b>1.8.2.2.</b>
@@ -1373,9 +1513,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.3.1" data-path="../../../spring/事务/spring事务管理.html">
+        <li class="chapter " data-level="1.8.3.1" data-path="../../../../spring/事务/spring事务管理.html">
             
-                <a href="../../../spring/事务/spring事务管理.html">
+                <a href="../../../../spring/事务/spring事务管理.html">
             
                     
                         <b>1.8.3.1.</b>
@@ -1430,9 +1570,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.9.1.1" data-path="../../../springboot/springboot配置/springboot配置文件加载分析.html">
+        <li class="chapter " data-level="1.9.1.1" data-path="../../../../springboot/springboot配置/springboot配置文件加载分析.html">
             
-                <a href="../../../springboot/springboot配置/springboot配置文件加载分析.html">
+                <a href="../../../../springboot/springboot配置/springboot配置文件加载分析.html">
             
                     
                         <b>1.9.1.1.</b>
@@ -1445,9 +1585,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.1.2" data-path="../../../springboot/springboot配置/修改springboot默认加载application-properties文件.html">
+        <li class="chapter " data-level="1.9.1.2" data-path="../../../../springboot/springboot配置/修改springboot默认加载application-properties文件.html">
             
-                <a href="../../../springboot/springboot配置/修改springboot默认加载application-properties文件.html">
+                <a href="../../../../springboot/springboot配置/修改springboot默认加载application-properties文件.html">
             
                     
                         <b>1.9.1.2.</b>
@@ -1481,9 +1621,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.9.2.1" data-path="../../../springboot/监听器/springboot监听器.html">
+        <li class="chapter " data-level="1.9.2.1" data-path="../../../../springboot/监听器/springboot监听器.html">
             
-                <a href="../../../springboot/监听器/springboot监听器.html">
+                <a href="../../../../springboot/监听器/springboot监听器.html">
             
                     
                         <b>1.9.2.1.</b>
@@ -1501,9 +1641,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.3" data-path="../../../springboot/SpringApplication源码分析.html">
+        <li class="chapter " data-level="1.9.3" data-path="../../../../springboot/SpringApplication源码分析.html">
             
-                <a href="../../../springboot/SpringApplication源码分析.html">
+                <a href="../../../../springboot/SpringApplication源码分析.html">
             
                     
                         <b>1.9.3.</b>
@@ -1537,9 +1677,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.10.1" data-path="../../../zother1-JavaFaceNotes/Dubbo.html">
+        <li class="chapter " data-level="1.10.1" data-path="../../../../zother1-JavaFaceNotes/Dubbo.html">
             
-                <a href="../../../zother1-JavaFaceNotes/Dubbo.html">
+                <a href="../../../../zother1-JavaFaceNotes/Dubbo.html">
             
                     
                         <b>1.10.1.</b>
@@ -1552,9 +1692,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.2" data-path="../../../zother1-JavaFaceNotes/IO&NIO.html">
+        <li class="chapter " data-level="1.10.2" data-path="../../../../zother1-JavaFaceNotes/IO&NIO.html">
             
-                <a href="../../../zother1-JavaFaceNotes/IO&NIO.html">
+                <a href="../../../../zother1-JavaFaceNotes/IO&NIO.html">
             
                     
                         <b>1.10.2.</b>
@@ -1567,9 +1707,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.3" data-path="../../../zother1-JavaFaceNotes/Java基础.html">
+        <li class="chapter " data-level="1.10.3" data-path="../../../../zother1-JavaFaceNotes/Java基础.html">
             
-                <a href="../../../zother1-JavaFaceNotes/Java基础.html">
+                <a href="../../../../zother1-JavaFaceNotes/Java基础.html">
             
                     
                         <b>1.10.3.</b>
@@ -1582,9 +1722,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.4" data-path="../../../zother1-JavaFaceNotes/java集合.html">
+        <li class="chapter " data-level="1.10.4" data-path="../../../../zother1-JavaFaceNotes/java集合.html">
             
-                <a href="../../../zother1-JavaFaceNotes/java集合.html">
+                <a href="../../../../zother1-JavaFaceNotes/java集合.html">
             
                     
                         <b>1.10.4.</b>
@@ -1597,9 +1737,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.5" data-path="../../../zother1-JavaFaceNotes/JVM.html">
+        <li class="chapter " data-level="1.10.5" data-path="../../../../zother1-JavaFaceNotes/JVM.html">
             
-                <a href="../../../zother1-JavaFaceNotes/JVM.html">
+                <a href="../../../../zother1-JavaFaceNotes/JVM.html">
             
                     
                         <b>1.10.5.</b>
@@ -1612,9 +1752,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.6" data-path="../../../zother1-JavaFaceNotes/Kafka.html">
+        <li class="chapter " data-level="1.10.6" data-path="../../../../zother1-JavaFaceNotes/Kafka.html">
             
-                <a href="../../../zother1-JavaFaceNotes/Kafka.html">
+                <a href="../../../../zother1-JavaFaceNotes/Kafka.html">
             
                     
                         <b>1.10.6.</b>
@@ -1627,9 +1767,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.7" data-path="../../../zother1-JavaFaceNotes/Linux.html">
+        <li class="chapter " data-level="1.10.7" data-path="../../../../zother1-JavaFaceNotes/Linux.html">
             
-                <a href="../../../zother1-JavaFaceNotes/Linux.html">
+                <a href="../../../../zother1-JavaFaceNotes/Linux.html">
             
                     
                         <b>1.10.7.</b>
@@ -1642,9 +1782,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.8" data-path="../../../zother1-JavaFaceNotes/Mybatis.html">
+        <li class="chapter " data-level="1.10.8" data-path="../../../../zother1-JavaFaceNotes/Mybatis.html">
             
-                <a href="../../../zother1-JavaFaceNotes/Mybatis.html">
+                <a href="../../../../zother1-JavaFaceNotes/Mybatis.html">
             
                     
                         <b>1.10.8.</b>
@@ -1657,9 +1797,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.9" data-path="../../../zother1-JavaFaceNotes/MySql.html">
+        <li class="chapter " data-level="1.10.9" data-path="../../../../zother1-JavaFaceNotes/MySql.html">
             
-                <a href="../../../zother1-JavaFaceNotes/MySql.html">
+                <a href="../../../../zother1-JavaFaceNotes/MySql.html">
             
                     
                         <b>1.10.9.</b>
@@ -1672,9 +1812,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.10" data-path="../../../zother1-JavaFaceNotes/Nginx.html">
+        <li class="chapter " data-level="1.10.10" data-path="../../../../zother1-JavaFaceNotes/Nginx.html">
             
-                <a href="../../../zother1-JavaFaceNotes/Nginx.html">
+                <a href="../../../../zother1-JavaFaceNotes/Nginx.html">
             
                     
                         <b>1.10.10.</b>
@@ -1687,9 +1827,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.11" data-path="../../../zother1-JavaFaceNotes/Redis.html">
+        <li class="chapter " data-level="1.10.11" data-path="../../../../zother1-JavaFaceNotes/Redis.html">
             
-                <a href="../../../zother1-JavaFaceNotes/Redis.html">
+                <a href="../../../../zother1-JavaFaceNotes/Redis.html">
             
                     
                         <b>1.10.11.</b>
@@ -1702,9 +1842,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.12" data-path="../../../zother1-JavaFaceNotes/Spring.html">
+        <li class="chapter " data-level="1.10.12" data-path="../../../../zother1-JavaFaceNotes/Spring.html">
             
-                <a href="../../../zother1-JavaFaceNotes/Spring.html">
+                <a href="../../../../zother1-JavaFaceNotes/Spring.html">
             
                     
                         <b>1.10.12.</b>
@@ -1717,9 +1857,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.13" data-path="../../../zother1-JavaFaceNotes/SpringBoot.html">
+        <li class="chapter " data-level="1.10.13" data-path="../../../../zother1-JavaFaceNotes/SpringBoot.html">
             
-                <a href="../../../zother1-JavaFaceNotes/SpringBoot.html">
+                <a href="../../../../zother1-JavaFaceNotes/SpringBoot.html">
             
                     
                         <b>1.10.13.</b>
@@ -1732,9 +1872,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.14" data-path="../../../zother1-JavaFaceNotes/SpringCloud.html">
+        <li class="chapter " data-level="1.10.14" data-path="../../../../zother1-JavaFaceNotes/SpringCloud.html">
             
-                <a href="../../../zother1-JavaFaceNotes/SpringCloud.html">
+                <a href="../../../../zother1-JavaFaceNotes/SpringCloud.html">
             
                     
                         <b>1.10.14.</b>
@@ -1747,9 +1887,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.15" data-path="../../../zother1-JavaFaceNotes/多线程.html">
+        <li class="chapter " data-level="1.10.15" data-path="../../../../zother1-JavaFaceNotes/多线程.html">
             
-                <a href="../../../zother1-JavaFaceNotes/多线程.html">
+                <a href="../../../../zother1-JavaFaceNotes/多线程.html">
             
                     
                         <b>1.10.15.</b>
@@ -1762,9 +1902,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.16" data-path="../../../zother1-JavaFaceNotes/异常&反射.html">
+        <li class="chapter " data-level="1.10.16" data-path="../../../../zother1-JavaFaceNotes/异常&反射.html">
             
-                <a href="../../../zother1-JavaFaceNotes/异常&反射.html">
+                <a href="../../../../zother1-JavaFaceNotes/异常&反射.html">
             
                     
                         <b>1.10.16.</b>
@@ -1777,9 +1917,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.17" data-path="../../../zother1-JavaFaceNotes/简历.html">
+        <li class="chapter " data-level="1.10.17" data-path="../../../../zother1-JavaFaceNotes/简历.html">
             
-                <a href="../../../zother1-JavaFaceNotes/简历.html">
+                <a href="../../../../zother1-JavaFaceNotes/简历.html">
             
                     
                         <b>1.10.17.</b>
@@ -1797,9 +1937,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11" data-path="../../../zother5-Java-Interview/">
+        <li class="chapter " data-level="1.11" data-path="../../../../zother5-Java-Interview/">
             
-                <a href="../../../zother5-Java-Interview/">
+                <a href="../../../../zother5-Java-Interview/">
             
                     
                         <b>1.11.</b>
@@ -1813,9 +1953,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.11.1" data-path="../../../zother5-Java-Interview/Java基础学习.html">
+        <li class="chapter " data-level="1.11.1" data-path="../../../../zother5-Java-Interview/Java基础学习.html">
             
-                <a href="../../../zother5-Java-Interview/Java基础学习.html">
+                <a href="../../../../zother5-Java-Interview/Java基础学习.html">
             
                     
                         <b>1.11.1.</b>
@@ -1828,9 +1968,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.2" data-path="../../../zother5-Java-Interview/Java集合面试题及答案.html">
+        <li class="chapter " data-level="1.11.2" data-path="../../../../zother5-Java-Interview/Java集合面试题及答案.html">
             
-                <a href="../../../zother5-Java-Interview/Java集合面试题及答案.html">
+                <a href="../../../../zother5-Java-Interview/Java集合面试题及答案.html">
             
                     
                         <b>1.11.2.</b>
@@ -1843,9 +1983,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.3" data-path="../../../zother5-Java-Interview/一、Java基础.html">
+        <li class="chapter " data-level="1.11.3" data-path="../../../../zother5-Java-Interview/一、Java基础.html">
             
-                <a href="../../../zother5-Java-Interview/一、Java基础.html">
+                <a href="../../../../zother5-Java-Interview/一、Java基础.html">
             
                     
                         <b>1.11.3.</b>
@@ -1858,9 +1998,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.4" data-path="../../../zother5-Java-Interview/七、JavaWeb.html">
+        <li class="chapter " data-level="1.11.4" data-path="../../../../zother5-Java-Interview/七、JavaWeb.html">
             
-                <a href="../../../zother5-Java-Interview/七、JavaWeb.html">
+                <a href="../../../../zother5-Java-Interview/七、JavaWeb.html">
             
                     
                         <b>1.11.4.</b>
@@ -1873,9 +2013,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.5" data-path="../../../zother5-Java-Interview/三、Java 集合.html">
+        <li class="chapter " data-level="1.11.5" data-path="../../../../zother5-Java-Interview/三、Java 集合.html">
             
-                <a href="../../../zother5-Java-Interview/三、Java 集合.html">
+                <a href="../../../../zother5-Java-Interview/三、Java 集合.html">
             
                     
                         <b>1.11.5.</b>
@@ -1888,9 +2028,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.6" data-path="../../../zother5-Java-Interview/九、操作系统.html">
+        <li class="chapter " data-level="1.11.6" data-path="../../../../zother5-Java-Interview/九、操作系统.html">
             
-                <a href="../../../zother5-Java-Interview/九、操作系统.html">
+                <a href="../../../../zother5-Java-Interview/九、操作系统.html">
             
                     
                         <b>1.11.6.</b>
@@ -1903,9 +2043,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.7" data-path="../../../zother5-Java-Interview/二、设计模式.html">
+        <li class="chapter " data-level="1.11.7" data-path="../../../../zother5-Java-Interview/二、设计模式.html">
             
-                <a href="../../../zother5-Java-Interview/二、设计模式.html">
+                <a href="../../../../zother5-Java-Interview/二、设计模式.html">
             
                     
                         <b>1.11.7.</b>
@@ -1918,9 +2058,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.8" data-path="../../../zother5-Java-Interview/二十、Spring源码解析.html">
+        <li class="chapter " data-level="1.11.8" data-path="../../../../zother5-Java-Interview/二十、Spring源码解析.html">
             
-                <a href="../../../zother5-Java-Interview/二十、Spring源码解析.html">
+                <a href="../../../../zother5-Java-Interview/二十、Spring源码解析.html">
             
                     
                         <b>1.11.8.</b>
@@ -1933,9 +2073,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.9" data-path="../../../zother5-Java-Interview/二十一、Tomcat源码解析.html">
+        <li class="chapter " data-level="1.11.9" data-path="../../../../zother5-Java-Interview/二十一、Tomcat源码解析.html">
             
-                <a href="../../../zother5-Java-Interview/二十一、Tomcat源码解析.html">
+                <a href="../../../../zother5-Java-Interview/二十一、Tomcat源码解析.html">
             
                     
                         <b>1.11.9.</b>
@@ -1948,9 +2088,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.10" data-path="../../../zother5-Java-Interview/五、JVM.html">
+        <li class="chapter " data-level="1.11.10" data-path="../../../../zother5-Java-Interview/五、JVM.html">
             
-                <a href="../../../zother5-Java-Interview/五、JVM.html">
+                <a href="../../../../zother5-Java-Interview/五、JVM.html">
             
                     
                         <b>1.11.10.</b>
@@ -1963,9 +2103,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.11" data-path="../../../zother5-Java-Interview/八、Mysql.html">
+        <li class="chapter " data-level="1.11.11" data-path="../../../../zother5-Java-Interview/八、Mysql.html">
             
-                <a href="../../../zother5-Java-Interview/八、Mysql.html">
+                <a href="../../../../zother5-Java-Interview/八、Mysql.html">
             
                     
                         <b>1.11.11.</b>
@@ -2015,9 +2155,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.12.1.1" data-path="../../../zother7-JavaInterview/dataStructures-algorithms/算法面试真题汇总.html">
+        <li class="chapter " data-level="1.12.1.1" data-path="../../../../zother7-JavaInterview/dataStructures-algorithms/算法面试真题汇总.html">
             
-                <a href="../../../zother7-JavaInterview/dataStructures-algorithms/算法面试真题汇总.html">
+                <a href="../../../../zother7-JavaInterview/dataStructures-algorithms/算法面试真题汇总.html">
             
                     
                         <b>1.12.1.1.</b>
@@ -2030,9 +2170,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12.1.2" data-path="../../../zother7-JavaInterview/dataStructures-algorithms/算法题目难点题目总结.html">
+        <li class="chapter " data-level="1.12.1.2" data-path="../../../../zother7-JavaInterview/dataStructures-algorithms/算法题目难点题目总结.html">
             
-                <a href="../../../zother7-JavaInterview/dataStructures-algorithms/算法题目难点题目总结.html">
+                <a href="../../../../zother7-JavaInterview/dataStructures-algorithms/算法题目难点题目总结.html">
             
                     
                         <b>1.12.1.2.</b>
@@ -2045,9 +2185,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12.1.3" data-path="../../../zother7-JavaInterview/dataStructures-algorithms/递归套路总结.html">
+        <li class="chapter " data-level="1.12.1.3" data-path="../../../../zother7-JavaInterview/dataStructures-algorithms/递归套路总结.html">
             
-                <a href="../../../zother7-JavaInterview/dataStructures-algorithms/递归套路总结.html">
+                <a href="../../../../zother7-JavaInterview/dataStructures-algorithms/递归套路总结.html">
             
                     
                         <b>1.12.1.3.</b>
@@ -2081,9 +2221,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.12.2.1" data-path="../../../zother7-JavaInterview/interview/已投公司情况.html">
+        <li class="chapter " data-level="1.12.2.1" data-path="../../../../zother7-JavaInterview/interview/已投公司情况.html">
             
-                <a href="../../../zother7-JavaInterview/interview/已投公司情况.html">
+                <a href="../../../../zother7-JavaInterview/interview/已投公司情况.html">
             
                     
                         <b>1.12.2.1.</b>
@@ -2096,9 +2236,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12.2.2" data-path="../../../zother7-JavaInterview/interview/自我介绍和项目介绍.html">
+        <li class="chapter " data-level="1.12.2.2" data-path="../../../../zother7-JavaInterview/interview/自我介绍和项目介绍.html">
             
-                <a href="../../../zother7-JavaInterview/interview/自我介绍和项目介绍.html">
+                <a href="../../../../zother7-JavaInterview/interview/自我介绍和项目介绍.html">
             
                     
                         <b>1.12.2.2.</b>
@@ -2132,9 +2272,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.12.3.1" data-path="../../../zother7-JavaInterview/interview-experience/各大公司面经.html">
+        <li class="chapter " data-level="1.12.3.1" data-path="../../../../zother7-JavaInterview/interview-experience/各大公司面经.html">
             
-                <a href="../../../zother7-JavaInterview/interview-experience/各大公司面经.html">
+                <a href="../../../../zother7-JavaInterview/interview-experience/各大公司面经.html">
             
                     
                         <b>1.12.3.1.</b>
@@ -2147,9 +2287,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12.3.2" data-path="../../../zother7-JavaInterview/interview-experience/面试常见知识.html">
+        <li class="chapter " data-level="1.12.3.2" data-path="../../../../zother7-JavaInterview/interview-experience/面试常见知识.html">
             
-                <a href="../../../zother7-JavaInterview/interview-experience/面试常见知识.html">
+                <a href="../../../../zother7-JavaInterview/interview-experience/面试常见知识.html">
             
                     
                         <b>1.12.3.2.</b>
@@ -2162,9 +2302,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12.3.3" data-path="../../../zother7-JavaInterview/interview-experience/面试常见问题分类汇总.html">
+        <li class="chapter " data-level="1.12.3.3" data-path="../../../../zother7-JavaInterview/interview-experience/面试常见问题分类汇总.html">
             
-                <a href="../../../zother7-JavaInterview/interview-experience/面试常见问题分类汇总.html">
+                <a href="../../../../zother7-JavaInterview/interview-experience/面试常见问题分类汇总.html">
             
                     
                         <b>1.12.3.3.</b>
@@ -2198,9 +2338,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.12.4.1" data-path="../../../zother7-JavaInterview/microservice/微服务相关资料.html">
+        <li class="chapter " data-level="1.12.4.1" data-path="../../../../zother7-JavaInterview/microservice/微服务相关资料.html">
             
-                <a href="../../../zother7-JavaInterview/microservice/微服务相关资料.html">
+                <a href="../../../../zother7-JavaInterview/microservice/微服务相关资料.html">
             
                     
                         <b>1.12.4.1.</b>
@@ -2234,9 +2374,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.12.5.1" data-path="../../../zother7-JavaInterview/network/http面试问题全解析.html">
+        <li class="chapter " data-level="1.12.5.1" data-path="../../../../zother7-JavaInterview/network/http面试问题全解析.html">
             
-                <a href="../../../zother7-JavaInterview/network/http面试问题全解析.html">
+                <a href="../../../../zother7-JavaInterview/network/http面试问题全解析.html">
             
                     
                         <b>1.12.5.1.</b>
@@ -2270,9 +2410,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.12.6.1" data-path="../../../zother7-JavaInterview/operating-system/后端程序员必备的Linux基础知识.html">
+        <li class="chapter " data-level="1.12.6.1" data-path="../../../../zother7-JavaInterview/operating-system/后端程序员必备的Linux基础知识.html">
             
-                <a href="../../../zother7-JavaInterview/operating-system/后端程序员必备的Linux基础知识.html">
+                <a href="../../../../zother7-JavaInterview/operating-system/后端程序员必备的Linux基础知识.html">
             
                     
                         <b>1.12.6.1.</b>
@@ -2285,9 +2425,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12.6.2" data-path="../../../zother7-JavaInterview/operating-system/操作系统、计算机网络相关知识.html">
+        <li class="chapter " data-level="1.12.6.2" data-path="../../../../zother7-JavaInterview/operating-system/操作系统、计算机网络相关知识.html">
             
-                <a href="../../../zother7-JavaInterview/operating-system/操作系统、计算机网络相关知识.html">
+                <a href="../../../../zother7-JavaInterview/operating-system/操作系统、计算机网络相关知识.html">
             
                     
                         <b>1.12.6.2.</b>
@@ -2321,9 +2461,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.12.7.1" data-path="../../../zother7-JavaInterview/project/消息中间件面试题.html">
+        <li class="chapter " data-level="1.12.7.1" data-path="../../../../zother7-JavaInterview/project/消息中间件面试题.html">
             
-                <a href="../../../zother7-JavaInterview/project/消息中间件面试题.html">
+                <a href="../../../../zother7-JavaInterview/project/消息中间件面试题.html">
             
                     
                         <b>1.12.7.1.</b>
@@ -2336,9 +2476,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12.7.2" data-path="../../../zother7-JavaInterview/project/秒杀项目总结.html">
+        <li class="chapter " data-level="1.12.7.2" data-path="../../../../zother7-JavaInterview/project/秒杀项目总结.html">
             
-                <a href="../../../zother7-JavaInterview/project/秒杀项目总结.html">
+                <a href="../../../../zother7-JavaInterview/project/秒杀项目总结.html">
             
                     
                         <b>1.12.7.2.</b>
@@ -2361,9 +2501,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.13" data-path="../../../学习路线.html">
+        <li class="chapter " data-level="1.13" data-path="../../../../学习路线.html">
             
-                <a href="../../../学习路线.html">
+                <a href="../../../../学习路线.html">
             
                     
                         <b>1.13.</b>
@@ -2406,7 +2546,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >jdk1.8ConcurrentHashMap源码分析</a>
+        <a href="../../../.." >Test</a>
     </h1>
 </div>
 
@@ -2424,25 +2564,32 @@
                                 <p><strong>  </strong> <excerpt in="" index="" |="" 首页摘要=""></excerpt></p>
 <!-- more -->
 <h3 id=""><a name="" class="plugin-anchor" href="#"><i class="fa fa-link" aria-hidden="true"></i></a> </h3>
-<pre><code>
+<pre><code class="lang-java">
 
-</code></pre><h4 id=""><a name="" class="plugin-anchor" href="#"><i class="fa fa-link" aria-hidden="true"></i></a> </h4>
-<ol>
+</code></pre>
+<ul>
 <li></li>
 <li></li>
 <li></li>
-</ol>
-<h4 id="segment"><a name="segment" class="plugin-anchor" href="#segment"><i class="fa fa-link" aria-hidden="true"></i></a>Segment</h4>
-<pre><code>    static class Segment&lt;K,V&gt; extends ReentrantLock implements Serializable {
-        private static final long serialVersionUID = 2249069246763182397L;
-        final float loadFactor;
-        Segment(float lf) { this.loadFactor = lf; }
-    }
-</code></pre><ol>
+</ul>
+<h4 id=""><a name="" class="plugin-anchor" href="#"><i class="fa fa-link" aria-hidden="true"></i></a> </h4>
+<pre><code class="lang-java">
+
+</code></pre>
+<ul>
 <li></li>
 <li></li>
 <li></li>
-</ol>
+</ul>
+<h4 id=""><a name="" class="plugin-anchor" href="#"><i class="fa fa-link" aria-hidden="true"></i></a> </h4>
+<pre><code class="lang-java">
+
+</code></pre>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
 
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -2471,14 +2618,6 @@
 
             
                 
-                <a href="jdk1.7hashmap源码分析.html" class="navigation navigation-prev " aria-label="Previous page: jdk1.7hashmap源码分析">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="jdk1.8HashMap源码分析.html" class="navigation navigation-next " aria-label="Next page: jdk1.8hashmap源码分析">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -2487,65 +2626,65 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"jdk1.8ConcurrentHashMap源码分析","tags":[],"date":"2019-08-22T10:48:17.000Z","categories":null,"level":"1.2.1.1.6","depth":4,"next":{"title":"jdk1.8hashmap源码分析","level":"1.2.1.1.7","depth":4,"path":"base/collection/hashmap/jdk1.8HashMap源码分析.md","ref":"base/collection/hashmap/jdk1.8HashMap源码分析.md","articles":[]},"previous":{"title":"jdk1.7hashmap源码分析","level":"1.2.1.1.5","depth":4,"path":"base/collection/hashmap/jdk1.7hashmap源码分析.md","ref":"base/collection/hashmap/jdk1.7hashmap源码分析.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","-highlight","baidu","splitter","sitemap","back-to-top-button","code","splitter","-lunr","-search","search-pro","theme-comscore","popup","hide-element","anchors","nocache","page-toc-button"],"ignores":["friends","tags","categories","about"],"root":".deploy/content","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"nocache":{},"github":{"url":"https://github.com/zhaoda/webpack-handbook"},"editlink":{"base":"https://github.com/zhaoda/webpack-handbook/blob/master/content","label":"编辑本页"},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://zhaoda.net/"},"theme-comscore":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"baidu":{"token":"a9787f0ab45d5e237bab522431d0a7ec"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"SUMMARY.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java实用笔记","language":"zh-hans","output.name":"site","catalog":["./source/_posts"],"links":{"sidebar":{"Home":"http://blog.liangqingxiang.top/"}},"gitbook":"3.2.3","description":"学习笔记"},"file":{"path":"base/collection/hashmap/jdk1.8ConcurrentHashMap源码分析.md","mtime":"2020-06-14T08:02:21.108Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-14T08:06:28.960Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Test","tags":[],"date":"2020-06-06T21:47:47.000Z","categories":null,"level":"1.2.5.1.1.1","depth":5,"next":{"title":"Set","level":"1.2.5.1.2","depth":4,"ref":"","articles":[{"title":"hashset源码学习","level":"1.2.5.1.2.1","depth":5,"path":"base/集合/collection/set/hashset源码学习.md","ref":"base/集合/collection/set/hashset源码学习.md","articles":[]},{"title":"TreeSet源码学习","level":"1.2.5.1.2.2","depth":5,"path":"base/集合/collection/set/TreeSet源码学习.md","ref":"base/集合/collection/set/TreeSet源码学习.md","articles":[]}]},"previous":{"title":"List","level":"1.2.5.1.1","depth":4,"ref":"","articles":[{"title":"Test","level":"1.2.5.1.1.1","depth":5,"path":"base/集合/collection/list/ArrayList源码学习.md","ref":"base/集合/collection/list/ArrayList源码学习.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["github","-highlight","baidu","splitter","sitemap","back-to-top-button","code","splitter","-lunr","-search","search-pro","theme-comscore","popup","hide-element","anchors","nocache","page-toc-button"],"ignores":["friends","tags","categories","about"],"root":".deploy/content","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"nocache":{},"github":{"url":"https://github.com/zhaoda/webpack-handbook"},"editlink":{"base":"https://github.com/zhaoda/webpack-handbook/blob/master/content","label":"编辑本页"},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://zhaoda.net/"},"theme-comscore":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"baidu":{"token":"a9787f0ab45d5e237bab522431d0a7ec"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"SUMMARY.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java实用笔记","language":"zh-hans","output.name":"site","catalog":["./source/_posts"],"links":{"sidebar":{"Home":"http://blog.liangqingxiang.top/"}},"gitbook":"3.2.3","description":"学习笔记"},"file":{"path":"base/集合/collection/list/ArrayList源码学习.md","mtime":"2020-06-17T08:27:43.524Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-17T08:28:18.784Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>
 
         
-    <script src="../../../gitbook/gitbook.js"></script>
-    <script src="../../../gitbook/theme.js"></script>
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
     
         
-        <script src="../../../gitbook/gitbook-plugin-github/plugin.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
+        <script src="../../../../gitbook/gitbook-plugin-github/plugin.js"></script>
         
     
         
-        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        <script src="../../../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
         
     
         
-        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        <script src="../../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        <script src="../../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
         
     
         
-        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        <script src="../../../../gitbook/gitbook-plugin-code/plugin.js"></script>
         
     
         
-        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        <script src="../../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
         
     
         
-        <script src="../../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        <script src="../../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
         
     
         
-        <script src="../../../gitbook/gitbook-plugin-nocache/nocache.js"></script>
+        <script src="../../../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
         
     
         
-        <script src="../../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        <script src="../../../../gitbook/gitbook-plugin-nocache/nocache.js"></script>
         
     
         
-        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../../../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
         
     
         
-        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="../../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
         
-        <script src="../../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
         
     
 

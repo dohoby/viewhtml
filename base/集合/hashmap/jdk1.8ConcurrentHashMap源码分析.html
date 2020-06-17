@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>HashMap相关 · java实用笔记</title>
+        <title>jdk1.8ConcurrentHashMap源码分析 · java实用笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -81,10 +81,10 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="HashMap相关2.html" />
+    <link rel="next" href="jdk1.8HashMap源码分析.html" />
     
     
-    <link rel="prev" href="ConcurrentHashMap相关.html" />
+    <link rel="prev" href="jdk1.7hashmap源码分析.html" />
     
 
 
@@ -161,7 +161,7 @@
                     
                         <b>1.2.1.</b>
                     
-                    Collection
+                    String
             
                 </span>
             
@@ -170,30 +170,14 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1.1" >
+        <li class="chapter " data-level="1.2.1.1" data-path="../../string/StringBuffer和StringBuilder.html">
             
-                <span>
+                <a href="../../string/StringBuffer和StringBuilder.html">
             
                     
                         <b>1.2.1.1.</b>
                     
-                    Hashmap
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.1.1.1" data-path="ConcurrentHashMap相关.html">
-            
-                <a href="ConcurrentHashMap相关.html">
-            
-                    
-                        <b>1.2.1.1.1.</b>
-                    
-                    ConcurrentHashMap相关
+                    集合StringBuffer和StringBuilder
             
                 </a>
             
@@ -201,185 +185,14 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.1.1.2" data-path="HashMap相关.html">
+        <li class="chapter " data-level="1.2.1.2" data-path="../../string/string源码.html">
             
-                <a href="HashMap相关.html">
-            
-                    
-                        <b>1.2.1.1.2.</b>
-                    
-                    HashMap相关
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.3" data-path="HashMap相关2.html">
-            
-                <a href="HashMap相关2.html">
-            
-                    
-                        <b>1.2.1.1.3.</b>
-                    
-                    HashMap相关2
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.4" data-path="HashMap相关tx.html">
-            
-                <a href="HashMap相关tx.html">
-            
-                    
-                        <b>1.2.1.1.4.</b>
-                    
-                    HashMap相关tx
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.5" data-path="jdk1.7hashmap源码分析.html">
-            
-                <a href="jdk1.7hashmap源码分析.html">
-            
-                    
-                        <b>1.2.1.1.5.</b>
-                    
-                    jdk1.7hashmap源码分析
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.6" data-path="jdk1.8ConcurrentHashMap源码分析.html">
-            
-                <a href="jdk1.8ConcurrentHashMap源码分析.html">
-            
-                    
-                        <b>1.2.1.1.6.</b>
-                    
-                    jdk1.8ConcurrentHashMap源码分析
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.7" data-path="jdk1.8HashMap源码分析.html">
-            
-                <a href="jdk1.8HashMap源码分析.html">
-            
-                    
-                        <b>1.2.1.1.7.</b>
-                    
-                    jdk1.8hashmap源码分析
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.8" data-path="Jdk1.8源码解析HashMap-putTreeVal.html">
-            
-                <a href="Jdk1.8源码解析HashMap-putTreeVal.html">
-            
-                    
-                        <b>1.2.1.1.8.</b>
-                    
-                    Jdk1.8源码解析-java.util.HashMap#putTreeVal
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.9" data-path="Jdk1.8源码解析HashMap-resize.html">
-            
-                <a href="Jdk1.8源码解析HashMap-resize.html">
-            
-                    
-                        <b>1.2.1.1.9.</b>
-                    
-                    Jdk1.8源码解析-java.util.HashMap#resize
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.10" data-path="Jdk1.8源码解析HashMap-treeifyBin.html">
-            
-                <a href="Jdk1.8源码解析HashMap-treeifyBin.html">
-            
-                    
-                        <b>1.2.1.1.10.</b>
-                    
-                    Jdk1.8源码解析-java.util.HashMap#treeifyBin链表转化为红黑树
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.11" data-path="其他map.html">
-            
-                <a href="其他map.html">
-            
-                    
-                        <b>1.2.1.1.11.</b>
-                    
-                    其他map
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.2" >
-            
-                <span>
+                <a href="../../string/string源码.html">
             
                     
                         <b>1.2.1.2.</b>
                     
-                    hashmap源码
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.1.2.1" data-path="../hashmap源码/jdk1.7ConcurrentHashMap源码.html">
-            
-                <a href="../hashmap源码/jdk1.7ConcurrentHashMap源码.html">
-            
-                    
-                        <b>1.2.1.2.1.</b>
-                    
-                    jdk1.7ConcurrentHashMap源码
+                    string源码
             
                 </a>
             
@@ -387,80 +200,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.2.2" data-path="../hashmap源码/jdk1.7HashMap源码.html">
+        <li class="chapter " data-level="1.2.1.3" data-path="../../string/string源码学习.html">
             
-                <a href="../hashmap源码/jdk1.7HashMap源码.html">
-            
-                    
-                        <b>1.2.1.2.2.</b>
-                    
-                    jdk1.7HashMap源码
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.2.3" data-path="../hashmap源码/jdk1.8ConcurrentHashMap源码.html">
-            
-                <a href="../hashmap源码/jdk1.8ConcurrentHashMap源码.html">
-            
-                    
-                        <b>1.2.1.2.3.</b>
-                    
-                    jdk1.8ConcurrentHashMap源码
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.2.4" data-path="../hashmap源码/jdk1.8HashMap源码.html">
-            
-                <a href="../hashmap源码/jdk1.8HashMap源码.html">
-            
-                    
-                        <b>1.2.1.2.4.</b>
-                    
-                    jdk1.8HashMap源码
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.3" >
-            
-                <span>
+                <a href="../../string/string源码学习.html">
             
                     
                         <b>1.2.1.3.</b>
                     
-                    Hashset
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.1.3.1" data-path="../hashset/hashset源码学习.html">
-            
-                <a href="../hashset/hashset源码学习.html">
-            
-                    
-                        <b>1.2.1.3.1.</b>
-                    
-                    hashset源码学习
+                    string源码学习
             
                 </a>
             
@@ -468,19 +215,29 @@
             
         </li>
     
-
-            </ul>
+        <li class="chapter " data-level="1.2.1.4" data-path="../../string/字符串string学习.html">
             
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.4" data-path="../集合类学习.html">
-            
-                <a href="../集合类学习.html">
+                <a href="../../string/字符串string学习.html">
             
                     
                         <b>1.2.1.4.</b>
                     
-                    集合类学习
+                    字符串string学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../../string/字符串string学习2-lg.html">
+            
+                <a href="../../string/字符串string学习2-lg.html">
+            
+                    
+                        <b>1.2.1.5.</b>
+                    
+                    字符串string学习2
             
                 </a>
             
@@ -500,7 +257,7 @@
                     
                         <b>1.2.2.</b>
                     
-                    String
+                    算法
             
                 </span>
             
@@ -509,14 +266,30 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.2.1" data-path="../../string/StringBuffer和StringBuilder.html">
+        <li class="chapter " data-level="1.2.2.1" >
             
-                <a href="../../string/StringBuffer和StringBuilder.html">
+                <span>
             
                     
                         <b>1.2.2.1.</b>
                     
-                    集合StringBuffer和StringBuilder
+                    排序
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1.1" data-path="../../算法/排序/快速排序.html">
+            
+                <a href="../../算法/排序/快速排序.html">
+            
+                    
+                        <b>1.2.2.1.1.</b>
+                    
+                    Test
             
                 </a>
             
@@ -524,63 +297,8 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.2" data-path="../../string/string源码.html">
-            
-                <a href="../../string/string源码.html">
-            
-                    
-                        <b>1.2.2.2.</b>
-                    
-                    string源码
-            
-                </a>
-            
 
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.2.3" data-path="../../string/string源码学习.html">
-            
-                <a href="../../string/string源码学习.html">
-            
-                    
-                        <b>1.2.2.3.</b>
-                    
-                    string源码学习
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.2.4" data-path="../../string/字符串string学习.html">
-            
-                <a href="../../string/字符串string学习.html">
-            
-                    
-                        <b>1.2.2.4.</b>
-                    
-                    字符串string学习
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.2.5" data-path="../../string/字符串string学习2-lg.html">
-            
-                <a href="../../string/字符串string学习2-lg.html">
-            
-                    
-                        <b>1.2.2.5.</b>
-                    
-                    字符串string学习2
-            
-                </a>
-            
-
+            </ul>
             
         </li>
     
@@ -676,12 +394,60 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5" data-path="../../test.html">
+        <li class="chapter " data-level="1.2.5" >
             
-                <a href="../../test.html">
+                <span>
             
                     
                         <b>1.2.5.</b>
+                    
+                    集合
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" >
+            
+                <span>
+            
+                    
+                        <b>1.2.5.1.</b>
+                    
+                    Collection
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.1" >
+            
+                <span>
+            
+                    
+                        <b>1.2.5.1.1.</b>
+                    
+                    List
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.1.1" data-path="../collection/list/ArrayList源码学习.html">
+            
+                <a href="../collection/list/ArrayList源码学习.html">
+            
+                    
+                        <b>1.2.5.1.1.1.</b>
                     
                     Test
             
@@ -691,12 +457,375 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.6" data-path="../../基本类型装箱拆箱.html">
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.5.1.2.</b>
+                    
+                    Set
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.2.1" data-path="../collection/set/hashset源码学习.html">
+            
+                <a href="../collection/set/hashset源码学习.html">
+            
+                    
+                        <b>1.2.5.1.2.1.</b>
+                    
+                    hashset源码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.2" data-path="../collection/set/TreeSet源码学习.html">
+            
+                <a href="../collection/set/TreeSet源码学习.html">
+            
+                    
+                        <b>1.2.5.1.2.2.</b>
+                    
+                    TreeSet源码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.5.2.</b>
+                    
+                    Hashmap
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.2.1" data-path="ConcurrentHashMap相关.html">
+            
+                <a href="ConcurrentHashMap相关.html">
+            
+                    
+                        <b>1.2.5.2.1.</b>
+                    
+                    ConcurrentHashMap相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.2" data-path="HashMap相关.html">
+            
+                <a href="HashMap相关.html">
+            
+                    
+                        <b>1.2.5.2.2.</b>
+                    
+                    HashMap相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.3" data-path="HashMap相关2.html">
+            
+                <a href="HashMap相关2.html">
+            
+                    
+                        <b>1.2.5.2.3.</b>
+                    
+                    HashMap相关2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.4" data-path="HashMap相关tx.html">
+            
+                <a href="HashMap相关tx.html">
+            
+                    
+                        <b>1.2.5.2.4.</b>
+                    
+                    HashMap相关tx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.5" data-path="jdk1.7hashmap源码分析.html">
+            
+                <a href="jdk1.7hashmap源码分析.html">
+            
+                    
+                        <b>1.2.5.2.5.</b>
+                    
+                    jdk1.7hashmap源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.5.2.6" data-path="jdk1.8ConcurrentHashMap源码分析.html">
+            
+                <a href="jdk1.8ConcurrentHashMap源码分析.html">
+            
+                    
+                        <b>1.2.5.2.6.</b>
+                    
+                    jdk1.8ConcurrentHashMap源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.7" data-path="jdk1.8HashMap源码分析.html">
+            
+                <a href="jdk1.8HashMap源码分析.html">
+            
+                    
+                        <b>1.2.5.2.7.</b>
+                    
+                    jdk1.8hashmap源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.8" data-path="Jdk1.8源码解析HashMap-putTreeVal.html">
+            
+                <a href="Jdk1.8源码解析HashMap-putTreeVal.html">
+            
+                    
+                        <b>1.2.5.2.8.</b>
+                    
+                    Jdk1.8源码解析-java.util.HashMap#putTreeVal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.9" data-path="Jdk1.8源码解析HashMap-resize.html">
+            
+                <a href="Jdk1.8源码解析HashMap-resize.html">
+            
+                    
+                        <b>1.2.5.2.9.</b>
+                    
+                    Jdk1.8源码解析-java.util.HashMap#resize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.10" data-path="Jdk1.8源码解析HashMap-treeifyBin.html">
+            
+                <a href="Jdk1.8源码解析HashMap-treeifyBin.html">
+            
+                    
+                        <b>1.2.5.2.10.</b>
+                    
+                    Jdk1.8源码解析-java.util.HashMap#treeifyBin链表转化为红黑树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.11" data-path="LinkedHashMap.html">
+            
+                <a href="LinkedHashMap.html">
+            
+                    
+                        <b>1.2.5.2.11.</b>
+                    
+                    Linked Hash Map
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" >
+            
+                <span>
+            
+                    
+                        <b>1.2.5.3.</b>
+                    
+                    hashmap源码
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.3.1" data-path="../hashmap源码/jdk1.7ConcurrentHashMap源码.html">
+            
+                <a href="../hashmap源码/jdk1.7ConcurrentHashMap源码.html">
+            
+                    
+                        <b>1.2.5.3.1.</b>
+                    
+                    jdk1.7ConcurrentHashMap源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.2" data-path="../hashmap源码/jdk1.7HashMap源码.html">
+            
+                <a href="../hashmap源码/jdk1.7HashMap源码.html">
+            
+                    
+                        <b>1.2.5.3.2.</b>
+                    
+                    jdk1.7HashMap源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.3" data-path="../hashmap源码/jdk1.8ConcurrentHashMap源码.html">
+            
+                <a href="../hashmap源码/jdk1.8ConcurrentHashMap源码.html">
+            
+                    
+                        <b>1.2.5.3.3.</b>
+                    
+                    jdk1.8ConcurrentHashMap源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.4" data-path="../hashmap源码/jdk1.8HashMap源码.html">
+            
+                <a href="../hashmap源码/jdk1.8HashMap源码.html">
+            
+                    
+                        <b>1.2.5.3.4.</b>
+                    
+                    jdk1.8HashMap源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" data-path="../集合类学习.html">
+            
+                <a href="../集合类学习.html">
+            
+                    
+                        <b>1.2.5.4.</b>
+                    
+                    集合类学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../test.html">
+            
+                <a href="../../test.html">
+            
+                    
+                        <b>1.2.6.</b>
+                    
+                    Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../基本类型装箱拆箱.html">
             
                 <a href="../../基本类型装箱拆箱.html">
             
                     
-                        <b>1.2.6.</b>
+                        <b>1.2.7.</b>
                     
                     集合基本类型装箱拆箱
             
@@ -706,12 +835,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="../../基本类型装箱拆箱2.html">
+        <li class="chapter " data-level="1.2.8" data-path="../../基本类型装箱拆箱2.html">
             
                 <a href="../../基本类型装箱拆箱2.html">
             
                     
-                        <b>1.2.7.</b>
+                        <b>1.2.8.</b>
                     
                     基本类型装箱拆箱2
             
@@ -852,6 +981,21 @@
                         <b>1.4.2.</b>
                     
                     jvm参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../../jvm/jvm相关.html">
+            
+                <a href="../../../jvm/jvm相关.html">
+            
+                    
+                        <b>1.4.3.</b>
+                    
+                    jvm相关
             
                 </a>
             
@@ -2406,7 +2550,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >HashMap相关</a>
+        <a href="../../.." >jdk1.8ConcurrentHashMap源码分析</a>
     </h1>
 </div>
 
@@ -2423,73 +2567,22 @@
                                 
                                 <p><strong>  </strong> <excerpt in="" index="" |="" 首页摘要=""></excerpt></p>
 <!-- more -->
-<p>&#x4E0B;&#x9762;&#x76F4;&#x63A5;&#x6765;&#x5E72;&#x8D27;&#xFF0C;&#x5148;&#x8BF4;&#x8FD9;&#x4E09;&#x4E2A;Map&#x7684;&#x533A;&#x522B;&#xFF1A;</p>
-<h4 id="hashtable-hashmap-concurrenthashmap&#x533A;&#x522B;"><a name="hashtable-hashmap-concurrenthashmap&#x533A;&#x522B;" class="plugin-anchor" href="#hashtable-hashmap-concurrenthashmap&#x533A;&#x522B;"><i class="fa fa-link" aria-hidden="true"></i></a>HashTable HashMap ConcurrentHashMap&#x533A;&#x522B;</h4>
-<ul>
-<li>HashMap,LinkedHashMap,TreeMap&#x90FD;&#x5C5E;&#x4E8E;Map  </li>
-<li>LinkedHashMap&#x4E5F;&#x662F;&#x4E00;&#x4E2A;HashMap,&#x4F46;&#x662F;&#x5185;&#x90E8;&#x7EF4;&#x6301;&#x4E86;&#x4E00;&#x4E2A;&#x53CC;&#x5411;&#x94FE;&#x8868;,&#x53EF;&#x4EE5;&#x4FDD;&#x6301;&#x987A;&#x5E8F;  </li>
-<li>TreeMap &#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x6392;&#x5E8F;</li>
-<li>HashMap&#x53EF;&#x4EE5;&#x7528; Collections&#x7684;synchronizedMap&#x65B9;&#x6CD5;&#x4F7F;HashMap&#x5177;&#x6709;&#x540C;&#x6B65;&#x7684;&#x80FD;&#x529B;  </li>
-</ul>
-<h4 id="hashtable"><a name="hashtable" class="plugin-anchor" href="#hashtable"><i class="fa fa-link" aria-hidden="true"></i></a>HashTable</h4>
-<p>&#x5E95;&#x5C42;&#x6570;&#x7EC4;+&#x94FE;&#x8868;&#x5B9E;&#x73B0;&#xFF0C;&#x65E0;&#x8BBA;key&#x8FD8;&#x662F;value&#x90FD;&#x4E0D;&#x80FD;&#x4E3A;null&#xFF0C;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF0C;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x5728;&#x4FEE;&#x6539;&#x6570;&#x636E;&#x65F6;&#x9501;&#x4F4F;&#x6574;&#x4E2A;HashTable&#xFF0C;&#x6548;&#x7387;&#x4F4E;&#xFF0C;ConcurrentHashMap&#x505A;&#x4E86;&#x76F8;&#x5173;&#x4F18;&#x5316;</p>
-<p>&#x521D;&#x59CB;size&#x4E3A;11&#xFF0C;&#x6269;&#x5BB9;&#xFF1A;newsize = olesize*2+1</p>
-<p>&#x8BA1;&#x7B97;index&#x7684;&#x65B9;&#x6CD5;&#xFF1A;index = (hash &amp; 0x7FFFFFFF) % tab.length</p>
-<h4 id="hashmap"><a name="hashmap" class="plugin-anchor" href="#hashmap"><i class="fa fa-link" aria-hidden="true"></i></a>HashMap</h4>
-<p>&#x5E95;&#x5C42;&#x6570;&#x7EC4;+&#x94FE;&#x8868;&#x5B9E;&#x73B0;&#xFF0C;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;null&#x952E;&#x548C;null&#x503C;&#xFF0C;&#x7EBF;&#x7A0B;&#x4E0D;&#x5B89;&#x5168;</p>
-<p>&#x521D;&#x59CB;size&#x4E3A;16&#xFF0C;&#x6269;&#x5BB9;&#xFF1A;newsize = oldsize*2&#xFF0C;size&#x4E00;&#x5B9A;&#x4E3A;2&#x7684;n&#x6B21;&#x5E42;</p>
-<p>&#x6269;&#x5BB9;&#x9488;&#x5BF9;&#x6574;&#x4E2A;Map&#xFF0C;&#x6BCF;&#x6B21;&#x6269;&#x5BB9;&#x65F6;&#xFF0C;&#x539F;&#x6765;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x4F9D;&#x6B21;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x5B58;&#x653E;&#x4F4D;&#x7F6E;&#xFF0C;&#x5E76;&#x91CD;&#x65B0;&#x63D2;&#x5165;</p>
-<p>&#x63D2;&#x5165;&#x5143;&#x7D20;&#x540E;&#x624D;&#x5224;&#x65AD;&#x8BE5;&#x4E0D;&#x8BE5;&#x6269;&#x5BB9;&#xFF0C;&#x6709;&#x53EF;&#x80FD;&#x65E0;&#x6548;&#x6269;&#x5BB9;&#xFF08;&#x63D2;&#x5165;&#x540E;&#x5982;&#x679C;&#x6269;&#x5BB9;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x518D;&#x6B21;&#x63D2;&#x5165;&#xFF0C;&#x5C31;&#x4F1A;&#x4EA7;&#x751F;&#x65E0;&#x6548;&#x6269;&#x5BB9;&#xFF09;</p>
-<p>&#x5F53;Map&#x4E2D;&#x5143;&#x7D20;&#x603B;&#x6570;&#x8D85;&#x8FC7;Entry&#x6570;&#x7EC4;&#x7684;75%&#xFF0C;&#x89E6;&#x53D1;&#x6269;&#x5BB9;&#x64CD;&#x4F5C;&#xFF0C;&#x4E3A;&#x4E86;&#x51CF;&#x5C11;&#x94FE;&#x8868;&#x957F;&#x5EA6;&#xFF0C;&#x5143;&#x7D20;&#x5206;&#x914D;&#x66F4;&#x5747;&#x5300;</p>
-<p>&#x8BA1;&#x7B97;index&#x65B9;&#x6CD5;&#xFF1A;index = hash &amp; (tab.length &#x2013; 1)</p>
-<h4 id="hashmap&#x7684;&#x521D;&#x59CB;&#x503C;&#x8FD8;&#x8981;&#x8003;&#x8651;&#x52A0;&#x8F7D;&#x56E0;&#x5B50;"><a name="hashmap&#x7684;&#x521D;&#x59CB;&#x503C;&#x8FD8;&#x8981;&#x8003;&#x8651;&#x52A0;&#x8F7D;&#x56E0;&#x5B50;" class="plugin-anchor" href="#hashmap&#x7684;&#x521D;&#x59CB;&#x503C;&#x8FD8;&#x8981;&#x8003;&#x8651;&#x52A0;&#x8F7D;&#x56E0;&#x5B50;"><i class="fa fa-link" aria-hidden="true"></i></a>HashMap&#x7684;&#x521D;&#x59CB;&#x503C;&#x8FD8;&#x8981;&#x8003;&#x8651;&#x52A0;&#x8F7D;&#x56E0;&#x5B50;:</h4>
-<p> &#x54C8;&#x5E0C;&#x51B2;&#x7A81;&#xFF1A;&#x82E5;&#x5E72;Key&#x7684;&#x54C8;&#x5E0C;&#x503C;&#x6309;&#x6570;&#x7EC4;&#x5927;&#x5C0F;&#x53D6;&#x6A21;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x843D;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x4E0B;&#x6807;&#x4E0A;&#xFF0C;&#x5C06;&#x7EC4;&#x6210;&#x4E00;&#x6761;Entry&#x94FE;&#xFF0C;&#x5BF9;Key&#x7684;&#x67E5;&#x627E;&#x9700;&#x8981;&#x904D;&#x5386;Entry&#x94FE;&#x4E0A;&#x7684;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x6267;&#x884C;equals()&#x6BD4;&#x8F83;&#x3002;</p>
-<p>&#x52A0;&#x8F7D;&#x56E0;&#x5B50;&#xFF1A;&#x4E3A;&#x4E86;&#x964D;&#x4F4E;&#x54C8;&#x5E0C;&#x51B2;&#x7A81;&#x7684;&#x6982;&#x7387;&#xFF0C;&#x9ED8;&#x8BA4;&#x5F53;HashMap&#x4E2D;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x8FBE;&#x5230;&#x6570;&#x7EC4;&#x5927;&#x5C0F;&#x7684;75%&#x65F6;&#xFF0C;&#x5373;&#x4F1A;&#x89E6;&#x53D1;&#x6269;&#x5BB9;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x9884;&#x4F30;&#x5BB9;&#x91CF;&#x662F;100&#xFF0C;&#x5373;&#x9700;&#x8981;&#x8BBE;&#x5B9A;100/0.75&#xFF1D;134&#x7684;&#x6570;&#x7EC4;&#x5927;&#x5C0F;&#x3002;</p>
-<p>&#x7A7A;&#x95F4;&#x6362;&#x65F6;&#x95F4;&#xFF1A;&#x5982;&#x679C;&#x5E0C;&#x671B;&#x52A0;&#x5FEB;Key&#x67E5;&#x627E;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x8FDB;&#x4E00;&#x6B65;&#x964D;&#x4F4E;&#x52A0;&#x8F7D;&#x56E0;&#x5B50;&#xFF0C;&#x52A0;&#x5927;&#x521D;&#x59CB;&#x5927;&#x5C0F;&#xFF0C;&#x4EE5;&#x964D;&#x4F4E;&#x54C8;&#x5E0C;&#x51B2;&#x7A81;&#x7684;&#x6982;&#x7387;&#x3002;</p>
-<p>HashMap&#x548C;Hashtable&#x90FD;&#x662F;&#x7528;hash&#x7B97;&#x6CD5;&#x6765;&#x51B3;&#x5B9A;&#x5176;&#x5143;&#x7D20;&#x7684;&#x5B58;&#x50A8;&#xFF0C;&#x56E0;&#x6B64;HashMap&#x548C;Hashtable&#x7684;hash&#x8868;&#x5305;&#x542B;&#x5982;&#x4E0B;&#x5C5E;&#x6027;&#xFF1A;</p>
-<p>&#x5BB9;&#x91CF;&#xFF08;capacity&#xFF09;&#xFF1A;hash&#x8868;&#x4E2D;&#x6876;&#x7684;&#x6570;&#x91CF;</p>
-<p>&#x521D;&#x59CB;&#x5316;&#x5BB9;&#x91CF;&#xFF08;initial capacity&#xFF09;&#xFF1A;&#x521B;&#x5EFA;hash&#x8868;&#x65F6;&#x6876;&#x7684;&#x6570;&#x91CF;&#xFF0C;HashMap&#x5141;&#x8BB8;&#x5728;&#x6784;&#x9020;&#x5668;&#x4E2D;&#x6307;&#x5B9A;&#x521D;&#x59CB;&#x5316;&#x5BB9;&#x91CF;</p>
-<p>&#x5C3A;&#x5BF8;&#xFF08;size&#xFF09;&#xFF1A;&#x5F53;&#x524D;hash&#x8868;&#x4E2D;&#x8BB0;&#x5F55;&#x7684;&#x6570;&#x91CF;</p>
-<p>&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#xFF08;load factor&#xFF09;&#xFF1A;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x7B49;&#x4E8E;&#x201C;size/capacity&#x201D;&#x3002;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x4E3A;0&#xFF0C;&#x8868;&#x793A;&#x7A7A;&#x7684;hash&#x8868;&#xFF0C;0.5&#x8868;&#x793A;&#x534A;&#x6EE1;&#x7684;&#x6563;&#x5217;&#x8868;&#xFF0C;&#x4F9D;&#x6B64;&#x7C7B;&#x63A8;&#x3002;&#x8F7B;&#x8D1F;&#x8F7D;&#x7684;&#x6563;&#x5217;&#x8868;&#x5177;&#x6709;&#x51B2;&#x7A81;&#x5C11;&#x3001;&#x9002;&#x5B9C;&#x63D2;&#x5165;&#x4E0E;&#x67E5;&#x8BE2;&#x7684;&#x7279;&#x70B9;&#xFF08;&#x4F46;&#x662F;&#x4F7F;&#x7528;Iterator&#x8FED;&#x4EE3;&#x5143;&#x7D20;&#x65F6;&#x6BD4;&#x8F83;&#x6162;&#xFF09;</p>
-<p>&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;hash&#x8868;&#x91CC;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x201C;&#x8D1F;&#x8F7D;&#x6781;&#x9650;&#x201D;&#xFF0C;&#x201C;&#x8D1F;&#x8F7D;&#x6781;&#x9650;&#x201D;&#x662F;&#x4E00;&#x4E2A;0&#xFF5E;1&#x7684;&#x6570;&#x503C;&#xFF0C;&#x201C;&#x8D1F;&#x8F7D;&#x6781;&#x9650;&#x201D;&#x51B3;&#x5B9A;&#x4E86;hash&#x8868;&#x7684;&#x6700;&#x5927;&#x586B;&#x6EE1;&#x7A0B;&#x5EA6;&#x3002;&#x5F53;hash&#x8868;&#x4E2D;&#x7684;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x8FBE;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x201C;&#x8D1F;&#x8F7D;&#x6781;&#x9650;&#x201D;&#x65F6;&#xFF0C;hash&#x8868;&#x4F1A;&#x81EA;&#x52A8;&#x6210;&#x500D;&#x5730;&#x589E;&#x52A0;&#x5BB9;&#x91CF;&#xFF08;&#x6876;&#x7684;&#x6570;&#x91CF;&#xFF09;&#xFF0C;&#x5E76;&#x5C06;&#x539F;&#x6709;&#x7684;&#x5BF9;&#x8C61;&#x91CD;&#x65B0;&#x5206;&#x914D;&#xFF0C;&#x653E;&#x5165;&#x65B0;&#x7684;&#x6876;&#x5185;&#xFF0C;&#x8FD9;&#x79F0;&#x4E3A;rehashing&#x3002;</p>
-<p>HashMap&#x548C;Hashtable&#x7684;&#x6784;&#x9020;&#x5668;&#x5141;&#x8BB8;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x8D1F;&#x8F7D;&#x6781;&#x9650;&#xFF0C;HashMap&#x548C;Hashtable&#x9ED8;&#x8BA4;&#x7684;&#x201C;&#x8D1F;&#x8F7D;&#x6781;&#x9650;&#x201D;&#x4E3A;0.75&#xFF0C;&#x8FD9;&#x8868;&#x660E;&#x5F53;&#x8BE5;hash&#x8868;&#x7684;3/4&#x5DF2;&#x7ECF;&#x88AB;&#x586B;&#x6EE1;&#x65F6;&#xFF0C;hash&#x8868;&#x4F1A;&#x53D1;&#x751F;rehashing&#x3002;</p>
-<p>&#x201C;&#x8D1F;&#x8F7D;&#x6781;&#x9650;&#x201D;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#xFF08;0.75&#xFF09;&#x662F;&#x65F6;&#x95F4;&#x548C;&#x7A7A;&#x95F4;&#x6210;&#x672C;&#x4E0A;&#x7684;&#x4E00;&#x79CD;&#x6298;&#x4E2D;&#xFF1A;</p>
-<p>&#x8F83;&#x9AD8;&#x7684;&#x201C;&#x8D1F;&#x8F7D;&#x6781;&#x9650;&#x201D;&#x53EF;&#x4EE5;&#x964D;&#x4F4E;hash&#x8868;&#x6240;&#x5360;&#x7528;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#xFF0C;&#x4F46;&#x4F1A;&#x589E;&#x52A0;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x7684;&#x65F6;&#x95F4;&#x5F00;&#x9500;&#xFF0C;&#x800C;&#x67E5;&#x8BE2;&#x662F;&#x6700;&#x9891;&#x7E41;&#x7684;&#x64CD;&#x4F5C;&#xFF08;HashMap&#x7684;get()&#x4E0E;put()&#x65B9;&#x6CD5;&#x90FD;&#x8981;&#x7528;&#x5230;&#x67E5;&#x8BE2;&#xFF09;</p>
-<p>&#x8F83;&#x4F4E;&#x7684;&#x201C;&#x8D1F;&#x8F7D;&#x6781;&#x9650;&#x201D;&#x4F1A;&#x63D0;&#x9AD8;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x7684;&#x6027;&#x80FD;&#xFF0C;&#x4F46;&#x4F1A;&#x589E;&#x52A0;hash&#x8868;&#x6240;&#x5360;&#x7528;&#x7684;&#x5185;&#x5B58;&#x5F00;&#x9500;</p>
-<p>&#x7A0B;&#x5E8F;&#x733F;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x6765;&#x8C03;&#x6574;&#x201C;&#x8D1F;&#x8F7D;&#x6781;&#x9650;&#x201D;&#x503C;&#x3002;</p>
-<h4 id="concurrenthashmap"><a name="concurrenthashmap" class="plugin-anchor" href="#concurrenthashmap"><i class="fa fa-link" aria-hidden="true"></i></a>ConcurrentHashMap</h4>
-<p>&#x5E95;&#x5C42;&#x91C7;&#x7528;&#x5206;&#x6BB5;&#x7684;&#x6570;&#x7EC4;+&#x94FE;&#x8868;&#x5B9E;&#x73B0;&#xFF0C;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;</p>
-<p>&#x901A;&#x8FC7;&#x628A;&#x6574;&#x4E2A;Map&#x5206;&#x4E3A;N&#x4E2A;Segment&#xFF0C;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x76F8;&#x540C;&#x7684;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF0C;&#x4F46;&#x662F;&#x6548;&#x7387;&#x63D0;&#x5347;N&#x500D;&#xFF0C;&#x9ED8;&#x8BA4;&#x63D0;&#x5347;16&#x500D;&#x3002;(&#x8BFB;&#x64CD;&#x4F5C;&#x4E0D;&#x52A0;&#x9501;&#xFF0C;&#x7531;&#x4E8E;HashEntry&#x7684;value&#x53D8;&#x91CF;&#x662F; volatile&#x7684;&#xFF0C;&#x4E5F;&#x80FD;&#x4FDD;&#x8BC1;&#x8BFB;&#x53D6;&#x5230;&#x6700;&#x65B0;&#x7684;&#x503C;&#x3002;)</p>
-<p>Hashtable&#x7684;synchronized&#x662F;&#x9488;&#x5BF9;&#x6574;&#x5F20;Hash&#x8868;&#x7684;&#xFF0C;&#x5373;&#x6BCF;&#x6B21;&#x9501;&#x4F4F;&#x6574;&#x5F20;&#x8868;&#x8BA9;&#x7EBF;&#x7A0B;&#x72EC;&#x5360;&#xFF0C;ConcurrentHashMap&#x5141;&#x8BB8;&#x591A;&#x4E2A;&#x4FEE;&#x6539;&#x64CD;&#x4F5C;&#x5E76;&#x53D1;&#x8FDB;&#x884C;&#xFF0C;&#x5176;&#x5173;&#x952E;&#x5728;&#x4E8E;&#x4F7F;&#x7528;&#x4E86;&#x9501;&#x5206;&#x79BB;&#x6280;&#x672F;</p>
-<p>&#x6709;&#x4E9B;&#x65B9;&#x6CD5;&#x9700;&#x8981;&#x8DE8;&#x6BB5;&#xFF0C;&#x6BD4;&#x5982;size()&#x548C;containsValue()&#xFF0C;&#x5B83;&#x4EEC;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x9501;&#x5B9A;&#x6574;&#x4E2A;&#x8868;&#x800C;&#x800C;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F;&#x67D0;&#x4E2A;&#x6BB5;&#xFF0C;&#x8FD9;&#x9700;&#x8981;&#x6309;&#x987A;&#x5E8F;&#x9501;&#x5B9A;&#x6240;&#x6709;&#x6BB5;&#xFF0C;&#x64CD;&#x4F5C;&#x5B8C;&#x6BD5;&#x540E;&#xFF0C;&#x53C8;&#x6309;&#x987A;&#x5E8F;&#x91CA;&#x653E;&#x6240;&#x6709;&#x6BB5;&#x7684;&#x9501;</p>
-<p>&#x6269;&#x5BB9;&#xFF1A;&#x6BB5;&#x5185;&#x6269;&#x5BB9;&#xFF08;&#x6BB5;&#x5185;&#x5143;&#x7D20;&#x8D85;&#x8FC7;&#x8BE5;&#x6BB5;&#x5BF9;&#x5E94;Entry&#x6570;&#x7EC4;&#x957F;&#x5EA6;&#x7684;75%&#x89E6;&#x53D1;&#x6269;&#x5BB9;&#xFF0C;&#x4E0D;&#x4F1A;&#x5BF9;&#x6574;&#x4E2A;Map&#x8FDB;&#x884C;&#x6269;&#x5BB9;&#xFF09;&#xFF0C;&#x63D2;&#x5165;&#x524D;&#x68C0;&#x6D4B;&#x9700;&#x4E0D;&#x9700;&#x8981;&#x6269;&#x5BB9;&#xFF0C;&#x6709;&#x6548;&#x907F;&#x514D;&#x65E0;&#x6548;&#x6269;&#x5BB9;</p>
-<p>Hashtable&#x548C;HashMap&#x90FD;&#x5B9E;&#x73B0;&#x4E86;Map&#x63A5;&#x53E3;&#xFF0C;&#x4F46;&#x662F;Hashtable&#x7684;&#x5B9E;&#x73B0;&#x662F;&#x57FA;&#x4E8E;Dictionary&#x62BD;&#x8C61;&#x7C7B;&#x7684;&#x3002;Java5&#x63D0;&#x4F9B;&#x4E86;ConcurrentHashMap&#xFF0C;&#x5B83;&#x662F;HashTable&#x7684;&#x66FF;&#x4EE3;&#xFF0C;&#x6BD4;HashTable&#x7684;&#x6269;&#x5C55;&#x6027;&#x66F4;&#x597D;&#x3002;</p>
-<p>&#x5728;HashMap&#x4E2D;&#xFF0C;null&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x952E;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x952E;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#xFF0C;&#x4F46;&#x53EF;&#x4EE5;&#x6709;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x952E;&#x6240;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x4E3A;null&#x3002;&#x5F53;get()&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;null&#x503C;&#x65F6;&#xFF0C;&#x5373;&#x53EF;&#x4EE5;&#x8868;&#x793A;HashMap&#x4E2D;&#x6CA1;&#x6709;&#x8BE5;key&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x8868;&#x793A;&#x8BE5;key&#x6240;&#x5BF9;&#x5E94;&#x7684;value&#x4E3A;null&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5728;HashMap&#x4E2D;&#x4E0D;&#x80FD;&#x7531;get()&#x65B9;&#x6CD5;&#x6765;&#x5224;&#x65AD;HashMap&#x4E2D;&#x662F;&#x5426;&#x5B58;&#x5728;&#x67D0;&#x4E2A;key&#xFF0C;&#x5E94;&#x8BE5;&#x7528;containsKey()&#x65B9;&#x6CD5;&#x6765;&#x5224;&#x65AD;&#x3002;&#x800C;&#x5728;Hashtable&#x4E2D;&#xFF0C;&#x65E0;&#x8BBA;&#x662F;key&#x8FD8;&#x662F;value&#x90FD;&#x4E0D;&#x80FD;&#x4E3A;null&#x3002;</p>
-<p>Hashtable&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x5B83;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x540C;&#x6B65;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7528;&#x5728;&#x591A;&#x7EBF;&#x7A0B;&#x73AF;&#x5883;&#x4E2D;&#x3002;&#x800C;HashMap&#x5219;&#x4E0D;&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x5728;&#x591A;&#x7EBF;&#x7A0B;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x9700;&#x8981;&#x624B;&#x52A8;&#x5B9E;&#x73B0;&#x540C;&#x6B65;&#x673A;&#x5236;&#x3002;</p>
-<p>Hashtable&#x4E0E;HashMap&#x53E6;&#x4E00;&#x4E2A;&#x533A;&#x522B;&#x662F;HashMap&#x7684;&#x8FED;&#x4EE3;&#x5668;&#xFF08;Iterator&#xFF09;&#x662F;fail-fast&#x8FED;&#x4EE3;&#x5668;&#xFF0C;&#x800C;Hashtable&#x7684;enumerator&#x8FED;&#x4EE3;&#x5668;&#x4E0D;&#x662F;fail-fast&#x7684;&#x3002;&#x6240;&#x4EE5;&#x5F53;&#x6709;&#x5176;&#x5B83;&#x7EBF;&#x7A0B;&#x6539;&#x53D8;&#x4E86;HashMap&#x7684;&#x7ED3;&#x6784;&#xFF08;&#x589E;&#x52A0;&#x6216;&#x8005;&#x79FB;&#x9664;&#x5143;&#x7D20;&#xFF09;&#xFF0C;&#x5C06;&#x4F1A;&#x629B;&#x51FA;ConcurrentModificationException&#xFF0C;&#x4F46;&#x8FED;&#x4EE3;&#x5668;&#x672C;&#x8EAB;&#x7684;remove()&#x65B9;&#x6CD5;&#x79FB;&#x9664;&#x5143;&#x7D20;&#x5219;&#x4E0D;&#x4F1A;&#x629B;&#x51FA;ConcurrentModificationException&#x5F02;&#x5E38;&#x3002;&#x4F46;&#x8FD9;&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x4E00;&#x5B9A;&#x53D1;&#x751F;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x8981;&#x770B;JVM&#x3002;</p>
-<p>&#x53C2;&#x8003;&#xFF1A;
-<a href="https://mp.weixin.qq.com/s?__biz=MzUxNDA1NDI3OA==&amp;mid=2247486460&amp;idx=1&amp;sn=dc272f151d7e49cb33b8aa8559424ae8&amp;chksm=f94a8a15ce3d03035a741e7e383d1bf6939b45f3e1d821ccb316672dfec6e8c24c51d34b80d2&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1588342568180&amp;sharer_shareid=05fe8a67423e445e481692cdff57b1ab#rd" target="_blank">https://mp.weixin.qq.com/s?__biz=MzUxNDA1NDI3OA==&amp;mid=2247486460&amp;idx=1&amp;sn=dc272f151d7e49cb33b8aa8559424ae8&amp;chksm=f94a8a15ce3d03035a741e7e383d1bf6939b45f3e1d821ccb316672dfec6e8c24c51d34b80d2&amp;mpshare=1&amp;scene=24&amp;srcid=&amp;sharer_sharetime=1588342568180&amp;sharer_shareid=05fe8a67423e445e481692cdff57b1ab#rd</a></p>
-<h4 id="&#x9501;&#x5206;&#x6BB5;&#x6280;&#x672F;"><a name="&#x9501;&#x5206;&#x6BB5;&#x6280;&#x672F;" class="plugin-anchor" href="#&#x9501;&#x5206;&#x6BB5;&#x6280;&#x672F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9501;&#x5206;&#x6BB5;&#x6280;&#x672F;</h4>
-<p>&#x9501;&#x5206;&#x6BB5;&#x6280;&#x672F;&#xFF1A;&#x9996;&#x5148;&#x5C06;&#x6570;&#x636E;&#x5206;&#x6210;&#x4E00;&#x6BB5;&#x4E00;&#x6BB5;&#x7684;&#x5B58;&#x50A8;&#xFF0C;&#x7136;&#x540E;&#x7ED9;&#x6BCF;&#x4E00;&#x6BB5;&#x6570;&#x636E;&#x914D;&#x4E00;&#x628A;&#x9501;&#xFF0C;&#x5F53;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x5360;&#x7528;&#x9501;&#x8BBF;&#x95EE;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x6BB5;&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5176;&#x4ED6;&#x6BB5;&#x7684;&#x6570;&#x636E;&#x4E5F;&#x80FD;&#x88AB;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x8BBF;&#x95EE;&#x3002; </p>
-<p>ConcurrentHashMap&#x63D0;&#x4F9B;&#x4E86;&#x4E0E;Hashtable&#x548C;SynchronizedMap&#x4E0D;&#x540C;&#x7684;&#x9501;&#x673A;&#x5236;&#x3002;Hashtable&#x4E2D;&#x91C7;&#x7528;&#x7684;&#x9501;&#x673A;&#x5236;&#x662F;&#x4E00;&#x6B21;&#x9501;&#x4F4F;&#x6574;&#x4E2A;hash&#x8868;&#xFF0C;&#x4ECE;&#x800C;&#x5728;&#x540C;&#x4E00;&#x65F6;&#x523B;&#x53EA;&#x80FD;&#x7531;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF1B;&#x800C;ConcurrentHashMap&#x4E2D;&#x5219;&#x662F;&#x4E00;&#x6B21;&#x9501;&#x4F4F;&#x4E00;&#x4E2A;&#x6876;&#x3002;</p>
-<p>ConcurrentHashMap&#x9ED8;&#x8BA4;&#x5C06;hash&#x8868;&#x5206;&#x4E3A;16&#x4E2A;&#x6876;&#xFF0C;&#x8BF8;&#x5982;get&#x3001;put&#x3001;remove&#x7B49;&#x5E38;&#x7528;&#x64CD;&#x4F5C;&#x53EA;&#x9501;&#x4F4F;&#x5F53;&#x524D;&#x9700;&#x8981;&#x7528;&#x5230;&#x7684;&#x6876;&#x3002;&#x8FD9;&#x6837;&#xFF0C;&#x539F;&#x6765;&#x53EA;&#x80FD;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x8FDB;&#x5165;&#xFF0C;&#x73B0;&#x5728;&#x5374;&#x80FD;&#x540C;&#x65F6;&#x6709;16&#x4E2A;&#x5199;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#xFF0C;&#x5E76;&#x53D1;&#x6027;&#x80FD;&#x7684;&#x63D0;&#x5347;&#x662F;&#x663E;&#x800C;&#x6613;&#x89C1;&#x7684;&#x3002;</p>
+<h3 id=""><a name="" class="plugin-anchor" href="#"><i class="fa fa-link" aria-hidden="true"></i></a> </h3>
 <pre><code>
 
-</code></pre><h3 id="concurrenthashmap"><a name="concurrenthashmap" class="plugin-anchor" href="#concurrenthashmap"><i class="fa fa-link" aria-hidden="true"></i></a>Concurrenthashmap</h3>
-<p><a href="https://blog.liangqingxiang.top/view2/zother2-interview/java/collection/Concurrenthashmap/" target="_blank">https://blog.liangqingxiang.top/view2/zother2-interview/java/collection/Concurrenthashmap/</a></p>
+</code></pre><h4 id=""><a name="" class="plugin-anchor" href="#"><i class="fa fa-link" aria-hidden="true"></i></a> </h4>
 <ol>
 <li></li>
 <li></li>
 <li></li>
 </ol>
-<h4 id="hashtable&#x4E0E;hashmap&#x7684;&#x533A;&#x522B;"><a name="hashtable&#x4E0E;hashmap&#x7684;&#x533A;&#x522B;" class="plugin-anchor" href="#hashtable&#x4E0E;hashmap&#x7684;&#x533A;&#x522B;"><i class="fa fa-link" aria-hidden="true"></i></a>Hashtable&#x4E0E;HashMap&#x7684;&#x533A;&#x522B;</h4>
-<p><a href="https://mp.weixin.qq.com/s/YHSLdfCh-ivI__sdDaL8og" target="_blank">https://mp.weixin.qq.com/s/YHSLdfCh-ivI__sdDaL8og</a></p>
-<p><a href="https://my.oschina.net/u/1458864/blog/267591" target="_blank">https://my.oschina.net/u/1458864/blog/267591</a></p>
-<h4 id="hashmap&#x7684;&#x7ED3;&#x6784;&#xFF0C;17&#x548C;18&#x6709;&#x54EA;&#x4E9B;&#x533A;&#x522B;"><a name="hashmap&#x7684;&#x7ED3;&#x6784;&#xFF0C;17&#x548C;18&#x6709;&#x54EA;&#x4E9B;&#x533A;&#x522B;" class="plugin-anchor" href="#hashmap&#x7684;&#x7ED3;&#x6784;&#xFF0C;17&#x548C;18&#x6709;&#x54EA;&#x4E9B;&#x533A;&#x522B;"><i class="fa fa-link" aria-hidden="true"></i></a>Hashmap&#x7684;&#x7ED3;&#x6784;&#xFF0C;1.7&#x548C;1.8&#x6709;&#x54EA;&#x4E9B;&#x533A;&#x522B;</h4>
-<p><a href="https://blog.csdn.net/qq_36520235/article/details/82417949" target="_blank">https://blog.csdn.net/qq_36520235/article/details/82417949</a></p>
-<h4 id="java-map&#x91CC;&#x9762;&#x7684;&#x952E;&#x548C;&#x503C;&#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;&#x5417;&#xFF1F;"><a name="java-map&#x91CC;&#x9762;&#x7684;&#x952E;&#x548C;&#x503C;&#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;&#x5417;&#xFF1F;" class="plugin-anchor" href="#java-map&#x91CC;&#x9762;&#x7684;&#x952E;&#x548C;&#x503C;&#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;&#x5417;&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>Java: Map&#x91CC;&#x9762;&#x7684;&#x952E;&#x548C;&#x503C;&#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;&#x5417;&#xFF1F;</h4>
-<p><a href="https://blog.csdn.net/WGH100817/article/details/101721771" target="_blank">Java: Map&#x91CC;&#x9762;&#x7684;&#x952E;&#x548C;&#x503C;&#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;&#x5417;&#xFF1F;</a></p>
-<ol>
+<h4 id="segment"><a name="segment" class="plugin-anchor" href="#segment"><i class="fa fa-link" aria-hidden="true"></i></a>Segment</h4>
+<pre><code>    static class Segment&lt;K,V&gt; extends ReentrantLock implements Serializable {
+        private static final long serialVersionUID = 2249069246763182397L;
+        final float loadFactor;
+        Segment(float lf) { this.loadFactor = lf; }
+    }
+</code></pre><ol>
 <li></li>
 <li></li>
 <li></li>
@@ -2522,12 +2615,12 @@
 
             
                 
-                <a href="ConcurrentHashMap相关.html" class="navigation navigation-prev " aria-label="Previous page: ConcurrentHashMap相关">
+                <a href="jdk1.7hashmap源码分析.html" class="navigation navigation-prev " aria-label="Previous page: jdk1.7hashmap源码分析">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="HashMap相关2.html" class="navigation navigation-next " aria-label="Next page: HashMap相关2">
+                <a href="jdk1.8HashMap源码分析.html" class="navigation navigation-next " aria-label="Next page: jdk1.8hashmap源码分析">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -2538,7 +2631,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"HashMap相关","tags":[],"date":"2019-08-22T10:48:17.000Z","categories":null,"level":"1.2.1.1.2","depth":4,"next":{"title":"HashMap相关2","level":"1.2.1.1.3","depth":4,"path":"base/collection/hashmap/HashMap相关2.md","ref":"base/collection/hashmap/HashMap相关2.md","articles":[]},"previous":{"title":"ConcurrentHashMap相关","level":"1.2.1.1.1","depth":4,"path":"base/collection/hashmap/ConcurrentHashMap相关.md","ref":"base/collection/hashmap/ConcurrentHashMap相关.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","-highlight","baidu","splitter","sitemap","back-to-top-button","code","splitter","-lunr","-search","search-pro","theme-comscore","popup","hide-element","anchors","nocache","page-toc-button"],"ignores":["friends","tags","categories","about"],"root":".deploy/content","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"nocache":{},"github":{"url":"https://github.com/zhaoda/webpack-handbook"},"editlink":{"base":"https://github.com/zhaoda/webpack-handbook/blob/master/content","label":"编辑本页"},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://zhaoda.net/"},"theme-comscore":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"baidu":{"token":"a9787f0ab45d5e237bab522431d0a7ec"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"SUMMARY.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java实用笔记","language":"zh-hans","output.name":"site","catalog":["./source/_posts"],"links":{"sidebar":{"Home":"http://blog.liangqingxiang.top/"}},"gitbook":"3.2.3","description":"学习笔记"},"file":{"path":"base/collection/hashmap/HashMap相关.md","mtime":"2020-06-14T08:02:21.108Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-14T08:06:28.960Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"jdk1.8ConcurrentHashMap源码分析","tags":[],"date":"2019-08-22T10:48:17.000Z","categories":null,"level":"1.2.5.2.6","depth":4,"next":{"title":"jdk1.8hashmap源码分析","level":"1.2.5.2.7","depth":4,"path":"base/集合/hashmap/jdk1.8HashMap源码分析.md","ref":"base/集合/hashmap/jdk1.8HashMap源码分析.md","articles":[]},"previous":{"title":"jdk1.7hashmap源码分析","level":"1.2.5.2.5","depth":4,"path":"base/集合/hashmap/jdk1.7hashmap源码分析.md","ref":"base/集合/hashmap/jdk1.7hashmap源码分析.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","-highlight","baidu","splitter","sitemap","back-to-top-button","code","splitter","-lunr","-search","search-pro","theme-comscore","popup","hide-element","anchors","nocache","page-toc-button"],"ignores":["friends","tags","categories","about"],"root":".deploy/content","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"nocache":{},"github":{"url":"https://github.com/zhaoda/webpack-handbook"},"editlink":{"base":"https://github.com/zhaoda/webpack-handbook/blob/master/content","label":"编辑本页"},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://zhaoda.net/"},"theme-comscore":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"baidu":{"token":"a9787f0ab45d5e237bab522431d0a7ec"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"SUMMARY.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java实用笔记","language":"zh-hans","output.name":"site","catalog":["./source/_posts"],"links":{"sidebar":{"Home":"http://blog.liangqingxiang.top/"}},"gitbook":"3.2.3","description":"学习笔记"},"file":{"path":"base/集合/hashmap/jdk1.8ConcurrentHashMap源码分析.md","mtime":"2020-06-17T08:27:43.081Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-17T08:28:18.784Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

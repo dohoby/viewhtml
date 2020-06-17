@@ -1,0 +1,3156 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>TreeSet源码学习 · java实用笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="hashset源码学习.html" />
+    
+
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://blog.liangqingxiang.top/" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../../">
+            
+                <a href="../../../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.</b>
+                    
+                    Base
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    String
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../../../string/StringBuffer和StringBuilder.html">
+            
+                <a href="../../../string/StringBuffer和StringBuilder.html">
+            
+                    
+                        <b>1.2.1.1.</b>
+                    
+                    集合StringBuffer和StringBuilder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../../../string/string源码.html">
+            
+                <a href="../../../string/string源码.html">
+            
+                    
+                        <b>1.2.1.2.</b>
+                    
+                    string源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../../../string/string源码学习.html">
+            
+                <a href="../../../string/string源码学习.html">
+            
+                    
+                        <b>1.2.1.3.</b>
+                    
+                    string源码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../../../string/字符串string学习.html">
+            
+                <a href="../../../string/字符串string学习.html">
+            
+                    
+                        <b>1.2.1.4.</b>
+                    
+                    字符串string学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../../../string/字符串string学习2-lg.html">
+            
+                <a href="../../../string/字符串string学习2-lg.html">
+            
+                    
+                        <b>1.2.1.5.</b>
+                    
+                    字符串string学习2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    算法
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" >
+            
+                <span>
+            
+                    
+                        <b>1.2.2.1.</b>
+                    
+                    排序
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1.1" data-path="../../../算法/排序/快速排序.html">
+            
+                <a href="../../../算法/排序/快速排序.html">
+            
+                    
+                        <b>1.2.2.1.1.</b>
+                    
+                    Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    线程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../../../线程/ThreadPoolExecutor.html">
+            
+                <a href="../../../线程/ThreadPoolExecutor.html">
+            
+                    
+                        <b>1.2.3.1.</b>
+                    
+                    ThreadPoolExecutor详解 ThreadPoolExecutor 的参数含义及源码执行流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../../../线程/线程的状态-lg.html">
+            
+                <a href="../../../线程/线程的状态-lg.html">
+            
+                    
+                        <b>1.2.3.2.</b>
+                    
+                    线程的状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                        <b>1.2.4.</b>
+                    
+                    网络
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../../../网络/http和tcp.html">
+            
+                <a href="../../../网络/http和tcp.html">
+            
+                    
+                        <b>1.2.4.1.</b>
+                    
+                    http和tcp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                        <b>1.2.5.</b>
+                    
+                    集合
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" >
+            
+                <span>
+            
+                    
+                        <b>1.2.5.1.</b>
+                    
+                    Collection
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.1" >
+            
+                <span>
+            
+                    
+                        <b>1.2.5.1.1.</b>
+                    
+                    List
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.1.1" data-path="../list/ArrayList源码学习.html">
+            
+                <a href="../list/ArrayList源码学习.html">
+            
+                    
+                        <b>1.2.5.1.1.1.</b>
+                    
+                    Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.5.1.2.</b>
+                    
+                    Set
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.2.1" data-path="hashset源码学习.html">
+            
+                <a href="hashset源码学习.html">
+            
+                    
+                        <b>1.2.5.1.2.1.</b>
+                    
+                    hashset源码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.5.1.2.2" data-path="TreeSet源码学习.html">
+            
+                <a href="TreeSet源码学习.html">
+            
+                    
+                        <b>1.2.5.1.2.2.</b>
+                    
+                    TreeSet源码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.5.2.</b>
+                    
+                    Hashmap
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.2.1" data-path="../../hashmap/ConcurrentHashMap相关.html">
+            
+                <a href="../../hashmap/ConcurrentHashMap相关.html">
+            
+                    
+                        <b>1.2.5.2.1.</b>
+                    
+                    ConcurrentHashMap相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.2" data-path="../../hashmap/HashMap相关.html">
+            
+                <a href="../../hashmap/HashMap相关.html">
+            
+                    
+                        <b>1.2.5.2.2.</b>
+                    
+                    HashMap相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.3" data-path="../../hashmap/HashMap相关2.html">
+            
+                <a href="../../hashmap/HashMap相关2.html">
+            
+                    
+                        <b>1.2.5.2.3.</b>
+                    
+                    HashMap相关2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.4" data-path="../../hashmap/HashMap相关tx.html">
+            
+                <a href="../../hashmap/HashMap相关tx.html">
+            
+                    
+                        <b>1.2.5.2.4.</b>
+                    
+                    HashMap相关tx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.5" data-path="../../hashmap/jdk1.7hashmap源码分析.html">
+            
+                <a href="../../hashmap/jdk1.7hashmap源码分析.html">
+            
+                    
+                        <b>1.2.5.2.5.</b>
+                    
+                    jdk1.7hashmap源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.6" data-path="../../hashmap/jdk1.8ConcurrentHashMap源码分析.html">
+            
+                <a href="../../hashmap/jdk1.8ConcurrentHashMap源码分析.html">
+            
+                    
+                        <b>1.2.5.2.6.</b>
+                    
+                    jdk1.8ConcurrentHashMap源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.7" data-path="../../hashmap/jdk1.8HashMap源码分析.html">
+            
+                <a href="../../hashmap/jdk1.8HashMap源码分析.html">
+            
+                    
+                        <b>1.2.5.2.7.</b>
+                    
+                    jdk1.8hashmap源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.8" data-path="../../hashmap/Jdk1.8源码解析HashMap-putTreeVal.html">
+            
+                <a href="../../hashmap/Jdk1.8源码解析HashMap-putTreeVal.html">
+            
+                    
+                        <b>1.2.5.2.8.</b>
+                    
+                    Jdk1.8源码解析-java.util.HashMap#putTreeVal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.9" data-path="../../hashmap/Jdk1.8源码解析HashMap-resize.html">
+            
+                <a href="../../hashmap/Jdk1.8源码解析HashMap-resize.html">
+            
+                    
+                        <b>1.2.5.2.9.</b>
+                    
+                    Jdk1.8源码解析-java.util.HashMap#resize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.10" data-path="../../hashmap/Jdk1.8源码解析HashMap-treeifyBin.html">
+            
+                <a href="../../hashmap/Jdk1.8源码解析HashMap-treeifyBin.html">
+            
+                    
+                        <b>1.2.5.2.10.</b>
+                    
+                    Jdk1.8源码解析-java.util.HashMap#treeifyBin链表转化为红黑树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.11" data-path="../../hashmap/LinkedHashMap.html">
+            
+                <a href="../../hashmap/LinkedHashMap.html">
+            
+                    
+                        <b>1.2.5.2.11.</b>
+                    
+                    Linked Hash Map
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" >
+            
+                <span>
+            
+                    
+                        <b>1.2.5.3.</b>
+                    
+                    hashmap源码
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.3.1" data-path="../../hashmap源码/jdk1.7ConcurrentHashMap源码.html">
+            
+                <a href="../../hashmap源码/jdk1.7ConcurrentHashMap源码.html">
+            
+                    
+                        <b>1.2.5.3.1.</b>
+                    
+                    jdk1.7ConcurrentHashMap源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.2" data-path="../../hashmap源码/jdk1.7HashMap源码.html">
+            
+                <a href="../../hashmap源码/jdk1.7HashMap源码.html">
+            
+                    
+                        <b>1.2.5.3.2.</b>
+                    
+                    jdk1.7HashMap源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.3" data-path="../../hashmap源码/jdk1.8ConcurrentHashMap源码.html">
+            
+                <a href="../../hashmap源码/jdk1.8ConcurrentHashMap源码.html">
+            
+                    
+                        <b>1.2.5.3.3.</b>
+                    
+                    jdk1.8ConcurrentHashMap源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.4" data-path="../../hashmap源码/jdk1.8HashMap源码.html">
+            
+                <a href="../../hashmap源码/jdk1.8HashMap源码.html">
+            
+                    
+                        <b>1.2.5.3.4.</b>
+                    
+                    jdk1.8HashMap源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" data-path="../../集合类学习.html">
+            
+                <a href="../../集合类学习.html">
+            
+                    
+                        <b>1.2.5.4.</b>
+                    
+                    集合类学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../../test.html">
+            
+                <a href="../../../test.html">
+            
+                    
+                        <b>1.2.6.</b>
+                    
+                    Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../../基本类型装箱拆箱.html">
+            
+                <a href="../../../基本类型装箱拆箱.html">
+            
+                    
+                        <b>1.2.7.</b>
+                    
+                    集合基本类型装箱拆箱
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../../../基本类型装箱拆箱2.html">
+            
+                <a href="../../../基本类型装箱拆箱2.html">
+            
+                    
+                        <b>1.2.8.</b>
+                    
+                    基本类型装箱拆箱2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                        <b>1.3.</b>
+                    
+                    Design Patterns
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" >
+            
+                <span>
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    Spring
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../../../designPatterns/spring/spring享元模式.html">
+            
+                <a href="../../../../designPatterns/spring/spring享元模式.html">
+            
+                    
+                        <b>1.3.1.1.</b>
+                    
+                    spring享元模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../../../../designPatterns/spring/spring代理模式.html">
+            
+                <a href="../../../../designPatterns/spring/spring代理模式.html">
+            
+                    
+                        <b>1.3.1.2.</b>
+                    
+                    spring代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../../../../designPatterns/spring/spring策略模式.html">
+            
+                <a href="../../../../designPatterns/spring/spring策略模式.html">
+            
+                    
+                        <b>1.3.1.3.</b>
+                    
+                    spring策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                        <b>1.4.</b>
+                    
+                    Jvm
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../../../jvm/jvm内存模型.html">
+            
+                <a href="../../../../jvm/jvm内存模型.html">
+            
+                    
+                        <b>1.4.1.</b>
+                    
+                    jvm内存模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../../../jvm/jvm参数.html">
+            
+                <a href="../../../../jvm/jvm参数.html">
+            
+                    
+                        <b>1.4.2.</b>
+                    
+                    jvm参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../../../jvm/jvm相关.html">
+            
+                <a href="../../../../jvm/jvm相关.html">
+            
+                    
+                        <b>1.4.3.</b>
+                    
+                    jvm相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                        <b>1.5.</b>
+                    
+                    Mybatis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" >
+            
+                <span>
+            
+                    
+                        <b>1.5.1.</b>
+                    
+                    mybatis分页插件
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../../../mybatis/mybatis分页插件/mybatis插件引入.html">
+            
+                <a href="../../../../mybatis/mybatis分页插件/mybatis插件引入.html">
+            
+                    
+                        <b>1.5.1.1.</b>
+                    
+                    mybatis插件引入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../../../../mybatis/mybatis分页插件/Page.html">
+            
+                <a href="../../../../mybatis/mybatis分页插件/Page.html">
+            
+                    
+                        <b>1.5.1.2.</b>
+                    
+                    Page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="../../../../mybatis/mybatis分页插件/PagePlugin.html">
+            
+                <a href="../../../../mybatis/mybatis分页插件/PagePlugin.html">
+            
+                    
+                        <b>1.5.1.3.</b>
+                    
+                    Page Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.4" data-path="../../../../mybatis/mybatis分页插件/ReflectHelper.html">
+            
+                <a href="../../../../mybatis/mybatis分页插件/ReflectHelper.html">
+            
+                    
+                        <b>1.5.1.4.</b>
+                    
+                    Reflect Helper
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" >
+            
+                <span>
+            
+                    
+                        <b>1.5.2.</b>
+                    
+                    mybatis分页插件2
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../../../../mybatis/mybatis分页插件2/mybatis插件引入.html">
+            
+                <a href="../../../../mybatis/mybatis分页插件2/mybatis插件引入.html">
+            
+                    
+                        <b>1.5.2.1.</b>
+                    
+                    mybatis插件引入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../../../../mybatis/mybatis分页插件2/PageInterceptor.html">
+            
+                <a href="../../../../mybatis/mybatis分页插件2/PageInterceptor.html">
+            
+                    
+                        <b>1.5.2.2.</b>
+                    
+                    Page Interceptor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3" data-path="../../../../mybatis/mybatis分页插件2/Pagination.html">
+            
+                <a href="../../../../mybatis/mybatis分页插件2/Pagination.html">
+            
+                    
+                        <b>1.5.2.3.</b>
+                    
+                    Pagination
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../../../mybatis/mybatis-view1.html">
+            
+                <a href="../../../../mybatis/mybatis-view1.html">
+            
+                    
+                        <b>1.5.3.</b>
+                    
+                    Mybatis View 1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../../../mybatis/mybatis学习.html">
+            
+                <a href="../../../../mybatis/mybatis学习.html">
+            
+                    
+                        <b>1.5.4.</b>
+                    
+                    mybatis学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../../../mybatis/mybatis源码.html">
+            
+                <a href="../../../../mybatis/mybatis源码.html">
+            
+                    
+                        <b>1.5.5.</b>
+                    
+                    mybatis源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../../../mybatis/mybatis源码学习总结1.html">
+            
+                <a href="../../../../mybatis/mybatis源码学习总结1.html">
+            
+                    
+                        <b>1.5.6.</b>
+                    
+                    mybatis源码学习总结1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../../../../mybatis/mybatis源码学习总结2.html">
+            
+                <a href="../../../../mybatis/mybatis源码学习总结2.html">
+            
+                    
+                        <b>1.5.7.</b>
+                    
+                    mybatis源码学习总结2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../../../../mybatis/mybatis用法.html">
+            
+                <a href="../../../../mybatis/mybatis用法.html">
+            
+                    
+                        <b>1.5.8.</b>
+                    
+                    mybatis用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../../../../mybatis/常见mybatis用法.html">
+            
+                <a href="../../../../mybatis/常见mybatis用法.html">
+            
+                    
+                        <b>1.5.9.</b>
+                    
+                    常见mybatis用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                        <b>1.6.</b>
+                    
+                    Mybatis Spring
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../../../mybatis-spring/Mybatis-Spring源码分析.html">
+            
+                <a href="../../../../mybatis-spring/Mybatis-Spring源码分析.html">
+            
+                    
+                        <b>1.6.1.</b>
+                    
+                    Mybatis-Spring源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                        <b>1.7.</b>
+                    
+                    Redis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../../../redis/redis相关.html">
+            
+                <a href="../../../../redis/redis相关.html">
+            
+                    
+                        <b>1.7.1.</b>
+                    
+                    redis相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../../../redis/缓存.html">
+            
+                <a href="../../../../redis/缓存.html">
+            
+                    
+                        <b>1.7.2.</b>
+                    
+                    缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                        <b>1.8.</b>
+                    
+                    Spring
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" >
+            
+                <span>
+            
+                    
+                        <b>1.8.1.</b>
+                    
+                    Aop
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1.1" data-path="../../../../spring/aop/aop动态代理学习.html">
+            
+                <a href="../../../../spring/aop/aop动态代理学习.html">
+            
+                    
+                        <b>1.8.1.1.</b>
+                    
+                    aop动态代理学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.2" data-path="../../../../spring/aop/aop学习.html">
+            
+                <a href="../../../../spring/aop/aop学习.html">
+            
+                    
+                        <b>1.8.1.2.</b>
+                    
+                    mybatis学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.3" data-path="../../../../spring/aop/JdkDanymicAopProxy源码.html">
+            
+                <a href="../../../../spring/aop/JdkDanymicAopProxy源码.html">
+            
+                    
+                        <b>1.8.1.3.</b>
+                    
+                    JdkDanymicAopProxy源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" >
+            
+                <span>
+            
+                    
+                        <b>1.8.2.</b>
+                    
+                    Ioc
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.2.1" data-path="../../../../spring/ioc/bean实例化过程.html">
+            
+                <a href="../../../../spring/ioc/bean实例化过程.html">
+            
+                    
+                        <b>1.8.2.1.</b>
+                    
+                    bean实例化过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.2" data-path="../../../../spring/ioc/spring-ioc原理.html">
+            
+                <a href="../../../../spring/ioc/spring-ioc原理.html">
+            
+                    
+                        <b>1.8.2.2.</b>
+                    
+                    spring-ioc原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" >
+            
+                <span>
+            
+                    
+                        <b>1.8.3.</b>
+                    
+                    事务
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.3.1" data-path="../../../../spring/事务/spring事务管理.html">
+            
+                <a href="../../../../spring/事务/spring事务管理.html">
+            
+                    
+                        <b>1.8.3.1.</b>
+                    
+                    spring事务管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                        <b>1.9.</b>
+                    
+                    Springboot
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" >
+            
+                <span>
+            
+                    
+                        <b>1.9.1.</b>
+                    
+                    springboot配置
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1.1" data-path="../../../../springboot/springboot配置/springboot配置文件加载分析.html">
+            
+                <a href="../../../../springboot/springboot配置/springboot配置文件加载分析.html">
+            
+                    
+                        <b>1.9.1.1.</b>
+                    
+                    springboot配置文件加载分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.1.2" data-path="../../../../springboot/springboot配置/修改springboot默认加载application-properties文件.html">
+            
+                <a href="../../../../springboot/springboot配置/修改springboot默认加载application-properties文件.html">
+            
+                    
+                        <b>1.9.1.2.</b>
+                    
+                    修改springboot默认加载application.properties文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" >
+            
+                <span>
+            
+                    
+                        <b>1.9.2.</b>
+                    
+                    监听器
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.2.1" data-path="../../../../springboot/监听器/springboot监听器.html">
+            
+                <a href="../../../../springboot/监听器/springboot监听器.html">
+            
+                    
+                        <b>1.9.2.1.</b>
+                    
+                    springboot监听器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../../../../springboot/SpringApplication源码分析.html">
+            
+                <a href="../../../../springboot/SpringApplication源码分析.html">
+            
+                    
+                        <b>1.9.3.</b>
+                    
+                    SpringApplication源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                        <b>1.10.</b>
+                    
+                    Zother 1 Java Face Notes
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../../../../zother1-JavaFaceNotes/Dubbo.html">
+            
+                <a href="../../../../zother1-JavaFaceNotes/Dubbo.html">
+            
+                    
+                        <b>1.10.1.</b>
+                    
+                    Dubbo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../../../../zother1-JavaFaceNotes/IO&NIO.html">
+            
+                <a href="../../../../zother1-JavaFaceNotes/IO&NIO.html">
+            
+                    
+                        <b>1.10.2.</b>
+                    
+                    IO NIO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../../../../zother1-JavaFaceNotes/Java基础.html">
+            
+                <a href="../../../../zother1-JavaFaceNotes/Java基础.html">
+            
+                    
+                        <b>1.10.3.</b>
+                    
+                    Java基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../../../../zother1-JavaFaceNotes/java集合.html">
+            
+                <a href="../../../../zother1-JavaFaceNotes/java集合.html">
+            
+                    
+                        <b>1.10.4.</b>
+                    
+                    java集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../../../../zother1-JavaFaceNotes/JVM.html">
+            
+                <a href="../../../../zother1-JavaFaceNotes/JVM.html">
+            
+                    
+                        <b>1.10.5.</b>
+                    
+                    JVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../../../../zother1-JavaFaceNotes/Kafka.html">
+            
+                <a href="../../../../zother1-JavaFaceNotes/Kafka.html">
+            
+                    
+                        <b>1.10.6.</b>
+                    
+                    Kafka
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="../../../../zother1-JavaFaceNotes/Linux.html">
+            
+                <a href="../../../../zother1-JavaFaceNotes/Linux.html">
+            
+                    
+                        <b>1.10.7.</b>
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="../../../../zother1-JavaFaceNotes/Mybatis.html">
+            
+                <a href="../../../../zother1-JavaFaceNotes/Mybatis.html">
+            
+                    
+                        <b>1.10.8.</b>
+                    
+                    Mybatis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="../../../../zother1-JavaFaceNotes/MySql.html">
+            
+                <a href="../../../../zother1-JavaFaceNotes/MySql.html">
+            
+                    
+                        <b>1.10.9.</b>
+                    
+                    My Sql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.10" data-path="../../../../zother1-JavaFaceNotes/Nginx.html">
+            
+                <a href="../../../../zother1-JavaFaceNotes/Nginx.html">
+            
+                    
+                        <b>1.10.10.</b>
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.11" data-path="../../../../zother1-JavaFaceNotes/Redis.html">
+            
+                <a href="../../../../zother1-JavaFaceNotes/Redis.html">
+            
+                    
+                        <b>1.10.11.</b>
+                    
+                    Redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.12" data-path="../../../../zother1-JavaFaceNotes/Spring.html">
+            
+                <a href="../../../../zother1-JavaFaceNotes/Spring.html">
+            
+                    
+                        <b>1.10.12.</b>
+                    
+                    Spring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.13" data-path="../../../../zother1-JavaFaceNotes/SpringBoot.html">
+            
+                <a href="../../../../zother1-JavaFaceNotes/SpringBoot.html">
+            
+                    
+                        <b>1.10.13.</b>
+                    
+                    Spring Boot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.14" data-path="../../../../zother1-JavaFaceNotes/SpringCloud.html">
+            
+                <a href="../../../../zother1-JavaFaceNotes/SpringCloud.html">
+            
+                    
+                        <b>1.10.14.</b>
+                    
+                    Spring Cloud
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.15" data-path="../../../../zother1-JavaFaceNotes/多线程.html">
+            
+                <a href="../../../../zother1-JavaFaceNotes/多线程.html">
+            
+                    
+                        <b>1.10.15.</b>
+                    
+                    多线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.16" data-path="../../../../zother1-JavaFaceNotes/异常&反射.html">
+            
+                <a href="../../../../zother1-JavaFaceNotes/异常&反射.html">
+            
+                    
+                        <b>1.10.16.</b>
+                    
+                    异常&反射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.17" data-path="../../../../zother1-JavaFaceNotes/简历.html">
+            
+                <a href="../../../../zother1-JavaFaceNotes/简历.html">
+            
+                    
+                        <b>1.10.17.</b>
+                    
+                    简历
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../../../../zother5-Java-Interview/">
+            
+                <a href="../../../../zother5-Java-Interview/">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    Zother 5 Java Interview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../../../../zother5-Java-Interview/Java基础学习.html">
+            
+                <a href="../../../../zother5-Java-Interview/Java基础学习.html">
+            
+                    
+                        <b>1.11.1.</b>
+                    
+                    Java基础学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../../../../zother5-Java-Interview/Java集合面试题及答案.html">
+            
+                <a href="../../../../zother5-Java-Interview/Java集合面试题及答案.html">
+            
+                    
+                        <b>1.11.2.</b>
+                    
+                    Java集合面试题及答案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../../../../zother5-Java-Interview/一、Java基础.html">
+            
+                <a href="../../../../zother5-Java-Interview/一、Java基础.html">
+            
+                    
+                        <b>1.11.3.</b>
+                    
+                    一、Java基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../../../../zother5-Java-Interview/七、JavaWeb.html">
+            
+                <a href="../../../../zother5-Java-Interview/七、JavaWeb.html">
+            
+                    
+                        <b>1.11.4.</b>
+                    
+                    七、JavaWeb
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../../../../zother5-Java-Interview/三、Java 集合.html">
+            
+                <a href="../../../../zother5-Java-Interview/三、Java 集合.html">
+            
+                    
+                        <b>1.11.5.</b>
+                    
+                    三、Java 集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../../../../zother5-Java-Interview/九、操作系统.html">
+            
+                <a href="../../../../zother5-Java-Interview/九、操作系统.html">
+            
+                    
+                        <b>1.11.6.</b>
+                    
+                    九、操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="../../../../zother5-Java-Interview/二、设计模式.html">
+            
+                <a href="../../../../zother5-Java-Interview/二、设计模式.html">
+            
+                    
+                        <b>1.11.7.</b>
+                    
+                    二、设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="../../../../zother5-Java-Interview/二十、Spring源码解析.html">
+            
+                <a href="../../../../zother5-Java-Interview/二十、Spring源码解析.html">
+            
+                    
+                        <b>1.11.8.</b>
+                    
+                    二十、Spring源码解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="../../../../zother5-Java-Interview/二十一、Tomcat源码解析.html">
+            
+                <a href="../../../../zother5-Java-Interview/二十一、Tomcat源码解析.html">
+            
+                    
+                        <b>1.11.9.</b>
+                    
+                    二十一、Tomcat源码解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="../../../../zother5-Java-Interview/五、JVM.html">
+            
+                <a href="../../../../zother5-Java-Interview/五、JVM.html">
+            
+                    
+                        <b>1.11.10.</b>
+                    
+                    五、JVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.11" data-path="../../../../zother5-Java-Interview/八、Mysql.html">
+            
+                <a href="../../../../zother5-Java-Interview/八、Mysql.html">
+            
+                    
+                        <b>1.11.11.</b>
+                    
+                    八、Mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                        <b>1.12.</b>
+                    
+                    Zother 7 Java Interview
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" >
+            
+                <span>
+            
+                    
+                        <b>1.12.1.</b>
+                    
+                    Data Structures Algorithms
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1.1" data-path="../../../../zother7-JavaInterview/dataStructures-algorithms/算法面试真题汇总.html">
+            
+                <a href="../../../../zother7-JavaInterview/dataStructures-algorithms/算法面试真题汇总.html">
+            
+                    
+                        <b>1.12.1.1.</b>
+                    
+                    算法面试真题汇总
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.2" data-path="../../../../zother7-JavaInterview/dataStructures-algorithms/算法题目难点题目总结.html">
+            
+                <a href="../../../../zother7-JavaInterview/dataStructures-algorithms/算法题目难点题目总结.html">
+            
+                    
+                        <b>1.12.1.2.</b>
+                    
+                    算法题目难点题目总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.3" data-path="../../../../zother7-JavaInterview/dataStructures-algorithms/递归套路总结.html">
+            
+                <a href="../../../../zother7-JavaInterview/dataStructures-algorithms/递归套路总结.html">
+            
+                    
+                        <b>1.12.1.3.</b>
+                    
+                    递归套路总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" >
+            
+                <span>
+            
+                    
+                        <b>1.12.2.</b>
+                    
+                    Interview
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.2.1" data-path="../../../../zother7-JavaInterview/interview/已投公司情况.html">
+            
+                <a href="../../../../zother7-JavaInterview/interview/已投公司情况.html">
+            
+                    
+                        <b>1.12.2.1.</b>
+                    
+                    已投公司情况
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.2" data-path="../../../../zother7-JavaInterview/interview/自我介绍和项目介绍.html">
+            
+                <a href="../../../../zother7-JavaInterview/interview/自我介绍和项目介绍.html">
+            
+                    
+                        <b>1.12.2.2.</b>
+                    
+                    自我介绍和项目介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" >
+            
+                <span>
+            
+                    
+                        <b>1.12.3.</b>
+                    
+                    Interview Experience
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.3.1" data-path="../../../../zother7-JavaInterview/interview-experience/各大公司面经.html">
+            
+                <a href="../../../../zother7-JavaInterview/interview-experience/各大公司面经.html">
+            
+                    
+                        <b>1.12.3.1.</b>
+                    
+                    各大公司面经
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3.2" data-path="../../../../zother7-JavaInterview/interview-experience/面试常见知识.html">
+            
+                <a href="../../../../zother7-JavaInterview/interview-experience/面试常见知识.html">
+            
+                    
+                        <b>1.12.3.2.</b>
+                    
+                    面试常见知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3.3" data-path="../../../../zother7-JavaInterview/interview-experience/面试常见问题分类汇总.html">
+            
+                <a href="../../../../zother7-JavaInterview/interview-experience/面试常见问题分类汇总.html">
+            
+                    
+                        <b>1.12.3.3.</b>
+                    
+                    面试常见问题分类汇总
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" >
+            
+                <span>
+            
+                    
+                        <b>1.12.4.</b>
+                    
+                    Microservice
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.4.1" data-path="../../../../zother7-JavaInterview/microservice/微服务相关资料.html">
+            
+                <a href="../../../../zother7-JavaInterview/microservice/微服务相关资料.html">
+            
+                    
+                        <b>1.12.4.1.</b>
+                    
+                    微服务相关资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" >
+            
+                <span>
+            
+                    
+                        <b>1.12.5.</b>
+                    
+                    Network
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.5.1" data-path="../../../../zother7-JavaInterview/network/http面试问题全解析.html">
+            
+                <a href="../../../../zother7-JavaInterview/network/http面试问题全解析.html">
+            
+                    
+                        <b>1.12.5.1.</b>
+                    
+                    http面试问题全解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" >
+            
+                <span>
+            
+                    
+                        <b>1.12.6.</b>
+                    
+                    Operating System
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.6.1" data-path="../../../../zother7-JavaInterview/operating-system/后端程序员必备的Linux基础知识.html">
+            
+                <a href="../../../../zother7-JavaInterview/operating-system/后端程序员必备的Linux基础知识.html">
+            
+                    
+                        <b>1.12.6.1.</b>
+                    
+                    后端程序员必备的Linux基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6.2" data-path="../../../../zother7-JavaInterview/operating-system/操作系统、计算机网络相关知识.html">
+            
+                <a href="../../../../zother7-JavaInterview/operating-system/操作系统、计算机网络相关知识.html">
+            
+                    
+                        <b>1.12.6.2.</b>
+                    
+                    操作系统、计算机网络相关知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7" >
+            
+                <span>
+            
+                    
+                        <b>1.12.7.</b>
+                    
+                    Project
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.7.1" data-path="../../../../zother7-JavaInterview/project/消息中间件面试题.html">
+            
+                <a href="../../../../zother7-JavaInterview/project/消息中间件面试题.html">
+            
+                    
+                        <b>1.12.7.1.</b>
+                    
+                    消息中间件面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7.2" data-path="../../../../zother7-JavaInterview/project/秒杀项目总结.html">
+            
+                <a href="../../../../zother7-JavaInterview/project/秒杀项目总结.html">
+            
+                    
+                        <b>1.12.7.2.</b>
+                    
+                    秒杀项目总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../../../../学习路线.html">
+            
+                <a href="../../../../学习路线.html">
+            
+                    
+                        <b>1.13.</b>
+                    
+                    学习路线
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../.." >TreeSet源码学习</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p><strong>  </strong> <excerpt in="" index="" |="" 首页摘要=""></excerpt></p>
+<!-- more -->
+<h3 id="&#x6E90;&#x7801;&#x5206;&#x6790;"><a name="&#x6E90;&#x7801;&#x5206;&#x6790;" class="plugin-anchor" href="#&#x6E90;&#x7801;&#x5206;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6E90;&#x7801;&#x5206;&#x6790;</h3>
+<p>&#x7EE7;&#x627F;AbstractSet&#xFF0C;&#x5B9E;&#x73B0;NavigableSet&#x63A5;&#x53E3;,NavigableSet&#x63A5;&#x53E3;&#x7EE7;&#x627F;SortedSet&#x63A5;&#x53E3;&#xFF0C;SortedSet&#x63A5;&#x53E3;&#x7EE7;&#x627F;Set&#x63A5;&#x53E3;</p>
+<pre><code class="lang-java">public class TreeSet&lt;E&gt; extends AbstractSet&lt;E&gt;
+    implements NavigableSet&lt;E&gt;, Cloneable, java.io.Serializable
+</code></pre>
+<p>&#x5185;&#x90E8;&#x53D8;&#x91CF;NavigableMap&#x7EE7;&#x627F;SortedMap&#xFF0C;SortedMap&#x7EE7;&#x627F;Map</p>
+<pre><code class="lang-java">    private transient NavigableMap&lt;E,Object&gt; m;
+</code></pre>
+<p>&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7528;TreeMap&#x6765;&#x5B9A;&#x4E49;</p>
+<pre><code class="lang-java">
+    public TreeSet() {
+        this(new TreeMap&lt;E,Object&gt;());
+    }
+
+    TreeSet(NavigableMap&lt;E,Object&gt; m) {
+        this.m = m;
+    }
+</code></pre>
+<p>add&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x8C03;&#x7528;TreeMap&#x7684;put&#x65B9;&#x6CD5;</p>
+<pre><code class="lang-java">    public boolean add(E e) {
+        return m.put(e, PRESENT)==null;
+    }
+</code></pre>
+<p>TreeMap&#x7684;put&#x65B9;&#x6CD5;    </p>
+<ul>
+<li>TreeMap&#x4E2D;&#x7684;key&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&#xFF0C;&#x4E3A;&#x7A7A;&#x4F1A;&#x62A5;NullPointerException&#x7A7A;&#x6307;&#x9488;&#x5F02;&#x5E38;  </li>
+<li>&#x6784;&#x9020;&#x51FD;&#x6570;&#x6307;&#x5B9A;comparator&#x6392;&#x5E8F;&#x5668;&#x6216;&#x8005;&#x5BF9;&#x8C61;&#x5B9E;&#x73B0;Comparable&#x63A5;&#x53E3;&#xFF08;&#x5BF9;&#x8C61;&#x5F3A;&#x5236;&#x8F6C;&#x6362;&#x4E3A;Comparable&#xFF09;&#x5E76;&#x91CD;&#x5199;compareTo()&#x65B9;&#x6CD5;&#xFF0C;</li>
+<li>&#x5224;&#x65AD;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x76F8;&#x7B49;<br>1.&#x81EA;&#x7136;&#x6392;&#x5E8F;&#x4E2D;(&#x5B9E;&#x73B0;Comparable&#x63A5;&#x53E3;)&#xFF0C;&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x76F8;&#x540C;&#x7684;&#x6807;&#x51C6;&#x4E3A;&#xFF1A;compareTo()&#x8FD4;&#x56DE;0.&#x4E0D;&#x518D;&#x662F;equals().
+2.&#x5B9A;&#x5236;&#x6392;&#x5E8F;&#x4E2D;(&#x6784;&#x9020;&#x51FD;&#x6570;&#x6307;&#x5B9A;comparator)&#xFF0C;&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x76F8;&#x540C;&#x7684;&#x6807;&#x51C6;&#x4E3A;&#xFF1A;compare()&#x8FD4;&#x56DE;0.&#x4E0D;&#x518D;&#x662F;equals().</li>
+</ul>
+<pre><code class="lang-java">    /**
+     * Associates the specified value with the specified key in this map.
+     * If the map previously contained a mapping for the key, the old
+     * value is replaced.
+     *
+     * @param key key with which the specified value is to be associated
+     * @param value value to be associated with the specified key
+     *
+     * @return the previous value associated with {@code key}, or
+     *         {@code null} if there was no mapping for {@code key}.
+     *         (A {@code null} return can also indicate that the map
+     *         previously associated {@code null} with {@code key}.)
+     * @throws ClassCastException if the specified key cannot be compared
+     *         with the keys currently in the map
+     * @throws NullPointerException if the specified key is null
+     *         and this map uses natural ordering, or its comparator
+     *         does not permit null keys
+     */
+    public V put(K key, V value) {
+        Entry&lt;K,V&gt; t = root;
+        if (t == null) {
+            compare(key, key); // type (and possibly null) check
+
+            root = new Entry&lt;&gt;(key, value, null);
+            size = 1;
+            modCount++;
+            return null;
+        }
+        int cmp;
+        Entry&lt;K,V&gt; parent;
+        // split comparator and comparable paths
+        Comparator&lt;? super K&gt; cpr = comparator;
+        if (cpr != null) {
+            do {
+                parent = t;
+                cmp = cpr.compare(key, t.key);
+                if (cmp &lt; 0)
+                    t = t.left;
+                else if (cmp &gt; 0)
+                    t = t.right;
+                else
+                    return t.setValue(value);
+            } while (t != null);
+        }
+        else {
+            if (key == null)
+                throw new NullPointerException();
+            @SuppressWarnings(&quot;unchecked&quot;)
+                Comparable&lt;? super K&gt; k = (Comparable&lt;? super K&gt;) key;
+            do {
+                parent = t;
+                cmp = k.compareTo(t.key);
+                if (cmp &lt; 0)
+                    t = t.left;
+                else if (cmp &gt; 0)
+                    t = t.right;
+                else
+                    return t.setValue(value);
+            } while (t != null);
+        }
+        Entry&lt;K,V&gt; e = new Entry&lt;&gt;(key, value, parent);
+        if (cmp &lt; 0)
+            parent.left = e;
+        else
+            parent.right = e;
+        fixAfterInsertion(e);
+        size++;
+        modCount++;
+        return null;
+    }
+</code></pre>
+<ul>
+<li>put&#x65B9;&#x6CD5;&#x91CC;&#x8C03;&#x7528;&#x4E86;&#x4E0B;&#x9762;&#x7684;compare&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x91CC;&#x4F1A;&#x5224;&#x65AD;&#x6784;&#x9020;&#x51FD;&#x6570;&#x91CC;&#x662F;&#x5426;&#x6709;comparator&#x6BD4;&#x8F83;&#x6392;&#x5E8F;&#x5668;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5C31;&#x5F3A;&#x5236;&#x5C06;&#x5BF9;&#x8C61;k1&#x8F6C;&#x6362;&#x4E3A;Comparable,
+&#x6240;&#x4EE5;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x6392;&#x5E8F;&#x5668;&#xFF0C;&#x5219;&#x6BD4;&#x8F83;&#x5BF9;&#x8C61;&#x5FC5;&#x987B;&#x5B9E;&#x73B0;Comparable&#x63A5;&#x53E3;&#xFF0C;<pre><code class="lang-java">  /**
+   * Compares two keys using the correct comparison method for this TreeMap.
+   */
+  @SuppressWarnings(&quot;unchecked&quot;)
+  final int compare(Object k1, Object k2) {
+      return comparator==null ? ((Comparable&lt;? super K&gt;)k1).compareTo((K)k2)
+          : comparator.compare((K)k1, (K)k2);
+  }
+</code></pre>
+</li>
+</ul>
+<p>get&#x65B9;&#x6CD5;&#x540C;&#x7406;  </p>
+<pre><code class="lang-java">   /**
+     * Returns this map&apos;s entry for the given key, or {@code null} if the map
+     * does not contain an entry for the key.
+     *
+     * @return this map&apos;s entry for the given key, or {@code null} if the map
+     *         does not contain an entry for the key
+     * @throws ClassCastException if the specified key cannot be compared
+     *         with the keys currently in the map
+     * @throws NullPointerException if the specified key is null
+     *         and this map uses natural ordering, or its comparator
+     *         does not permit null keys
+     */
+    final Entry&lt;K,V&gt; getEntry(Object key) {
+        // Offload comparator-based version for sake of performance
+        if (comparator != null)
+            return getEntryUsingComparator(key);
+        if (key == null)
+            throw new NullPointerException();
+        @SuppressWarnings(&quot;unchecked&quot;)
+            Comparable&lt;? super K&gt; k = (Comparable&lt;? super K&gt;) key;
+        Entry&lt;K,V&gt; p = root;
+        while (p != null) {
+            int cmp = k.compareTo(p.key);
+            if (cmp &lt; 0)
+                p = p.left;
+            else if (cmp &gt; 0)
+                p = p.right;
+            else
+                return p;
+        }
+        return null;
+    }
+</code></pre>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<h4 id="&#x4F8B;&#x5B50;"><a name="&#x4F8B;&#x5B50;" class="plugin-anchor" href="#&#x4F8B;&#x5B50;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F8B;&#x5B50;</h4>
+<pre><code class="lang-java">package com.view.set.treeset.test3;
+
+import java.util.TreeSet;
+
+/*
+ * TreeSet &#x6309;&#x7167;&#x81EA;&#x5B9A;&#x4E49;&#x5BF9;&#x8C61;Student&#x7684;&#x59D3;&#x540D;&#x957F;&#x5EA6;&#x81EA;&#x7136;&#x6392;&#x5E8F;
+ *
+ *
+ * &#x5206;&#x6790;&#xFF1A;
+ *         A:&#x5B9E;&#x73B0;&#x81EA;&#x7136;&#x6392;&#x5E8F;&#xFF0C;&#x5143;&#x7D20;&#x7684;&#x7C7B;&#x5C31;&#x8981;&#x5B9E;&#x73B0;Comparable&#x63A5;&#x53E3;&#xFF0C;&#x5E76;&#x91CD;&#x5199;compareTo()&#x65B9;&#x6CD5;
+ *         B:&#x4E3B;&#x8981;&#x6761;&#x4EF6; &#x59D3;&#x540D;&#x957F;&#x5EA6;
+ *         C:&#x6B21;&#x8981;&#x6761;&#x4EF6;  &#x59D3;&#x540D;&#x5185;&#x5BB9;&#xFF0C;&#x5E74;&#x9F84;
+ */
+public class TreeSetDemo {
+    public static void main(String[] args) {
+        //&#x521B;&#x5EFA;&#x96C6;&#x5408;&#x5BF9;&#x8C61;
+        TreeSet&lt;Student&gt; ts=new TreeSet&lt;Student&gt;();
+        //&#x521B;&#x5EFA;&#x5143;&#x7D20;&#x5BF9;&#x8C61;
+        Student s1=new Student(&quot;linqingxia&quot;,27);
+        Student s2=new Student(&quot;wuqilong&quot;,27);
+        Student s3=new Student(&quot;wanglihong&quot;,34);
+        Student s4=new Student(&quot;zhouxingchi&quot;,57);
+        Student s5=new Student(&quot;linqingxia&quot;,28);
+        Student s6=new Student(&quot;linqingxia&quot;,27);
+
+        //&#x6DFB;&#x52A0;&#x96C6;&#x5408;&#x5143;&#x7D20;
+        ts.add(s1);
+        ts.add(s2);
+        ts.add(s3);
+        ts.add(s4);
+        ts.add(s5);
+        ts.add(s6);
+
+        //&#x904D;&#x5386;&#x96C6;&#x5408;
+        for(Student s:ts){
+            System.out.println(s.getName()+&quot;-----&quot;+s.getAge());
+        }
+    }
+
+}
+/** &#x8FD0;&#x884C;&#x7ED3;&#x679C;:
+ wuqilong-----27
+ linqingxia-----27
+ linqingxia-----28
+ wanglihong-----34
+ zhouxingchi-----57
+ */
+</code></pre>
+<p>&#x5B9A;&#x4E49;Student&#x5B66;&#x751F;&#x5BF9;&#x8C61;&#xFF0C;&#x5B9E;&#x73B0;Comparable&#x63A5;&#x53E3;&#xFF0C;&#x5E76;&#x91CD;&#x5199;compareTo()&#x65B9;&#x6CD5;&#xFF0C;
+&#x7528;&#x59D3;&#x540D;name&#x548C;&#x5E74;&#x9F84;age&#x6765;&#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x4EBA;&#xFF0C;&#x5F53;&#x7136;&#x751F;&#x6D3B;&#x4E2D;&#x6709;&#x91CD;&#x540D;&#x548C;&#x91CD;&#x5E74;&#x9F84;&#x7684;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x6839;&#x636E;id&#x6765;&#x5224;&#x65AD;&#xFF0C;&#x7136;&#x540E;&#x6309;id&#x59D3;&#x540D;&#x5E74;&#x9F84;&#x6765;&#x6392;&#x5E8F;</p>
+<pre><code class="lang-java">package com.view.set.treeset.test3;
+
+/*
+ * &#x8981;&#x5B9E;&#x73B0;&#x81EA;&#x7136;&#x6392;&#x5E8F;&#xFF0C;&#x5C31;&#x4E00;&#x5B9A;&#x8981;&#x5B9E;&#x73B0;Comparable&#x63A5;&#x53E3;&#xFF0C;&#x5E76;&#x91CD;&#x5199;compareTo()&#x65B9;&#x6CD5;
+ *
+ * &#x82E5;&#x4E0D;&#x5B9E;&#x73B0;Comparable&#x63A5;&#x53E3;&#xFF0C;&#x800C;&#x628A;&#x5BF9;&#x8C61;&#x5F80;TreeSet&#x4E2D;&#x6DFB;&#x52A0;&#xFF0C;&#x5C31;&#x4F1A;&#x62A5;ClassCastException
+ *       &#x539F;&#x56E0;&#xFF1A;java.util.TreeMap.put(TreeMap.java:542)
+ *      Comparable&lt;? super K&gt; k = (Comparable&lt;? super K&gt;) key;//key=&#x96C6;&#x5408;&#x5143;&#x7D20;&#xFF0C;&#x88AB;&#x5F3A;&#x884C;&#x8F6C;&#x6362;&#x6210;&#x63A5;&#x53E3;&#x7C7B;&#x578B;
+ *
+ */
+public class Student implements Comparable&lt;Student&gt; {
+    private String name;
+    private int age;
+
+    public Student() {
+        super();
+    }
+
+    public Student(String name, int age) {
+        super();
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        int num = this.getName().length() - o.getName().length();
+        int num2 = num == 0 ? this.getName().compareTo(o.getName()) : num;
+        int num3 = num2 == 0 ? this.getAge() - o.getAge() : num2;
+
+        return num3;
+    }
+
+
+}
+</code></pre>
+<h4 id="&#x4F8B;&#x5B50;2"><a name="&#x4F8B;&#x5B50;2" class="plugin-anchor" href="#&#x4F8B;&#x5B50;2"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F8B;&#x5B50;2</h4>
+<p>&#x81EA;&#x7136;&#x6392;&#x5E8F;</p>
+<pre><code class="lang-java">package com.view.set.treeset.test2;
+
+import java.util.Iterator;
+import java.util.TreeSet;
+
+
+//https://blog.csdn.net/luo1454925298/article/details/104895067
+//&#x81EA;&#x7136;&#x6392;&#x5E8F;
+//http://bbs.itheima.com/thread-300836-1-431.html
+public class TreeSetTest1 {
+
+
+    public static void main(String[] args) {
+
+
+        TreeSet set = new TreeSet();
+
+        //&#x4E3E;&#x4F8B;&#x4E8C;&#xFF1A;
+        set.add(new User(&quot;Tom&quot;, 12));
+        set.add(new User(&quot;Mike&quot;, 65));
+        set.add(new User(&quot;Jack&quot;, 33));
+        set.add(new User(&quot;Jack&quot;, 56));
+        boolean flag=set.add(new User(&quot;Jack&quot;, 56));//&#x8FD9;&#x91CC;&#x4F1A;&#x8FD4;&#x56DE;&#x5931;&#x8D25;,&#x8FD9;&#x91CC;&#x6309;&#x59D3;&#x540D;&#x548C;&#x5E74;&#x9F84;&#x76F8;&#x540C;&#x4E3A;&#x540C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5904;&#x7406;
+        System.out.println(flag);
+
+        Iterator iterator = set.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+    }
+
+
+    private static class User implements Comparable {//&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;Comparable&lt;User&gt;
+        int age;
+        String name;
+
+        public User(String name, int age) {
+            this.age = age;
+            this.name = name;
+        }
+
+        public int getAge() {
+            return age;
+        }
+
+        public void setAge(int age) {
+            this.age = age;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        @Override
+        public String toString() {
+            return &quot;User{&quot; +
+                    &quot;age=&quot; + age +
+                    &quot;, name=&apos;&quot; + name + &apos;\&apos;&apos; +
+                    &apos;}&apos;;
+        }
+
+        /*@Override
+        public int compareTo(User o) {
+            return 0;
+        }*/
+
+        @Override
+        public int compareTo(Object o) {
+            /*if (this == o) {
+                return 0;//&#x5BF9;&#x8C61;&#x76F8;&#x540C;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;0&#xFF0C;&#x8FD4;&#x56DE;0&#x4EE3;&#x8868;TreeSet&#x5DF2;&#x7ECF;&#x5305;&#x542B;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0D;&#x4F1A;&#x518D;&#x5B58;&#x8FDB;&#x53BB;
+            }*/
+
+            if (!(o instanceof User)) {
+                return 0;//&#x4E0D;&#x662F;user&#xFF0C;&#x5219;&#x4E0D;&#x5B58;&#x50A8;
+            }
+
+            User user = (User) o;
+            //&#x63A5;&#x4E0B;&#x6765;&#x6BD4;&#x8F83;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x4EBA;&#x548C;&#x53E6;&#x4E00;&#x4E2A;&#x4EBA;&#x7684;&#x59D3;&#x540D;name&#x548C;&#x5E74;&#x9F84;age&#x7684;&#x6BD4;&#x8F83;&#xFF0C;
+
+            // &#x8FD9;&#x91CC;&#x5148;&#x6309;&#x59D3;&#x540D;&#x6392;&#xFF0C;&#x518D;&#x6309;&#x5E74;&#x9F84;&#x6392;
+            //int num1 = this.getName().compareTo(user.getName());
+            //return num1 != 0 ? num1 : this.getAge() - user.getAge();
+
+            //&#x8FD9;&#x91CC;&#x6309;&#x5E74;&#x9F84;&#x6392;&#xFF0C;&#x518D;&#x6309;&#x59D3;&#x540D;&#x6392;
+            int num1 = this.getAge() - user.getAge();
+            return num1 != 0 ? num1 : this.getName().compareTo(user.getName());
+        }
+    }
+}
+</code></pre>
+<p>&#x5B9A;&#x5236;&#x6392;&#x5E8F;</p>
+<pre><code class="lang-java">package com.view.set.treeset.test2;
+
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.TreeSet;
+
+//&#x5B9A;&#x5236;&#x6392;&#x5E8F;
+public class TreeSetTest2 {
+
+
+    public static void main(String[] args) {
+
+        Comparator com = new Comparator() {
+            //&#x7167;&#x5E74;&#x9F84;&#x4ECE;&#x5C0F;&#x5230;&#x5927;&#x6392;&#x5217;
+            @Override
+            public int compare(Object o1, Object o2) {
+                if (o1 instanceof User &amp;&amp; o2 instanceof User) {
+                    User u1 = (User) o1;
+                    User u2 = (User) o2;
+                    return Integer.compare(u1.getAge(), u2.getAge());//&#x8FD9;&#x91CC;&#x53EA;&#x6309;&#x7167;&#x5E74;&#x9F84;&#x6765;&#x6392;&#x5E8F;
+                } else {
+                    throw new RuntimeException(&quot;&#x8F93;&#x5165;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4E0D;&#x5339;&#x914D;&quot;);
+                }
+            }
+        };
+
+        TreeSet set = new TreeSet(com);
+        set.add(new User(&quot;Tom&quot;, 12));
+        set.add(new User(&quot;Mike&quot;, 65));
+        set.add(new User(&quot;Jack&quot;, 33));
+        set.add(new User(&quot;Jack&quot;, 56));
+
+        Iterator iterator = set.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next().toString());
+        }
+    }
+
+    private static class User {
+        int age;
+        String name;
+
+        public User( String name,int age) {
+            this.age = age;
+            this.name = name;
+        }
+
+        public int getAge() {
+            return age;
+        }
+
+        public void setAge(int age) {
+            this.age = age;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        @Override
+        public String toString() {
+            return &quot;User{&quot; +
+                    &quot;age=&quot; + age +
+                    &quot;, name=&apos;&quot; + name + &apos;\&apos;&apos; +
+                    &apos;}&apos;;
+        }
+    }
+}
+</code></pre>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<h4 id="&#x4F8B;&#x5B50;3-&#x5B57;&#x7B26;&#x4E32;&#x6392;&#x5E8F;"><a name="&#x4F8B;&#x5B50;3-&#x5B57;&#x7B26;&#x4E32;&#x6392;&#x5E8F;" class="plugin-anchor" href="#&#x4F8B;&#x5B50;3-&#x5B57;&#x7B26;&#x4E32;&#x6392;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F8B;&#x5B50;3-&#x5B57;&#x7B26;&#x4E32;&#x6392;&#x5E8F;</h4>
+<pre><code class="lang-java">package com.view.set.treeset.test4;
+
+import java.util.Comparator;
+import java.util.Set;
+import java.util.TreeSet;
+
+//
+class DescSort implements Comparator&lt;String&gt; {
+    public int compare(String s1, String s2) {
+        if (s1.compareTo(s2) &gt; 0)
+            return -1;
+        else if (s1.compareTo(s2) &lt; 0)
+            return 1;
+        else
+            return 0;
+    }
+}
+
+public class ComparatorDemo {
+    public static void main(String[] args) {
+        String[] s = new String[] { &quot;Sun&quot;, &quot;Mon&quot;, &quot;Tue&quot;, &quot;Wed&quot;, &quot;Thur&quot;, &quot;Fri&quot;, &quot;Sat&quot; };
+        Set&lt;String&gt; ts = new TreeSet&lt;String&gt;();
+        for (int i = 0; i &lt; s.length; i++)
+            ts.add(s[i]);
+        System.out.println(ts);
+        Comparator&lt;String&gt; comp = new DescSort();
+        ts = new TreeSet&lt;String&gt;(comp);
+        for (int i = 0; i &lt; s.length; i++)
+            ts.add(s[i]);
+        System.out.println(ts);
+    }
+}
+/*
+&#x8F93;&#x51FA;&#xFF1A;
+        [Fri, Mon, Sat, Sun, Thur, Tue, Wed]
+        [Wed, Tue, Thur, Sun, Sat, Mon, Fri]
+
+
+&#x95EE;&#x9898;&#x4E00;&#xFF1A;&#x8BF7;&#x95EE;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x8F93;&#x51FA;&#x7684;&#x65F6;&#x5019;&#x7B2C;&#x4E00;&#x6B21;&#x662F;&#x6309;&#x7167;&#x5347;&#x5E8F;&#x6392;&#x5E8F;&#xFF0C;&#x7B2C;&#x4E8C;&#x6B21;&#x662F;&#x6309;&#x7167;&#x964D;&#x5E8F;&#x6392;&#x5E8F;&#x7684;&#xFF1F;&#x8FD9;&#x91CC;&#x7684;compar&#x65B9;&#x6CD5;&#x5E94;&#x8BE5;&#x53EA;&#x63D0;&#x4F9B;&#x4E86;&#x964D;&#x5E8F;&#x7684;&#x4F5C;&#x7528;&#x5440;&#xFF1F;
+&#x95EE;&#x9898;&#x4E8C;&#xFF1A;new TreeSet&lt;String&gt;(comp);&#x548C;new TreeSet&lt;String&gt;(&#xFF09;;&#x6709;&#x4EC0;&#x4E48;&#x4E0D;&#x540C;&#x5462;&#xFF1F;
+        &#x5E0C;&#x671B;&#x5927;&#x795E;&#x4EEC;&#x80FD;&#x8BB2;&#x7684;&#x5177;&#x4F53;&#x4E00;&#x4E9B;&#xFF0C;&#x6DF1;&#x5165;&#x4E00;&#x4E9B;
+
+&#x9996;&#x5148; treeset &#x662F;&#x6709;&#x5E8F;&#x7684;set&#x96C6;&#x5408;&#x3002;&#x4EE3;&#x7801;&#x7B2C;21 &#x884C; &#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x6BD4;&#x8F83;&#x5668;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x6309;&#x7167;&#x5176;&#x5143;&#x7D20;&#x7684;&#x81EA;&#x7136;&#x987A;&#x5E8F;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x3002;&#x8F93;&#x51FA;&#x5347;&#x5E8F;&#xFF0C; &#x4EE3;&#x7801;&#x7684;26&#x884C; &#x5728;&#x6784;&#x9020;TreeSet&#x65F6;&#x6307;&#x5B9A;&#x4E86;&#x81EA;&#x5DF1;&#x5B9A;&#x4E49;&#x7684;&#x6BD4;&#x8F83;&#x5668;&#xFF0C;&#x56E0;&#x6B64;&#x6309;&#x5B9A;&#x4E49;&#x6BD4;&#x8F83;&#x5668;&#x7684;&#x89C4;&#x5219;&#x6392;&#x5E8F;&#x3002;
+
+
+ */
+</code></pre>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="hashset源码学习.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: hashset源码学习">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"TreeSet源码学习","tags":[],"date":"2020-06-06T21:47:47.000Z","categories":null,"level":"1.2.5.1.2.2","depth":5,"next":{"title":"Hashmap","level":"1.2.5.2","depth":3,"ref":"","articles":[{"title":"ConcurrentHashMap相关","level":"1.2.5.2.1","depth":4,"path":"base/集合/hashmap/ConcurrentHashMap相关.md","ref":"base/集合/hashmap/ConcurrentHashMap相关.md","articles":[]},{"title":"HashMap相关","level":"1.2.5.2.2","depth":4,"path":"base/集合/hashmap/HashMap相关.md","ref":"base/集合/hashmap/HashMap相关.md","articles":[]},{"title":"HashMap相关2","level":"1.2.5.2.3","depth":4,"path":"base/集合/hashmap/HashMap相关2.md","ref":"base/集合/hashmap/HashMap相关2.md","articles":[]},{"title":"HashMap相关tx","level":"1.2.5.2.4","depth":4,"path":"base/集合/hashmap/HashMap相关tx.md","ref":"base/集合/hashmap/HashMap相关tx.md","articles":[]},{"title":"jdk1.7hashmap源码分析","level":"1.2.5.2.5","depth":4,"path":"base/集合/hashmap/jdk1.7hashmap源码分析.md","ref":"base/集合/hashmap/jdk1.7hashmap源码分析.md","articles":[]},{"title":"jdk1.8ConcurrentHashMap源码分析","level":"1.2.5.2.6","depth":4,"path":"base/集合/hashmap/jdk1.8ConcurrentHashMap源码分析.md","ref":"base/集合/hashmap/jdk1.8ConcurrentHashMap源码分析.md","articles":[]},{"title":"jdk1.8hashmap源码分析","level":"1.2.5.2.7","depth":4,"path":"base/集合/hashmap/jdk1.8HashMap源码分析.md","ref":"base/集合/hashmap/jdk1.8HashMap源码分析.md","articles":[]},{"title":"Jdk1.8源码解析-java.util.HashMap#putTreeVal","level":"1.2.5.2.8","depth":4,"path":"base/集合/hashmap/Jdk1.8源码解析HashMap-putTreeVal.md","ref":"base/集合/hashmap/Jdk1.8源码解析HashMap-putTreeVal.md","articles":[]},{"title":"Jdk1.8源码解析-java.util.HashMap#resize","level":"1.2.5.2.9","depth":4,"path":"base/集合/hashmap/Jdk1.8源码解析HashMap-resize.md","ref":"base/集合/hashmap/Jdk1.8源码解析HashMap-resize.md","articles":[]},{"title":"Jdk1.8源码解析-java.util.HashMap#treeifyBin链表转化为红黑树","level":"1.2.5.2.10","depth":4,"path":"base/集合/hashmap/Jdk1.8源码解析HashMap-treeifyBin.md","ref":"base/集合/hashmap/Jdk1.8源码解析HashMap-treeifyBin.md","articles":[]},{"title":"Linked Hash Map","level":"1.2.5.2.11","depth":4,"path":"base/集合/hashmap/LinkedHashMap.md","ref":"base/集合/hashmap/LinkedHashMap.md","articles":[]}]},"previous":{"title":"hashset源码学习","level":"1.2.5.1.2.1","depth":5,"path":"base/集合/collection/set/hashset源码学习.md","ref":"base/集合/collection/set/hashset源码学习.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","-highlight","baidu","splitter","sitemap","back-to-top-button","code","splitter","-lunr","-search","search-pro","theme-comscore","popup","hide-element","anchors","nocache","page-toc-button"],"ignores":["friends","tags","categories","about"],"root":".deploy/content","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"nocache":{},"github":{"url":"https://github.com/zhaoda/webpack-handbook"},"editlink":{"base":"https://github.com/zhaoda/webpack-handbook/blob/master/content","label":"编辑本页"},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://zhaoda.net/"},"theme-comscore":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"baidu":{"token":"a9787f0ab45d5e237bab522431d0a7ec"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"SUMMARY.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java实用笔记","language":"zh-hans","output.name":"site","catalog":["./source/_posts"],"links":{"sidebar":{"Home":"http://blog.liangqingxiang.top/"}},"gitbook":"3.2.3","description":"学习笔记"},"file":{"path":"base/集合/collection/set/TreeSet源码学习.md","mtime":"2020-06-17T08:27:43.525Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-17T08:28:18.784Z"},"basePath":"../../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-nocache/nocache.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Jdk1.8源码解析-java.util.HashMap#putTreeVal · java实用笔记</title>
+        <title>Linked Hash Map · java实用笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -81,10 +81,8 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Jdk1.8源码解析HashMap-resize.html" />
     
-    
-    <link rel="prev" href="jdk1.8HashMap源码分析.html" />
+    <link rel="prev" href="Jdk1.8源码解析HashMap-treeifyBin.html" />
     
 
 
@@ -161,7 +159,7 @@
                     
                         <b>1.2.1.</b>
                     
-                    Collection
+                    String
             
                 </span>
             
@@ -170,30 +168,14 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1.1" >
+        <li class="chapter " data-level="1.2.1.1" data-path="../../string/StringBuffer和StringBuilder.html">
             
-                <span>
+                <a href="../../string/StringBuffer和StringBuilder.html">
             
                     
                         <b>1.2.1.1.</b>
                     
-                    Hashmap
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.1.1.1" data-path="ConcurrentHashMap相关.html">
-            
-                <a href="ConcurrentHashMap相关.html">
-            
-                    
-                        <b>1.2.1.1.1.</b>
-                    
-                    ConcurrentHashMap相关
+                    集合StringBuffer和StringBuilder
             
                 </a>
             
@@ -201,185 +183,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.1.2" data-path="HashMap相关.html">
+        <li class="chapter " data-level="1.2.1.2" data-path="../../string/string源码.html">
             
-                <a href="HashMap相关.html">
-            
-                    
-                        <b>1.2.1.1.2.</b>
-                    
-                    HashMap相关
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.3" data-path="HashMap相关2.html">
-            
-                <a href="HashMap相关2.html">
-            
-                    
-                        <b>1.2.1.1.3.</b>
-                    
-                    HashMap相关2
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.4" data-path="HashMap相关tx.html">
-            
-                <a href="HashMap相关tx.html">
-            
-                    
-                        <b>1.2.1.1.4.</b>
-                    
-                    HashMap相关tx
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.5" data-path="jdk1.7hashmap源码分析.html">
-            
-                <a href="jdk1.7hashmap源码分析.html">
-            
-                    
-                        <b>1.2.1.1.5.</b>
-                    
-                    jdk1.7hashmap源码分析
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.6" data-path="jdk1.8ConcurrentHashMap源码分析.html">
-            
-                <a href="jdk1.8ConcurrentHashMap源码分析.html">
-            
-                    
-                        <b>1.2.1.1.6.</b>
-                    
-                    jdk1.8ConcurrentHashMap源码分析
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.7" data-path="jdk1.8HashMap源码分析.html">
-            
-                <a href="jdk1.8HashMap源码分析.html">
-            
-                    
-                        <b>1.2.1.1.7.</b>
-                    
-                    jdk1.8hashmap源码分析
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.2.1.1.8" data-path="Jdk1.8源码解析HashMap-putTreeVal.html">
-            
-                <a href="Jdk1.8源码解析HashMap-putTreeVal.html">
-            
-                    
-                        <b>1.2.1.1.8.</b>
-                    
-                    Jdk1.8源码解析-java.util.HashMap#putTreeVal
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.9" data-path="Jdk1.8源码解析HashMap-resize.html">
-            
-                <a href="Jdk1.8源码解析HashMap-resize.html">
-            
-                    
-                        <b>1.2.1.1.9.</b>
-                    
-                    Jdk1.8源码解析-java.util.HashMap#resize
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.10" data-path="Jdk1.8源码解析HashMap-treeifyBin.html">
-            
-                <a href="Jdk1.8源码解析HashMap-treeifyBin.html">
-            
-                    
-                        <b>1.2.1.1.10.</b>
-                    
-                    Jdk1.8源码解析-java.util.HashMap#treeifyBin链表转化为红黑树
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.1.11" data-path="其他map.html">
-            
-                <a href="其他map.html">
-            
-                    
-                        <b>1.2.1.1.11.</b>
-                    
-                    其他map
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.2" >
-            
-                <span>
+                <a href="../../string/string源码.html">
             
                     
                         <b>1.2.1.2.</b>
                     
-                    hashmap源码
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.1.2.1" data-path="../hashmap源码/jdk1.7ConcurrentHashMap源码.html">
-            
-                <a href="../hashmap源码/jdk1.7ConcurrentHashMap源码.html">
-            
-                    
-                        <b>1.2.1.2.1.</b>
-                    
-                    jdk1.7ConcurrentHashMap源码
+                    string源码
             
                 </a>
             
@@ -387,80 +198,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.2.2" data-path="../hashmap源码/jdk1.7HashMap源码.html">
+        <li class="chapter " data-level="1.2.1.3" data-path="../../string/string源码学习.html">
             
-                <a href="../hashmap源码/jdk1.7HashMap源码.html">
-            
-                    
-                        <b>1.2.1.2.2.</b>
-                    
-                    jdk1.7HashMap源码
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.2.3" data-path="../hashmap源码/jdk1.8ConcurrentHashMap源码.html">
-            
-                <a href="../hashmap源码/jdk1.8ConcurrentHashMap源码.html">
-            
-                    
-                        <b>1.2.1.2.3.</b>
-                    
-                    jdk1.8ConcurrentHashMap源码
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.2.4" data-path="../hashmap源码/jdk1.8HashMap源码.html">
-            
-                <a href="../hashmap源码/jdk1.8HashMap源码.html">
-            
-                    
-                        <b>1.2.1.2.4.</b>
-                    
-                    jdk1.8HashMap源码
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.3" >
-            
-                <span>
+                <a href="../../string/string源码学习.html">
             
                     
                         <b>1.2.1.3.</b>
                     
-                    Hashset
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.1.3.1" data-path="../hashset/hashset源码学习.html">
-            
-                <a href="../hashset/hashset源码学习.html">
-            
-                    
-                        <b>1.2.1.3.1.</b>
-                    
-                    hashset源码学习
+                    string源码学习
             
                 </a>
             
@@ -468,19 +213,29 @@
             
         </li>
     
-
-            </ul>
+        <li class="chapter " data-level="1.2.1.4" data-path="../../string/字符串string学习.html">
             
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.4" data-path="../集合类学习.html">
-            
-                <a href="../集合类学习.html">
+                <a href="../../string/字符串string学习.html">
             
                     
                         <b>1.2.1.4.</b>
                     
-                    集合类学习
+                    字符串string学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../../string/字符串string学习2-lg.html">
+            
+                <a href="../../string/字符串string学习2-lg.html">
+            
+                    
+                        <b>1.2.1.5.</b>
+                    
+                    字符串string学习2
             
                 </a>
             
@@ -500,7 +255,7 @@
                     
                         <b>1.2.2.</b>
                     
-                    String
+                    算法
             
                 </span>
             
@@ -509,14 +264,30 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.2.1" data-path="../../string/StringBuffer和StringBuilder.html">
+        <li class="chapter " data-level="1.2.2.1" >
             
-                <a href="../../string/StringBuffer和StringBuilder.html">
+                <span>
             
                     
                         <b>1.2.2.1.</b>
                     
-                    集合StringBuffer和StringBuilder
+                    排序
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1.1" data-path="../../算法/排序/快速排序.html">
+            
+                <a href="../../算法/排序/快速排序.html">
+            
+                    
+                        <b>1.2.2.1.1.</b>
+                    
+                    Test
             
                 </a>
             
@@ -524,63 +295,8 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.2" data-path="../../string/string源码.html">
-            
-                <a href="../../string/string源码.html">
-            
-                    
-                        <b>1.2.2.2.</b>
-                    
-                    string源码
-            
-                </a>
-            
 
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.2.3" data-path="../../string/string源码学习.html">
-            
-                <a href="../../string/string源码学习.html">
-            
-                    
-                        <b>1.2.2.3.</b>
-                    
-                    string源码学习
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.2.4" data-path="../../string/字符串string学习.html">
-            
-                <a href="../../string/字符串string学习.html">
-            
-                    
-                        <b>1.2.2.4.</b>
-                    
-                    字符串string学习
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.2.5" data-path="../../string/字符串string学习2-lg.html">
-            
-                <a href="../../string/字符串string学习2-lg.html">
-            
-                    
-                        <b>1.2.2.5.</b>
-                    
-                    字符串string学习2
-            
-                </a>
-            
-
+            </ul>
             
         </li>
     
@@ -676,12 +392,60 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5" data-path="../../test.html">
+        <li class="chapter " data-level="1.2.5" >
             
-                <a href="../../test.html">
+                <span>
             
                     
                         <b>1.2.5.</b>
+                    
+                    集合
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" >
+            
+                <span>
+            
+                    
+                        <b>1.2.5.1.</b>
+                    
+                    Collection
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.1" >
+            
+                <span>
+            
+                    
+                        <b>1.2.5.1.1.</b>
+                    
+                    List
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.1.1" data-path="../collection/list/ArrayList源码学习.html">
+            
+                <a href="../collection/list/ArrayList源码学习.html">
+            
+                    
+                        <b>1.2.5.1.1.1.</b>
                     
                     Test
             
@@ -691,12 +455,375 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.6" data-path="../../基本类型装箱拆箱.html">
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.5.1.2.</b>
+                    
+                    Set
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1.2.1" data-path="../collection/set/hashset源码学习.html">
+            
+                <a href="../collection/set/hashset源码学习.html">
+            
+                    
+                        <b>1.2.5.1.2.1.</b>
+                    
+                    hashset源码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.1.2.2" data-path="../collection/set/TreeSet源码学习.html">
+            
+                <a href="../collection/set/TreeSet源码学习.html">
+            
+                    
+                        <b>1.2.5.1.2.2.</b>
+                    
+                    TreeSet源码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.5.2.</b>
+                    
+                    Hashmap
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.2.1" data-path="ConcurrentHashMap相关.html">
+            
+                <a href="ConcurrentHashMap相关.html">
+            
+                    
+                        <b>1.2.5.2.1.</b>
+                    
+                    ConcurrentHashMap相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.2" data-path="HashMap相关.html">
+            
+                <a href="HashMap相关.html">
+            
+                    
+                        <b>1.2.5.2.2.</b>
+                    
+                    HashMap相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.3" data-path="HashMap相关2.html">
+            
+                <a href="HashMap相关2.html">
+            
+                    
+                        <b>1.2.5.2.3.</b>
+                    
+                    HashMap相关2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.4" data-path="HashMap相关tx.html">
+            
+                <a href="HashMap相关tx.html">
+            
+                    
+                        <b>1.2.5.2.4.</b>
+                    
+                    HashMap相关tx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.5" data-path="jdk1.7hashmap源码分析.html">
+            
+                <a href="jdk1.7hashmap源码分析.html">
+            
+                    
+                        <b>1.2.5.2.5.</b>
+                    
+                    jdk1.7hashmap源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.6" data-path="jdk1.8ConcurrentHashMap源码分析.html">
+            
+                <a href="jdk1.8ConcurrentHashMap源码分析.html">
+            
+                    
+                        <b>1.2.5.2.6.</b>
+                    
+                    jdk1.8ConcurrentHashMap源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.7" data-path="jdk1.8HashMap源码分析.html">
+            
+                <a href="jdk1.8HashMap源码分析.html">
+            
+                    
+                        <b>1.2.5.2.7.</b>
+                    
+                    jdk1.8hashmap源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.8" data-path="Jdk1.8源码解析HashMap-putTreeVal.html">
+            
+                <a href="Jdk1.8源码解析HashMap-putTreeVal.html">
+            
+                    
+                        <b>1.2.5.2.8.</b>
+                    
+                    Jdk1.8源码解析-java.util.HashMap#putTreeVal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.9" data-path="Jdk1.8源码解析HashMap-resize.html">
+            
+                <a href="Jdk1.8源码解析HashMap-resize.html">
+            
+                    
+                        <b>1.2.5.2.9.</b>
+                    
+                    Jdk1.8源码解析-java.util.HashMap#resize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2.10" data-path="Jdk1.8源码解析HashMap-treeifyBin.html">
+            
+                <a href="Jdk1.8源码解析HashMap-treeifyBin.html">
+            
+                    
+                        <b>1.2.5.2.10.</b>
+                    
+                    Jdk1.8源码解析-java.util.HashMap#treeifyBin链表转化为红黑树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.5.2.11" data-path="LinkedHashMap.html">
+            
+                <a href="LinkedHashMap.html">
+            
+                    
+                        <b>1.2.5.2.11.</b>
+                    
+                    Linked Hash Map
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" >
+            
+                <span>
+            
+                    
+                        <b>1.2.5.3.</b>
+                    
+                    hashmap源码
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.3.1" data-path="../hashmap源码/jdk1.7ConcurrentHashMap源码.html">
+            
+                <a href="../hashmap源码/jdk1.7ConcurrentHashMap源码.html">
+            
+                    
+                        <b>1.2.5.3.1.</b>
+                    
+                    jdk1.7ConcurrentHashMap源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.2" data-path="../hashmap源码/jdk1.7HashMap源码.html">
+            
+                <a href="../hashmap源码/jdk1.7HashMap源码.html">
+            
+                    
+                        <b>1.2.5.3.2.</b>
+                    
+                    jdk1.7HashMap源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.3" data-path="../hashmap源码/jdk1.8ConcurrentHashMap源码.html">
+            
+                <a href="../hashmap源码/jdk1.8ConcurrentHashMap源码.html">
+            
+                    
+                        <b>1.2.5.3.3.</b>
+                    
+                    jdk1.8ConcurrentHashMap源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.4" data-path="../hashmap源码/jdk1.8HashMap源码.html">
+            
+                <a href="../hashmap源码/jdk1.8HashMap源码.html">
+            
+                    
+                        <b>1.2.5.3.4.</b>
+                    
+                    jdk1.8HashMap源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" data-path="../集合类学习.html">
+            
+                <a href="../集合类学习.html">
+            
+                    
+                        <b>1.2.5.4.</b>
+                    
+                    集合类学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../test.html">
+            
+                <a href="../../test.html">
+            
+                    
+                        <b>1.2.6.</b>
+                    
+                    Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../基本类型装箱拆箱.html">
             
                 <a href="../../基本类型装箱拆箱.html">
             
                     
-                        <b>1.2.6.</b>
+                        <b>1.2.7.</b>
                     
                     集合基本类型装箱拆箱
             
@@ -706,12 +833,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="../../基本类型装箱拆箱2.html">
+        <li class="chapter " data-level="1.2.8" data-path="../../基本类型装箱拆箱2.html">
             
                 <a href="../../基本类型装箱拆箱2.html">
             
                     
-                        <b>1.2.7.</b>
+                        <b>1.2.8.</b>
                     
                     基本类型装箱拆箱2
             
@@ -852,6 +979,21 @@
                         <b>1.4.2.</b>
                     
                     jvm参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../../jvm/jvm相关.html">
+            
+                <a href="../../../jvm/jvm相关.html">
+            
+                    
+                        <b>1.4.3.</b>
+                    
+                    jvm相关
             
                 </a>
             
@@ -2406,7 +2548,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >Jdk1.8源码解析-java.util.HashMap#putTreeVal</a>
+        <a href="../../.." >Linked Hash Map</a>
     </h1>
 </div>
 
@@ -2423,164 +2565,75 @@
                                 
                                 <p><strong>  </strong> <excerpt in="" index="" |="" 首页摘要=""></excerpt></p>
 <!-- more -->
-<h3 id="javautilhashmaptreenodeputtreeval"><a name="javautilhashmaptreenodeputtreeval" class="plugin-anchor" href="#javautilhashmaptreenodeputtreeval"><i class="fa fa-link" aria-hidden="true"></i></a>java.util.HashMap.TreeNode#putTreeVal</h3>
-<pre><code>/** 
-   * todo &#x5F53;&#x5B58;&#x5728;hash&#x78B0;&#x649E;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E14;&#x5143;&#x7D20;&#x6570;&#x91CF;&#x5927;&#x4E8E;8&#x4E2A;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x4F1A;&#x4EE5;&#x7EA2;&#x9ED1;&#x6811;&#x7684;&#x65B9;&#x5F0F;&#x5C06;&#x8FD9;&#x4E9B;&#x5143;&#x7D20;&#x7EC4;&#x7EC7;&#x8D77;&#x6765;
-   * @param map &#x5F53;&#x524D;&#x8282;&#x70B9;&#x6240;&#x5728;&#x7684;HashMap&#x5BF9;&#x8C61;;
-   * @param tab &#x5F53;&#x524D;HashMap&#x5BF9;&#x8C61;&#x7684;&#x5143;&#x7D20;&#x6570;&#x7EC4;;
-   * @param h   &#x6307;&#x5B9A;key&#x7684;hash&#x503C;;
-   * @param k   &#x6307;&#x5B9A;key;
-   * @param v   &#x6307;&#x5B9A;key&#x4E0A;&#x8981;&#x5199;&#x5165;&#x7684;&#x503C;;
-   * @return  &#x8FD4;&#x56DE;&#xFF1A;&#x6307;&#x5B9A;key&#x6240;&#x5339;&#x914D;&#x5230;&#x7684;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF0C;&#x9488;&#x5BF9;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x53BB;&#x4FEE;&#x6539;V&#xFF08;&#x8FD4;&#x56DE;&#x7A7A;&#x8BF4;&#x660E;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x8282;&#x70B9;&#xFF09;
-   * Tree version of putVal.
-   **/
-final TreeNode&lt;K,V&gt; putTreeVal(HashMap&lt;K,V&gt; map, Node&lt;K,V&gt;[] tab,
-                               int h, K k, V v) {
-    //todo &#x5B9A;&#x4E49;k&#x7684;Class&#x5BF9;&#x8C61;
-    Class&lt;?&gt; kc = null;
-    //todo &#x6807;&#x8BC6;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x904D;&#x5386;&#x8FC7;&#x4E00;&#x6B21;&#x6811;&#xFF0C;&#x672A;&#x5FC5;&#x662F;&#x4ECE;&#x6839;&#x8282;&#x70B9;&#x904D;&#x5386;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x904D;&#x5386;&#x8DEF;&#x5F84;&#x4E0A;&#x4E00;&#x5B9A;&#x5DF2;&#x7ECF;&#x5305;&#x542B;&#x4E86;&#x540E;&#x7EED;&#x9700;&#x8981;&#x6BD4;&#x5BF9;&#x7684;&#x6240;&#x6709;&#x8282;&#x70B9;&#x3002;
-    boolean searched = false;
-    //todo &#x7236;&#x8282;&#x70B9;&#x4E0D;&#x4E3A;&#x7A7A;&#x90A3;&#x4E48;&#x67E5;&#x627E;&#x6839;&#x8282;&#x70B9;&#xFF0C;&#x4E3A;&#x7A7A;&#x90A3;&#x4E48;&#x81EA;&#x8EAB;&#x5C31;&#x662F;&#x6839;&#x8282;&#x70B9;
-    TreeNode&lt;K,V&gt; root = (parent != null) ? root() : this;
-   // todo &#x4ECE;&#x6839;&#x8282;&#x70B9;&#x5F00;&#x59CB;&#x904D;&#x5386;&#xFF0C;&#x6CA1;&#x6709;&#x7EC8;&#x6B62;&#x6761;&#x4EF6;&#xFF0C;&#x53EA;&#x80FD;&#x4ECE;&#x5185;&#x90E8;&#x9000;&#x51FA;
-    for (TreeNode&lt;K,V&gt; p = root;;) {
-        //todo // &#x58F0;&#x660E;&#x65B9;&#x5411;&#x3001;&#x5F53;&#x524D;&#x8282;&#x70B9;hash&#x503C;&#x3001;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x952E;&#x5BF9;&#x8C61;
-        int dir, ph; K pk;
-        // &#x5982;&#x679C;&#x5F53;&#x524D;&#x8282;&#x70B9;hash &#x5927;&#x4E8E; &#x6307;&#x5B9A;key&#x7684;hash&#x503C;
-        if ((ph = p.hash) &gt; h)
-            dir = -1;// todo &#x8981;&#x6DFB;&#x52A0;&#x7684;&#x5143;&#x7D20;&#x5E94;&#x8BE5;&#x653E;&#x7F6E;&#x5728;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x5DE6;&#x4FA7;
-        else if (ph &lt; h)// &#x5982;&#x679C;&#x5F53;&#x524D;&#x8282;&#x70B9;hash &#x5C0F;&#x4E8E; &#x6307;&#x5B9A;key&#x7684;hash&#x503C;
-            dir = 1;// todo &#x8981;&#x6DFB;&#x52A0;&#x7684;&#x5143;&#x7D20;&#x5E94;&#x8BE5;&#x653E;&#x7F6E;&#x5728;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x53F3;&#x4FA7;
-        // &#x5982;&#x679C;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x952E;&#x5BF9;&#x8C61; &#x548C; &#x6307;&#x5B9A;key&#x5BF9;&#x8C61;&#x76F8;&#x540C;
-        else if ((pk = p.key) == k || (k != null &amp;&amp; k.equals(pk)))
-            return p;//todo &#x90A3;&#x4E48;&#x5C31;&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF0C;&#x5728;&#x5916;&#x5C42;&#x65B9;&#x6CD5;&#x4F1A;&#x5BF9;v&#x8FDB;&#x884C;&#x5199;&#x5165;
-        //todo &#x8D70;&#x5230;&#x8FD9;&#x4E00;&#x6B65;&#x8BF4;&#x660E; &#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;hash&#x503C;  &#x548C; &#x6307;&#x5B9A;key&#x7684;hash&#x503C;  &#x662F;&#x76F8;&#x7B49;&#x7684;&#xFF0C;&#x4F46;&#x662F;equals&#x4E0D;&#x7B49;
-        else if ((kc == null &amp;&amp; 
-                  (kc = comparableClassFor(k)) == null) ||
-                 (dir = compareComparables(kc, k, pk)) == 0) {
-            //todo &#x8D70;&#x5230;&#x8FD9;&#x91CC;&#x8BF4;&#x660E;&#xFF1A;&#x6307;&#x5B9A;key&#x6CA1;&#x6709;&#x5B9E;&#x73B0;comparable&#x63A5;&#x53E3;   &#x6216;&#x8005;   &#x5B9E;&#x73B0;&#x4E86;comparable&#x63A5;&#x53E3;&#x5E76;&#x4E14;&#x548C;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x952E;&#x5BF9;&#x8C61;&#x6BD4;&#x8F83;&#x4E4B;&#x540E;&#x76F8;&#x7B49;&#xFF08;&#x4EC5;&#x9650;&#x7B2C;&#x4E00;&#x6B21;&#x5FAA;&#x73AF;&#xFF09; 
-            /**
-             * 1&#x3001;searched &#x6807;&#x8BC6;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x5BF9;&#x6BD4;&#x8FC7;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x5DE6;&#x53F3;&#x5B50;&#x8282;&#x70B9;&#x4E86;&#xFF1B;
-             * 2&#x3001;&#x5982;&#x679C;&#x8FD8;&#x6CA1;&#x6709;&#x904D;&#x5386;&#x8FC7;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x9012;&#x5F52;&#x904D;&#x5386;&#x5BF9;&#x6BD4;&#xFF0C;&#x770B;&#x662F;&#x5426;&#x80FD;&#x591F;&#x5F97;&#x5230;&#x90A3;&#x4E2A;&#x952E;&#x5BF9;&#x8C61;equals&#x76F8;&#x7B49;&#x7684;&#x7684;&#x8282;&#x70B9;&#xFF1B;
-             * 3&#x3001;&#x5982;&#x679C;&#x5F97;&#x5230;&#x4E86;&#x952E;&#x7684;equals&#x76F8;&#x7B49;&#x7684;&#x7684;&#x8282;&#x70B9;&#x5C31;&#x8FD4;&#x56DE;&#xFF1B;
-             * 4&#x3001;&#x5982;&#x679C;&#x8FD8;&#x662F;&#x6CA1;&#x6709;&#x952E;&#x7684;equals&#x76F8;&#x7B49;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x90A3;&#x8BF4;&#x660E;&#x5E94;&#x8BE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x8282;&#x70B9;&#x4E86;&#x3002;
-             */
-            if (!searched) {
-                // &#x5982;&#x679C;&#x8FD8;&#x6CA1;&#x6709;&#x6BD4;&#x5BF9;&#x8FC7;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x6240;&#x6709;&#x5B50;&#x8282;&#x70B9; //todo &#x5B9A;&#x4E49;&#x8981;&#x8FD4;&#x56DE;&#x7684;&#x8282;&#x70B9; q&#x3001;&#x548C;&#x5B50;&#x8282;&#x70B9; ch
-                TreeNode&lt;K,V&gt; q, ch;
-                searched = true;// &#x6807;&#x8BC6;&#x5DF2;&#x7ECF;&#x904D;&#x5386;&#x8FC7;&#x4E00;&#x6B21;&#x4E86;
-                //todo &#x7EA2;&#x9ED1;&#x6811;&#x4E5F;&#x662F;&#x4E8C;&#x53C9;&#x6811;&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x8981;&#x6CBF;&#x7740;&#x5DE6;&#x53F3;&#x4E24;&#x4FA7;&#x904D;&#x5386;&#x5BFB;&#x627E;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;
-                //&#x8FD9;&#x662F;&#x4E2A;&#x77ED;&#x8DEF;&#x6216;&#xFF08;||&#xFF09;&#x8FD0;&#x7B97;&#xFF0C;&#x5982;&#x679C;&#x5148;&#x4ECE;&#x5DE6;&#x4FA7;&#x5C31;&#x5DF2;&#x7ECF;&#x627E;&#x5230;&#x4E86;&#xFF0C;&#x53F3;&#x4FA7;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x904D;&#x5386;&#x4E86;
-                //find &#x65B9;&#x6CD5;&#x5185;&#x90E8;&#x8FD8;&#x4F1A;&#x6709;&#x9012;&#x5F52;&#x8C03;&#x7528;&#x3002;&#x53C2;&#x89C1;&#xFF1A;find&#x65B9;&#x6CD5;&#x89E3;&#x6790; &#x627E;&#x5230;&#x4E86;&#x6307;&#x5B9A;key&#x952E;&#x5BF9;&#x5E94;&#x7684;
-                if (((ch = p.left) != null &amp;&amp;
-                     (q = ch.find(h, k, kc)) != null) ||
-                    ((ch = p.right) != null &amp;&amp;
-                     (q = ch.find(h, k, kc)) != null))
-                    return q;// 
-            }
-            // &#x8D70;&#x5230;&#x8FD9;&#x91CC;&#x5C31;&#x8BF4;&#x660E;&#xFF0C;&#x904D;&#x5386;&#x4E86;&#x6240;&#x6709;&#x5B50;&#x8282;&#x70B9;&#x4E5F;&#x6CA1;&#x6709;&#x627E;&#x5230;&#x548C;&#x5F53;&#x524D;&#x952E;equals&#x76F8;&#x7B49;&#x7684;&#x8282;&#x70B9; todo &#x518D;&#x6BD4;&#x8F83;&#x4E00;&#x4E0B;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x952E;&#x548C;&#x6307;&#x5B9A;key&#x952E;&#x7684;&#x5927;&#x5C0F;
-            dir = tieBreakOrder(k, pk);
-        }
-        TreeNode&lt;K,V&gt; xp = p;// &#x5B9A;&#x4E49;xp&#x6307;&#x5411;&#x5F53;&#x524D;&#x8282;&#x70B9;
-
-        /** 
-         * 1&#x3001;&#x5982;&#x679C;dir&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;0&#xFF0C;&#x90A3;&#x4E48;&#x770B;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x5DE6;&#x8282;&#x70B9;&#x662F;&#x5426;&#x4E3A;&#x7A7A;&#xFF0C;&#x5982;&#x679C;&#x4E3A;&#x7A7A;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x628A;&#x8981;&#x6DFB;&#x52A0;&#x7684;&#x5143;&#x7D20;&#x4F5C;&#x4E3A;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x5DE6;&#x8282;&#x70B9;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x4E3A;&#x7A7A;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x4E0B;&#x4E00;&#x8F6E;&#x7EE7;&#x7EED;&#x6BD4;&#x8F83;&#xFF1B;
-         * 2&#x3001;&#x5982;&#x679C;dir&#x5927;&#x4E8E;&#x7B49;&#x4E8E;0&#xFF0C;&#x90A3;&#x4E48;&#x770B;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x53F3;&#x8282;&#x70B9;&#x662F;&#x5426;&#x4E3A;&#x7A7A;&#xFF0C;&#x5982;&#x679C;&#x4E3A;&#x7A7A;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x628A;&#x8981;&#x6DFB;&#x52A0;&#x7684;&#x5143;&#x7D20;&#x4F5C;&#x4E3A;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x53F3;&#x8282;&#x70B9;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x4E3A;&#x7A7A;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x4E0B;&#x4E00;&#x8F6E;&#x7EE7;&#x7EED;&#x6BD4;&#x8F83;&#xFF1B;
-         * 3&#x3001;&#x5982;&#x679C;&#x4EE5;&#x4E0A;&#x4E24;&#x6761;&#x5F53;&#x4E2D;&#x6709;&#x4E00;&#x4E2A;&#x5B50;&#x8282;&#x70B9;&#x4E0D;&#x4E3A;&#x7A7A;&#xFF0C;&#x8FD9;&#x4E2A;if&#x4E2D;&#x8FD8;&#x505A;&#x4E86;&#x4E00;&#x4EF6;&#x4E8B;&#xFF0C;&#x90A3;&#x5C31;&#x662F;&#x628A;p&#x5DF2;&#x7ECF;&#x6307;&#x5411;&#x4E86;&#x5BF9;&#x5E94;&#x7684;&#x4E0D;&#x4E3A;&#x7A7A;&#x7684;&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x5F00;&#x59CB;&#x4E0B;&#x4E00;&#x8F6E;&#x7684;&#x6BD4;&#x8F83;&#x3002;
-         */
-         // &#x5982;&#x679C;&#x6070;&#x597D;&#x8981;&#x6DFB;&#x52A0;&#x7684;&#x65B9;&#x5411;&#x4E0A;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x4E3A;&#x7A7A;&#xFF0C;&#x6B64;&#x65F6;&#x8282;&#x70B9;p&#x5DF2;&#x7ECF;&#x6307;&#x5411;&#x4E86;&#x8FD9;&#x4E2A;&#x7A7A;&#x7684;&#x5B50;&#x8282;&#x70B9;
-        if ((p = (dir &lt;= 0) ? p.left : p.right) == null) {
-            Node&lt;K,V&gt; xpn = xp.next;// &#x83B7;&#x53D6;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;next&#x8282;&#x70B9;
-            TreeNode&lt;K,V&gt; x = map.newTreeNode(h, k, v, xpn);// &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6811;&#x8282;&#x70B9;
-            if (dir &lt;= 0)
-                xp.left = x;// &#x5DE6;&#x5B69;&#x5B50;&#x6307;&#x5411;&#x5230;&#x8FD9;&#x4E2A;&#x65B0;&#x7684;&#x6811;&#x8282;&#x70B9;
-            else
-                xp.right = x;// &#x53F3;&#x5B69;&#x5B50;&#x6307;&#x5411;&#x5230;&#x8FD9;&#x4E2A;&#x65B0;&#x7684;&#x6811;&#x8282;&#x70B9;
-            xp.next = x;// &#x94FE;&#x8868;&#x4E2D;&#x7684;next&#x8282;&#x70B9;&#x6307;&#x5411;&#x5230;&#x8FD9;&#x4E2A;&#x65B0;&#x7684;&#x6811;&#x8282;&#x70B9;
-            x.parent = x.prev = xp;// todo &#x8FD9;&#x4E2A;&#x65B0;&#x7684;&#x6811;&#x8282;&#x70B9;&#x7684;&#x7236;&#x8282;&#x70B9;&#x3001;&#x524D;&#x8282;&#x70B9;&#x5747;&#x8BBE;&#x7F6E;&#x4E3A; &#x5F53;&#x524D;&#x7684;&#x6811;&#x8282;&#x70B9;
-            if (xpn != null)//todo // &#x5982;&#x679C;&#x539F;&#x6765;&#x7684;next&#x8282;&#x70B9;&#x4E0D;&#x4E3A;&#x7A7A;
-                ((TreeNode&lt;K,V&gt;)xpn).prev = x;// &#x90A3;&#x4E48;&#x539F;&#x6765;&#x7684;next&#x8282;&#x70B9;&#x7684;&#x524D;&#x8282;&#x70B9;&#x6307;&#x5411;&#x5230;&#x65B0;&#x7684;&#x6811;&#x8282;&#x70B9;
-            moveRootToFront(tab, balanceInsertion(root, x));//todo &#x91CD;&#x65B0;&#x5E73;&#x8861;&#xFF0C;&#x4EE5;&#x53CA;&#x65B0;&#x7684;&#x6839;&#x8282;&#x70B9;&#x7F6E;&#x9876;
-            return null;// todo &#x8FD4;&#x56DE;&#x7A7A;&#xFF0C;&#x610F;&#x5473;&#x7740;&#x4EA7;&#x751F;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x8282;&#x70B9;
-        }
-    }
-}
-</code></pre><h4 id="javautilhashmaptreenoderoot"><a name="javautilhashmaptreenoderoot" class="plugin-anchor" href="#javautilhashmaptreenoderoot"><i class="fa fa-link" aria-hidden="true"></i></a>java.util.HashMap.TreeNode#root</h4>
-<pre><code>/**
- * Returns root of tree containing this node.
- * &#x627E;&#x5230; TreeNode&lt;K,V&gt; &#x7684;&#x6839;&#x7ED3;&#x70B9;
- **/
-final TreeNode&lt;K,V&gt; root() {
-    for (TreeNode&lt;K,V&gt; r = this, p;;) {
-        //&#x82E5;r&#x7684;&#x7236;&#x8282;&#x70B9; == null&#xFF0C;&#x5219; r&#x4E3A;&#x6839;&#x7ED3;&#x70B9;&#xFF0C;return r
-        if ((p = r.parent) == null)
-            return r;
-        //&#x82E5;p = r.parent&#xFF0C;r&#x7684;&#x7236;&#x8282;&#x70B9;&#x4E0D;&#x4E3A;&#x7A7A;&#xFF0C;&#x628A; p &#x8D4B;&#x7ED9; r&#xFF0C;&#x7EE7;&#x7EED;&#x5FAA;&#x73AF;&#xFF0C;&#x76F4;&#x5230;&#x627E;&#x5230;&#x6839;&#x7ED3;&#x70B9;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;
-        r = p;
-    }
-}
-</code></pre><ol>
-<li></li>
-<li></li>
-<li></li>
-</ol>
-<h4 id="javautilhashmapcomparableclassfor"><a name="javautilhashmapcomparableclassfor" class="plugin-anchor" href="#javautilhashmapcomparableclassfor"><i class="fa fa-link" aria-hidden="true"></i></a>java.util.HashMap#comparableClassFor</h4>
-<pre><code>/**
-     * Returns x&apos;s Class if it is of the form &quot;class C implements
-     * Comparable&lt;C&gt;&quot;, else null. todo &#x5982;&#x679C;&#x5BF9;&#x8C61;x&#x7684;&#x7C7B;&#x662F;C&#xFF0C;&#x5982;&#x679C;C&#x5B9E;&#x73B0;&#x4E86;Comparable&lt;C&gt;&#x63A5;&#x53E3;&#xFF0C;&#x90A3;&#x4E48;&#x8FD4;&#x56DE;C&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;null
+<h3 id="linkedhashmap"><a name="linkedhashmap" class="plugin-anchor" href="#linkedhashmap"><i class="fa fa-link" aria-hidden="true"></i></a>LinkedHashMap</h3>
+<h4 id="&#x7EE7;&#x627F;&#x4E86;hashmap"><a name="&#x7EE7;&#x627F;&#x4E86;hashmap" class="plugin-anchor" href="#&#x7EE7;&#x627F;&#x4E86;hashmap"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7EE7;&#x627F;&#x4E86;HashMap</h4>
+<pre><code class="lang-java">public class LinkedHashMap&lt;K,V&gt;
+    extends HashMap&lt;K,V&gt;
+    implements Map&lt;K,V&gt;
+</code></pre>
+<h4 id="&#x53CC;&#x5411;&#x94FE;&#x8868;&#xFF0C;entry&#x7EE7;&#x627F;hashmapnode"><a name="&#x53CC;&#x5411;&#x94FE;&#x8868;&#xFF0C;entry&#x7EE7;&#x627F;hashmapnode" class="plugin-anchor" href="#&#x53CC;&#x5411;&#x94FE;&#x8868;&#xFF0C;entry&#x7EE7;&#x627F;hashmapnode"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53CC;&#x5411;&#x94FE;&#x8868;&#xFF0C;Entry<k,v>&#x7EE7;&#x627F;HashMap.Node<k,v></k,v></k,v></h4>
+<pre><code class="lang-java">   /**
+     * HashMap.Node subclass for normal LinkedHashMap entries.
      */
-    static Class&lt;?&gt; comparableClassFor(Object x) {
-        if (x instanceof Comparable) {
-            Class&lt;?&gt; c; Type[] ts, as; Type t; ParameterizedType p;
-            if ((c = x.getClass()) == String.class) // bypass checks todo &#x5982;&#x679C;x&#x662F;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x5BF9;&#x8C61;
-                return c;// todo &#x8FD4;&#x56DE;String.class&#xFF1B;others&#xFF1A;&#x4E3A;&#x4EC0;&#x4E48;&#x5982;&#x679C;x&#x662F;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x5C31;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;c&#x4E86;&#x5462; ? &#x56E0;&#x4E3A;String  &#x5B9E;&#x73B0;&#x4E86; Comparable &#x63A5;&#x53E3;&#xFF0C;&#x53EF;&#x53C2;&#x8003;&#x5982;&#x4E0B;String&#x7C7B;&#x7684;&#x5B9A;&#x4E49;public final class String implements java.io.Serializable, Comparable&lt;String&gt;, CharSequence //todo &#x5982;&#x679C; c &#x4E0D;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#xFF0C;&#x83B7;&#x53D6;c&#x76F4;&#x63A5;&#x5B9E;&#x73B0;&#x7684;&#x63A5;&#x53E3;&#xFF08;&#x5982;&#x679C;&#x662F;&#x6CDB;&#x578B;&#x63A5;&#x53E3;&#x5219;&#x9644;&#x5E26;&#x6CDB;&#x578B;&#x4FE1;&#x606F;&#xFF09;**/
-            if ((ts = c.getGenericInterfaces()) != null) {// &#x904D;&#x5386;&#x63A5;&#x53E3;&#x6570;&#x7EC4;
-                for (int i = 0; i &lt; ts.length; ++i) {/*** todo &#x5982;&#x679C;&#x5F53;&#x524D;&#x63A5;&#x53E3;t&#x662F;&#x4E2A;&#x6CDB;&#x578B;&#x63A5;&#x53E3; {@link java.lang.reflect.ParameterizedType}// todo &#x5982;&#x679C;&#x8BE5;&#x6CDB;&#x578B;&#x63A5;&#x53E3;t&#x7684;&#x539F;&#x59CB;&#x7C7B;&#x578B;p &#x662F; Comparable &#x63A5;&#x53E3;// todo &#x5982;&#x679C;&#x8BE5;Comparable&#x63A5;&#x53E3;p&#x53EA;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x6CDB;&#x578B;&#x53C2;&#x6570; // todo &#x5982;&#x679C;&#x8FD9;&#x4E00;&#x4E2A;&#x6CDB;&#x578B;&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x578B;&#x5C31;&#x662F;c&#xFF0C;&#x90A3;&#x4E48;&#x8FD4;&#x56DE;c ***/
-                    if (((t = ts[i]) instanceof ParameterizedType) &amp;&amp;
-                        ((p = (ParameterizedType)t).getRawType() ==
-                         Comparable.class) &amp;&amp;
-                        (as = p.getActualTypeArguments()) != null &amp;&amp;
-                        as.length == 1 &amp;&amp; as[0] == c) // type arg is c
-                        return c;
-                }// todo &#x4E0A;&#x9762;for&#x5FAA;&#x73AF;&#x7684;&#x76EE;&#x7684;&#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x770B;&#x770B;x&#x7684;class&#x662F;&#x5426; implements  Comparable&lt;x&#x7684;class&gt;
-            }
+    static class Entry&lt;K,V&gt; extends HashMap.Node&lt;K,V&gt; {
+        Entry&lt;K,V&gt; before, after;
+        Entry(int hash, K key, V value, Node&lt;K,V&gt; next) {
+            super(hash, key, value, next);
         }
-        return null;// &#x5982;&#x679C;c&#x5E76;&#x6CA1;&#x6709;&#x5B9E;&#x73B0; Comparable&lt;c&gt; &#x90A3;&#x4E48;&#x8FD4;&#x56DE;&#x7A7A;
     }
-</code></pre><h4 id="javautilhashmapcomparecomparables"><a name="javautilhashmapcomparecomparables" class="plugin-anchor" href="#javautilhashmapcomparecomparables"><i class="fa fa-link" aria-hidden="true"></i></a>java.util.HashMap#compareComparables</h4>
-<pre><code>
-/**
- * Returns k.compareTo(x) if x matches kc (k&apos;s screened comparable 
- * class), else 0.                                                 
- * todo &#x5982;&#x679C;x&#x6240;&#x5C5E;&#x7684;&#x7C7B;&#x662F;kc&#xFF0C;&#x8FD4;&#x56DE;k.compareTo(x)&#x7684;&#x6BD4;&#x8F83;&#x7ED3;&#x679C;,
- * todo &#x5982;&#x679C;x&#x4E3A;&#x7A7A;&#xFF0C;&#x6216;&#x8005;&#x5176;&#x6240;&#x5C5E;&#x7684;&#x7C7B;&#x4E0D;&#x662F;kc&#xFF0C;&#x8FD4;&#x56DE;0
- */
-@SuppressWarnings({&quot;rawtypes&quot;,&quot;unchecked&quot;}) // for cast to Comparable
-static int compareComparables(Class&lt;?&gt; kc, Object k, Object x) {
-    return (x == null || x.getClass() != kc ? 0 :
-            ((Comparable)k).compareTo(x));
-}
-</code></pre><h4 id="javautilhashmapnewtreenode"><a name="javautilhashmapnewtreenode" class="plugin-anchor" href="#javautilhashmapnewtreenode"><i class="fa fa-link" aria-hidden="true"></i></a>java.util.HashMap#newTreeNode</h4>
-<pre><code>// Create a tree bin node
-TreeNode&lt;K,V&gt; newTreeNode(int hash, K key, V value, Node&lt;K,V&gt; next) {
-    return new TreeNode&lt;&gt;(hash, key, value, next);
-}
-</code></pre><h4 id="javautilhashmaptreenodetreenode"><a name="javautilhashmaptreenodetreenode" class="plugin-anchor" href="#javautilhashmaptreenodetreenode"><i class="fa fa-link" aria-hidden="true"></i></a>java.util.HashMap.TreeNode#TreeNode</h4>
-<pre><code>
-TreeNode(int hash, K key, V val, Node&lt;K,V&gt; next) {
-    super(hash, key, val, next);
-}
-</code></pre><h4 id="javautillinkedhashmapentryentry"><a name="javautillinkedhashmapentryentry" class="plugin-anchor" href="#javautillinkedhashmapentryentry"><i class="fa fa-link" aria-hidden="true"></i></a>java.util.LinkedHashMap.Entry#Entry</h4>
-<pre><code>
-Entry(int hash, K key, V value, Node&lt;K,V&gt; next) {
-    super(hash, key, value, next);
-}
-</code></pre><p><a href="https://mp.weixin.qq.com/s?__biz=MzIwMDAzNTUwMg==&amp;mid=2247483730&amp;idx=1&amp;sn=96c02ec3e64680c8a340e713fbd8fbed&amp;chksm=96821c93a1f5958571302c782ba1a5ccf5e9c4ed27417dfe7b377c301dc57f451637478805d4#rd" target="_blank">java.util.HashMap.TreeNode#putTreeVal</a></p>
-<ol>
+
+    private static final long serialVersionUID = 3801124242820219131L;
+
+    /**
+     * The head (eldest) of the doubly linked list.
+     */
+    transient LinkedHashMap.Entry&lt;K,V&gt; head;
+
+    /**
+     * The tail (youngest) of the doubly linked list.
+     */
+    transient LinkedHashMap.Entry&lt;K,V&gt; tail;
+</code></pre>
+<p>linkedMap&#x5728;&#x4E8E;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x4F60;&#x60F3;&#x4FDD;&#x6301;&#x8FDB;&#x5165;&#x7684;&#x987A;&#x5E8F;&#x4E0E;&#x88AB;&#x53D6;&#x51FA;&#x7684;&#x987A;&#x5E8F;&#x4E00;&#x81F4;&#x7684;&#x8BDD;&#xFF0C;&#x4F18;&#x5148;&#x8003;&#x8651;LinkedMap&#xFF0C;hashMap&#x952E;&#x53EA;&#x80FD;&#x5141;&#x8BB8;&#x4E3A;&#x4E00;&#x6761;&#x4E3A;&#x7A7A;&#xFF0C;value&#x53EF;&#x4EE5;&#x5141;&#x8BB8;&#x4E3A;&#x591A;&#x6761;&#x4E3A;&#x7A7A;&#xFF0C;&#x952E;&#x552F;&#x4E00;&#xFF0C;&#x4F46;&#x503C;&#x53EF;&#x4EE5;&#x591A;&#x4E2A;&#x3002;</p>
+<p>LinkedHashMap&#x4E5F;&#x6700;&#x591A;&#x53EA;&#x5141;&#x8BB8;&#x4E00;&#x6761;Entry&#x7684;&#x952E;&#x4E3A;Null(&#x591A;&#x6761;&#x4F1A;&#x8986;&#x76D6;)&#xFF0C;&#x4F46;&#x5141;&#x8BB8;&#x591A;&#x6761;Entry&#x7684;&#x503C;&#x4E3A;Null</p>
+<h4 id="&#x63D2;&#x5165;&#x6570;&#x636E;&#x540E;&#x4F1A;&#x8C03;&#x6574;&#x94FE;&#x8868;&#x7684;&#x6570;&#x636E;&#x987A;&#x5E8F;-afternodeinsertionevict"><a name="&#x63D2;&#x5165;&#x6570;&#x636E;&#x540E;&#x4F1A;&#x8C03;&#x6574;&#x94FE;&#x8868;&#x7684;&#x6570;&#x636E;&#x987A;&#x5E8F;-afternodeinsertionevict" class="plugin-anchor" href="#&#x63D2;&#x5165;&#x6570;&#x636E;&#x540E;&#x4F1A;&#x8C03;&#x6574;&#x94FE;&#x8868;&#x7684;&#x6570;&#x636E;&#x987A;&#x5E8F;-afternodeinsertionevict"><i class="fa fa-link" aria-hidden="true"></i></a>&#x63D2;&#x5165;&#x6570;&#x636E;&#x540E;&#x4F1A;&#x8C03;&#x6574;&#x94FE;&#x8868;&#x7684;&#x6570;&#x636E;&#x987A;&#x5E8F; afterNodeInsertion(evict);</h4>
+<p>&#x8C03;&#x7528;HashMap&#x7684;put&#x6216;&#x8005;putall&#x65B9;&#x6CD5;&#x540E;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;afterNodeInsertion&#x65B9;&#x6CD5;&#xFF0C;<br>HashMap&#x65B9;&#x6CD5;&#x4E2D;&#x6709;&#x5982;&#x4E0B;3&#x4E2A;&#x51FD;&#x6570;</p>
+<pre><code class="lang-java">    // Callbacks to allow LinkedHashMap post-actions
+    void afterNodeAccess(Node&lt;K,V&gt; p) { }
+    void afterNodeInsertion(boolean evict) { }
+    void afterNodeRemoval(Node&lt;K,V&gt; p) { }
+</code></pre>
+<p>&#x8FD9;3&#x4E2A;&#x51FD;&#x6570;&#x4F1A;&#x5728;LinkedHashMap&#x4E2D;&#x5B9E;&#x73B0;,&#x63D2;&#x5165;&#x6570;&#x636E;&#x540E;&#x4F1A;&#x8C03;&#x6574;&#x94FE;&#x8868;&#x7684;&#x6570;&#x636E;&#x987A;&#x5E8F;,&#x4F46;&#x662F;&#x5FC5;&#x987B;&#x5728;accessOrder = true;&#x4E3A;true&#x65F6;&#x624D;&#x4F1A;&#x8C03;&#x6574;&#xFF0C;
+LinkedHashMap&#x65E0;&#x53C2;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x9ED8;&#x8BA4;&#x662F;false&#x7684;</p>
+<pre><code>    public LinkedHashMap() {
+        super();
+        accessOrder = false;
+    }
+</code></pre><h4 id="&#x5B9E;&#x73B0;lru&#x7B97;&#x6CD5;"><a name="&#x5B9E;&#x73B0;lru&#x7B97;&#x6CD5;" class="plugin-anchor" href="#&#x5B9E;&#x73B0;lru&#x7B97;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x73B0;LRU&#x7B97;&#x6CD5;</h4>
+<pre><code class="lang-java">    protected boolean removeEldestEntry(Map.Entry&lt;K,V&gt; eldest) {
+        return false;
+    }
+</code></pre>
+<ul>
 <li></li>
 <li></li>
 <li></li>
-</ol>
+</ul>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<h4 id="treemap"><a name="treemap" class="plugin-anchor" href="#treemap"><i class="fa fa-link" aria-hidden="true"></i></a>TreeMap</h4>
+<pre><code class="lang-java">public class TreeMap&lt;K,V&gt;
+    extends AbstractMap&lt;K,V&gt;
+    implements NavigableMap&lt;K,V&gt;, Cloneable, java.io.Serializable
+</code></pre>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
 
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -2609,14 +2662,10 @@ Entry(int hash, K key, V value, Node&lt;K,V&gt; next) {
 
             
                 
-                <a href="jdk1.8HashMap源码分析.html" class="navigation navigation-prev " aria-label="Previous page: jdk1.8hashmap源码分析">
+                <a href="Jdk1.8源码解析HashMap-treeifyBin.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Jdk1.8源码解析-java.util.HashMap#treeifyBin链表转化为红黑树">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="Jdk1.8源码解析HashMap-resize.html" class="navigation navigation-next " aria-label="Next page: Jdk1.8源码解析-java.util.HashMap#resize">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -2625,7 +2674,7 @@ Entry(int hash, K key, V value, Node&lt;K,V&gt; next) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Jdk1.8源码解析-java.util.HashMap#putTreeVal","tags":[],"date":"2019-08-22T10:48:17.000Z","categories":null,"level":"1.2.1.1.8","depth":4,"next":{"title":"Jdk1.8源码解析-java.util.HashMap#resize","level":"1.2.1.1.9","depth":4,"path":"base/collection/hashmap/Jdk1.8源码解析HashMap-resize.md","ref":"base/collection/hashmap/Jdk1.8源码解析HashMap-resize.md","articles":[]},"previous":{"title":"jdk1.8hashmap源码分析","level":"1.2.1.1.7","depth":4,"path":"base/collection/hashmap/jdk1.8HashMap源码分析.md","ref":"base/collection/hashmap/jdk1.8HashMap源码分析.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","-highlight","baidu","splitter","sitemap","back-to-top-button","code","splitter","-lunr","-search","search-pro","theme-comscore","popup","hide-element","anchors","nocache","page-toc-button"],"ignores":["friends","tags","categories","about"],"root":".deploy/content","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"nocache":{},"github":{"url":"https://github.com/zhaoda/webpack-handbook"},"editlink":{"base":"https://github.com/zhaoda/webpack-handbook/blob/master/content","label":"编辑本页"},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://zhaoda.net/"},"theme-comscore":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"baidu":{"token":"a9787f0ab45d5e237bab522431d0a7ec"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"SUMMARY.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java实用笔记","language":"zh-hans","output.name":"site","catalog":["./source/_posts"],"links":{"sidebar":{"Home":"http://blog.liangqingxiang.top/"}},"gitbook":"3.2.3","description":"学习笔记"},"file":{"path":"base/collection/hashmap/Jdk1.8源码解析HashMap-putTreeVal.md","mtime":"2020-06-14T08:02:21.108Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-14T08:06:28.960Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Linked Hash Map","tags":[],"date":"2020-06-06T21:47:47.000Z","categories":null,"level":"1.2.5.2.11","depth":4,"next":{"title":"hashmap源码","level":"1.2.5.3","depth":3,"ref":"","articles":[{"title":"jdk1.7ConcurrentHashMap源码","level":"1.2.5.3.1","depth":4,"path":"base/集合/hashmap源码/jdk1.7ConcurrentHashMap源码.md","ref":"base/集合/hashmap源码/jdk1.7ConcurrentHashMap源码.md","articles":[]},{"title":"jdk1.7HashMap源码","level":"1.2.5.3.2","depth":4,"path":"base/集合/hashmap源码/jdk1.7HashMap源码.md","ref":"base/集合/hashmap源码/jdk1.7HashMap源码.md","articles":[]},{"title":"jdk1.8ConcurrentHashMap源码","level":"1.2.5.3.3","depth":4,"path":"base/集合/hashmap源码/jdk1.8ConcurrentHashMap源码.md","ref":"base/集合/hashmap源码/jdk1.8ConcurrentHashMap源码.md","articles":[]},{"title":"jdk1.8HashMap源码","level":"1.2.5.3.4","depth":4,"path":"base/集合/hashmap源码/jdk1.8HashMap源码.md","ref":"base/集合/hashmap源码/jdk1.8HashMap源码.md","articles":[]}]},"previous":{"title":"Jdk1.8源码解析-java.util.HashMap#treeifyBin链表转化为红黑树","level":"1.2.5.2.10","depth":4,"path":"base/集合/hashmap/Jdk1.8源码解析HashMap-treeifyBin.md","ref":"base/集合/hashmap/Jdk1.8源码解析HashMap-treeifyBin.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","-highlight","baidu","splitter","sitemap","back-to-top-button","code","splitter","-lunr","-search","search-pro","theme-comscore","popup","hide-element","anchors","nocache","page-toc-button"],"ignores":["friends","tags","categories","about"],"root":".deploy/content","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"nocache":{},"github":{"url":"https://github.com/zhaoda/webpack-handbook"},"editlink":{"base":"https://github.com/zhaoda/webpack-handbook/blob/master/content","label":"编辑本页"},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://zhaoda.net/"},"theme-comscore":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"baidu":{"token":"a9787f0ab45d5e237bab522431d0a7ec"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"SUMMARY.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java实用笔记","language":"zh-hans","output.name":"site","catalog":["./source/_posts"],"links":{"sidebar":{"Home":"http://blog.liangqingxiang.top/"}},"gitbook":"3.2.3","description":"学习笔记"},"file":{"path":"base/集合/hashmap/LinkedHashMap.md","mtime":"2020-06-17T08:27:43.082Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-17T08:28:18.784Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
