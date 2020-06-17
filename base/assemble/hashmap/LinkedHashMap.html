@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>jdk1.8ConcurrentHashMap源码分析 · java实用笔记</title>
+        <title>Linked Hash Map · java实用笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -81,10 +81,8 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="jdk1.8HashMap源码分析.html" />
     
-    
-    <link rel="prev" href="jdk1.7hashmap源码分析.html" />
+    <link rel="prev" href="Jdk1.8源码解析HashMap-treeifyBin.html" />
     
 
 
@@ -161,7 +159,7 @@
                     
                         <b>1.2.1.</b>
                     
-                    String
+                    Assemble
             
                 </span>
             
@@ -170,252 +168,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1.1" data-path="../../string/StringBuffer和StringBuilder.html">
+        <li class="chapter " data-level="1.2.1.1" >
             
-                <a href="../../string/StringBuffer和StringBuilder.html">
+                <span>
             
                     
                         <b>1.2.1.1.</b>
-                    
-                    集合StringBuffer和StringBuilder
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.2" data-path="../../string/string源码.html">
-            
-                <a href="../../string/string源码.html">
-            
-                    
-                        <b>1.2.1.2.</b>
-                    
-                    string源码
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.3" data-path="../../string/string源码学习.html">
-            
-                <a href="../../string/string源码学习.html">
-            
-                    
-                        <b>1.2.1.3.</b>
-                    
-                    string源码学习
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.4" data-path="../../string/字符串string学习.html">
-            
-                <a href="../../string/字符串string学习.html">
-            
-                    
-                        <b>1.2.1.4.</b>
-                    
-                    字符串string学习
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.5" data-path="../../string/字符串string学习2-lg.html">
-            
-                <a href="../../string/字符串string学习2-lg.html">
-            
-                    
-                        <b>1.2.1.5.</b>
-                    
-                    字符串string学习2
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.2" >
-            
-                <span>
-            
-                    
-                        <b>1.2.2.</b>
-                    
-                    算法
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.2.1" >
-            
-                <span>
-            
-                    
-                        <b>1.2.2.1.</b>
-                    
-                    排序
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.2.1.1" data-path="../../算法/排序/快速排序.html">
-            
-                <a href="../../算法/排序/快速排序.html">
-            
-                    
-                        <b>1.2.2.1.1.</b>
-                    
-                    Test
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.3" >
-            
-                <span>
-            
-                    
-                        <b>1.2.3.</b>
-                    
-                    线程
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.3.1" data-path="../../线程/ThreadPoolExecutor.html">
-            
-                <a href="../../线程/ThreadPoolExecutor.html">
-            
-                    
-                        <b>1.2.3.1.</b>
-                    
-                    ThreadPoolExecutor详解 ThreadPoolExecutor 的参数含义及源码执行流程
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.3.2" data-path="../../线程/线程的状态-lg.html">
-            
-                <a href="../../线程/线程的状态-lg.html">
-            
-                    
-                        <b>1.2.3.2.</b>
-                    
-                    线程的状态
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.4" >
-            
-                <span>
-            
-                    
-                        <b>1.2.4.</b>
-                    
-                    网络
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.4.1" data-path="../../网络/http和tcp.html">
-            
-                <a href="../../网络/http和tcp.html">
-            
-                    
-                        <b>1.2.4.1.</b>
-                    
-                    http和tcp
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.5" >
-            
-                <span>
-            
-                    
-                        <b>1.2.5.</b>
-                    
-                    集合
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.5.1" >
-            
-                <span>
-            
-                    
-                        <b>1.2.5.1.</b>
                     
                     Collection
             
@@ -426,12 +184,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.5.1.1" >
+        <li class="chapter " data-level="1.2.1.1.1" >
             
                 <span>
             
                     
-                        <b>1.2.5.1.1.</b>
+                        <b>1.2.1.1.1.</b>
                     
                     List
             
@@ -442,14 +200,14 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.5.1.1.1" data-path="../collection/list/ArrayList源码学习.html">
+        <li class="chapter " data-level="1.2.1.1.1.1" data-path="../collection/list/ArrayList源码学习.html">
             
                 <a href="../collection/list/ArrayList源码学习.html">
             
                     
-                        <b>1.2.5.1.1.1.</b>
+                        <b>1.2.1.1.1.1.</b>
                     
-                    Test
+                    ArrayList源码学习
             
                 </a>
             
@@ -462,12 +220,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.1.2" >
+        <li class="chapter " data-level="1.2.1.1.2" >
             
                 <span>
             
                     
-                        <b>1.2.5.1.2.</b>
+                        <b>1.2.1.1.2.</b>
                     
                     Set
             
@@ -478,12 +236,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.5.1.2.1" data-path="../collection/set/hashset源码学习.html">
+        <li class="chapter " data-level="1.2.1.1.2.1" data-path="../collection/set/hashset源码学习.html">
             
                 <a href="../collection/set/hashset源码学习.html">
             
                     
-                        <b>1.2.5.1.2.1.</b>
+                        <b>1.2.1.1.2.1.</b>
                     
                     hashset源码学习
             
@@ -493,12 +251,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.1.2.2" data-path="../collection/set/TreeSet源码学习.html">
+        <li class="chapter " data-level="1.2.1.1.2.2" data-path="../collection/set/TreeSet源码学习.html">
             
                 <a href="../collection/set/TreeSet源码学习.html">
             
                     
-                        <b>1.2.5.1.2.2.</b>
+                        <b>1.2.1.1.2.2.</b>
                     
                     TreeSet源码学习
             
@@ -518,12 +276,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.2" >
+        <li class="chapter " data-level="1.2.1.2" >
             
                 <span>
             
                     
-                        <b>1.2.5.2.</b>
+                        <b>1.2.1.2.</b>
                     
                     Hashmap
             
@@ -534,12 +292,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.5.2.1" data-path="ConcurrentHashMap相关.html">
+        <li class="chapter " data-level="1.2.1.2.1" data-path="ConcurrentHashMap相关.html">
             
                 <a href="ConcurrentHashMap相关.html">
             
                     
-                        <b>1.2.5.2.1.</b>
+                        <b>1.2.1.2.1.</b>
                     
                     ConcurrentHashMap相关
             
@@ -549,12 +307,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.2.2" data-path="HashMap相关.html">
+        <li class="chapter " data-level="1.2.1.2.2" data-path="HashMap相关.html">
             
                 <a href="HashMap相关.html">
             
                     
-                        <b>1.2.5.2.2.</b>
+                        <b>1.2.1.2.2.</b>
                     
                     HashMap相关
             
@@ -564,12 +322,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.2.3" data-path="HashMap相关2.html">
+        <li class="chapter " data-level="1.2.1.2.3" data-path="HashMap相关2.html">
             
                 <a href="HashMap相关2.html">
             
                     
-                        <b>1.2.5.2.3.</b>
+                        <b>1.2.1.2.3.</b>
                     
                     HashMap相关2
             
@@ -579,12 +337,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.2.4" data-path="HashMap相关tx.html">
+        <li class="chapter " data-level="1.2.1.2.4" data-path="HashMap相关tx.html">
             
                 <a href="HashMap相关tx.html">
             
                     
-                        <b>1.2.5.2.4.</b>
+                        <b>1.2.1.2.4.</b>
                     
                     HashMap相关tx
             
@@ -594,12 +352,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.2.5" data-path="jdk1.7hashmap源码分析.html">
+        <li class="chapter " data-level="1.2.1.2.5" data-path="jdk1.7hashmap源码分析.html">
             
                 <a href="jdk1.7hashmap源码分析.html">
             
                     
-                        <b>1.2.5.2.5.</b>
+                        <b>1.2.1.2.5.</b>
                     
                     jdk1.7hashmap源码分析
             
@@ -609,12 +367,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.5.2.6" data-path="jdk1.8ConcurrentHashMap源码分析.html">
+        <li class="chapter " data-level="1.2.1.2.6" data-path="jdk1.8ConcurrentHashMap源码分析.html">
             
                 <a href="jdk1.8ConcurrentHashMap源码分析.html">
             
                     
-                        <b>1.2.5.2.6.</b>
+                        <b>1.2.1.2.6.</b>
                     
                     jdk1.8ConcurrentHashMap源码分析
             
@@ -624,12 +382,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.2.7" data-path="jdk1.8HashMap源码分析.html">
+        <li class="chapter " data-level="1.2.1.2.7" data-path="jdk1.8HashMap源码分析.html">
             
                 <a href="jdk1.8HashMap源码分析.html">
             
                     
-                        <b>1.2.5.2.7.</b>
+                        <b>1.2.1.2.7.</b>
                     
                     jdk1.8hashmap源码分析
             
@@ -639,12 +397,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.2.8" data-path="Jdk1.8源码解析HashMap-putTreeVal.html">
+        <li class="chapter " data-level="1.2.1.2.8" data-path="Jdk1.8源码解析HashMap-putTreeVal.html">
             
                 <a href="Jdk1.8源码解析HashMap-putTreeVal.html">
             
                     
-                        <b>1.2.5.2.8.</b>
+                        <b>1.2.1.2.8.</b>
                     
                     Jdk1.8源码解析-java.util.HashMap#putTreeVal
             
@@ -654,12 +412,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.2.9" data-path="Jdk1.8源码解析HashMap-resize.html">
+        <li class="chapter " data-level="1.2.1.2.9" data-path="Jdk1.8源码解析HashMap-resize.html">
             
                 <a href="Jdk1.8源码解析HashMap-resize.html">
             
                     
-                        <b>1.2.5.2.9.</b>
+                        <b>1.2.1.2.9.</b>
                     
                     Jdk1.8源码解析-java.util.HashMap#resize
             
@@ -669,12 +427,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.2.10" data-path="Jdk1.8源码解析HashMap-treeifyBin.html">
+        <li class="chapter " data-level="1.2.1.2.10" data-path="Jdk1.8源码解析HashMap-treeifyBin.html">
             
                 <a href="Jdk1.8源码解析HashMap-treeifyBin.html">
             
                     
-                        <b>1.2.5.2.10.</b>
+                        <b>1.2.1.2.10.</b>
                     
                     Jdk1.8源码解析-java.util.HashMap#treeifyBin链表转化为红黑树
             
@@ -684,12 +442,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.2.11" data-path="LinkedHashMap.html">
+        <li class="chapter active" data-level="1.2.1.2.11" data-path="LinkedHashMap.html">
             
                 <a href="LinkedHashMap.html">
             
                     
-                        <b>1.2.5.2.11.</b>
+                        <b>1.2.1.2.11.</b>
                     
                     Linked Hash Map
             
@@ -704,12 +462,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.3" >
+        <li class="chapter " data-level="1.2.1.3" >
             
                 <span>
             
                     
-                        <b>1.2.5.3.</b>
+                        <b>1.2.1.3.</b>
                     
                     hashmap源码
             
@@ -720,12 +478,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.5.3.1" data-path="../hashmap源码/jdk1.7ConcurrentHashMap源码.html">
+        <li class="chapter " data-level="1.2.1.3.1" data-path="../hashmap源码/jdk1.7ConcurrentHashMap源码.html">
             
                 <a href="../hashmap源码/jdk1.7ConcurrentHashMap源码.html">
             
                     
-                        <b>1.2.5.3.1.</b>
+                        <b>1.2.1.3.1.</b>
                     
                     jdk1.7ConcurrentHashMap源码
             
@@ -735,12 +493,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.3.2" data-path="../hashmap源码/jdk1.7HashMap源码.html">
+        <li class="chapter " data-level="1.2.1.3.2" data-path="../hashmap源码/jdk1.7HashMap源码.html">
             
                 <a href="../hashmap源码/jdk1.7HashMap源码.html">
             
                     
-                        <b>1.2.5.3.2.</b>
+                        <b>1.2.1.3.2.</b>
                     
                     jdk1.7HashMap源码
             
@@ -750,12 +508,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.3.3" data-path="../hashmap源码/jdk1.8ConcurrentHashMap源码.html">
+        <li class="chapter " data-level="1.2.1.3.3" data-path="../hashmap源码/jdk1.8ConcurrentHashMap源码.html">
             
                 <a href="../hashmap源码/jdk1.8ConcurrentHashMap源码.html">
             
                     
-                        <b>1.2.5.3.3.</b>
+                        <b>1.2.1.3.3.</b>
                     
                     jdk1.8ConcurrentHashMap源码
             
@@ -765,12 +523,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.3.4" data-path="../hashmap源码/jdk1.8HashMap源码.html">
+        <li class="chapter " data-level="1.2.1.3.4" data-path="../hashmap源码/jdk1.8HashMap源码.html">
             
                 <a href="../hashmap源码/jdk1.8HashMap源码.html">
             
                     
-                        <b>1.2.5.3.4.</b>
+                        <b>1.2.1.3.4.</b>
                     
                     jdk1.8HashMap源码
             
@@ -785,12 +543,57 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.4" data-path="../集合类学习.html">
+        <li class="chapter " data-level="1.2.1.4" data-path="../test.html">
+            
+                <a href="../test.html">
+            
+                    
+                        <b>1.2.1.4.</b>
+                    
+                    Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../基本类型装箱拆箱.html">
+            
+                <a href="../基本类型装箱拆箱.html">
+            
+                    
+                        <b>1.2.1.5.</b>
+                    
+                    集合基本类型装箱拆箱
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="../基本类型装箱拆箱2.html">
+            
+                <a href="../基本类型装箱拆箱2.html">
+            
+                    
+                        <b>1.2.1.6.</b>
+                    
+                    基本类型装箱拆箱2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="../集合类学习.html">
             
                 <a href="../集合类学习.html">
             
                     
-                        <b>1.2.5.4.</b>
+                        <b>1.2.1.7.</b>
                     
                     集合类学习
             
@@ -805,12 +608,140 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.6" data-path="../../test.html">
+        <li class="chapter " data-level="1.2.2" >
             
-                <a href="../../test.html">
+                <span>
             
                     
-                        <b>1.2.6.</b>
+                        <b>1.2.2.</b>
+                    
+                    String
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../../string/StringBuffer和StringBuilder.html">
+            
+                <a href="../../string/StringBuffer和StringBuilder.html">
+            
+                    
+                        <b>1.2.2.1.</b>
+                    
+                    集合StringBuffer和StringBuilder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../../string/string源码.html">
+            
+                <a href="../../string/string源码.html">
+            
+                    
+                        <b>1.2.2.2.</b>
+                    
+                    string源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../../string/string源码学习.html">
+            
+                <a href="../../string/string源码学习.html">
+            
+                    
+                        <b>1.2.2.3.</b>
+                    
+                    string源码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../../string/字符串string学习.html">
+            
+                <a href="../../string/字符串string学习.html">
+            
+                    
+                        <b>1.2.2.4.</b>
+                    
+                    字符串string学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../../string/字符串string学习2-lg.html">
+            
+                <a href="../../string/字符串string学习2-lg.html">
+            
+                    
+                        <b>1.2.2.5.</b>
+                    
+                    字符串string学习2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    算法
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" >
+            
+                <span>
+            
+                    
+                        <b>1.2.3.1.</b>
+                    
+                    排序
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1.1" data-path="../../算法/排序/快速排序.html">
+            
+                <a href="../../算法/排序/快速排序.html">
+            
+                    
+                        <b>1.2.3.1.1.</b>
                     
                     Test
             
@@ -820,14 +751,40 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="../../基本类型装箱拆箱.html">
+
+            </ul>
             
-                <a href="../../基本类型装箱拆箱.html">
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
             
                     
-                        <b>1.2.7.</b>
+                        <b>1.2.4.</b>
                     
-                    集合基本类型装箱拆箱
+                    线程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../../线程/ThreadPoolExecutor.html">
+            
+                <a href="../../线程/ThreadPoolExecutor.html">
+            
+                    
+                        <b>1.2.4.1.</b>
+                    
+                    ThreadPoolExecutor详解 ThreadPoolExecutor 的参数含义及源码执行流程
             
                 </a>
             
@@ -835,18 +792,59 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.8" data-path="../../基本类型装箱拆箱2.html">
+        <li class="chapter " data-level="1.2.4.2" data-path="../../线程/线程的状态-lg.html">
             
-                <a href="../../基本类型装箱拆箱2.html">
+                <a href="../../线程/线程的状态-lg.html">
             
                     
-                        <b>1.2.8.</b>
+                        <b>1.2.4.2.</b>
                     
-                    基本类型装箱拆箱2
+                    线程的状态
             
                 </a>
             
 
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                        <b>1.2.5.</b>
+                    
+                    网络
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../../网络/http和tcp.html">
+            
+                <a href="../../网络/http和tcp.html">
+            
+                    
+                        <b>1.2.5.1.</b>
+                    
+                    http和tcp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -2550,7 +2548,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >jdk1.8ConcurrentHashMap源码分析</a>
+        <a href="../../.." >Linked Hash Map</a>
     </h1>
 </div>
 
@@ -2567,26 +2565,75 @@
                                 
                                 <p><strong>  </strong> <excerpt in="" index="" |="" 首页摘要=""></excerpt></p>
 <!-- more -->
-<h3 id=""><a name="" class="plugin-anchor" href="#"><i class="fa fa-link" aria-hidden="true"></i></a> </h3>
-<pre><code>
-
-</code></pre><h4 id=""><a name="" class="plugin-anchor" href="#"><i class="fa fa-link" aria-hidden="true"></i></a> </h4>
-<ol>
-<li></li>
-<li></li>
-<li></li>
-</ol>
-<h4 id="segment"><a name="segment" class="plugin-anchor" href="#segment"><i class="fa fa-link" aria-hidden="true"></i></a>Segment</h4>
-<pre><code>    static class Segment&lt;K,V&gt; extends ReentrantLock implements Serializable {
-        private static final long serialVersionUID = 2249069246763182397L;
-        final float loadFactor;
-        Segment(float lf) { this.loadFactor = lf; }
+<h3 id="linkedhashmap"><a name="linkedhashmap" class="plugin-anchor" href="#linkedhashmap"><i class="fa fa-link" aria-hidden="true"></i></a>LinkedHashMap</h3>
+<h4 id="&#x7EE7;&#x627F;&#x4E86;hashmap"><a name="&#x7EE7;&#x627F;&#x4E86;hashmap" class="plugin-anchor" href="#&#x7EE7;&#x627F;&#x4E86;hashmap"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7EE7;&#x627F;&#x4E86;HashMap</h4>
+<pre><code class="lang-java">public class LinkedHashMap&lt;K,V&gt;
+    extends HashMap&lt;K,V&gt;
+    implements Map&lt;K,V&gt;
+</code></pre>
+<h4 id="&#x53CC;&#x5411;&#x94FE;&#x8868;&#xFF0C;entry&#x7EE7;&#x627F;hashmapnode"><a name="&#x53CC;&#x5411;&#x94FE;&#x8868;&#xFF0C;entry&#x7EE7;&#x627F;hashmapnode" class="plugin-anchor" href="#&#x53CC;&#x5411;&#x94FE;&#x8868;&#xFF0C;entry&#x7EE7;&#x627F;hashmapnode"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53CC;&#x5411;&#x94FE;&#x8868;&#xFF0C;Entry<k,v>&#x7EE7;&#x627F;HashMap.Node<k,v></k,v></k,v></h4>
+<pre><code class="lang-java">   /**
+     * HashMap.Node subclass for normal LinkedHashMap entries.
+     */
+    static class Entry&lt;K,V&gt; extends HashMap.Node&lt;K,V&gt; {
+        Entry&lt;K,V&gt; before, after;
+        Entry(int hash, K key, V value, Node&lt;K,V&gt; next) {
+            super(hash, key, value, next);
+        }
     }
-</code></pre><ol>
+
+    private static final long serialVersionUID = 3801124242820219131L;
+
+    /**
+     * The head (eldest) of the doubly linked list.
+     */
+    transient LinkedHashMap.Entry&lt;K,V&gt; head;
+
+    /**
+     * The tail (youngest) of the doubly linked list.
+     */
+    transient LinkedHashMap.Entry&lt;K,V&gt; tail;
+</code></pre>
+<p>linkedMap&#x5728;&#x4E8E;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x4F60;&#x60F3;&#x4FDD;&#x6301;&#x8FDB;&#x5165;&#x7684;&#x987A;&#x5E8F;&#x4E0E;&#x88AB;&#x53D6;&#x51FA;&#x7684;&#x987A;&#x5E8F;&#x4E00;&#x81F4;&#x7684;&#x8BDD;&#xFF0C;&#x4F18;&#x5148;&#x8003;&#x8651;LinkedMap&#xFF0C;hashMap&#x952E;&#x53EA;&#x80FD;&#x5141;&#x8BB8;&#x4E3A;&#x4E00;&#x6761;&#x4E3A;&#x7A7A;&#xFF0C;value&#x53EF;&#x4EE5;&#x5141;&#x8BB8;&#x4E3A;&#x591A;&#x6761;&#x4E3A;&#x7A7A;&#xFF0C;&#x952E;&#x552F;&#x4E00;&#xFF0C;&#x4F46;&#x503C;&#x53EF;&#x4EE5;&#x591A;&#x4E2A;&#x3002;</p>
+<p>LinkedHashMap&#x4E5F;&#x6700;&#x591A;&#x53EA;&#x5141;&#x8BB8;&#x4E00;&#x6761;Entry&#x7684;&#x952E;&#x4E3A;Null(&#x591A;&#x6761;&#x4F1A;&#x8986;&#x76D6;)&#xFF0C;&#x4F46;&#x5141;&#x8BB8;&#x591A;&#x6761;Entry&#x7684;&#x503C;&#x4E3A;Null</p>
+<h4 id="&#x63D2;&#x5165;&#x6570;&#x636E;&#x540E;&#x4F1A;&#x8C03;&#x6574;&#x94FE;&#x8868;&#x7684;&#x6570;&#x636E;&#x987A;&#x5E8F;-afternodeinsertionevict"><a name="&#x63D2;&#x5165;&#x6570;&#x636E;&#x540E;&#x4F1A;&#x8C03;&#x6574;&#x94FE;&#x8868;&#x7684;&#x6570;&#x636E;&#x987A;&#x5E8F;-afternodeinsertionevict" class="plugin-anchor" href="#&#x63D2;&#x5165;&#x6570;&#x636E;&#x540E;&#x4F1A;&#x8C03;&#x6574;&#x94FE;&#x8868;&#x7684;&#x6570;&#x636E;&#x987A;&#x5E8F;-afternodeinsertionevict"><i class="fa fa-link" aria-hidden="true"></i></a>&#x63D2;&#x5165;&#x6570;&#x636E;&#x540E;&#x4F1A;&#x8C03;&#x6574;&#x94FE;&#x8868;&#x7684;&#x6570;&#x636E;&#x987A;&#x5E8F; afterNodeInsertion(evict);</h4>
+<p>&#x8C03;&#x7528;HashMap&#x7684;put&#x6216;&#x8005;putall&#x65B9;&#x6CD5;&#x540E;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;afterNodeInsertion&#x65B9;&#x6CD5;&#xFF0C;<br>HashMap&#x65B9;&#x6CD5;&#x4E2D;&#x6709;&#x5982;&#x4E0B;3&#x4E2A;&#x51FD;&#x6570;</p>
+<pre><code class="lang-java">    // Callbacks to allow LinkedHashMap post-actions
+    void afterNodeAccess(Node&lt;K,V&gt; p) { }
+    void afterNodeInsertion(boolean evict) { }
+    void afterNodeRemoval(Node&lt;K,V&gt; p) { }
+</code></pre>
+<p>&#x8FD9;3&#x4E2A;&#x51FD;&#x6570;&#x4F1A;&#x5728;LinkedHashMap&#x4E2D;&#x5B9E;&#x73B0;,&#x63D2;&#x5165;&#x6570;&#x636E;&#x540E;&#x4F1A;&#x8C03;&#x6574;&#x94FE;&#x8868;&#x7684;&#x6570;&#x636E;&#x987A;&#x5E8F;,&#x4F46;&#x662F;&#x5FC5;&#x987B;&#x5728;accessOrder = true;&#x4E3A;true&#x65F6;&#x624D;&#x4F1A;&#x8C03;&#x6574;&#xFF0C;
+LinkedHashMap&#x65E0;&#x53C2;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x9ED8;&#x8BA4;&#x662F;false&#x7684;</p>
+<pre><code>    public LinkedHashMap() {
+        super();
+        accessOrder = false;
+    }
+</code></pre><h4 id="&#x5B9E;&#x73B0;lru&#x7B97;&#x6CD5;"><a name="&#x5B9E;&#x73B0;lru&#x7B97;&#x6CD5;" class="plugin-anchor" href="#&#x5B9E;&#x73B0;lru&#x7B97;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x73B0;LRU&#x7B97;&#x6CD5;</h4>
+<pre><code class="lang-java">    protected boolean removeEldestEntry(Map.Entry&lt;K,V&gt; eldest) {
+        return false;
+    }
+</code></pre>
+<ul>
 <li></li>
 <li></li>
 <li></li>
-</ol>
+</ul>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<h4 id="treemap"><a name="treemap" class="plugin-anchor" href="#treemap"><i class="fa fa-link" aria-hidden="true"></i></a>TreeMap</h4>
+<pre><code class="lang-java">public class TreeMap&lt;K,V&gt;
+    extends AbstractMap&lt;K,V&gt;
+    implements NavigableMap&lt;K,V&gt;, Cloneable, java.io.Serializable
+</code></pre>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
 
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -2615,14 +2662,10 @@
 
             
                 
-                <a href="jdk1.7hashmap源码分析.html" class="navigation navigation-prev " aria-label="Previous page: jdk1.7hashmap源码分析">
+                <a href="Jdk1.8源码解析HashMap-treeifyBin.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Jdk1.8源码解析-java.util.HashMap#treeifyBin链表转化为红黑树">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="jdk1.8HashMap源码分析.html" class="navigation navigation-next " aria-label="Next page: jdk1.8hashmap源码分析">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -2631,7 +2674,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"jdk1.8ConcurrentHashMap源码分析","tags":[],"date":"2019-08-22T10:48:17.000Z","categories":null,"level":"1.2.5.2.6","depth":4,"next":{"title":"jdk1.8hashmap源码分析","level":"1.2.5.2.7","depth":4,"path":"base/集合/hashmap/jdk1.8HashMap源码分析.md","ref":"base/集合/hashmap/jdk1.8HashMap源码分析.md","articles":[]},"previous":{"title":"jdk1.7hashmap源码分析","level":"1.2.5.2.5","depth":4,"path":"base/集合/hashmap/jdk1.7hashmap源码分析.md","ref":"base/集合/hashmap/jdk1.7hashmap源码分析.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","-highlight","baidu","splitter","sitemap","back-to-top-button","code","splitter","-lunr","-search","search-pro","theme-comscore","popup","hide-element","anchors","nocache","page-toc-button"],"ignores":["friends","tags","categories","about"],"root":".deploy/content","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"nocache":{},"github":{"url":"https://github.com/zhaoda/webpack-handbook"},"editlink":{"base":"https://github.com/zhaoda/webpack-handbook/blob/master/content","label":"编辑本页"},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://zhaoda.net/"},"theme-comscore":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"baidu":{"token":"a9787f0ab45d5e237bab522431d0a7ec"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"SUMMARY.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java实用笔记","language":"zh-hans","output.name":"site","catalog":["./source/_posts"],"links":{"sidebar":{"Home":"http://blog.liangqingxiang.top/"}},"gitbook":"3.2.3","description":"学习笔记"},"file":{"path":"base/集合/hashmap/jdk1.8ConcurrentHashMap源码分析.md","mtime":"2020-06-17T08:27:43.081Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-17T08:28:18.784Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Linked Hash Map","tags":[],"date":"2020-06-06T21:47:47.000Z","categories":null,"level":"1.2.1.2.11","depth":4,"next":{"title":"hashmap源码","level":"1.2.1.3","depth":3,"ref":"","articles":[{"title":"jdk1.7ConcurrentHashMap源码","level":"1.2.1.3.1","depth":4,"path":"base/assemble/hashmap源码/jdk1.7ConcurrentHashMap源码.md","ref":"base/assemble/hashmap源码/jdk1.7ConcurrentHashMap源码.md","articles":[]},{"title":"jdk1.7HashMap源码","level":"1.2.1.3.2","depth":4,"path":"base/assemble/hashmap源码/jdk1.7HashMap源码.md","ref":"base/assemble/hashmap源码/jdk1.7HashMap源码.md","articles":[]},{"title":"jdk1.8ConcurrentHashMap源码","level":"1.2.1.3.3","depth":4,"path":"base/assemble/hashmap源码/jdk1.8ConcurrentHashMap源码.md","ref":"base/assemble/hashmap源码/jdk1.8ConcurrentHashMap源码.md","articles":[]},{"title":"jdk1.8HashMap源码","level":"1.2.1.3.4","depth":4,"path":"base/assemble/hashmap源码/jdk1.8HashMap源码.md","ref":"base/assemble/hashmap源码/jdk1.8HashMap源码.md","articles":[]}]},"previous":{"title":"Jdk1.8源码解析-java.util.HashMap#treeifyBin链表转化为红黑树","level":"1.2.1.2.10","depth":4,"path":"base/assemble/hashmap/Jdk1.8源码解析HashMap-treeifyBin.md","ref":"base/assemble/hashmap/Jdk1.8源码解析HashMap-treeifyBin.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","-highlight","baidu","splitter","sitemap","back-to-top-button","code","splitter","-lunr","-search","search-pro","theme-comscore","popup","hide-element","anchors","nocache","page-toc-button"],"ignores":["friends","tags","categories","about"],"root":".deploy/content","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"nocache":{},"github":{"url":"https://github.com/zhaoda/webpack-handbook"},"editlink":{"base":"https://github.com/zhaoda/webpack-handbook/blob/master/content","label":"编辑本页"},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://zhaoda.net/"},"theme-comscore":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"baidu":{"token":"a9787f0ab45d5e237bab522431d0a7ec"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"SUMMARY.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java实用笔记","language":"zh-hans","output.name":"site","catalog":["./source/_posts"],"links":{"sidebar":{"Home":"http://blog.liangqingxiang.top/"}},"gitbook":"3.2.3","description":"学习笔记"},"file":{"path":"base/assemble/hashmap/LinkedHashMap.md","mtime":"2020-06-17T08:37:02.487Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-17T08:37:22.988Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
