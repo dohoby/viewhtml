@@ -27,6 +27,7 @@
 <url> <loc>http://zhaoda.net/base/string/string源码学习.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/string/字符串string学习.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/string/字符串string学习2-lg.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/base/基本类型/BigDecimal问题.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/基本类型/基本类型装箱拆箱.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/基本类型/基本类型装箱拆箱2.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/基本类型/基本运算.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
@@ -66,6 +67,7 @@
 <url> <loc>http://zhaoda.net/jvm/jvm内存模型.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/jvm/jvm参数.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/jvm/jvm相关.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/jvm/类加载过程.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/mybatis/mybatis分页插件/mybatis插件引入.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/mybatis/mybatis分页插件/Page.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/mybatis/mybatis分页插件/PagePlugin.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
