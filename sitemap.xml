@@ -63,6 +63,9 @@
 <url> <loc>http://zhaoda.net/designPatterns/spring/spring代理模式.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/designPatterns/spring/spring策略模式.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/designPatterns/单例/单例模式.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/designPatterns/策略/策略模式-实战例子1.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/designPatterns/策略/策略模式-实战例子2.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/designPatterns/策略/策略模式-实战例子3.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/distributed/dubbo学习1.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/jvm/jvm内存模型.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/jvm/jvm参数.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
