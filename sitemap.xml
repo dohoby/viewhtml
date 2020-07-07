@@ -22,12 +22,25 @@
 <url> <loc>http://zhaoda.net/base/assemble/hashmap源码/jdk1.8ConcurrentHashMap源码.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/assemble/hashmap源码/jdk1.8HashMap源码.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/assemble/集合类学习.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/base/lambada/java8-求和.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/base/lambada/java8-空指针Optional.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/base/lambada/Java8实战例子.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/base/lambada/Java8新特性- 重复注解.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/base/lambada/Java8新特性-jvm年老代参数参数变更.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/base/lambada/Java8新特性-Lambda表达式-streams.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/base/lambada/Java8新特性-Lambda表达式与Functional接口.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/base/lambada/Java8新特性-接口的默认方法与静态方法.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/base/lambada/Java8新特性-方法引用.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/base/lambada/Java8新特性——内建的功能性接口.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/base/lambada/java8用法.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/base/lambada/labada常用写法.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/string/StringBuffer和StringBuilder.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/string/string源码.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/string/string源码学习.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/string/字符串string学习.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/string/字符串string学习2-lg.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/基本类型/BigDecimal问题.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/base/基本类型/原码反码补码.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/基本类型/基本类型装箱拆箱.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/基本类型/基本类型装箱拆箱2.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/基本类型/基本运算.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
@@ -47,6 +60,7 @@
 <url> <loc>http://zhaoda.net/base/线程/生产者消费者案例/生产者消费者例子1.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/线程/生产者消费者案例/生产者消费者例子2.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/线程/生产者消费者案例/生产者消费者例子3.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/base/线程/AQS.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/线程/CountDownLatch和CyclicBarrier.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/线程/synchronized和ReentrantLock的实现原理.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/线程/ThreadLocal原理.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
@@ -94,6 +108,7 @@
 <url> <loc>http://zhaoda.net/spring/ioc/bean实例化过程.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/spring/ioc/spring-ioc原理.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/spring/事务/spring事务管理.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/spring/动态数据源/AbstractRoutingDataSource源码.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/springboot/springboot配置/springboot配置文件加载分析.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/springboot/springboot配置/修改springboot默认加载application-properties文件.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/springboot/监听器/springboot监听器.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
