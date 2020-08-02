@@ -82,6 +82,8 @@
 <url> <loc>http://zhaoda.net/designPatterns/spring/spring工厂模式.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/designPatterns/spring/spring策略模式.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/designPatterns/单例/单例模式.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/designPatterns/策略/jdk用到的策略模式.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/designPatterns/策略/mybatis用到的策略模式.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/designPatterns/策略/策略模式-实战例子1.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/designPatterns/策略/策略模式-实战例子2.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/designPatterns/策略/策略模式-实战例子3.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
@@ -112,6 +114,7 @@
 <url> <loc>http://zhaoda.net/mutiThread/ThreadLocal原理.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/mutiThread/ThreadLocal原理2.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/mutiThread/ThreadPoolExecutor-lg.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/mutiThread/ThreadPoolExecutor相关.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/mutiThread/Volatile实现原理.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/mutiThread/死锁.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/mutiThread/线程学习1.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
@@ -131,10 +134,12 @@
 <url> <loc>http://zhaoda.net/mybatis/mybatis源码解析/mybatis源码学习总结2.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/mybatis/mybatis源码解析/spring管理mybatis事务分析.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/mybatis/mybatis源码解析/SqlSessionFactoryBean源码分析.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/mybatis/源码/SqlSessionManager源码.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/mybatis/mybatis-view1.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/mybatis/mybatis学习.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/mybatis/MyBatis框架面试常见问题.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/mybatis/mybatis用法.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/mybatis/mybatis相关.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/mybatis/常见mybatis用法.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/mybatis-spring/Mybatis-Spring源码分析.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/redis/redis命令/redis-string命令.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
