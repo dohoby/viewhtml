@@ -34,7 +34,6 @@
 <url> <loc>http://zhaoda.net/base/lambada/Java8新特性——内建的功能性接口.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/lambada/java8用法.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/lambada/labada常用写法.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://zhaoda.net/base/mq/mq相关.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/string/StringBuffer和StringBuilder.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/string/string源码.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/string/string源码学习.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
@@ -55,13 +54,6 @@
 <url> <loc>http://zhaoda.net/base/基本类型/静态static学习.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/异常/异常处理.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/异常/异常学习.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://zhaoda.net/base/数据库/sql题/常见sql用法.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://zhaoda.net/base/数据库/sql题/数据库去重.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://zhaoda.net/base/数据库/sql题/行转列.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://zhaoda.net/base/数据库/mysql事务.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://zhaoda.net/base/数据库/mysql学习.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://zhaoda.net/base/数据库/sql优化.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://zhaoda.net/base/数据库/数据库学习.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/算法/排序/冒泡排序和选择排序.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/算法/排序/堆排序.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/算法/排序/快速排序.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
@@ -77,6 +69,19 @@
 <url> <loc>http://zhaoda.net/base/设计/权限相关-shrio.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/面试题/面试题.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/base/test.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/database/sql题/常见sql用法.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/database/sql题/数据库去重.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/database/sql题/行转列.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/database/mysql事务.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/database/mysql存储引擎.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/database/mysql学习.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/database/MySQL的ACID原理.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/database/mysql聚簇索引和非聚簇索引.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/database/MySQL读写分离主从复制原理.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/database/postgres和mysql.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/database/sql优化.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/database/数据库学习.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/database/索引种类.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/designPatterns/spring/spring享元模式.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/designPatterns/spring/spring代理模式.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/designPatterns/spring/spring工厂模式.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
@@ -98,6 +103,7 @@
 <url> <loc>http://zhaoda.net/jvm/jvm相关.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/jvm/垃圾收集算法和收集器.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/jvm/类加载过程.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/mq/mq相关.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/mutiThread/源码/AbstractQueuedSynchronizer.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/mutiThread/源码/ReadWriteLock.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/mutiThread/源码/ReenTrantLock.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
@@ -142,6 +148,7 @@
 <url> <loc>http://zhaoda.net/mybatis/mybatis相关.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/mybatis/常见mybatis用法.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/mybatis-spring/Mybatis-Spring源码分析.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/redis/redis命令/redis-set命令.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/redis/redis命令/redis-string命令.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/redis/redis应用/redis应用.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/redis/redis应用/cys-redis微信异步关注（队列）.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
@@ -151,9 +158,9 @@
 <url> <loc>http://zhaoda.net/redis/redis应用/cys-redis验证码（临时性的，设计过期时间的应用）.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/redis/redis应用/redis-string应用.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/redis/redis应用/redis-zset应用.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/redis/redis数据结构.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/redis/jedis模板.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/redis/redis协议测试.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://zhaoda.net/redis/redis数据结构.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/redis/redis相关.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/redis/缓存.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/redis/缓存和数据库一致性问题.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
@@ -171,6 +178,7 @@
 <url> <loc>http://zhaoda.net/spring/ioc/spring循环依赖.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/spring/mvc/cookie.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/spring/mvc/spring-controller单例问题.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://zhaoda.net/spring/mvc/spring-mvc.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/spring/事务/spring事务管理.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/spring/动态数据源/动态数据源.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://zhaoda.net/spring/动态数据源/AbstractRoutingDataSource源码.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
